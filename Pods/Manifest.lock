@@ -1,0 +1,64 @@
+PODS:
+  - Alamofire (5.2.2)
+  - AttributedStringBuilder (1.1)
+  - DynamicBlurView (5.0.3)
+  - KeychainSwift (19.0.0)
+  - Moya (14.0.0):
+    - Moya/Core (= 14.0.0)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+  - Reachability (3.2)
+  - Reusable (4.1.1):
+    - Reusable/Storyboard (= 4.1.1)
+    - Reusable/View (= 4.1.1)
+  - Reusable/Storyboard (4.1.1)
+  - Reusable/View (4.1.1)
+  - SnapKit (5.0.1)
+  - SwiftGen (6.3.0)
+  - SwiftLint (0.40.3)
+  - SwiftMessages (8.0.2):
+    - SwiftMessages/App (= 8.0.2)
+  - SwiftMessages/App (8.0.2)
+
+DEPENDENCIES:
+  - AttributedStringBuilder
+  - DynamicBlurView
+  - KeychainSwift
+  - Moya
+  - Reachability
+  - Reusable
+  - SnapKit
+  - SwiftGen
+  - SwiftLint
+  - SwiftMessages
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AttributedStringBuilder
+    - DynamicBlurView
+    - KeychainSwift
+    - Moya
+    - Reachability
+    - Reusable
+    - SnapKit
+    - SwiftGen
+    - SwiftLint
+    - SwiftMessages
+
+SPEC CHECKSUMS:
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  AttributedStringBuilder: 974bb0a88ec8fa5f33fc9861ad13815451ebf651
+  DynamicBlurView: b57e2f6aa33f85b2bcca272265162a3c7c5cc499
+  KeychainSwift: a06190cf933ad46b1e0abc3d77d29c06331715c7
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  Reusable: 53a9acf5c536f229b31b5865782414b508252ddb
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SwiftGen: 3d5024a47ea79e408cded20763d7a17d18a4548c
+  SwiftLint: dfd554ff0dff17288ee574814ccdd5cea85d76f7
+  SwiftMessages: 633304165351b8e3dcbb81a71f8efcd86f9c1669
+
+PODFILE CHECKSUM: 281241f518c8fd6186541c89964e242ce1976812
+
+COCOAPODS: 1.9.1

@@ -1,0 +1,33 @@
+//
+//  Dev.xcconfig
+//  VTBMobile
+//
+//  Created by Alexandr Gabrusevich on 9/6/19.
+//  Copyright © 2019 Evgeniy Mikholap. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+#include "Pods/Target Support Files/Pods-VTBMobile/Pods-VTBMobile.debug (demo).xcconfig"
+#include "Pods/Target Support Files/Pods-VTBMobile/Pods-VTBMobile.release (demo).xcconfig"
+
+// Server URL
+BASE_URL = https:/$()/vtbmobile.lab.croc.ru/
+
+// Chat Socket
+CHAT_URL = wss:/$()/vo.vtb24.ru/chat/WebSocket/
+CHAT_PROJECT_ID = 1
+CHAT_MESSENGER_TYPE = 82
+CHAT_FILE_STORAGE_URL = https:/$()/vo.vtb24.ru/fileStorage/files/thumb/
+SERVER_TYPE = demo
+
+// Multicard
+MULTICARD_URL = https:/$()/anketa.vtb.ru/kreditnaya-karta/?utm_source=vtbmobileru&utm_medium=vtb&utm_campaign=lk_mobile_credcards_vtbmobileru
+
+// Multibonus
+MULTIBONUS_URL = https:/$()/bonus.vtb.ru/
+
+// App Settings
+APP_ID = 1477334014
+PRODUCT_BUNDLE_IDENTIFIER = ru.vtbmobile.client

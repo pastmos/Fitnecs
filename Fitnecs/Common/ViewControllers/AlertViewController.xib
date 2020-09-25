@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AlertViewController" customModule="VTBMobile" customModuleProvider="target">
+            <connections>
+                <outlet property="alertView" destination="2mp-DR-Dpv" id="R4r-al-v1Z"/>
+                <outlet property="backgroundView" destination="tA4-3v-5QG" id="sqy-NC-YIe"/>
+                <outlet property="buttonsStackView" destination="kpm-5I-efx" id="r1M-Co-B18"/>
+                <outlet property="firstButton" destination="6OB-Xr-f7Z" id="x3c-vG-fOt"/>
+                <outlet property="infoContainerView" destination="Tep-h2-t7a" id="pUn-wk-8Zu"/>
+                <outlet property="messageLabel" destination="NN6-Ri-p1f" id="21i-hC-9aD"/>
+                <outlet property="secondButton" destination="g61-Yg-7c1" id="thk-Zn-giL"/>
+                <outlet property="titleLabel" destination="cYN-DG-xw5" id="geN-RH-bBD"/>
+                <outlet property="verticalSeparatorView" destination="tXr-ml-6gm" id="lCc-qK-NvT"/>
+                <outlet property="view" destination="E2b-fP-mzI" id="5Qn-dA-a9h"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="E2b-fP-mzI">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tA4-3v-5QG" customClass="DynamicBlurView" customModule="DynamicBlurView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <gestureRecognizers/>
+                </view>
+                <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="45" translatesAutoresizingMaskIntoConstraints="NO" id="2mp-DR-Dpv" userLabel="Alert View">
+                    <rect key="frame" x="52.5" y="275.5" width="270" height="116"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kzy-xi-xhN" userLabel="Main Stack View">
+                            <rect key="frame" x="0.0" y="0.0" width="270" height="116"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="72" translatesAutoresizingMaskIntoConstraints="NO" id="Tep-h2-t7a" userLabel="Info Container View">
+                                    <rect key="frame" x="0.0" y="0.0" width="270" height="72"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="afB-4c-m3s" userLabel="Info Stack View">
+                                            <rect key="frame" x="10" y="15" width="250" height="41.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="{Title}" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYN-DG-xw5" userLabel="Title Label">
+                                                    <rect key="frame" x="0.0" y="0.0" width="250" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" name="main-text-color"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="{Message}" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NN6-Ri-p1f" userLabel="Message Label">
+                                                    <rect key="frame" x="0.0" y="25.5" width="250" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.18431372549019609" green="0.20392156862745098" blue="0.25490196078431371" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y1f-CF-6IJ" userLabel="Horizontal Separator View">
+                                            <rect key="frame" x="0.0" y="71" width="270" height="1"/>
+                                            <color key="backgroundColor" name="alert-separator"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="ioE-3Q-pCx"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" name="alert-form-background"/>
+                                    <constraints>
+                                        <constraint firstItem="Y1f-CF-6IJ" firstAttribute="leading" secondItem="Tep-h2-t7a" secondAttribute="leading" id="5U1-qM-WqV"/>
+                                        <constraint firstAttribute="trailing" secondItem="afB-4c-m3s" secondAttribute="trailing" constant="10" id="IP3-QU-gjz"/>
+                                        <constraint firstItem="afB-4c-m3s" firstAttribute="leading" secondItem="Tep-h2-t7a" secondAttribute="leading" constant="10" id="Lxp-dV-Cvh"/>
+                                        <constraint firstItem="afB-4c-m3s" firstAttribute="top" secondItem="Tep-h2-t7a" secondAttribute="top" constant="15" id="c9J-qE-Z9S"/>
+                                        <constraint firstAttribute="trailing" secondItem="Y1f-CF-6IJ" secondAttribute="trailing" id="enO-Sd-oNB"/>
+                                        <constraint firstAttribute="bottom" secondItem="Y1f-CF-6IJ" secondAttribute="bottom" id="iVL-9E-gj9"/>
+                                        <constraint firstItem="Y1f-CF-6IJ" firstAttribute="top" secondItem="afB-4c-m3s" secondAttribute="bottom" constant="14.5" id="twP-tl-5BH"/>
+                                    </constraints>
+                                </view>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qwv-JM-VLo" userLabel="Buttons Stack View">
+                                    <rect key="frame" x="0.0" y="72" width="270" height="44"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zzv-qK-V7u" userLabel="Buttons Container View">
+                                            <rect key="frame" x="0.0" y="0.0" width="270" height="44"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="kpm-5I-efx" userLabel="Buttons Stack View">
+                                                    <rect key="frame" x="0.0" y="0.0" width="270" height="44"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6OB-Xr-f7Z" userLabel="First Button">
+                                                            <rect key="frame" x="0.0" y="0.0" width="134.5" height="44"/>
+                                                            <state key="normal" title="{First}" backgroundImage="alert-button-normal">
+                                                                <color key="titleColor" name="main-blue-color"/>
+                                                            </state>
+                                                            <state key="highlighted" backgroundImage="alert-button-highlighted"/>
+                                                            <connections>
+                                                                <action selector="first" destination="-1" eventType="touchUpInside" id="i2S-u8-Ub1"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g61-Yg-7c1" userLabel="Second Button">
+                                                            <rect key="frame" x="135.5" y="0.0" width="134.5" height="44"/>
+                                                            <state key="normal" title="{Second}" backgroundImage="alert-button-normal">
+                                                                <color key="titleColor" name="main-blue-color"/>
+                                                            </state>
+                                                            <state key="highlighted" backgroundImage="alert-button-highlighted"/>
+                                                            <connections>
+                                                                <action selector="second" destination="-1" eventType="touchUpInside" id="1UE-JH-rK0"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                                <view contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="tXr-ml-6gm" userLabel="Vertical Separator Container View">
+                                                    <rect key="frame" x="134.5" y="0.0" width="1" height="44"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lqp-DD-iBh" userLabel="Vertical Separator View">
+                                                            <rect key="frame" x="0.0" y="0.0" width="1" height="44"/>
+                                                            <color key="backgroundColor" name="alert-separator"/>
+                                                        </view>
+                                                    </subviews>
+                                                    <color key="backgroundColor" name="alert-form-background"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="Lqp-DD-iBh" secondAttribute="bottom" id="2Mn-I9-Yev"/>
+                                                        <constraint firstItem="Lqp-DD-iBh" firstAttribute="leading" secondItem="tXr-ml-6gm" secondAttribute="leading" id="Bky-yT-IqC"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Lqp-DD-iBh" secondAttribute="trailing" id="OO9-rh-adg"/>
+                                                        <constraint firstAttribute="width" constant="1" id="fnR-69-DZs"/>
+                                                        <constraint firstItem="Lqp-DD-iBh" firstAttribute="top" secondItem="tXr-ml-6gm" secondAttribute="top" id="jAU-7p-n38"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="kpm-5I-efx" secondAttribute="trailing" id="48n-W6-VPA"/>
+                                                <constraint firstAttribute="bottom" secondItem="tXr-ml-6gm" secondAttribute="bottom" id="TzB-bg-sE2"/>
+                                                <constraint firstItem="kpm-5I-efx" firstAttribute="top" secondItem="zzv-qK-V7u" secondAttribute="top" id="UQw-DL-Xdk"/>
+                                                <constraint firstItem="tXr-ml-6gm" firstAttribute="centerX" secondItem="zzv-qK-V7u" secondAttribute="centerX" id="Yf4-I3-MQB"/>
+                                                <constraint firstItem="tXr-ml-6gm" firstAttribute="top" secondItem="zzv-qK-V7u" secondAttribute="top" id="caU-RM-zjZ"/>
+                                                <constraint firstAttribute="bottom" secondItem="kpm-5I-efx" secondAttribute="bottom" id="cqb-7l-k7e"/>
+                                                <constraint firstItem="kpm-5I-efx" firstAttribute="leading" secondItem="zzv-qK-V7u" secondAttribute="leading" id="oTd-14-qxw"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="up6-9q-X01"/>
+                                    </constraints>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="kzy-xi-xhN" firstAttribute="leading" secondItem="2mp-DR-Dpv" secondAttribute="leading" id="A9u-iQ-vI1"/>
+                        <constraint firstAttribute="bottom" secondItem="kzy-xi-xhN" secondAttribute="bottom" id="DDq-Se-C5J"/>
+                        <constraint firstAttribute="trailing" secondItem="kzy-xi-xhN" secondAttribute="trailing" id="HGt-BW-kxk"/>
+                        <constraint firstItem="kzy-xi-xhN" firstAttribute="top" secondItem="2mp-DR-Dpv" secondAttribute="top" id="SwL-pB-Rfn"/>
+                        <constraint firstAttribute="width" constant="270" id="bsA-ea-ik1"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="hSQ-8r-DTI"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" name="alert-background"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="2mp-DR-Dpv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H0t-K0-4gd" secondAttribute="top" id="CiQ-Vh-nNt"/>
+                <constraint firstItem="tA4-3v-5QG" firstAttribute="leading" secondItem="E2b-fP-mzI" secondAttribute="leading" id="T7s-By-1oi"/>
+                <constraint firstItem="2mp-DR-Dpv" firstAttribute="centerY" secondItem="E2b-fP-mzI" secondAttribute="centerY" id="YCM-ug-fqf"/>
+                <constraint firstAttribute="bottom" secondItem="tA4-3v-5QG" secondAttribute="bottom" id="YGB-g7-auw"/>
+                <constraint firstItem="tA4-3v-5QG" firstAttribute="top" secondItem="E2b-fP-mzI" secondAttribute="top" id="diD-u2-Gnz"/>
+                <constraint firstItem="2mp-DR-Dpv" firstAttribute="centerX" secondItem="E2b-fP-mzI" secondAttribute="centerX" id="jxz-ib-cwX"/>
+                <constraint firstAttribute="trailing" secondItem="tA4-3v-5QG" secondAttribute="trailing" id="rIR-QO-dSY"/>
+                <constraint firstItem="H0t-K0-4gd" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="2mp-DR-Dpv" secondAttribute="bottom" id="twR-8q-vfQ"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="H0t-K0-4gd"/>
+            <point key="canvasLocation" x="312.80000000000001" y="-145.56650246305421"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="alert-button-highlighted" width="2" height="2"/>
+        <image name="alert-button-normal" width="2" height="2"/>
+        <namedColor name="alert-background">
+            <color red="0.039000000804662704" green="0.15700000524520874" blue="0.58799999952316284" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="alert-form-background">
+            <color red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="0.92000001668930054" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="alert-separator">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.15000000596046448" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="main-blue-color">
+            <color red="0.11764705882352941" green="0.29411764705882354" blue="0.82352941176470584" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="main-text-color">
+            <color red="0.18431372549019609" green="0.20392156862745098" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

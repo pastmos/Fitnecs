@@ -1,0 +1,35 @@
+output_dir: Fitnecs/Generated/
+
+strings:
+  inputs: ['Fitnecs/Resources/Localizable.strings']
+  outputs:
+    templateName: structured-swift5
+    output: strings.swift
+    params:
+      enumName: Strings
+
+xcassets:
+  inputs: ['Fitnecs/Resources/Images.xcassets', 'Fitnecs/Resources/Colors.xcassets']
+  outputs:
+    templateName: swift5
+    output: assets-images.swift
+    params:
+      enumName: Assets
+
+ib:
+  inputs: ['Fitnecs/Common/Common.storyboard',
+    'Fitnecs/Stories/Root/Root.storyboard',
+    'Fitnecs/Stories/Auth/Auth.storyboard',
+    'Fitnecs/Stories/Main/Main.storyboard']
+
+  outputs:
+    templateName: scenes-swift5
+    output: storyboards.swift
+    params:
+      enumName: Storyboards
+
+fonts:
+  inputs: ['Fitnecs/Resources/Fonts']
+  outputs:
+      templateName: swift5
+      output: fonts.swift
