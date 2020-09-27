@@ -20,7 +20,9 @@ ib:
   inputs: ['Fitnecs/Common/Common.storyboard',
     'Fitnecs/Stories/Root/Root.storyboard',
     'Fitnecs/Stories/Auth/Auth.storyboard',
-    'Fitnecs/Stories/Main/Main.storyboard']
+    'Fitnecs/Stories/Main/Main.storyboard',
+    'Fitnecs/Stories/Activity/Activity.storyboard',
+    'Fitnecs/Stories/Geo/Geo.storyboard']
 
   outputs:
     templateName: scenes-swift5

@@ -8,12 +8,10 @@
 
 import UIKit
 
-import Reusable
-
 
 // MARK: - MainViewController
 
-class MainViewController: BaseViewController {
+class MainViewController: UITabBarController {
 
     // MARK: Properties
 

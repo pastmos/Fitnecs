@@ -12,6 +12,11 @@ import UIKit
 
 // swiftlint:disable explicit_type_interface identifier_name line_length type_body_length type_name
 internal enum Storyboards {
+  internal enum Activity: StoryboardType {
+    internal static let storyboardName = "Activity"
+
+    internal static let activityViewController = SceneType<Fitnecs.ActivityViewController>(storyboard: Activity.self, identifier: "ActivityViewController")
+  }
   internal enum Auth: StoryboardType {
     internal static let storyboardName = "Auth"
 
@@ -26,10 +31,13 @@ internal enum Storyboards {
 
     internal static let smallModalViewController = SceneType<Fitnecs.SmallModalViewController>(storyboard: Common.self, identifier: "SmallModalViewController")
   }
+  internal enum Geo: StoryboardType {
+    internal static let storyboardName = "Geo"
+  }
   internal enum Main: StoryboardType {
     internal static let storyboardName = "Main"
 
-    internal static let mainViewController = SceneType<Fitnecs.MainViewController>(storyboard: Main.self, identifier: "MainViewController")
+    internal static let mainViewController = SceneType<Fitnecs.MainViewController>(storyboard: Main.self, identifier: "mainViewController")
   }
   internal enum Root: StoryboardType {
     internal static let storyboardName = "Root"
