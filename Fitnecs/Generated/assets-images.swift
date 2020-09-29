@@ -78,8 +78,11 @@ internal enum Assets {
   }
   internal enum Images {
     internal static let activityTab = ImageAsset(name: "activity-tab")
+    internal static let footSteps = ImageAsset(name: "foot-steps")
+    internal static let heightIcon = ImageAsset(name: "height-icon")
+    internal static let weightIcon = ImageAsset(name: "weight-icon")
     internal static let geoTab = ImageAsset(name: "geo-tab")
-    internal static let launchLogoImage = ImageAsset(name: "launch-logo-image")
+    internal static let logo = ImageAsset(name: "logo")
   }
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name

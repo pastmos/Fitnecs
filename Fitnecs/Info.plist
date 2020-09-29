@@ -43,5 +43,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSHealthClinicalHealthRecordsShareUsageDescription</key>
+	<string>Доступ к данным HealthKit необходим для корректного отображения информации в приложении</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>Доступ к данным HealthKit необходим для корректного отображения информации в приложении</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>Доступ к данным HealthKit необходим для корректного отображения информации в приложении</string>
 </dict>
 </plist>

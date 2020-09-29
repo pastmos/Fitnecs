@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		26893DBC2521DCB900604B44 /* GeoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26893DBB2521DCB900604B44 /* GeoViewController.swift */; };
 		26D4C78F2523372300F645A3 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26D4C78E2523372300F645A3 /* HealthKit.framework */; };
+		26D4C792252350EA00F645A3 /* HealthKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D4C791252350EA00F645A3 /* HealthKitService.swift */; };
+		26D4C795252369D000F645A3 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D4C794252369D000F645A3 /* Date.swift */; };
+		26D4C79925237EC400F645A3 /* ActivityViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D4C79825237EC400F645A3 /* ActivityViewData.swift */; };
 		CE72CF522520FE6900EEE4FD /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE72CF512520FE6900EEE4FD /* Activity.storyboard */; };
 		CE842E4F251B508E00C4CD96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE842E4E251B508E00C4CD96 /* AppDelegate.swift */; };
 		CE842E5B251B509100C4CD96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE842E59251B509100C4CD96 /* LaunchScreen.storyboard */; };
@@ -114,6 +117,9 @@
 		26893DBB2521DCB900604B44 /* GeoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoViewController.swift; sourceTree = "<group>"; };
 		26D4C78D2523372300F645A3 /* Fitnecs.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Fitnecs.entitlements; sourceTree = "<group>"; };
 		26D4C78E2523372300F645A3 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		26D4C791252350EA00F645A3 /* HealthKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitService.swift; sourceTree = "<group>"; };
+		26D4C794252369D000F645A3 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		26D4C79825237EC400F645A3 /* ActivityViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewData.swift; sourceTree = "<group>"; };
 		580EE6D4903AFE0E5E7E4AA4 /* Pods-Fitnecs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitnecs.release.xcconfig"; path = "Target Support Files/Pods-Fitnecs/Pods-Fitnecs.release.xcconfig"; sourceTree = "<group>"; };
 		AF970BD8FF0BB9AABE06FCFC /* Pods-Fitnecs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitnecs.debug.xcconfig"; path = "Target Support Files/Pods-Fitnecs/Pods-Fitnecs.debug.xcconfig"; sourceTree = "<group>"; };
 		BEA5E2CA0898CC61A62282C1 /* Pods_Fitnecs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fitnecs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -232,6 +238,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26D4C79725237EAB00F645A3 /* ViewDatas */ = {
+			isa = PBXGroup;
+			children = (
+				26D4C79825237EC400F645A3 /* ActivityViewData.swift */,
+			);
+			path = ViewDatas;
+			sourceTree = "<group>";
+		};
 		2C446CBFA930B2DDF15DB1A7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,6 +271,7 @@
 				CE8B3F2125212CA800F4FEED /* ActivityCoordinator.swift */,
 				CEFAB93C252110C600F58048 /* ViewControllers */,
 				CEFAB93D252110D200F58048 /* ViewModels */,
+				26D4C79725237EAB00F645A3 /* ViewDatas */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -305,6 +320,7 @@
 				CEAE8B25251CCCA900E7EF87 /* DateFormatter+DecodingStrategy.swift */,
 				CEAE88E0251B75EF00E7EF87 /* String+HTML.swift */,
 				CEAE876D251B573700E7EF87 /* UIWindow+TopController.swift */,
+				26D4C794252369D000F645A3 /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -497,6 +513,7 @@
 			children = (
 				CEAE88E8251B770300E7EF87 /* StorageService.swift */,
 				CEAE8B29251CD34500E7EF87 /* ValidationService.swift */,
+				26D4C791252350EA00F645A3 /* HealthKitService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -912,10 +929,12 @@
 				CEAE8AB1251CC0DE00E7EF87 /* MainViewController.swift in Sources */,
 				CEAE87A8251B63E300E7EF87 /* TextFieldViewController.swift in Sources */,
 				CEAE8ACD251CC0DE00E7EF87 /* LoginViewModel.swift in Sources */,
+				26D4C795252369D000F645A3 /* Date.swift in Sources */,
 				CEAE876A251B562700E7EF87 /* Coordinator.swift in Sources */,
 				CEAE88C9251B74A400E7EF87 /* BaseAPIService.swift in Sources */,
 				CEAE88E9251B770300E7EF87 /* StorageService.swift in Sources */,
 				CEAE8AD6251CC0DE00E7EF87 /* AuthCoordinator.swift in Sources */,
+				26D4C792252350EA00F645A3 /* HealthKitService.swift in Sources */,
 				CEAE88BE251B73A500E7EF87 /* storyboards.swift in Sources */,
 				26893DBC2521DCB900604B44 /* GeoViewController.swift in Sources */,
 				CEAE8779251B57DA00E7EF87 /* ErrorViewData.swift in Sources */,
@@ -945,6 +964,7 @@
 				CEAE88C0251B73A500E7EF87 /* fonts.swift in Sources */,
 				CEAE876E251B573700E7EF87 /* UIWindow+TopController.swift in Sources */,
 				CEAE8788251B621600E7EF87 /* SmallModalViewController.swift in Sources */,
+				26D4C79925237EC400F645A3 /* ActivityViewData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
