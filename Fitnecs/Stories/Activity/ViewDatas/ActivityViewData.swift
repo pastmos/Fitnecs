@@ -6,12 +6,12 @@
 //
 
 import UIKit
+import Charts
 
 
 class ActivityViewData {
-
-    var height: Int = 0
-    var weight: Int = 0
-    var stepsToday: Double = 0
-    var stepsWeek: [Double] = []
+    var height: String = ""
+    var weight: String = ""
+    var stepsToday: String = ""
+    var chartData: BarLineScatterCandleBubbleChartData?
 }

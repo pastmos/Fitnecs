@@ -16,4 +16,5 @@ target 'Fitnecs' do
   pod 'SnapKit'
   pod 'Reusable'
   pod 'AttributedStringBuilder'
+  pod 'Charts'
 end

@@ -1,6 +1,9 @@
 PODS:
   - Alamofire (5.2.2)
   - AttributedStringBuilder (1.1)
+  - Charts (3.6.0):
+    - Charts/Core (= 3.6.0)
+  - Charts/Core (3.6.0)
   - DynamicBlurView (5.0.3)
   - KeychainSwift (19.0.0)
   - Moya (14.0.0):
@@ -22,6 +25,7 @@ PODS:
 
 DEPENDENCIES:
   - AttributedStringBuilder
+  - Charts
   - DynamicBlurView
   - KeychainSwift
   - Moya
@@ -36,6 +40,7 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - AttributedStringBuilder
+    - Charts
     - DynamicBlurView
     - KeychainSwift
     - Moya
@@ -49,6 +54,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   AttributedStringBuilder: 974bb0a88ec8fa5f33fc9861ad13815451ebf651
+  Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
   DynamicBlurView: b57e2f6aa33f85b2bcca272265162a3c7c5cc499
   KeychainSwift: a06190cf933ad46b1e0abc3d77d29c06331715c7
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
@@ -59,6 +65,6 @@ SPEC CHECKSUMS:
   SwiftLint: dfd554ff0dff17288ee574814ccdd5cea85d76f7
   SwiftMessages: 633304165351b8e3dcbb81a71f8efcd86f9c1669
 
-PODFILE CHECKSUM: 281241f518c8fd6186541c89964e242ce1976812
+PODFILE CHECKSUM: b55ef35757f26cb6ee657a88f942d42496c59b6c
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.0
