@@ -51,7 +51,7 @@ class ActivityViewModel: ActivityViewModelProtocol {
     var healthService: HealthKitService?
 
     var viewData: ActivityViewData = ActivityViewData()
-    var weekSteps: [Int] = []
+    var weekSteps: [Int] = [0,0,0,0,0,0,0]
 
 
     // MARK: Callbacks
@@ -88,15 +88,15 @@ class ActivityViewModel: ActivityViewModelProtocol {
                     dispatchGroup.enter()
                     let startDay = now.addingTimeInterval(-ActivityViewModel.Const.daySeconds * Double(i + 1)).startOfDay
                     let endDay = now.addingTimeInterval(-ActivityViewModel.Const.daySeconds * Double(i)).startOfDay
-                    self.healthService?.getStepCount(startDate: startDay, endDate: endDay) { steps, error in
-                        self.weekSteps.append(Int(steps ?? 0))
+                    self.healthService?.getStepCount(startDate: startDay, endDate: endDay, startOrder: i) { steps, error in
+                        self.weekSteps[i] = (Int(steps ?? 0))
                         dispatchGroup.leave()
                     }
                 }
 
                 dispatchGroup.enter()
                 let startDay = now.startOfDay
-                self.healthService?.getStepCount(startDate: startDay, endDate: now) { steps, error in
+                self.healthService?.getStepCount(startDate: startDay, endDate: now, startOrder: 0) { steps, error in
                     self.viewData.stepsToday = String(describing: Int(steps ?? 0)) + " " + "шагов"
                     dispatchGroup.leave()
                 }

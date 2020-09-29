@@ -35,7 +35,7 @@ class HealthKitService {
         }
     }
 
-    func getStepCount(startDate: Date, endDate: Date, completion: @escaping (Double?, Error?)->()) {
+    func getStepCount(startDate: Date, endDate: Date, startOrder: Int, completion: @escaping (Double?, Error?)->()) {
 
         //   Define the sample type
         let sampleType = HKQuantityType.quantityType(
