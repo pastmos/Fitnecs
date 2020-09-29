@@ -2,7 +2,7 @@
 //  GeoViewController.swift
 //  Fitnecs
 //
-//  Created by Панов Сергей on 28.09.2020.
+//  Created by Panov Sergey on 28.09.2020.
 //
 
 import UIKit

@@ -3,7 +3,7 @@
 //  VTBMobile
 //
 //  Created by Alexandr Gabrusevich on 11/20/19.
-//  Copyright © 2019 Evgeniy Mikholap. All rights reserved.
+//  Copyright © 2019 Panov Sergey. All rights reserved.
 //
 
 import Foundation

@@ -2,7 +2,7 @@
 //  ActivityViewModel.swift
 //  Fitnecs
 //
-//  Created by Past on 27.09.2020.
+//  Created by Panov Sergey on 27.09.2020.
 //
 
 import UIKit

@@ -2,8 +2,8 @@
 //  TokenAuthModel.swift
 //  VTBMobile
 //
-//  Created by Evgeniy Mikholap on 6/6/19.
-//  Copyright © 2019 Evgeniy Mikholap. All rights reserved.
+//  Created by Panov Sergey on 6/6/19.
+//  Copyright © 2019 Panov Sergey. All rights reserved.
 //
 
 import Foundation

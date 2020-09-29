@@ -3,7 +3,7 @@
 //  CustomPresentation
 //
 //  Created by Alex Habrusevich on 6/23/19.
-//  Copyright © 2019 Evgeniy Mikholap. All rights reserved.
+//  Copyright © 2019 Panov Sergey. All rights reserved.
 //
 
 import UIKit
