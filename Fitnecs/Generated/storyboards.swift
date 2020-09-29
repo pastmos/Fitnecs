@@ -33,6 +33,8 @@ internal enum Storyboards {
   }
   internal enum Geo: StoryboardType {
     internal static let storyboardName = "Geo"
+
+    internal static let geoViewController = SceneType<Fitnecs.GeoViewController>(storyboard: Geo.self, identifier: "GeoViewController")
   }
   internal enum Main: StoryboardType {
     internal static let storyboardName = "Main"

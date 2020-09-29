@@ -12,7 +12,7 @@
         <!--Geo View Controller-->
         <scene sceneID="yjL-JH-TXT">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="iU0-v8-tBE" customClass="GeoViewController" customModule="Fitnecs" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GeoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iU0-v8-tBE" customClass="GeoViewController" customModule="Fitnecs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NSl-ef-Qp8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

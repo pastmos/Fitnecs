@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26893DBC2521DCB900604B44 /* GeoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26893DBB2521DCB900604B44 /* GeoViewController.swift */; };
 		CE72CF522520FE6900EEE4FD /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE72CF512520FE6900EEE4FD /* Activity.storyboard */; };
 		CE842E4F251B508E00C4CD96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE842E4E251B508E00C4CD96 /* AppDelegate.swift */; };
 		CE842E5B251B509100C4CD96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE842E59251B509100C4CD96 /* LaunchScreen.storyboard */; };
@@ -109,6 +110,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		26893DBB2521DCB900604B44 /* GeoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoViewController.swift; sourceTree = "<group>"; };
 		580EE6D4903AFE0E5E7E4AA4 /* Pods-Fitnecs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitnecs.release.xcconfig"; path = "Target Support Files/Pods-Fitnecs/Pods-Fitnecs.release.xcconfig"; sourceTree = "<group>"; };
 		AF970BD8FF0BB9AABE06FCFC /* Pods-Fitnecs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitnecs.debug.xcconfig"; path = "Target Support Files/Pods-Fitnecs/Pods-Fitnecs.debug.xcconfig"; sourceTree = "<group>"; };
 		BEA5E2CA0898CC61A62282C1 /* Pods_Fitnecs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fitnecs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -212,7 +214,6 @@
 		CEAE8B30251CD42A00E7EF87 /* HtmlArticleViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HtmlArticleViewModel.swift; sourceTree = "<group>"; };
 		CEFAB93F252110FB00F58048 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		CEFAB9422521111900F58048 /* ActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
-		CEFAB949252123D000F58048 /* GeoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -342,12 +343,12 @@
 		CEAE8794251B636E00E7EF87 /* Stories */ = {
 			isa = PBXGroup;
 			children = (
-				CEFAB9462521238E00F58048 /* Geo */,
-				CE72CF502520FE4A00EEE4FD /* Activity */,
 				CEAE8795251B63AB00E7EF87 /* Base */,
 				CEAE89B3251B805700E7EF87 /* Root */,
 				CEAE8A83251CC0DE00E7EF87 /* Auth */,
 				CEAE8A59251CC0DD00E7EF87 /* Main */,
+				CE72CF502520FE4A00EEE4FD /* Activity */,
+				CEFAB9462521238E00F58048 /* Geo */,
 			);
 			path = Stories;
 			sourceTree = "<group>";
@@ -696,7 +697,7 @@
 		CEFAB948252123CF00F58048 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				CEFAB949252123D000F58048 /* GeoViewController.swift */,
+				26893DBB2521DCB900604B44 /* GeoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -910,6 +911,7 @@
 				CEAE88E9251B770300E7EF87 /* StorageService.swift in Sources */,
 				CEAE8AD6251CC0DE00E7EF87 /* AuthCoordinator.swift in Sources */,
 				CEAE88BE251B73A500E7EF87 /* storyboards.swift in Sources */,
+				26893DBC2521DCB900604B44 /* GeoViewController.swift in Sources */,
 				CEAE8779251B57DA00E7EF87 /* ErrorViewData.swift in Sources */,
 				CE8B3F2225212CA800F4FEED /* ActivityCoordinator.swift in Sources */,
 				CEAE88FC251B782F00E7EF87 /* TokenAuthModel.swift in Sources */,

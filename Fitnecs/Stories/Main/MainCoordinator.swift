@@ -38,6 +38,17 @@ class MainCoordinator: Coordinator {
         mainViewController.viewModel = viewModel
         return mainViewController
     }()
+
+    private lazy var activityCoordinator: ActivityCoordinator = {
+        let activityCoordinator = ActivityCoordinator()
+        return activityCoordinator
+    }()
+
+    private lazy var geoCoordinator: GeoCoordinator = {
+        let geoCoordinator = GeoCoordinator()
+        return geoCoordinator
+    }()
+
     private var smallModalViewController: SmallModalViewController?
 
 
@@ -58,9 +69,10 @@ class MainCoordinator: Coordinator {
         mainViewController.view.snp.makeConstraints({ maker in
             maker.edges.equalToSuperview()
         })
-            
-
         mainViewController.didMove(toParent: rootViewController)
+
+        activityCoordinator.start(mainViewController)
+        geoCoordinator.start(mainViewController)
     }
 
     override func finish() {
