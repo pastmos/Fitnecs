@@ -21,6 +21,8 @@ enum Environment {
         static let serverType = "SERVER_TYPE"
     }
 
+    static let googleApiKey = "AIzaSyC7H6mZQd64iOS8eDJJeobGW4eTV_xjXjI"
+
     private static let infoDictionary: [String: Any] = {
         guard let dict = Bundle.main.infoDictionary else {
             fatalError("Plist file not found")

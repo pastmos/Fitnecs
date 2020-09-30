@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GoogleMaps
 
 protocol GeoViewModelCoordinatorDelegate: AnyObject {
     func close(from controller: UIViewController)
@@ -15,11 +16,11 @@ protocol GeoViewModelProtocol: AnyObject {
 
     // MARK: Delegates
 
-    var coordinatorDelegate: GeoViewModelCoordinatorDelegate? { get set }
+    var coordinatorDelegate: GeoViewModelCoordinatorDelegate? {get set}
 
 
     // MARK: Data Sources
-
+    var currentLocation: CLLocationCoordinate2D? {get set}
 
     // MARK: Callbacks
 
@@ -42,7 +43,7 @@ class GeoViewModel: GeoViewModelProtocol {
 
 
     // MARK: Data Sources
-
+    var currentLocation: CLLocationCoordinate2D?
 
     // MARK: Callbacks
 

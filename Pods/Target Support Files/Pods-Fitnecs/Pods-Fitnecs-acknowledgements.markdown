@@ -279,6 +279,10 @@ SOFTWARE.
 
 
 
+## GoogleMaps
+
+Copyright 2020 Google
+
 ## KeychainSwift
 
 The MIT License

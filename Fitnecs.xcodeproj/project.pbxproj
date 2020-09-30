@@ -12,6 +12,7 @@
 		26D4C792252350EA00F645A3 /* HealthKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D4C791252350EA00F645A3 /* HealthKitService.swift */; };
 		26D4C795252369D000F645A3 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D4C794252369D000F645A3 /* Date.swift */; };
 		26D4C79925237EC400F645A3 /* ActivityViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D4C79825237EC400F645A3 /* ActivityViewData.swift */; };
+		26D4C7AB252481AF00F645A3 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D4C7AA252481AF00F645A3 /* UIImageView.swift */; };
 		CE72CF522520FE6900EEE4FD /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE72CF512520FE6900EEE4FD /* Activity.storyboard */; };
 		CE842E4F251B508E00C4CD96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE842E4E251B508E00C4CD96 /* AppDelegate.swift */; };
 		CE842E5B251B509100C4CD96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE842E59251B509100C4CD96 /* LaunchScreen.storyboard */; };
@@ -120,6 +121,7 @@
 		26D4C791252350EA00F645A3 /* HealthKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitService.swift; sourceTree = "<group>"; };
 		26D4C794252369D000F645A3 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		26D4C79825237EC400F645A3 /* ActivityViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewData.swift; sourceTree = "<group>"; };
+		26D4C7AA252481AF00F645A3 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		580EE6D4903AFE0E5E7E4AA4 /* Pods-Fitnecs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitnecs.release.xcconfig"; path = "Target Support Files/Pods-Fitnecs/Pods-Fitnecs.release.xcconfig"; sourceTree = "<group>"; };
 		AF970BD8FF0BB9AABE06FCFC /* Pods-Fitnecs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitnecs.debug.xcconfig"; path = "Target Support Files/Pods-Fitnecs/Pods-Fitnecs.debug.xcconfig"; sourceTree = "<group>"; };
 		BEA5E2CA0898CC61A62282C1 /* Pods_Fitnecs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fitnecs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -321,6 +323,7 @@
 				CEAE88E0251B75EF00E7EF87 /* String+HTML.swift */,
 				CEAE876D251B573700E7EF87 /* UIWindow+TopController.swift */,
 				26D4C794252369D000F645A3 /* Date.swift */,
+				26D4C7AA252481AF00F645A3 /* UIImageView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -746,6 +749,7 @@
 				CE842E48251B508E00C4CD96 /* Frameworks */,
 				CE842E49251B508E00C4CD96 /* Resources */,
 				ECD9612B04B51CE97DFC6FB3 /* [CP] Embed Pods Frameworks */,
+				3CF18ED6DC39AB492AE6187E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -860,6 +864,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		3CF18ED6DC39AB492AE6187E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fitnecs/Pods-Fitnecs-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fitnecs/Pods-Fitnecs-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fitnecs/Pods-Fitnecs-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		CEAE87B2251B660A00E7EF87 /* SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -910,6 +931,7 @@
 				CEAE877A251B57DA00E7EF87 /* InfoViewData.swift in Sources */,
 				CEAE878A251B621600E7EF87 /* InfoViewController.swift in Sources */,
 				CEAE88BF251B73A500E7EF87 /* assets-images.swift in Sources */,
+				26D4C7AB252481AF00F645A3 /* UIImageView.swift in Sources */,
 				CEAE87AA251B63E300E7EF87 /* InteractivePopRecognizer.swift in Sources */,
 				CEAE87AD251B63E300E7EF87 /* BaseCoverContentViewController.swift in Sources */,
 				CEAE87AB251B63E300E7EF87 /* CoverPresentTransitionAnimator.swift in Sources */,

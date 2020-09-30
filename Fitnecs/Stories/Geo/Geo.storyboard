@@ -8,6 +8,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Semibold.otf">
+            <string>SFProDisplay-Semibold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Geo View Controller-->
         <scene sceneID="yjL-JH-TXT">
@@ -17,9 +22,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Geo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srh-1O-Cfg">
-                                <rect key="frame" x="191.5" y="442.5" width="31.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qdh-KP-pTr" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Долгота" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdf-rf-Dy0">
+                                <rect key="frame" x="30" y="96" width="354" height="24"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Широта" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8TE-nm-esp">
+                                <rect key="frame" x="30" y="64" width="354" height="24"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -27,10 +42,23 @@
                         <viewLayoutGuide key="safeArea" id="ptn-yK-ZyU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="srh-1O-Cfg" firstAttribute="centerX" secondItem="ptn-yK-ZyU" secondAttribute="centerX" id="5sI-8x-Rmw"/>
-                            <constraint firstItem="srh-1O-Cfg" firstAttribute="centerY" secondItem="ptn-yK-ZyU" secondAttribute="centerY" id="NJx-6P-xbe"/>
+                            <constraint firstAttribute="bottom" secondItem="Qdh-KP-pTr" secondAttribute="bottom" id="9Cg-hX-adg"/>
+                            <constraint firstItem="Qdh-KP-pTr" firstAttribute="leading" secondItem="ptn-yK-ZyU" secondAttribute="leading" id="Bzn-ra-iJF"/>
+                            <constraint firstItem="8TE-nm-esp" firstAttribute="top" secondItem="ptn-yK-ZyU" secondAttribute="top" constant="20" id="SBN-2F-0aA"/>
+                            <constraint firstItem="ptn-yK-ZyU" firstAttribute="trailing" secondItem="Qdh-KP-pTr" secondAttribute="trailing" id="Uzt-tf-HxA"/>
+                            <constraint firstItem="bdf-rf-Dy0" firstAttribute="top" secondItem="8TE-nm-esp" secondAttribute="bottom" constant="8" id="Zif-1Z-KCj"/>
+                            <constraint firstItem="ptn-yK-ZyU" firstAttribute="trailing" secondItem="8TE-nm-esp" secondAttribute="trailing" constant="30" id="d2R-pM-Dph"/>
+                            <constraint firstItem="ptn-yK-ZyU" firstAttribute="trailing" secondItem="bdf-rf-Dy0" secondAttribute="trailing" constant="30" id="fFX-y9-Sgw"/>
+                            <constraint firstItem="bdf-rf-Dy0" firstAttribute="leading" secondItem="ptn-yK-ZyU" secondAttribute="leading" constant="30" id="gzE-5Y-LCP"/>
+                            <constraint firstItem="8TE-nm-esp" firstAttribute="leading" secondItem="ptn-yK-ZyU" secondAttribute="leading" constant="30" id="iA9-1r-th0"/>
+                            <constraint firstItem="Qdh-KP-pTr" firstAttribute="top" secondItem="NSl-ef-Qp8" secondAttribute="top" id="nnM-Jn-4AH"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="googleMapView" destination="Qdh-KP-pTr" id="1hY-Xf-nAS"/>
+                        <outlet property="latitudeLabel" destination="8TE-nm-esp" id="urQ-dT-hbw"/>
+                        <outlet property="longitudeLabel" destination="bdf-rf-Dy0" id="WER-Zg-GcV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3DH-Ux-jMn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -17,4 +17,5 @@ target 'Fitnecs' do
   pod 'Reusable'
   pod 'AttributedStringBuilder'
   pod 'Charts'
+  pod 'GoogleMaps'
 end

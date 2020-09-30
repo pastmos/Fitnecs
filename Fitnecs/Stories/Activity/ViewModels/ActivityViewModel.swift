@@ -101,6 +101,18 @@ class ActivityViewModel: ActivityViewModelProtocol {
                     dispatchGroup.leave()
                 }
 
+                dispatchGroup.enter()
+                self.healthService?.getHeight { height, error in
+                    self.viewData.height = String(describing: height ?? 0) + " " + "м"
+                    dispatchGroup.leave()
+                }
+
+                dispatchGroup.enter()
+                self.healthService?.getWeight { weight, error in
+                    self.viewData.weight = String(describing: (weight ?? 0)/1000) + " " + "кг"
+                    dispatchGroup.leave()
+                }
+
                 dispatchGroup.notify(queue: DispatchQueue.main) { [weak self] in
                     guard let self = self else {
                         return

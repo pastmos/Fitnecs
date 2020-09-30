@@ -17,6 +17,7 @@ class ActivityViewController: UIViewController {
 
     var viewModel: ActivityViewModelProtocol?
 
+    @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var stepsTodayLabel: UILabel!
@@ -27,24 +28,26 @@ class ActivityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        avatarImageView.makeRounded()
+        setupChart()
+
+        viewModel?.updateScreen = { [weak self] data in
+            self?.weekStepsChart.data = data.chartData
+            self?.stepsTodayLabel.text = data.stepsToday
+            self?.weightLabel.text = data.weight
+            self?.heightLabel.text = data.height
+        }
+
+        viewModel?.start()
+    }
+
+    private func setupChart() {
         weekStepsChart.animate(yAxisDuration: 2.0)
         weekStepsChart.pinchZoomEnabled = false
         weekStepsChart.drawBarShadowEnabled = false
         weekStepsChart.drawBordersEnabled = false
         weekStepsChart.doubleTapToZoomEnabled = false
         weekStepsChart.drawGridBackgroundEnabled = true
-
-
-        viewModel?.updateScreen = { [weak self] data in
-            self?.weekStepsChart.data = data.chartData
-            self?.stepsTodayLabel.text = data.stepsToday
-        }
-
-        viewModel?.start()
-
-
     }
-
- 
 
 }

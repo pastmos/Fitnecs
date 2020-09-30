@@ -5,6 +5,11 @@ PODS:
     - Charts/Core (= 3.6.0)
   - Charts/Core (3.6.0)
   - DynamicBlurView (5.0.3)
+  - GoogleMaps (3.10.0):
+    - GoogleMaps/Maps (= 3.10.0)
+  - GoogleMaps/Base (3.10.0)
+  - GoogleMaps/Maps (3.10.0):
+    - GoogleMaps/Base
   - KeychainSwift (19.0.0)
   - Moya (14.0.0):
     - Moya/Core (= 14.0.0)
@@ -27,6 +32,7 @@ DEPENDENCIES:
   - AttributedStringBuilder
   - Charts
   - DynamicBlurView
+  - GoogleMaps
   - KeychainSwift
   - Moya
   - Reachability
@@ -42,6 +48,7 @@ SPEC REPOS:
     - AttributedStringBuilder
     - Charts
     - DynamicBlurView
+    - GoogleMaps
     - KeychainSwift
     - Moya
     - Reachability
@@ -56,6 +63,7 @@ SPEC CHECKSUMS:
   AttributedStringBuilder: 974bb0a88ec8fa5f33fc9861ad13815451ebf651
   Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
   DynamicBlurView: b57e2f6aa33f85b2bcca272265162a3c7c5cc499
+  GoogleMaps: 8c080862ff2748ece9929471b30feb56a6c5079d
   KeychainSwift: a06190cf933ad46b1e0abc3d77d29c06331715c7
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
@@ -65,6 +73,6 @@ SPEC CHECKSUMS:
   SwiftLint: dfd554ff0dff17288ee574814ccdd5cea85d76f7
   SwiftMessages: 633304165351b8e3dcbb81a71f8efcd86f9c1669
 
-PODFILE CHECKSUM: b55ef35757f26cb6ee657a88f942d42496c59b6c
+PODFILE CHECKSUM: 520da9873b447a8041eb238c3fa6af6e33fbeee7
 
 COCOAPODS: 1.9.0

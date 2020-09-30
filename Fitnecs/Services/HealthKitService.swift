@@ -13,6 +13,8 @@ class HealthKitService {
 
     let healthStore = HKHealthStore()
 
+
+    //Authorize
     func authoriseHealthKitAccess(_ completion: @escaping (Bool) -> ()){
 
         let healthKitTypes: Set = [
@@ -35,6 +37,8 @@ class HealthKitService {
         }
     }
 
+
+    //Steps
     func getStepCount(startDate: Date, endDate: Date, startOrder: Int, completion: @escaping (Double?, Error?)->()) {
 
         //   Define the sample type
@@ -64,4 +68,40 @@ class HealthKitService {
         // execute the Query
         healthStore.execute(sampleQuery)
     }
+
+
+    //Height
+    func getHeight(completion: @escaping (Double?, Error?)->()) {
+
+        let heightType = HKQuantityType.quantityType(
+            forIdentifier: HKQuantityTypeIdentifier.height)!
+
+        let query = HKSampleQuery(sampleType: heightType, predicate: nil, limit: 1, sortDescriptors: nil) { (query, results, error) in
+            if let result = results?.first as? HKQuantitySample{
+                completion(result.quantity.doubleValue(for: HKUnit.meter()), error)
+            }else{
+                print("OOPS didnt get height \nResults => \(results), error => \(error)")
+            }
+        }
+        self.healthStore.execute(query)
+    }
+
+
+    //Weight
+    func getWeight(completion: @escaping (Double?, Error?)->()) {
+
+        let heightType = HKQuantityType.quantityType(
+            forIdentifier: HKQuantityTypeIdentifier.bodyMass)!
+
+        let query = HKSampleQuery(sampleType: heightType, predicate: nil, limit: 1, sortDescriptors: nil) { (query, results, error) in
+            if let result = results?.first as? HKQuantitySample{
+                completion(result.quantity.doubleValue(for: HKUnit.gram()), error)
+            }else{
+                print("OOPS didnt get height \nResults => \(results), error => \(error)")
+            }
+        }
+        self.healthStore.execute(query)
+    }
+
+
 }

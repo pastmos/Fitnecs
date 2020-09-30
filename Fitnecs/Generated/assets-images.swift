@@ -80,6 +80,7 @@ internal enum Assets {
     internal static let activityTab = ImageAsset(name: "activity-tab")
     internal static let footSteps = ImageAsset(name: "foot-steps")
     internal static let heightIcon = ImageAsset(name: "height-icon")
+    internal static let userAvatarTest = ImageAsset(name: "user-avatar-test")
     internal static let weightIcon = ImageAsset(name: "weight-icon")
     internal static let geoTab = ImageAsset(name: "geo-tab")
     internal static let logo = ImageAsset(name: "logo")
