@@ -76,7 +76,9 @@ class HealthKitService {
         let heightType = HKQuantityType.quantityType(
             forIdentifier: HKQuantityTypeIdentifier.height)!
 
-        let query = HKSampleQuery(sampleType: heightType, predicate: nil, limit: 1, sortDescriptors: nil) { (query, results, error) in
+        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
+
+        let query = HKSampleQuery(sampleType: heightType, predicate: nil, limit: 1, sortDescriptors: [sortDescriptor]) { (query, results, error) in
             if let result = results?.first as? HKQuantitySample{
                 completion(result.quantity.doubleValue(for: HKUnit.meter()), error)
             }else{
@@ -93,11 +95,13 @@ class HealthKitService {
         let heightType = HKQuantityType.quantityType(
             forIdentifier: HKQuantityTypeIdentifier.bodyMass)!
 
-        let query = HKSampleQuery(sampleType: heightType, predicate: nil, limit: 1, sortDescriptors: nil) { (query, results, error) in
+        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
+
+        let query = HKSampleQuery(sampleType: heightType, predicate: nil, limit: 1, sortDescriptors: [sortDescriptor]) { (query, results, error) in
             if let result = results?.first as? HKQuantitySample{
                 completion(result.quantity.doubleValue(for: HKUnit.gram()), error)
             }else{
-                print("OOPS didnt get height \nResults => \(results), error => \(error)")
+                print("OOPS didnt get weight \nResults => \(results), error => \(error)")
             }
         }
         self.healthStore.execute(query)

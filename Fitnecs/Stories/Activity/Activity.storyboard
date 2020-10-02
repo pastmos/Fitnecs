@@ -30,13 +30,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fGd-w0-Sdy">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="925.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="900.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ygn-D1-JaO">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="164"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="139"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Панов Сергей" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LD4-0u-u0g">
-                                                        <rect key="frame" x="30" y="35" width="354" height="35"/>
+                                                        <rect key="frame" x="30" y="10" width="354" height="35"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="35" id="rcl-ct-9P7"/>
                                                         </constraints>
@@ -45,7 +45,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user-avatar-test" translatesAutoresizingMaskIntoConstraints="NO" id="w3F-rW-NXI">
-                                                        <rect key="frame" x="172.5" y="85" width="69" height="69"/>
+                                                        <rect key="frame" x="172.5" y="60" width="69" height="69"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="69" id="IWr-K7-jLg"/>
                                                             <constraint firstAttribute="width" secondItem="w3F-rW-NXI" secondAttribute="height" multiplier="1:1" id="jRG-Bc-APz"/>
@@ -56,14 +56,14 @@
                                                 <constraints>
                                                     <constraint firstItem="w3F-rW-NXI" firstAttribute="centerX" secondItem="Ygn-D1-JaO" secondAttribute="centerX" id="9Zb-qy-3Lm"/>
                                                     <constraint firstItem="LD4-0u-u0g" firstAttribute="leading" secondItem="Ygn-D1-JaO" secondAttribute="leading" constant="30" id="CoN-oh-o9P"/>
-                                                    <constraint firstItem="LD4-0u-u0g" firstAttribute="top" secondItem="Ygn-D1-JaO" secondAttribute="top" constant="35" id="La8-9j-85G"/>
+                                                    <constraint firstItem="LD4-0u-u0g" firstAttribute="top" secondItem="Ygn-D1-JaO" secondAttribute="top" constant="10" id="La8-9j-85G"/>
                                                     <constraint firstAttribute="bottom" secondItem="w3F-rW-NXI" secondAttribute="bottom" constant="10" id="dBh-A8-7pJ"/>
                                                     <constraint firstItem="w3F-rW-NXI" firstAttribute="top" secondItem="LD4-0u-u0g" secondAttribute="bottom" constant="15" id="mwC-NW-U7D"/>
                                                     <constraint firstAttribute="trailing" secondItem="LD4-0u-u0g" secondAttribute="trailing" constant="30" id="oMh-NP-rK1"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aUS-zp-o21">
-                                                <rect key="frame" x="0.0" y="174" width="414" height="181.5"/>
+                                                <rect key="frame" x="0.0" y="149" width="414" height="181.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Физические параметры" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mLe-eK-iNB">
                                                         <rect key="frame" x="30" y="10" width="354" height="30"/>
@@ -160,7 +160,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IEZ-RQ-I2d">
-                                                <rect key="frame" x="0.0" y="365.5" width="414" height="150"/>
+                                                <rect key="frame" x="0.0" y="340.5" width="414" height="150"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Текущая активность" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2jD-OZ-4qS">
                                                         <rect key="frame" x="30" y="10" width="354" height="30"/>
@@ -228,7 +228,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hhG-z5-HuQ">
-                                                <rect key="frame" x="0.0" y="525.5" width="414" height="310"/>
+                                                <rect key="frame" x="0.0" y="500.5" width="414" height="310"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Активность за последние 7 дней" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJU-w6-Mce">
                                                         <rect key="frame" x="30" y="10" width="354" height="30"/>
@@ -282,7 +282,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eod-rN-R52">
-                                                <rect key="frame" x="0.0" y="845.5" width="414" height="80"/>
+                                                <rect key="frame" x="0.0" y="820.5" width="414" height="80"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="NeH-2C-QJ7"/>
