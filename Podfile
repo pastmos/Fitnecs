@@ -18,4 +18,8 @@ target 'Fitnecs' do
   pod 'AttributedStringBuilder'
   pod 'Charts'
   pod 'GoogleMaps'
+  pod 'Firebase/Core'
+  pod 'Firebase/Crashlytics'
+  pod 'Firebase/Analytics'
+
 end
