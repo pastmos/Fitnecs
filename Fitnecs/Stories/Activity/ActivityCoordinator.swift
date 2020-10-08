@@ -34,8 +34,6 @@ class ActivityCoordinator: Coordinator {
     }
     
     func start(_ tabController: UITabBarController) {
-        //        //lets make crash
-        //        fatalError()
         tabController.viewControllers = [activityViewController]
     }
     

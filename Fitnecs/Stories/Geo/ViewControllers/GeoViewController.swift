@@ -30,9 +30,6 @@ class GeoViewController: UIViewController {
 
         googleMapView.delegate = self
 
-        // Request for use in foreground
-        self.locationManager.requestAlwaysAuthorization()
-
         if CLLocationManager.locationServicesEnabled() {
             initLocationManager()
         }

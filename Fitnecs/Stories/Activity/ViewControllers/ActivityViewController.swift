@@ -32,6 +32,8 @@ class ActivityViewController: UIViewController {
         setupChart()
 
         viewModel?.updateScreen = { [weak self] data in
+            let weekDays = self?.viewModel?.getWeekDays() ?? []
+            self?.weekStepsChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: weekDays)
             self?.weekStepsChart.data = data.chartData
             self?.stepsTodayLabel.text = data.stepsToday
             self?.weightLabel.text = data.weight

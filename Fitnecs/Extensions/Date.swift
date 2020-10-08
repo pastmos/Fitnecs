@@ -30,4 +30,43 @@ extension Date {
         components.second = -1
         return Calendar.current.date(byAdding: components, to: startOfMonth)!
     }
+
+
+
+    func dayOfTheWeek() -> String? {
+        let weekdays = self.weekdays()
+        let dayNumber = Calendar.current.component(.weekday, from: self)
+        return weekdays[dayNumber - 1]
+    }
+
+    func dayOfTheWeekNum() -> Int {
+        return Calendar.current.component(.weekday, from: self) - 1
+    }
+
+    func lastWeekDaysArray() -> [String] {
+        let weekdays = self.weekdays()
+        let weekDaysAmount = 7
+        let currentDayNum = self.dayOfTheWeekNum() - 1
+        var finalDaysArray: [String] = [""]
+
+        for i in 0..<weekDaysAmount {
+            finalDaysArray.append(weekdays[(currentDayNum + i) % weekDaysAmount])
+        }
+
+        return finalDaysArray
+    }
+
+    func weekdays() -> [String] {
+        return [
+            "Пн",
+            "Вт",
+            "Ср",
+            "Чт",
+            "Пт",
+            "Сб",
+            "Вс"
+        ]
+    }
+
+
 }

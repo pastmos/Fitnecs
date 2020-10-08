@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GoogleMaps
 import Charts
 
 protocol ActivityViewModelCoordinatorDelegate: AnyObject {
@@ -32,6 +33,7 @@ protocol ActivityViewModelProtocol: AnyObject {
 
     func start()
     func back(from controller: UIViewController)
+    func getWeekDays() -> [String]
 
 }
 
@@ -58,6 +60,8 @@ class ActivityViewModel: ActivityViewModelProtocol {
 
     var updateState: ((ActivityState) -> Void)?
     var updateScreen: ((ActivityViewData) -> Void)?
+
+    let locationManager = CLLocationManager()
 
     var todaySteps: Double = 0
 
@@ -120,16 +124,25 @@ class ActivityViewModel: ActivityViewModelProtocol {
 
                     self.viewData.chartData = self.createBarsArr(array: self.weekSteps)
                     self.updateScreen?(self.viewData)
+
+                    // Request for use in background
+                    self.locationManager.requestAlwaysAuthorization()
                 }
             }
         }
     }
 
 
+    func getWeekDays() -> [String] {
+        let date = Date()
+        return date.lastWeekDaysArray()
+    }
+
     private func createBarsArr(array: [Int]) -> BarLineScatterCandleBubbleChartData {
         var dataEntries: [BarChartDataEntry] = []
+
         for i in 0..<array.count {
-          let dataEntry = BarChartDataEntry(x: Double(i+1), y: Double(array[i]))
+            let dataEntry = BarChartDataEntry(x: Double(i+1), y: Double(array[array.count - i - 1]))
           dataEntries.append(dataEntry)
         }
         let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Количество шагов в день")
@@ -142,4 +155,3 @@ class ActivityViewModel: ActivityViewModelProtocol {
     }
 
 }
-
