@@ -21,6 +21,7 @@ class HealthKitService {
             HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!,
             HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.height)!,
             HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMass)!,
+            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.oxygenSaturation)!,
             HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.activeEnergyBurned)!,
             HKObjectType.categoryType(forIdentifier: HKCategoryTypeIdentifier.sleepAnalysis)!
         ]
@@ -59,8 +60,12 @@ class HealthKitService {
     }
 
 
-
-
+    //OxygenSaturation
+    func getOxygenSaturation(startDate: Date, endDate: Date, completion: @escaping (Double)->()) {
+        statisticsQuery(startDate: startDate, endDate: endDate, type: .oxygenSaturation, unit: .percent(), options: .discreteAverage) { total in
+            completion(total)
+        }
+    }
 
 
 //Sample
@@ -83,11 +88,12 @@ class HealthKitService {
     }
 
     //Sleep
-    func getSleep(completion: @escaping ()->()) {
+    func getSleep(completion: @escaping ([HKCategorySample])->()) {
         sampleQueryCategory(type: .sleepAnalysis, limit: 7) { samples in
             samples.forEach { sample in
                 print(sample)
             }
+            completion(samples)
         }
     }
 
@@ -97,7 +103,7 @@ class HealthKitService {
 
     //Basic funcs
 
-    func statisticsQuery(startDate: Date?, endDate: Date?, type: HKQuantityTypeIdentifier, unit: HKUnit, completion: @escaping (Double)->()) {
+    func statisticsQuery(startDate: Date?, endDate: Date?, type: HKQuantityTypeIdentifier, unit: HKUnit, options: HKStatisticsOptions = .cumulativeSum, completion: @escaping (Double)->()) {
         //   Define the sample type
         let sampleType = HKQuantityType.quantityType(
             forIdentifier: type)
@@ -108,9 +114,11 @@ class HealthKitService {
         // build the query
         let sampleQuery = HKStatisticsQuery(quantityType: sampleType!,
                                             quantitySamplePredicate: predicate,
-                                            options: .cumulativeSum) { query, results, error in
+                                            options: options) { query, results, error in
 
-            let quantity = results?.sumQuantity()
+            var quantity: HKQuantity?
+            quantity = (options == .cumulativeSum) ? results?.sumQuantity() : results?.averageQuantity()
+
             let total = quantity?.doubleValue(for: unit)
             completion(total ?? 0)
         }

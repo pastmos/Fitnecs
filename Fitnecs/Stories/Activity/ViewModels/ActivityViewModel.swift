@@ -100,7 +100,13 @@ class ActivityViewModel: ActivityViewModelProtocol {
 
                     dispatchGroup.enter()
                     self.healthService?.getActiveEnergyBurned(startDate: startDay, endDate: endDay) { energy in
-                        self.viewData.energy[i] = String(describing: (Int(energy))) + " " + "кКал"
+                        self.viewData.activeEnergyBurned[i] = String(describing: (Int(energy))) + " " + "кКал"
+                        dispatchGroup.leave()
+                    }
+
+                    dispatchGroup.enter()
+                    self.healthService?.getOxygenSaturation(startDate: startDay, endDate: endDay) { percent in
+                        self.viewData.oxygenSaturation[i] = String(describing: (Int(percent*100))) + " " + "%"
                         dispatchGroup.leave()
                     }
                 }
@@ -125,7 +131,7 @@ class ActivityViewModel: ActivityViewModelProtocol {
                 }
 
                 dispatchGroup.enter()
-                self.healthService?.getSleep() {
+                self.healthService?.getSleep() { samples in
                     dispatchGroup.leave()
                 }
 
