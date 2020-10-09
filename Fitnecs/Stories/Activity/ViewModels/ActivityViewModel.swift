@@ -89,31 +89,43 @@ class ActivityViewModel: ActivityViewModelProtocol {
                 let now = Date()
 
                 for i in 0..<7 {
-                    dispatchGroup.enter()
                     let startDay = now.addingTimeInterval(-ActivityViewModel.Const.daySeconds * Double(i + 1)).startOfDay
                     let endDay = now.addingTimeInterval(-ActivityViewModel.Const.daySeconds * Double(i)).startOfDay
-                    self.healthService?.getStepCount(startDate: startDay, endDate: endDay, startOrder: i) { steps, error in
-                        self.weekSteps[i] = (Int(steps ?? 0))
+
+                    dispatchGroup.enter()
+                    self.healthService?.getStepCount(startDate: startDay, endDate: endDay, startOrder: i) { steps in
+                        self.weekSteps[i] = (Int(steps))
+                        dispatchGroup.leave()
+                    }
+
+                    dispatchGroup.enter()
+                    self.healthService?.getActiveEnergyBurned(startDate: startDay, endDate: endDay) { energy in
+                        self.viewData.energy[i] = String(describing: (Int(energy))) + " " + "кКал"
                         dispatchGroup.leave()
                     }
                 }
 
                 dispatchGroup.enter()
                 let startDay = now.startOfDay
-                self.healthService?.getStepCount(startDate: startDay, endDate: now, startOrder: 0) { steps, error in
-                    self.viewData.stepsToday = String(describing: Int(steps ?? 0)) + " " + "шагов"
+                self.healthService?.getStepCount(startDate: startDay, endDate: now, startOrder: 0) { steps in
+                    self.viewData.stepsToday = String(describing: Int(steps)) + " " + "шагов"
                     dispatchGroup.leave()
                 }
 
                 dispatchGroup.enter()
-                self.healthService?.getHeight { height, error in
-                    self.viewData.height = String(describing: height ?? 0) + " " + "м"
+                self.healthService?.getHeight { height in
+                    self.viewData.height = String(describing: height) + " " + "м"
                     dispatchGroup.leave()
                 }
 
                 dispatchGroup.enter()
-                self.healthService?.getWeight { weight, error in
-                    self.viewData.weight = String(describing: (weight ?? 0)/1000) + " " + "кг"
+                self.healthService?.getWeight { weight in
+                    self.viewData.weight = String(describing: weight/1000) + " " + "кг"
+                    dispatchGroup.leave()
+                }
+
+                dispatchGroup.enter()
+                self.healthService?.getSleep() {
                     dispatchGroup.leave()
                 }
 

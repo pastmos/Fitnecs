@@ -14,13 +14,15 @@ class HealthKitService {
     let healthStore = HKHealthStore()
 
 
-    //Authorize
+//Authorize
     func authoriseHealthKitAccess(_ completion: @escaping (Bool) -> ()){
 
         let healthKitTypes: Set = [
             HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!,
             HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.height)!,
-            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMass)!
+            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMass)!,
+            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.activeEnergyBurned)!,
+            HKObjectType.categoryType(forIdentifier: HKCategoryTypeIdentifier.sleepAnalysis)!
         ]
         healthStore.requestAuthorization(toShare: healthKitTypes, read: healthKitTypes) { (_, _) in
             print("authorised???")
@@ -38,12 +40,67 @@ class HealthKitService {
     }
 
 
-    //Steps
-    func getStepCount(startDate: Date, endDate: Date, startOrder: Int, completion: @escaping (Double?, Error?)->()) {
 
+
+//Statistics
+
+    //Steps
+    func getStepCount(startDate: Date, endDate: Date, startOrder: Int, completion: @escaping (Double)->()) {
+        statisticsQuery(startDate: startDate, endDate: endDate, type: .stepCount, unit: .count()) { total in
+            completion(total)
+        }
+    }
+
+    //ActiveEnergyBurned
+    func getActiveEnergyBurned(startDate: Date, endDate: Date, completion: @escaping (Double)->()) {
+        statisticsQuery(startDate: startDate, endDate: endDate, type: .activeEnergyBurned, unit: .kilocalorie()) { total in
+            completion(total)
+        }
+    }
+
+
+
+
+
+
+//Sample
+    
+    //Height
+    func getHeight(completion: @escaping (Double)->()) {
+        sampleQuery(type: .height, unit: .meter()) {
+            result in
+            completion(result)
+        }
+    }
+
+
+    //Weight
+    func getWeight(completion: @escaping (Double)->()) {
+        sampleQuery(type: .bodyMass, unit: .gram()) {
+            result in
+            completion(result)
+        }
+    }
+
+    //Sleep
+    func getSleep(completion: @escaping ()->()) {
+        sampleQueryCategory(type: .sleepAnalysis, limit: 7) { samples in
+            samples.forEach { sample in
+                print(sample)
+            }
+        }
+    }
+
+
+
+
+
+    //Basic funcs
+
+    func statisticsQuery(startDate: Date?, endDate: Date?, type: HKQuantityTypeIdentifier, unit: HKUnit, completion: @escaping (Double)->()) {
         //   Define the sample type
         let sampleType = HKQuantityType.quantityType(
-            forIdentifier: HKQuantityTypeIdentifier.stepCount)
+            forIdentifier: type)
 
         //  Set the predicate
         let predicate = HKQuery.predicateForSamples(withStart: startDate,
@@ -53,95 +110,49 @@ class HealthKitService {
                                             quantitySamplePredicate: predicate,
                                             options: .cumulativeSum) { query, results, error in
 
-            if results != nil {
-                let quantity = results?.sumQuantity()
-                let unit = HKUnit.count()
-                let totalSteps = quantity?.doubleValue(for: unit)
-                completion(totalSteps, error)
-                print("totalSteps for \(endDate) are \(totalSteps!)")
-            } else {
-                completion(nil, error)
-                print("results are nil")
-                return
-            }
+            let quantity = results?.sumQuantity()
+            let total = quantity?.doubleValue(for: unit)
+            completion(total ?? 0)
         }
-        // execute the Query
         healthStore.execute(sampleQuery)
     }
 
 
-    //Sleep
-    func getSleep(startDate: Date, endDate: Date, startOrder: Int, completion: @escaping (Double?, Error?)->()) {
+    func sampleQuery(type: HKQuantityTypeIdentifier, unit: HKUnit, limit: Int = 1, completion: @escaping (Double)->()) {
+        let type = HKQuantityType.quantityType(
+            forIdentifier: type)!
 
-        if let sleepType = HKObjectType.categoryType(forIdentifier: HKCategoryTypeIdentifier.sleepAnalysis) {
+        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
 
-                // Use a sortDescriptor to get the recent data first
-                let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)
+        let query = HKSampleQuery(sampleType: type, predicate: nil, limit: limit, sortDescriptors: [sortDescriptor]) { (query, results, error) in
+            if let result = results?.first as? HKQuantitySample{
+                completion(result.quantity.doubleValue(for: unit))
+            }else{
+                completion(0)
+            }
+        }
+        self.healthStore.execute(query)
+    }
 
-                // we create our query with a block completion to execute
-                let query = HKSampleQuery(sampleType: sleepType, predicate: nil, limit: 30, sortDescriptors: [sortDescriptor]) { (query, tmpResult, error) -> Void in
 
-                    if error != nil {
+    func sampleQueryCategory(type: HKCategoryTypeIdentifier, limit: Int = 1, completion: @escaping ([HKCategorySample])->()) {
 
-                        // something happened
-                        return
+        var samples: [HKCategorySample] = []
 
-                    }
+        let type = HKObjectType.categoryType(forIdentifier: type)!
 
-                    if let result = tmpResult {
+        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
 
-                        // do something with my data
-                        for item in result {
-                            if let sample = item as? HKCategorySample {
-                                let value = (sample.value == HKCategoryValueSleepAnalysis.inBed.rawValue) ? "InBed" : "Asleep"
-                                print("Healthkit sleep: \(sample.startDate) \(sample.endDate) - value: \(value)")
-                            }
-                        }
+        let query = HKSampleQuery(sampleType: type, predicate: nil, limit: limit, sortDescriptors: [sortDescriptor]) { (query, result, error) in
+            if let result = result {
+                for item in result {
+                    if let sample = item as? HKCategorySample {
+                        samples.append(sample)
                     }
                 }
-
-                // finally, we execute our query
-            healthStore.execute(query)
-            }
-    }
-
-
-    //Height
-    func getHeight(completion: @escaping (Double?, Error?)->()) {
-
-        let heightType = HKQuantityType.quantityType(
-            forIdentifier: HKQuantityTypeIdentifier.height)!
-
-        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
-
-        let query = HKSampleQuery(sampleType: heightType, predicate: nil, limit: 1, sortDescriptors: [sortDescriptor]) { (query, results, error) in
-            if let result = results?.first as? HKQuantitySample{
-                completion(result.quantity.doubleValue(for: HKUnit.meter()), error)
-            }else{
-                print("OOPS didnt get height \nResults => \(results), error => \(error)")
+                completion(samples)
             }
         }
         self.healthStore.execute(query)
     }
-
-
-    //Weight
-    func getWeight(completion: @escaping (Double?, Error?)->()) {
-
-        let heightType = HKQuantityType.quantityType(
-            forIdentifier: HKQuantityTypeIdentifier.bodyMass)!
-
-        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
-
-        let query = HKSampleQuery(sampleType: heightType, predicate: nil, limit: 1, sortDescriptors: [sortDescriptor]) { (query, results, error) in
-            if let result = results?.first as? HKQuantitySample{
-                completion(result.quantity.doubleValue(for: HKUnit.gram()), error)
-            }else{
-                print("OOPS didnt get weight \nResults => \(results), error => \(error)")
-            }
-        }
-        self.healthStore.execute(query)
-    }
-
-
 }

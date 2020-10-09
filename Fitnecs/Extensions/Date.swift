@@ -8,6 +8,7 @@
 import UIKit
 
 extension Date {
+    
     var startOfDay: Date {
         return Calendar.current.startOfDay(for: self)
     }
@@ -68,5 +69,13 @@ extension Date {
         ]
     }
 
+
+}
+
+extension Date {
+
+    static func - (lhs: Date, rhs: Date) -> TimeInterval {
+        return lhs.timeIntervalSinceReferenceDate - rhs.timeIntervalSinceReferenceDate
+    }
 
 }
