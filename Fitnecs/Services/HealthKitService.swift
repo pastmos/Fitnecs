@@ -25,16 +25,13 @@ class HealthKitService {
             HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.activeEnergyBurned)!,
             HKObjectType.categoryType(forIdentifier: HKCategoryTypeIdentifier.sleepAnalysis)!
         ]
-        healthStore.requestAuthorization(toShare: healthKitTypes, read: healthKitTypes) { (_, _) in
-            print("authorised???")
-        }
 
         healthStore.requestAuthorization(toShare: healthKitTypes, read: healthKitTypes) { (bool, error) in
             if let e = error {
-                print("oops something went wrong during authorisation \(e.localizedDescription)")
+                print("HealthKit auth failed \(e.localizedDescription)")
                 completion(false)
             } else {
-                print("User has completed the authorization flow")
+                print("HealthKit auth success")
                 completion(true)
             }
         }
