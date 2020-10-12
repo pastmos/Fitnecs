@@ -15,5 +15,7 @@ class ActivityViewData {
     var stepsToday: String = ""
     var activeEnergyBurned: [String] = ["", "", "", "", "", "", ""]
     var oxygenSaturation: [String] = ["", "", "", "", "", "", ""]
+    var heartRate: [String] = ["", "", "", "", "", "", ""]
+    var sleepHours: [String] = ["", "", "", "", "", "", ""]
     var chartData: BarLineScatterCandleBubbleChartData?
 }

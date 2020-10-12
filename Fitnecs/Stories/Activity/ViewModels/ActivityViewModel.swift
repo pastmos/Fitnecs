@@ -7,6 +7,7 @@
 
 import UIKit
 import GoogleMaps
+import HealthKit
 import Charts
 
 protocol ActivityViewModelCoordinatorDelegate: AnyObject {
@@ -109,6 +110,32 @@ class ActivityViewModel: ActivityViewModelProtocol {
                         self.viewData.oxygenSaturation[i] = String(describing: (Int(percent*100))) + " " + "%"
                         dispatchGroup.leave()
                     }
+
+                    dispatchGroup.enter()
+                    self.healthService?.getHeartRate(startDate: startDay, endDate: endDay) { samples, unit in
+                        defer {
+                            dispatchGroup.leave()
+                        }
+                        guard let samples = samples as? [HKQuantitySample], !samples.isEmpty else {
+                            return
+                        }
+                        let average = samples.map{$0.quantity.doubleValue(for: unit)}.reduce(0, +) / Double(samples.count)
+
+                        self.viewData.heartRate[i] = String(describing: (Int(average))) + " " + "ударов"
+                    }
+
+                    dispatchGroup.enter()
+                    self.healthService?.getSleep(startDate: startDay - 3600*6, endDate: endDay - 3600*6) { samples, unit in
+                        defer {
+                            dispatchGroup.leave()
+                        }
+                        guard let samples = samples as? [HKCategorySample], !samples.isEmpty else {
+                            return
+                        }
+                        let average = samples.map{$0.endDate.timeIntervalSince($0.startDate)}.reduce(0, +) / Double(samples.count) / 3600
+
+                        self.viewData.sleepHours[i] = String(format: "%.1f", (Double(average))) + " " + "часов"
+                    }
                 }
 
                 dispatchGroup.enter()
@@ -119,21 +146,27 @@ class ActivityViewModel: ActivityViewModelProtocol {
                 }
 
                 dispatchGroup.enter()
-                self.healthService?.getHeight { height in
+                self.healthService?.getHeight { samples, unit in
+                    guard let sample = samples?.first as? HKQuantitySample else {
+                        return
+                    }
+                    let height = sample.quantity.doubleValue(for: unit)
                     self.viewData.height = String(describing: height) + " " + "м"
+
                     dispatchGroup.leave()
                 }
 
                 dispatchGroup.enter()
-                self.healthService?.getWeight { weight in
-                    self.viewData.weight = String(describing: weight/1000) + " " + "кг"
+                self.healthService?.getWeight { samples, unit in
+                    guard let sample = samples?.first as? HKQuantitySample else {
+                        return
+                    }
+                    let weight = sample.quantity.doubleValue(for: unit) / 1000
+                    self.viewData.weight = String(describing: weight) + " " + "кг"
+
                     dispatchGroup.leave()
                 }
 
-                dispatchGroup.enter()
-                self.healthService?.getSleep() { samples in
-                    dispatchGroup.leave()
-                }
 
                 dispatchGroup.notify(queue: DispatchQueue.main) { [weak self] in
                     guard let self = self else {
