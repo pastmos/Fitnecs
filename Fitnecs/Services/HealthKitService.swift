@@ -8,8 +8,22 @@
 import UIKit
 import HealthKit
 
+protocol HealthKitServiceProtocol {
+    func authoriseHealthKitAccess(_ completion: @escaping (Bool) -> ())
 
-class HealthKitService {
+    func getStepCount(startDate: Date, endDate: Date, completion: @escaping (Double)->())
+    func getDailyDistance(startDate: Date, endDate: Date, completion: @escaping (Double)->())
+    func getActiveEnergyBurned(startDate: Date, endDate: Date, completion: @escaping (Double)->())
+    func getOxygenSaturation(startDate: Date, endDate: Date, completion: @escaping (Double)->())
+
+    func getHeight(completion: @escaping ([HKSample]?, HKUnit) -> ())
+    func getWeight(completion: @escaping ([HKSample]?, HKUnit) -> ())
+    func getHeartRate(startDate: Date, endDate: Date, limit: Int, completion: @escaping ([HKSample]?, HKUnit) -> ())
+    func getSleep(startDate: Date, endDate: Date, limit: Int, completion: @escaping ([HKSample]?, HKUnit) -> ())
+}
+
+
+class HealthKitService: HealthKitServiceProtocol {
 
     let healthStore = HKHealthStore()
 
@@ -21,9 +35,15 @@ class HealthKitService {
             HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!,
             HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.height)!,
             HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMass)!,
+            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMassIndex)!,
+            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.flightsClimbed)!,
             HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.oxygenSaturation)!,
             HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.activeEnergyBurned)!,
             HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!,
+            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bloodPressureSystolic)!,
+            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bloodPressureDiastolic)!,
+            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyTemperature)!,
+            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceWalkingRunning)!,
             HKObjectType.categoryType(forIdentifier: HKCategoryTypeIdentifier.sleepAnalysis)!
         ]
 
@@ -44,8 +64,15 @@ class HealthKitService {
 //Statistics
 
     //Steps
-    func getStepCount(startDate: Date, endDate: Date, startOrder: Int, completion: @escaping (Double)->()) {
+    func getStepCount(startDate: Date, endDate: Date, completion: @escaping (Double)->()) {
         statisticsQuery(startDate: startDate, endDate: endDate, type: .stepCount) { total in
+            completion(total)
+        }
+    }
+
+    //Distance
+    func getDailyDistance(startDate: Date, endDate: Date, completion: @escaping (Double)->()) {
+        statisticsQuery(startDate: startDate, endDate: endDate, type: .distanceWalkingRunning, unit: .meter()) { total in
             completion(total)
         }
     }
@@ -60,6 +87,13 @@ class HealthKitService {
 
     //OxygenSaturation
     func getOxygenSaturation(startDate: Date, endDate: Date, completion: @escaping (Double)->()) {
+        statisticsQuery(startDate: startDate, endDate: endDate, type: .oxygenSaturation, unit: .percent(), options: .discreteAverage) { total in
+            completion(total)
+        }
+    }
+
+    //OxygenSaturation
+    func getBodyMassIndex(startDate: Date, endDate: Date, completion: @escaping (Double)->()) {
         statisticsQuery(startDate: startDate, endDate: endDate, type: .oxygenSaturation, unit: .percent(), options: .discreteAverage) { total in
             completion(total)
         }

@@ -27,7 +27,7 @@ protocol ActivityViewModelProtocol: AnyObject {
     // MARK: Callbacks
 
     var updateState: ((ActivityState) -> Void)? { get set }
-    var updateScreen: ((ActivityViewData) -> Void)? { get set }
+    var updateScreen: ((ChartActivityViewData) -> Void)? { get set }
 
 
     // MARK: Events
@@ -51,16 +51,14 @@ class ActivityViewModel: ActivityViewModelProtocol {
     weak var coordinatorDelegate: ActivityViewModelCoordinatorDelegate?
 
     // MARK: Variables
-    var healthService: HealthKitService?
+    var healthService: HealthKitServiceProtocol?
 
     var viewData: ActivityViewData = ActivityViewData()
-    var weekSteps: [Int] = [0,0,0,0,0,0,0]
-
 
     // MARK: Callbacks
 
     var updateState: ((ActivityState) -> Void)?
-    var updateScreen: ((ActivityViewData) -> Void)?
+    var updateScreen: ((ChartActivityViewData) -> Void)?
 
     let locationManager = CLLocationManager()
 
@@ -70,7 +68,7 @@ class ActivityViewModel: ActivityViewModelProtocol {
         static let daySeconds: Double = 86400
     }
 
-    init(healthService: HealthKitService = HealthKitService()) {
+    init(healthService: HealthKitServiceProtocol = HealthKitService()) {
         self.healthService = healthService
     }
 
@@ -94,25 +92,31 @@ class ActivityViewModel: ActivityViewModelProtocol {
                     let endDay = now.addingTimeInterval(-ActivityViewModel.Const.daySeconds * Double(i)).startOfDay
 
                     dispatchGroup.enter()
-                    self.healthService?.getStepCount(startDate: startDay, endDate: endDay, startOrder: i) { steps in
-                        self.weekSteps[i] = (Int(steps))
+                    self.healthService?.getStepCount(startDate: startDay, endDate: endDay) { steps in
+                        self.viewData.weekSteps[i] = Int(steps)
+                        dispatchGroup.leave()
+                    }
+
+                    dispatchGroup.enter()
+                    self.healthService?.getDailyDistance(startDate: startDay, endDate: endDay) { distance in
+                        self.viewData.distanceWalk[i] = distance.roundTo(2)
                         dispatchGroup.leave()
                     }
 
                     dispatchGroup.enter()
                     self.healthService?.getActiveEnergyBurned(startDate: startDay, endDate: endDay) { energy in
-                        self.viewData.activeEnergyBurned[i] = String(describing: (Int(energy))) + " " + "кКал"
+                        self.viewData.activeEnergyBurned[i] = Int(energy)
                         dispatchGroup.leave()
                     }
 
                     dispatchGroup.enter()
                     self.healthService?.getOxygenSaturation(startDate: startDay, endDate: endDay) { percent in
-                        self.viewData.oxygenSaturation[i] = String(describing: (Int(percent*100))) + " " + "%"
+                        self.viewData.oxygenSaturation[i] = Int(percent*100)
                         dispatchGroup.leave()
                     }
 
                     dispatchGroup.enter()
-                    self.healthService?.getHeartRate(startDate: startDay, endDate: endDay) { samples, unit in
+                    self.healthService?.getHeartRate(startDate: startDay, endDate: endDay, limit: 100) { samples, unit in
                         defer {
                             dispatchGroup.leave()
                         }
@@ -121,11 +125,11 @@ class ActivityViewModel: ActivityViewModelProtocol {
                         }
                         let average = samples.map{$0.quantity.doubleValue(for: unit)}.reduce(0, +) / Double(samples.count)
 
-                        self.viewData.heartRate[i] = String(describing: (Int(average))) + " " + "ударов"
+                        self.viewData.heartRate[i] = Int(average)
                     }
 
                     dispatchGroup.enter()
-                    self.healthService?.getSleep(startDate: startDay - 3600*6, endDate: endDay - 3600*6) { samples, unit in
+                    self.healthService?.getSleep(startDate: startDay - 3600*6, endDate: endDay - 3600*6, limit: 100) { samples, unit in
                         defer {
                             dispatchGroup.leave()
                         }
@@ -134,14 +138,14 @@ class ActivityViewModel: ActivityViewModelProtocol {
                         }
                         let average = samples.map{$0.endDate.timeIntervalSince($0.startDate)}.reduce(0, +) / Double(samples.count) / 3600
 
-                        self.viewData.sleepHours[i] = String(format: "%.1f", (Double(average))) + " " + "часов"
+                        self.viewData.sleepHours[i] = Double(average).roundTo(2)
                     }
                 }
 
                 dispatchGroup.enter()
                 let startDay = now.startOfDay
-                self.healthService?.getStepCount(startDate: startDay, endDate: now, startOrder: 0) { steps in
-                    self.viewData.stepsToday = String(describing: Int(steps)) + " " + "шагов"
+                self.healthService?.getStepCount(startDate: startDay, endDate: now) { steps in
+                    self.viewData.stepsToday = Int(steps)
                     dispatchGroup.leave()
                 }
 
@@ -151,7 +155,7 @@ class ActivityViewModel: ActivityViewModelProtocol {
                         return
                     }
                     let height = sample.quantity.doubleValue(for: unit)
-                    self.viewData.height = String(describing: height) + " " + "м"
+                    self.viewData.height = height
 
                     dispatchGroup.leave()
                 }
@@ -162,7 +166,7 @@ class ActivityViewModel: ActivityViewModelProtocol {
                         return
                     }
                     let weight = sample.quantity.doubleValue(for: unit) / 1000
-                    self.viewData.weight = String(describing: weight) + " " + "кг"
+                    self.viewData.weight = weight
 
                     dispatchGroup.leave()
                 }
@@ -173,8 +177,7 @@ class ActivityViewModel: ActivityViewModelProtocol {
                         return
                     }
 
-                    self.viewData.chartData = self.createBarsArr(array: self.weekSteps)
-                    self.updateScreen?(self.viewData)
+                    self.updateScreen?(self.viewData.chart)
 
                     // Request for use in background
                     self.locationManager.requestAlwaysAuthorization()
@@ -189,17 +192,6 @@ class ActivityViewModel: ActivityViewModelProtocol {
         return date.lastWeekDaysArray()
     }
 
-    private func createBarsArr(array: [Int]) -> BarLineScatterCandleBubbleChartData {
-        var dataEntries: [BarChartDataEntry] = []
-
-        for i in 0..<array.count {
-            let dataEntry = BarChartDataEntry(x: Double(i+1), y: Double(array[array.count - i - 1]))
-          dataEntries.append(dataEntry)
-        }
-        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Количество шагов в день")
-        let chartData = BarChartData(dataSet: chartDataSet)
-        return chartData
-    }
 
     func back(from controller: UIViewController) {
         coordinatorDelegate?.close(from: controller)

@@ -46,7 +46,7 @@ class GeoViewController: UIViewController {
     func initLocationManager() {
         locationManager.delegate = self
         locationManager.showsBackgroundLocationIndicator = true
-        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters//kCLLocationAccuracyNearestTenMeters
         locationManager.allowsBackgroundLocationUpdates = true
         locationManager.pausesLocationUpdatesAutomatically = false   // Remove later!
         //locationManager.startMonitoringSignificantLocationChanges()

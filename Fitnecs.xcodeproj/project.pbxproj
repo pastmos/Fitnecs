@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		26111D46252DE80A00587485 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26111D45252DE80A00587485 /* GoogleService-Info.plist */; };
+		2652CB5425388A200013827D /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2652CB5325388A200013827D /* Double.swift */; };
 		26893DBC2521DCB900604B44 /* GeoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26893DBB2521DCB900604B44 /* GeoViewController.swift */; };
 		26D4C78F2523372300F645A3 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26D4C78E2523372300F645A3 /* HealthKit.framework */; };
 		26D4C792252350EA00F645A3 /* HealthKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D4C791252350EA00F645A3 /* HealthKitService.swift */; };
@@ -117,6 +118,7 @@
 
 /* Begin PBXFileReference section */
 		26111D45252DE80A00587485 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2652CB5325388A200013827D /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		26893DBB2521DCB900604B44 /* GeoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoViewController.swift; sourceTree = "<group>"; };
 		26D4C78D2523372300F645A3 /* Fitnecs.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Fitnecs.entitlements; sourceTree = "<group>"; };
 		26D4C78E2523372300F645A3 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
@@ -326,6 +328,7 @@
 				CEAE876D251B573700E7EF87 /* UIWindow+TopController.swift */,
 				26D4C794252369D000F645A3 /* Date.swift */,
 				26D4C7AA252481AF00F645A3 /* UIImageView.swift */,
+				2652CB5325388A200013827D /* Double.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -991,6 +994,7 @@
 				CEAE8AF3251CC38A00E7EF87 /* MainViewModel.swift in Sources */,
 				CEAE8AE3251CC0DF00E7EF87 /* LoginViewData.swift in Sources */,
 				CE8B3F2925212EAA00F4FEED /* GeoViewModel.swift in Sources */,
+				2652CB5425388A200013827D /* Double.swift in Sources */,
 				CEAE87AF251B63E300E7EF87 /* CoverDismissTransitionAnimator.swift in Sources */,
 				CEAE8787251B621600E7EF87 /* AlertViewController.swift in Sources */,
 				CEAE8B2A251CD34500E7EF87 /* ValidationService.swift in Sources */,
