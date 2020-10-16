@@ -102,7 +102,7 @@ extension MainCoordinator: MainViewModelCoordinatorDelegate {
 
         let contentController = BaseCoverContentViewController(contentController: smallModalViewController,
                                                                mode: .fitContentSize,
-                                                               backgroundColor: Assets.Colors.backgroundBlueColor.color)
+                                                               backgroundColor: Assets.Colors.mainBlueColor.color)
         contentController.onDeinit = {
             dismiss?()
         }

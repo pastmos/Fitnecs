@@ -22,14 +22,15 @@ internal typealias AssetImageTypeAlias = ImageAsset.Image
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 internal enum Assets {
   internal enum Colors {
+    internal static let backgroundProgress = ColorAsset(name: "background-progress")
+    internal static let blueProgress = ColorAsset(name: "blue-progress")
+    internal static let lightblueProgress = ColorAsset(name: "lightblue-progress")
+    internal static let purpleProgress = ColorAsset(name: "purple-progress")
+    internal static let redProgress = ColorAsset(name: "red-progress")
     internal static let alertBackground = ColorAsset(name: "alert-background")
     internal static let alertFormBackground = ColorAsset(name: "alert-form-background")
     internal static let alertSeparator = ColorAsset(name: "alert-separator")
     internal static let noInternetBackground = ColorAsset(name: "no-internet-background")
-    internal static let buttonRetryDisabledColor = ColorAsset(name: "button-retry-disabled-color")
-    internal static let codeAcceptedColor = ColorAsset(name: "code-accepted-color")
-    internal static let codeErrorColor = ColorAsset(name: "code-error-color")
-    internal static let codeUnselectedColor = ColorAsset(name: "code-unselected-color")
     internal static let textfieldBlueBorderColor = ColorAsset(name: "textfield-blue-border-color")
     internal static let textfieldGrayBackgroundColor = ColorAsset(name: "textfield-gray-background-color")
     internal static let textfieldGrayBorderNormalColor = ColorAsset(name: "textfield-gray-border-normal-color")
@@ -45,16 +46,6 @@ internal enum Assets {
     internal static let mainRootBackground = ColorAsset(name: "main-root-background")
     internal static let mainTextColor = ColorAsset(name: "main-text-color")
     internal static let searchBackground = ColorAsset(name: "search-background")
-    internal static let backgroundBlueColor = ColorAsset(name: "background-blue-color")
-    internal static let cardShadowColor = ColorAsset(name: "card-shadow-color")
-    internal static let alertTextColor = ColorAsset(name: "alert-text-color")
-    internal static let colorProgressTitleColor = ColorAsset(name: "color-progress-title-color")
-    internal static let inkBlue = ColorAsset(name: "ink-blue")
-    internal static let rateSliderColor = ColorAsset(name: "rate-slider-color")
-    internal static let switchControlTitle = ColorAsset(name: "switch-control-title")
-    internal enum News {
-      internal static let cardShadowColor = ColorAsset(name: "News/card-shadow-color")
-    }
     internal enum Style {
       internal static let background1 = ColorAsset(name: "Style/Background 1")
       internal static let background = ColorAsset(name: "Style/Background")
@@ -70,11 +61,6 @@ internal enum Assets {
       internal static let magenta = ColorAsset(name: "Style/Magenta")
       internal static let red = ColorAsset(name: "Style/Red")
     }
-    internal static let moneySwitchInactive = ColorAsset(name: "money-switch-inactive")
-    internal static let multibonusBaseColor = ColorAsset(name: "multibonus-base-color")
-    internal static let textBlackColor = ColorAsset(name: "text-black-color")
-    internal static let textWhiteColor = ColorAsset(name: "text-white-color")
-    internal static let topupPaymentSwitcherInactive = ColorAsset(name: "topup-payment-switcher-inactive")
   }
   internal enum Images {
     internal static let activityTab = ImageAsset(name: "activity-tab")

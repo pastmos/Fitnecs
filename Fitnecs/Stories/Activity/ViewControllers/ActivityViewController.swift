@@ -13,43 +13,25 @@ import Charts
 
 class ActivityViewController: UIViewController {
 
+    @IBOutlet weak var activityIndexCircleProgress: CircularProgressBar!
     // MARK: Properties
 
     var viewModel: ActivityViewModelProtocol?
 
-    @IBOutlet weak var avatarImageView: UIImageView!
-    @IBOutlet weak var heightLabel: UILabel!
-    @IBOutlet weak var weightLabel: UILabel!
-    @IBOutlet weak var stepsTodayLabel: UILabel!
-    @IBOutlet weak var weekStepsChart: BarChartView!
 
     // MARK: Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        avatarImageView.makeRounded()
-        setupChart()
+        activityIndexCircleProgress.setProgress(to: 740, maxValue: 1000, lineColor: Assets.Colors.redProgress.color, withAnimation: true)
 
         viewModel?.updateScreen = { [weak self] data in
-            let weekDays = self?.viewModel?.getWeekDays() ?? []
-            self?.weekStepsChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: weekDays)
-            self?.weekStepsChart.data = data.stepsChartData
-            self?.stepsTodayLabel.text = data.stepsToday
-            self?.weightLabel.text = data.weight
-            self?.heightLabel.text = data.height
+
         }
 
         viewModel?.start()
     }
 
-    private func setupChart() {
-        weekStepsChart.animate(yAxisDuration: 2.0)
-        weekStepsChart.pinchZoomEnabled = false
-        weekStepsChart.drawBarShadowEnabled = false
-        weekStepsChart.drawBordersEnabled = false
-        weekStepsChart.doubleTapToZoomEnabled = false
-        weekStepsChart.drawGridBackgroundEnabled = true
-    }
 
 }

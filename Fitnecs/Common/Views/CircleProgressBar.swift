@@ -21,18 +21,10 @@ class CircularProgressBar: UIView {
 
     //MARK: Public
 
-    public var lineWidth:CGFloat = 50 {
+    public var lineWidth:CGFloat = 10 {
         didSet{
             foregroundLayer.lineWidth = lineWidth
             backgroundLayer.lineWidth = lineWidth - (0.20 * lineWidth)
-        }
-    }
-
-    public var labelSize: CGFloat = 20 {
-        didSet {
-            label.font = UIFont.systemFont(ofSize: labelSize)
-            label.sizeToFit()
-            configLabel()
         }
     }
 
@@ -42,46 +34,53 @@ class CircularProgressBar: UIView {
         }
     }
 
-    public var wholeCircleAnimationDuration: Double = 2
+    public var maxValue: Double = 100
 
-    public var lineBackgroundColor: UIColor = .gray
-    public var lineColor: UIColor = .red
+    public var wholeCircleAnimationDuration: Double = 1.5
+
+    public var lineBackgroundColor: UIColor = Assets.Colors.backgroundProgress.color
+    public var lineColor: UIColor = Assets.Colors.redProgress.color
     public var lineFinishColor: UIColor = .green
 
 
-    public func setProgress(to progressConstant: Double, withAnimation: Bool) {
+    public func setProgress(to progressConstant: Double, maxValue: Double, lineColor: UIColor, withAnimation: Bool) {
 
         var progress: Double {
             get {
-                if progressConstant > 1 { return 1 }
-                else if progressConstant < 0 { return 0 }
-                else { return progressConstant }
+                if progressConstant > 0  {
+                    return progressConstant
+                }
+                else {
+                    return 0
+                }
             }
         }
+        self.maxValue = maxValue
+        self.lineColor = lineColor
 
-        let animationDuration = wholeCircleAnimationDuration * progress
 
-        foregroundLayer.strokeEnd = CGFloat(progress)
+        let animationDuration = wholeCircleAnimationDuration * (progress / maxValue)
+
+        foregroundLayer.strokeEnd = CGFloat(progress / maxValue)
 
         if withAnimation {
             let animation = CABasicAnimation(keyPath: "strokeEnd")
             animation.fromValue = 0
-            animation.toValue = progress
+            animation.toValue = progress / maxValue
             animation.duration = animationDuration
             foregroundLayer.add(animation, forKey: "foregroundAnimation")
 
         }
 
         var currentTime:Double = 0
-        let timer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { (timer) in
+        let timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { (timer) in
             if currentTime >= animationDuration {
                 timer.invalidate()
             } else {
-                currentTime += 0.05
-                let percent = currentTime/2 * 100
-                self.label.text = "\(Int(progress * percent))"
-                self.setForegroundLayerColorForSafePercent()
-                self.configLabel()
+                currentTime += 0.01
+                let currentProgress = currentTime/animationDuration * progress
+                self.label.text = "\(Int(currentProgress))"
+                //self.setForegroundLayerColorForSafePercent()
             }
         }
         timer.fire()
@@ -106,11 +105,6 @@ class CircularProgressBar: UIView {
         get{ return self.convert(self.center, from:self.superview) }
     }
 
-    private func makeBar(){
-        self.layer.sublayers = nil
-        drawBackgroundLayer()
-        drawForegroundLayer()
-    }
 
     private func drawBackgroundLayer(){
         let path = UIBezierPath(arcCenter: pathCenter, radius: self.radius, startAngle: 0, endAngle: 2*CGFloat.pi, clockwise: true)
@@ -134,25 +128,23 @@ class CircularProgressBar: UIView {
         foregroundLayer.lineWidth = lineWidth
         foregroundLayer.fillColor = UIColor.clear.cgColor
         foregroundLayer.strokeColor = lineColor.cgColor
-        foregroundLayer.strokeEnd = 0
+        //foregroundLayer.strokeEnd = 0
 
         self.layer.addSublayer(foregroundLayer)
 
     }
 
-    private func makeLabel(withText text: String) -> UILabel {
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+    private func makeLabel(withText text: String, _ fontSize: CGFloat, width: CGFloat) -> UILabel {
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: width, height: 100))
         label.text = text
-        label.font = UIFont.systemFont(ofSize: labelSize)
-        label.sizeToFit()
+        label.textAlignment = .center
+        label.adjustsFontSizeToFitWidth = true
+        label.font = FontFamily.Calibri.regular.font(size: fontSize)
+        label.textColor = .black
         label.center = pathCenter
         return label
     }
 
-    private func configLabel(){
-        label.sizeToFit()
-        label.center = pathCenter
-    }
 
     private func setForegroundLayerColorForSafePercent(){
         if Int(label.text!)! >= self.safePercent {
@@ -163,21 +155,15 @@ class CircularProgressBar: UIView {
     }
 
     private func setupView() {
-        makeBar()
-        self.addSubview(label)
+        drawBackgroundLayer()
+        drawForegroundLayer()
     }
 
-
-
-    //Layout Sublayers
-    private var layoutDone = false
-    override func layoutSublayers(of layer: CALayer) {
-        if !layoutDone {
-            let tempText = label.text
-            setupView()
-            label.text = tempText
-            layoutDone = true
-        }
+    override func layoutSubviews() {
+        setupView()
+        let fontSize = CGFloat(self.bounds.width / 4.5)
+        self.label = makeLabel(withText: "0", fontSize, width: self.bounds.width * 0.8)
+        self.addSubview(label)
     }
 
 }

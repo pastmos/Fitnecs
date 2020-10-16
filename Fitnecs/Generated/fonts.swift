@@ -18,42 +18,14 @@ internal typealias Font = FontConvertible.Font
 
 // swiftlint:disable identifier_name line_length type_body_length
 internal enum FontFamily {
-  internal enum Roboto {
-    internal static let bold = FontConvertible(name: "Roboto-Bold", family: "Roboto", path: "Roboto-Bold.ttf")
-    internal static let medium = FontConvertible(name: "Roboto-Medium", family: "Roboto", path: "Roboto-Medium.ttf")
-    internal static let regular = FontConvertible(name: "Roboto-Regular", family: "Roboto", path: "Roboto-Regular.ttf")
-    internal static let all: [FontConvertible] = [bold, medium, regular]
+  internal enum Calibri {
+    internal static let regular = FontConvertible(name: "Calibri", family: "Calibri", path: "Calibri-Regular.ttf")
+    internal static let bold = FontConvertible(name: "Calibri-Bold", family: "Calibri", path: "Calibri-Bold.ttf")
+    internal static let italic = FontConvertible(name: "Calibri-Italic", family: "Calibri", path: "Calibri-Italic.ttf")
+    internal static let light = FontConvertible(name: "Calibri-Light", family: "Calibri", path: "Calibri-Light.ttf")
+    internal static let all: [FontConvertible] = [regular, bold, italic, light]
   }
-  internal enum SFProDisplay {
-    internal static let black = FontConvertible(name: "SFProDisplay-Black", family: "SF Pro Display", path: "SF-Pro-Display-Black.otf")
-    internal static let bold = FontConvertible(name: "SFProDisplay-Bold", family: "SF Pro Display", path: "SF-Pro-Display-Bold.otf")
-    internal static let heavy = FontConvertible(name: "SFProDisplay-Heavy", family: "SF Pro Display", path: "SF-Pro-Display-Heavy.otf")
-    internal static let light = FontConvertible(name: "SFProDisplay-Light", family: "SF Pro Display", path: "SF-Pro-Display-Light.otf")
-    internal static let regular = FontConvertible(name: "SFProDisplay-Regular", family: "SF Pro Display", path: "SF-Pro-Display-Regular.otf")
-    internal static let semibold = FontConvertible(name: "SFProDisplay-Semibold", family: "SF Pro Display", path: "SF-Pro-Display-Semibold.otf")
-    internal static let thin = FontConvertible(name: "SFProDisplay-Thin", family: "SF Pro Display", path: "SF-Pro-Display-Thin.otf")
-    internal static let ultralight = FontConvertible(name: "SFProDisplay-Ultralight", family: "SF Pro Display", path: "SF-Pro-Display-Ultralight.otf")
-    internal static let all: [FontConvertible] = [black, bold, heavy, light, regular, semibold, thin, ultralight]
-  }
-  internal enum SFProText {
-    internal static let bold = FontConvertible(name: "SFProText-Bold", family: "SF Pro Text", path: "SF-Pro-Text-Bold.otf")
-    internal static let heavy = FontConvertible(name: "SFProText-Heavy", family: "SF Pro Text", path: "SF-Pro-Text-Heavy.otf")
-    internal static let regular = FontConvertible(name: "SFProText-Regular", family: "SF Pro Text", path: "SF-Pro-Text-Regular.otf")
-    internal static let semibold = FontConvertible(name: "SFProText-Semibold", family: "SF Pro Text", path: "SF-Pro-Text-Semibold.otf")
-    internal static let all: [FontConvertible] = [bold, heavy, regular, semibold]
-  }
-  internal enum VTBGroup {
-    internal static let bold = FontConvertible(name: "VTBGroup-Bold", family: "VTB Group", path: "VTBBold.otf")
-    internal static let book = FontConvertible(name: "VTBGroup-Book", family: "VTB Group", path: "VTBBook.ttf")
-    internal static let demiBold = FontConvertible(name: "VTBGroup-DemiBold", family: "VTB Group", path: "VTBDemiBold.ttf")
-    internal static let all: [FontConvertible] = [bold, book, demiBold]
-  }
-  internal enum VTBGroupCond {
-    internal static let bold = FontConvertible(name: "VTBGroupCond-Bold", family: "VTB Group Cond", path: "VTBCondBold.ttf")
-    internal static let demiBold = FontConvertible(name: "VTBGroupCond-DemiBold", family: "VTB Group Cond", path: "VTBCondDemiBold.ttf")
-    internal static let all: [FontConvertible] = [bold, demiBold]
-  }
-  internal static let allCustomFonts: [FontConvertible] = [Roboto.all, SFProDisplay.all, SFProText.all, VTBGroup.all, VTBGroupCond.all].flatMap { $0 }
+  internal static let allCustomFonts: [FontConvertible] = [Calibri.all].flatMap { $0 }
   internal static func registerAllCustomFonts() {
     allCustomFonts.forEach { $0.register() }
   }
