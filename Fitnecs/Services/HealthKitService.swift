@@ -15,6 +15,7 @@ protocol HealthKitServiceProtocol {
     func getDailyDistance(startDate: Date, endDate: Date, completion: @escaping (Double)->())
     func getActiveEnergyBurned(startDate: Date, endDate: Date, completion: @escaping (Double)->())
     func getOxygenSaturation(startDate: Date, endDate: Date, completion: @escaping (Double)->())
+    func getBloodPressureSystolic(startDate: Date, endDate: Date, completion: @escaping (Double)->())
 
     func getHeight(completion: @escaping ([HKSample]?, HKUnit) -> ())
     func getWeight(completion: @escaping ([HKSample]?, HKUnit) -> ())
@@ -99,6 +100,13 @@ class HealthKitService: HealthKitServiceProtocol {
         }
     }
 
+    //BloodPressureSystolic
+    func getBloodPressureSystolic(startDate: Date, endDate: Date, completion: @escaping (Double)->()) {
+        statisticsQuery(startDate: startDate, endDate: endDate, type: .bloodPressureSystolic, unit: .millimeterOfMercury(), options: .discreteAverage) { total in
+            completion(total)
+        }
+    }
+
 
 
 
@@ -168,6 +176,7 @@ class HealthKitService: HealthKitServiceProtocol {
     func sampleQuery(startDate: Date? = nil, endDate: Date? = nil, type: HKQuantityTypeIdentifier, unit: HKUnit, limit: Int = 100, completion: @escaping ([HKSample]?, HKUnit)->()) {
         let type = HKQuantityType.quantityType(
             forIdentifier: type)!
+        let bpType = HKCorrelationType.correlationType(forIdentifier: .bloodPressure)!
 
         let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
 

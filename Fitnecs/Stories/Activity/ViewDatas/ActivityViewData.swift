@@ -40,6 +40,11 @@ struct ActivityViewData {
             chart.oxygenSaturationChartData = createBarsArr(array: oxygenSaturation.map{Double($0)})
         }
     }
+    var bloodPressureSystolic: [Int] = [0,0,0,0,0,0,0] {
+        didSet {
+            chart.bloodPressureSystolic = createBarsArr(array: bloodPressureSystolic.map{Double($0)})
+        }
+    }
     var heartRate: [Int] = [0,0,0,0,0,0,0] {
         didSet {
             chart.heartRateChartData = createBarsArr(array: heartRate.map{Double($0)})
@@ -80,6 +85,7 @@ struct ChartActivityViewData {
     var stepsToday: String = ""
     var activeEnergyBurnedChartData: BarLineScatterCandleBubbleChartData?
     var oxygenSaturationChartData: BarLineScatterCandleBubbleChartData?
+    var bloodPressureSystolic: BarLineScatterCandleBubbleChartData?
     var heartRateChartData: BarLineScatterCandleBubbleChartData?
     var sleepHoursChartData: BarLineScatterCandleBubbleChartData?
     var distanceWalkChartData: BarLineScatterCandleBubbleChartData?

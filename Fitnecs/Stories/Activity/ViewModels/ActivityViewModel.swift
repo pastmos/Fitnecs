@@ -116,6 +116,12 @@ class ActivityViewModel: ActivityViewModelProtocol {
                     }
 
                     dispatchGroup.enter()
+                    self.healthService?.getBloodPressureSystolic(startDate: startDay, endDate: endDay) { pressure in
+                        self.viewData.bloodPressureSystolic[i] = Int(pressure)
+                        dispatchGroup.leave()
+                    }
+
+                    dispatchGroup.enter()
                     self.healthService?.getHeartRate(startDate: startDay, endDate: endDay, limit: 100) { samples, unit in
                         defer {
                             dispatchGroup.leave()
