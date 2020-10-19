@@ -25,7 +25,16 @@ internal enum FontFamily {
     internal static let light = FontConvertible(name: "Calibri-Light", family: "Calibri", path: "Calibri-Light.ttf")
     internal static let all: [FontConvertible] = [regular, bold, italic, light]
   }
-  internal static let allCustomFonts: [FontConvertible] = [Calibri.all].flatMap { $0 }
+  internal enum Circe {
+    internal static let bold = FontConvertible(name: "Circe-Bold", family: "Circe", path: "Circe-Bold.ttf")
+    internal static let extraBold = FontConvertible(name: "Circe-ExtraBold", family: "Circe", path: "Circe-ExtraBold.ttf")
+    internal static let extraLight = FontConvertible(name: "Circe-ExtraLight", family: "Circe", path: "Circe-ExtraLight.ttf")
+    internal static let light = FontConvertible(name: "Circe-Light", family: "Circe", path: "Circe-Light.ttf")
+    internal static let regular = FontConvertible(name: "Circe-Regular", family: "Circe", path: "Circe-Regular.ttf")
+    internal static let thin = FontConvertible(name: "Circe-Thin", family: "Circe", path: "Circe-Thin.ttf")
+    internal static let all: [FontConvertible] = [bold, extraBold, extraLight, light, regular, thin]
+  }
+  internal static let allCustomFonts: [FontConvertible] = [Calibri.all, Circe.all].flatMap { $0 }
   internal static func registerAllCustomFonts() {
     allCustomFonts.forEach { $0.register() }
   }

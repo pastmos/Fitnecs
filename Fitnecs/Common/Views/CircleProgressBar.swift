@@ -21,7 +21,7 @@ class CircularProgressBar: UIView {
 
     //MARK: Public
 
-    public var lineWidth:CGFloat = 10 {
+    public var lineWidth:CGFloat = 2 {
         didSet{
             foregroundLayer.lineWidth = lineWidth
             backgroundLayer.lineWidth = lineWidth - (0.20 * lineWidth)
@@ -36,14 +36,18 @@ class CircularProgressBar: UIView {
 
     public var maxValue: Double = 100
 
-    public var wholeCircleAnimationDuration: Double = 1.5
+
+    public var wholeCircleAnimationDuration: Double = 1.2
 
     public var lineBackgroundColor: UIColor = Assets.Colors.backgroundProgress.color
-    public var lineColor: UIColor = Assets.Colors.redProgress.color
+    public var lineColor: UIColor = .blue {
+        didSet {
+            foregroundLayer.strokeColor = lineColor.cgColor
+        }
+    }
     public var lineFinishColor: UIColor = .green
 
-
-    public func setProgress(to progressConstant: Double, maxValue: Double, lineColor: UIColor, withAnimation: Bool) {
+    public func setProgress(to progressConstant: Double, maxValue: Double, lineColor: UIColor, thickness: CGFloat = 4, isFractional: Bool = true, withAnimation: Bool = true) {
 
         var progress: Double {
             get {
@@ -57,9 +61,11 @@ class CircularProgressBar: UIView {
         }
         self.maxValue = maxValue
         self.lineColor = lineColor
+        self.lineWidth = thickness
+        self.isFractional = isFractional
 
 
-        let animationDuration = wholeCircleAnimationDuration * (progress / maxValue)
+        let animationDuration = wholeCircleAnimationDuration //* (progress / maxValue)
 
         foregroundLayer.strokeEnd = CGFloat(progress / maxValue)
 
@@ -75,11 +81,17 @@ class CircularProgressBar: UIView {
         var currentTime:Double = 0
         let timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { (timer) in
             if currentTime >= animationDuration {
+                self.label.text = isFractional ? "\(Double(progress).roundTo(2))" : "\(Int(progress))"
                 timer.invalidate()
             } else {
                 currentTime += 0.01
-                let currentProgress = currentTime/animationDuration * progress
-                self.label.text = "\(Int(currentProgress))"
+                var currentProgress = (currentTime/animationDuration * progress)
+                currentProgress = isFractional ? currentProgress.roundTo(1) : floor(currentProgress)
+//                if isFractional && currentProgress.truncatingRemainder(dividingBy: 1) < 0.01 {
+//                    currentProgress = Double(Int(currentProgress))
+//                }
+
+                self.label.text = isFractional ? "\(Double(currentProgress))" : "\(Int(currentProgress))"
                 //self.setForegroundLayerColorForSafePercent()
             }
         }
@@ -104,6 +116,8 @@ class CircularProgressBar: UIView {
     private var pathCenter: CGPoint{
         get{ return self.convert(self.center, from:self.superview) }
     }
+
+    private var isFractional = true
 
 
     private func drawBackgroundLayer(){

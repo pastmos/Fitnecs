@@ -13,6 +13,31 @@ internal enum Strings {
   /// Ошибка
   internal static let error = Strings.tr("Localizable", "error")
 
+  internal enum Activity {
+    internal enum Distance {
+      /// Дистанция
+      internal static let label = Strings.tr("Localizable", "activity.distance.label")
+    }
+    internal enum Index {
+      /// Индекс подвижности
+      internal static let label = Strings.tr("Localizable", "activity.index.label")
+    }
+    internal enum Points {
+      internal enum Caption {
+        /// Баллы\nактивности
+        internal static let label = Strings.tr("Localizable", "activity.points.caption.label")
+      }
+    }
+    internal enum Sleep {
+      /// Сон
+      internal static let label = Strings.tr("Localizable", "activity.sleep.label")
+    }
+    internal enum Steps {
+      /// Шаги
+      internal static let label = Strings.tr("Localizable", "activity.steps.label")
+    }
+  }
+
   internal enum Common {
     internal enum Appstore {
       /// itms-apps://itunes.apple.com/app/id1477334014

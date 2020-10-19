@@ -24,9 +24,11 @@ internal enum Assets {
   internal enum Colors {
     internal static let backgroundProgress = ColorAsset(name: "background-progress")
     internal static let blueProgress = ColorAsset(name: "blue-progress")
+    internal static let darkBlue = ColorAsset(name: "dark-blue")
     internal static let lightblueProgress = ColorAsset(name: "lightblue-progress")
     internal static let purpleProgress = ColorAsset(name: "purple-progress")
     internal static let redProgress = ColorAsset(name: "red-progress")
+    internal static let textGray = ColorAsset(name: "text-gray")
     internal static let alertBackground = ColorAsset(name: "alert-background")
     internal static let alertFormBackground = ColorAsset(name: "alert-form-background")
     internal static let alertSeparator = ColorAsset(name: "alert-separator")

@@ -27,14 +27,13 @@ protocol ActivityViewModelProtocol: AnyObject {
     // MARK: Callbacks
 
     var updateState: ((ActivityState) -> Void)? { get set }
-    var updateScreen: ((ChartActivityViewData) -> Void)? { get set }
+    var updateScreen: ((ActivityViewData) -> Void)? { get set }
 
 
     // MARK: Events
 
     func start()
     func back(from controller: UIViewController)
-    func getWeekDays() -> [String]
 
 }
 
@@ -58,15 +57,11 @@ class ActivityViewModel: ActivityViewModelProtocol {
     // MARK: Callbacks
 
     var updateState: ((ActivityState) -> Void)?
-    var updateScreen: ((ChartActivityViewData) -> Void)?
+    var updateScreen: ((ActivityViewData) -> Void)?
 
     let locationManager = CLLocationManager()
 
-    var todaySteps: Double = 0
-
-    struct Const {
-        static let daySeconds: Double = 86400
-    }
+    var weekSteps: [Int] = [0,0,0,0,0,0,0]
 
     init(healthService: HealthKitServiceProtocol = HealthKitService()) {
         self.healthService = healthService
@@ -78,124 +73,76 @@ class ActivityViewModel: ActivityViewModelProtocol {
 
         healthService?.authoriseHealthKitAccess() { [weak self] isAuthorized in
 
-            guard let self = self else {
+            guard let self = self, isAuthorized else {
                 return
             }
 
             let dispatchGroup = DispatchGroup()
+            let now = Date()
+            let startDay = now.startOfDay
+            let endDay = now.endOfDay
 
-            if isAuthorized {
-                let now = Date()
 
-                for i in 0..<7 {
-                    let startDay = now.addingTimeInterval(-ActivityViewModel.Const.daySeconds * Double(i + 1)).startOfDay
-                    let endDay = now.addingTimeInterval(-ActivityViewModel.Const.daySeconds * Double(i)).startOfDay
+            dispatchGroup.enter()
+            self.healthService?.getStepCount(startDate: startDay, endDate: now) { steps in
+                self.viewData.steps = steps
+                dispatchGroup.leave()
+            }
 
-                    dispatchGroup.enter()
-                    self.healthService?.getStepCount(startDate: startDay, endDate: endDay) { steps in
-                        self.viewData.weekSteps[i] = Int(steps)
-                        dispatchGroup.leave()
-                    }
-
-                    dispatchGroup.enter()
-                    self.healthService?.getDailyDistance(startDate: startDay, endDate: endDay) { distance in
-                        self.viewData.distanceWalk[i] = distance.roundTo(2)
-                        dispatchGroup.leave()
-                    }
-
-                    dispatchGroup.enter()
-                    self.healthService?.getActiveEnergyBurned(startDate: startDay, endDate: endDay) { energy in
-                        self.viewData.activeEnergyBurned[i] = Int(energy)
-                        dispatchGroup.leave()
-                    }
-
-                    dispatchGroup.enter()
-                    self.healthService?.getOxygenSaturation(startDate: startDay, endDate: endDay) { percent in
-                        self.viewData.oxygenSaturation[i] = Int(percent*100)
-                        dispatchGroup.leave()
-                    }
-
-                    dispatchGroup.enter()
-                    self.healthService?.getBloodPressureSystolic(startDate: startDay, endDate: endDay) { pressure in
-                        self.viewData.bloodPressureSystolic[i] = Int(pressure)
-                        dispatchGroup.leave()
-                    }
-
-                    dispatchGroup.enter()
-                    self.healthService?.getHeartRate(startDate: startDay, endDate: endDay, limit: 100) { samples, unit in
-                        defer {
-                            dispatchGroup.leave()
-                        }
-                        guard let samples = samples as? [HKQuantitySample], !samples.isEmpty else {
-                            return
-                        }
-                        let average = samples.map{$0.quantity.doubleValue(for: unit)}.reduce(0, +) / Double(samples.count)
-
-                        self.viewData.heartRate[i] = Int(average)
-                    }
-
-                    dispatchGroup.enter()
-                    self.healthService?.getSleep(startDate: startDay - 3600*6, endDate: endDay - 3600*6, limit: 100) { samples, unit in
-                        defer {
-                            dispatchGroup.leave()
-                        }
-                        guard let samples = samples as? [HKCategorySample], !samples.isEmpty else {
-                            return
-                        }
-                        let average = samples.map{$0.endDate.timeIntervalSince($0.startDate)}.reduce(0, +) / Double(samples.count) / 3600
-
-                        self.viewData.sleepHours[i] = Double(average).roundTo(2)
-                    }
-                }
-
-                dispatchGroup.enter()
-                let startDay = now.startOfDay
-                self.healthService?.getStepCount(startDate: startDay, endDate: now) { steps in
-                    self.viewData.stepsToday = Int(steps)
+            dispatchGroup.enter()
+            self.healthService?.getSleep(startDate: startDay - Const.hourSeconds*6, endDate: endDay - Const.hourSeconds*6, limit: 100) { samples, unit in
+                defer {
                     dispatchGroup.leave()
                 }
+                guard let samples = samples as? [HKCategorySample], !samples.isEmpty else {
+                    return
+                }
+                let overall = samples.map{$0.endDate.timeIntervalSince($0.startDate)}.reduce(0, +) / Const.hourSeconds
+
+                self.viewData.sleep = Double(overall).roundTo(2)
+            }
+
+            dispatchGroup.enter()
+            self.healthService?.getDailyDistance(startDate: startDay, endDate: now) { meters in
+                self.viewData.distance = (meters/1000).roundTo(2)
+                dispatchGroup.leave()
+            }
+
+
+            for i in 0..<Const.daysInWeek {
+                let startDay = now.addingTimeInterval(-Const.daySeconds * Double(i + 1)).startOfDay
+                let endDay = now.addingTimeInterval(-Const.daySeconds * Double(i)).startOfDay
 
                 dispatchGroup.enter()
-                self.healthService?.getHeight { samples, unit in
-                    guard let sample = samples?.first as? HKQuantitySample else {
-                        return
-                    }
-                    let height = sample.quantity.doubleValue(for: unit)
-                    self.viewData.height = height
-
+                self.healthService?.getStepCount(startDate: startDay, endDate: endDay) { steps in
+                    self.weekSteps[i] = Int(steps)
                     dispatchGroup.leave()
                 }
+            }
 
-                dispatchGroup.enter()
-                self.healthService?.getWeight { samples, unit in
-                    guard let sample = samples?.first as? HKQuantitySample else {
-                        return
-                    }
-                    let weight = sample.quantity.doubleValue(for: unit) / 1000
-                    self.viewData.weight = weight
 
-                    dispatchGroup.leave()
+            dispatchGroup.notify(queue: DispatchQueue.main) { [weak self] in
+                guard let self = self else {
+                    return
                 }
 
+                self.viewData.activityIndex = self.getActivityIndex(self.viewData)
+                self.viewData.activityPoints = self.getActivityPoints(self.viewData)
+                self.updateScreen?(self.viewData)
 
-                dispatchGroup.notify(queue: DispatchQueue.main) { [weak self] in
-                    guard let self = self else {
-                        return
-                    }
-
-                    self.updateScreen?(self.viewData.chart)
-
-                    // Request for use in background
-                    self.locationManager.requestAlwaysAuthorization()
-                }
+                // Request for use in background
+                self.locationManager.requestAlwaysAuthorization()
             }
         }
     }
 
+    private func getActivityIndex(_ viewData: ActivityViewData) -> Double{
+        let index = Double(weekSteps.reduce(0,+) / Const.daysInWeek / 100)
+        return index
+    }
 
-    func getWeekDays() -> [String] {
-        let date = Date()
-        return date.lastWeekDaysArray()
+    private func getActivityPoints(_ viewData: ActivityViewData) -> String {
+        return "67"
     }
 
 

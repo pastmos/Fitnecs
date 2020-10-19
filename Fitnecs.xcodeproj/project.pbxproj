@@ -14,11 +14,13 @@
 		268B25B72539BF23008BC076 /* Statistics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 268B25B62539BF23008BC076 /* Statistics.storyboard */; };
 		268B25BA2539BF43008BC076 /* StatisticsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268B25B92539BF43008BC076 /* StatisticsCoordinator.swift */; };
 		268B25C02539C076008BC076 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268B25BF2539C076008BC076 /* StatisticsViewController.swift */; };
-		268B25C32539C089008BC076 /* SattisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268B25C22539C089008BC076 /* SattisticsViewModel.swift */; };
+		268B25C32539C089008BC076 /* StatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268B25C22539C089008BC076 /* StatisticsViewModel.swift */; };
 		268B25E6253A2361008BC076 /* Calibri-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 268B25E4253A235A008BC076 /* Calibri-Bold.ttf */; };
 		268B25E8253A2364008BC076 /* Calibri-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 268B25E2253A235A008BC076 /* Calibri-Italic.ttf */; };
 		268B25EA253A2366008BC076 /* Calibri-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 268B25E3253A235A008BC076 /* Calibri-Light.ttf */; };
 		268B25EC253A2369008BC076 /* Calibri-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 268B25E5253A235A008BC076 /* Calibri-Regular.ttf */; };
+		268B25FE253DCB91008BC076 /* StatisticsViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268B25FD253DCB91008BC076 /* StatisticsViewData.swift */; };
+		268B2602253DD023008BC076 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268B2601253DD023008BC076 /* Const.swift */; };
 		26D4C78F2523372300F645A3 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26D4C78E2523372300F645A3 /* HealthKit.framework */; };
 		26D4C792252350EA00F645A3 /* HealthKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D4C791252350EA00F645A3 /* HealthKitService.swift */; };
 		26D4C795252369D000F645A3 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D4C794252369D000F645A3 /* Date.swift */; };
@@ -111,11 +113,19 @@
 		268B25B62539BF23008BC076 /* Statistics.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Statistics.storyboard; sourceTree = "<group>"; };
 		268B25B92539BF43008BC076 /* StatisticsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsCoordinator.swift; sourceTree = "<group>"; };
 		268B25BF2539C076008BC076 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
-		268B25C22539C089008BC076 /* SattisticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SattisticsViewModel.swift; sourceTree = "<group>"; };
+		268B25C22539C089008BC076 /* StatisticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewModel.swift; sourceTree = "<group>"; };
 		268B25E2253A235A008BC076 /* Calibri-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri-Italic.ttf"; sourceTree = "<group>"; };
 		268B25E3253A235A008BC076 /* Calibri-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri-Light.ttf"; sourceTree = "<group>"; };
 		268B25E4253A235A008BC076 /* Calibri-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri-Bold.ttf"; sourceTree = "<group>"; };
 		268B25E5253A235A008BC076 /* Calibri-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri-Regular.ttf"; sourceTree = "<group>"; };
+		268B25F4253D7A38008BC076 /* Circe-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Circe-Light.ttf"; sourceTree = "<group>"; };
+		268B25F5253D7A38008BC076 /* Circe-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Circe-Regular.ttf"; sourceTree = "<group>"; };
+		268B25F6253D7A38008BC076 /* Circe-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Circe-ExtraBold.ttf"; sourceTree = "<group>"; };
+		268B25F7253D7A38008BC076 /* Circe-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Circe-ExtraLight.ttf"; sourceTree = "<group>"; };
+		268B25F8253D7A39008BC076 /* Circe-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Circe-Bold.ttf"; sourceTree = "<group>"; };
+		268B25F9253D7A39008BC076 /* Circe-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Circe-Thin.ttf"; sourceTree = "<group>"; };
+		268B25FD253DCB91008BC076 /* StatisticsViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewData.swift; sourceTree = "<group>"; };
+		268B2601253DD023008BC076 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		26D4C78D2523372300F645A3 /* Fitnecs.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Fitnecs.entitlements; sourceTree = "<group>"; };
 		26D4C78E2523372300F645A3 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		26D4C791252350EA00F645A3 /* HealthKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitService.swift; sourceTree = "<group>"; };
@@ -225,6 +235,7 @@
 				268B25B92539BF43008BC076 /* StatisticsCoordinator.swift */,
 				268B25BC2539BF50008BC076 /* ViewControllers */,
 				268B25BD2539BF5F008BC076 /* ViewModels */,
+				268B25FC253DCB51008BC076 /* ViewDatas */,
 			);
 			path = Statistics;
 			sourceTree = "<group>";
@@ -254,9 +265,25 @@
 		268B25BD2539BF5F008BC076 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				268B25C22539C089008BC076 /* SattisticsViewModel.swift */,
+				268B25C22539C089008BC076 /* StatisticsViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		268B25FC253DCB51008BC076 /* ViewDatas */ = {
+			isa = PBXGroup;
+			children = (
+				268B25FD253DCB91008BC076 /* StatisticsViewData.swift */,
+			);
+			path = ViewDatas;
+			sourceTree = "<group>";
+		};
+		268B2600253DD008008BC076 /* Const */ = {
+			isa = PBXGroup;
+			children = (
+				268B2601253DD023008BC076 /* Const.swift */,
+			);
+			path = Const;
 			sourceTree = "<group>";
 		};
 		26D4C79725237EAB00F645A3 /* ViewDatas */ = {
@@ -357,6 +384,7 @@
 				CEAE8A55251CBDD600E7EF87 /* Views */,
 				CEAE8771251B579800E7EF87 /* ViewDatas */,
 				CEAE89C0251B818E00E7EF87 /* Models */,
+				268B2600253DD008008BC076 /* Const */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -476,6 +504,12 @@
 				268B25E2253A235A008BC076 /* Calibri-Italic.ttf */,
 				268B25E3253A235A008BC076 /* Calibri-Light.ttf */,
 				268B25E5253A235A008BC076 /* Calibri-Regular.ttf */,
+				268B25F8253D7A39008BC076 /* Circe-Bold.ttf */,
+				268B25F6253D7A38008BC076 /* Circe-ExtraBold.ttf */,
+				268B25F7253D7A38008BC076 /* Circe-ExtraLight.ttf */,
+				268B25F4253D7A38008BC076 /* Circe-Light.ttf */,
+				268B25F5253D7A38008BC076 /* Circe-Regular.ttf */,
+				268B25F9253D7A39008BC076 /* Circe-Thin.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -961,7 +995,7 @@
 				CEAE89C6251B81D000E7EF87 /* ConfirmationModel.swift in Sources */,
 				CEAE8A57251CBE1D00E7EF87 /* RoundedView.swift in Sources */,
 				CEAE87AC251B63E300E7EF87 /* CoverTransitionInteractor.swift in Sources */,
-				268B25C32539C089008BC076 /* SattisticsViewModel.swift in Sources */,
+				268B25C32539C089008BC076 /* StatisticsViewModel.swift in Sources */,
 				CEAE8AB1251CC0DE00E7EF87 /* MainViewController.swift in Sources */,
 				CEAE87A8251B63E300E7EF87 /* TextFieldViewController.swift in Sources */,
 				CEAE8ACD251CC0DE00E7EF87 /* LoginViewModel.swift in Sources */,
@@ -984,6 +1018,7 @@
 				CE8B3F2925212EAA00F4FEED /* GeoViewModel.swift in Sources */,
 				2652CB5425388A200013827D /* Double.swift in Sources */,
 				CEAE87AF251B63E300E7EF87 /* CoverDismissTransitionAnimator.swift in Sources */,
+				268B2602253DD023008BC076 /* Const.swift in Sources */,
 				CEAE8787251B621600E7EF87 /* AlertViewController.swift in Sources */,
 				CEAE8B2A251CD34500E7EF87 /* ValidationService.swift in Sources */,
 				CEAE8AB5251CC0DE00E7EF87 /* MainCoordinator.swift in Sources */,
@@ -994,6 +1029,7 @@
 				CEAE89BA251B805700E7EF87 /* RootViewModel.swift in Sources */,
 				CEAE877B251B57DA00E7EF87 /* SmallModalViewData.swift in Sources */,
 				CEAE890D251B7A0800E7EF87 /* UserModel.swift in Sources */,
+				268B25FE253DCB91008BC076 /* StatisticsViewData.swift in Sources */,
 				CEAE89BD251B805700E7EF87 /* RootCoordinator.swift in Sources */,
 				CEAE88C8251B74A400E7EF87 /* AuthorizationAPIService.swift in Sources */,
 				CEAE8B34251CD42A00E7EF87 /* HtmlArticleViewModel.swift in Sources */,
