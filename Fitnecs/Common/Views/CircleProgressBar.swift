@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 
 class CircularProgressBar: UIView {
@@ -14,8 +15,8 @@ class CircularProgressBar: UIView {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupView()
-        label.text = "0"
+        self.label = makeLabel(withText: "", 10, width: self.bounds.width * 0.8)
+        self.addSubview(label)
     }
 
 
@@ -37,7 +38,7 @@ class CircularProgressBar: UIView {
     public var maxValue: Double = 100
 
 
-    public var wholeCircleAnimationDuration: Double = 1.2
+    public var wholeCircleAnimationDuration: Double = 1
 
     public var lineBackgroundColor: UIColor = Assets.Colors.backgroundProgress.color
     public var lineColor: UIColor = .blue {
@@ -46,6 +47,7 @@ class CircularProgressBar: UIView {
         }
     }
     public var lineFinishColor: UIColor = .green
+
 
     public func setProgress(to progressConstant: Double, maxValue: Double, lineColor: UIColor, thickness: CGFloat = 4, isFractional: Bool = true, withAnimation: Bool = true) {
 
@@ -114,7 +116,7 @@ class CircularProgressBar: UIView {
     }
 
     private var pathCenter: CGPoint{
-        get{ return self.convert(self.center, from:self.superview) }
+        get{ return self.convert(self.center, from: self.superview) }
     }
 
     private var isFractional = true
@@ -174,10 +176,15 @@ class CircularProgressBar: UIView {
     }
 
     override func layoutSubviews() {
+        super.layoutSubviews()
+
         setupView()
-        let fontSize = CGFloat(self.bounds.width / 4.5)
-        self.label = makeLabel(withText: "0", fontSize, width: self.bounds.width * 0.8)
-        self.addSubview(label)
+
+        self.label.font = FontFamily.Calibri.regular.font(size: CGFloat(self.bounds.width / 4.5))
+        self.label.snp.makeConstraints { (make) in
+            make.width.equalTo(self.bounds.width * 0.8)
+            make.center.equalTo(self)
+        }
     }
 
 }
