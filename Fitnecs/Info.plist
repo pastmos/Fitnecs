@@ -2,13 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Calibri-Regular.ttf</string>
-		<string>Calibri-Bold.ttf</string>
-		<string>Calibri-Light.ttf</string>
-		<string>Calibri-Italic.ttf</string>
-	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -41,6 +34,13 @@
 	<string>Доступ к геолокации необходим приложению для позиционирования пользователя</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Доступ к геолокации необходим приложению для позиционирования пользователя</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Calibri-Regular.ttf</string>
+		<string>Calibri-Bold.ttf</string>
+		<string>Calibri-Light.ttf</string>
+		<string>Calibri-Italic.ttf</string>
+	</array>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UIBackgroundModes</key>
