@@ -1,22 +1,21 @@
 //
-//  StatisticsViewController.swift
+//  ProfileViewController.swift
 //  Fitnecs
 //
-//  Created by Panov Sergey on 16.10.2020.
+//  Created by Panov Sergey on 20.10.2020.
 //
 
 import UIKit
-import Charts
 
 
 // MARK: - ActivityViewController
 
-class StatisticsViewController: UIViewController {
+class ProfileViewController: UIViewController {
 
 
     // MARK: Properties
 
-    var viewModel: StatisticsViewModelProtocol?
+    var viewModel: ProfileViewModelProtocol?
 
 
     // MARK: Lifecycle

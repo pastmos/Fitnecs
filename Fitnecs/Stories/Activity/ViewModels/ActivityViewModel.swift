@@ -61,7 +61,7 @@ class ActivityViewModel: ActivityViewModelProtocol {
 
     let locationManager = CLLocationManager()
 
-    var weekSteps: [Int] = [0,0,0,0,0,0,0]
+    var weekSteps: [Double] = [0,0,0,0,0,0,0]
 
     init(healthService: HealthKitServiceProtocol = HealthKitService()) {
         self.healthService = healthService
@@ -115,7 +115,7 @@ class ActivityViewModel: ActivityViewModelProtocol {
 
                 dispatchGroup.enter()
                 self.healthService?.getStepCount(startDate: startDay, endDate: endDay) { steps in
-                    self.weekSteps[i] = Int(steps)
+                    self.weekSteps[i] = steps
                     dispatchGroup.leave()
                 }
             }
@@ -137,7 +137,7 @@ class ActivityViewModel: ActivityViewModelProtocol {
     }
 
     private func getActivityIndex(_ viewData: ActivityViewData) -> Double{
-        let index = Double(weekSteps.reduce(0,+) / Const.daysInWeek / 100)
+        let index = weekSteps.reduce(0, +) / Double(Const.daysInWeek) / 100
         return index
     }
 

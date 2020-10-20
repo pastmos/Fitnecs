@@ -1,8 +1,19 @@
 {
   "images" : [
     {
-      "filename" : "activity-tab24.png",
-      "idiom" : "universal"
+      "filename" : "activity-tab1x.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "activity-tab2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "activity-tab3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

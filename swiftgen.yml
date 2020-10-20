@@ -22,7 +22,10 @@ ib:
     'Fitnecs/Stories/Auth/Auth.storyboard',
     'Fitnecs/Stories/Main/Main.storyboard',
     'Fitnecs/Stories/Activity/Activity.storyboard',
-    'Fitnecs/Stories/Geo/Geo.storyboard']
+    'Fitnecs/Stories/Geo/Geo.storyboard',
+    'Fitnecs/Stories/Statistics/Statistics.storyboard',
+    'Fitnecs/Stories/Profile/Profile.storyboard',
+    'Fitnecs/Stories/Achievements/Achievements.storyboard']
 
   outputs:
     templateName: scenes-swift5

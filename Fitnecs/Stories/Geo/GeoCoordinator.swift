@@ -20,7 +20,7 @@ class GeoCoordinator: Coordinator {
 
     private lazy var geoViewController: GeoViewController = {
         let geoViewController = Storyboards.Geo.geoViewController.instantiate()
-        geoViewController.tabBarItem = UITabBarItem(title: "Геопозиция", image: Assets.Images.geoTab.image, selectedImage: Assets.Images.geoTab.image)
+        geoViewController.tabBarItem = UITabBarItem(title: Strings.Tabs.Geo.title, image: Assets.Images.geoTab.image, selectedImage: Assets.Images.geoTab.image)
         let viewModel = GeoViewModel()
         viewModel.coordinatorDelegate = self
         geoViewController.viewModel = viewModel

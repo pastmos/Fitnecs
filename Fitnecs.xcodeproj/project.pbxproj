@@ -21,6 +21,14 @@
 		268B25EC253A2369008BC076 /* Calibri-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 268B25E5253A235A008BC076 /* Calibri-Regular.ttf */; };
 		268B25FE253DCB91008BC076 /* StatisticsViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268B25FD253DCB91008BC076 /* StatisticsViewData.swift */; };
 		268B2602253DD023008BC076 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268B2601253DD023008BC076 /* Const.swift */; };
+		268B260A253F04DB008BC076 /* Achievements.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 268B2609253F04DB008BC076 /* Achievements.storyboard */; };
+		268B2610253F0719008BC076 /* AchievementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268B260F253F0719008BC076 /* AchievementsViewController.swift */; };
+		268B2613253F0765008BC076 /* AchievementsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268B2612253F0765008BC076 /* AchievementsViewModel.swift */; };
+		268B2616253F08B6008BC076 /* AchievementsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268B2615253F08B6008BC076 /* AchievementsCoordinator.swift */; };
+		268B261D253F0A50008BC076 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 268B261C253F0A50008BC076 /* Profile.storyboard */; };
+		268B2620253F0A63008BC076 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268B261F253F0A63008BC076 /* ProfileCoordinator.swift */; };
+		268B2625253F0BF9008BC076 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268B2624253F0BF9008BC076 /* ProfileViewController.swift */; };
+		268B2629253F0C39008BC076 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268B2628253F0C39008BC076 /* ProfileViewModel.swift */; };
 		26D4C78F2523372300F645A3 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26D4C78E2523372300F645A3 /* HealthKit.framework */; };
 		26D4C792252350EA00F645A3 /* HealthKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D4C791252350EA00F645A3 /* HealthKitService.swift */; };
 		26D4C795252369D000F645A3 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D4C794252369D000F645A3 /* Date.swift */; };
@@ -126,6 +134,14 @@
 		268B25F9253D7A39008BC076 /* Circe-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Circe-Thin.ttf"; sourceTree = "<group>"; };
 		268B25FD253DCB91008BC076 /* StatisticsViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewData.swift; sourceTree = "<group>"; };
 		268B2601253DD023008BC076 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		268B2609253F04DB008BC076 /* Achievements.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Achievements.storyboard; sourceTree = "<group>"; };
+		268B260F253F0719008BC076 /* AchievementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsViewController.swift; sourceTree = "<group>"; };
+		268B2612253F0765008BC076 /* AchievementsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsViewModel.swift; sourceTree = "<group>"; };
+		268B2615253F08B6008BC076 /* AchievementsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsCoordinator.swift; sourceTree = "<group>"; };
+		268B261C253F0A50008BC076 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		268B261F253F0A63008BC076 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		268B2624253F0BF9008BC076 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		268B2628253F0C39008BC076 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		26D4C78D2523372300F645A3 /* Fitnecs.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Fitnecs.entitlements; sourceTree = "<group>"; };
 		26D4C78E2523372300F645A3 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		26D4C791252350EA00F645A3 /* HealthKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitService.swift; sourceTree = "<group>"; };
@@ -243,15 +259,25 @@
 		268B25B42539BC7F008BC076 /* Achievements */ = {
 			isa = PBXGroup;
 			children = (
+				268B2609253F04DB008BC076 /* Achievements.storyboard */,
+				268B2615253F08B6008BC076 /* AchievementsCoordinator.swift */,
+				268B2608253F04C1008BC076 /* ViewControllers */,
+				268B260C253F04E6008BC076 /* ViewModels */,
+				268B260D253F04F3008BC076 /* ViewDatas */,
 			);
 			path = Achievements;
 			sourceTree = "<group>";
 		};
-		268B25B52539BCAE008BC076 /* Menu */ = {
+		268B25B52539BCAE008BC076 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				268B261C253F0A50008BC076 /* Profile.storyboard */,
+				268B261F253F0A63008BC076 /* ProfileCoordinator.swift */,
+				268B2619253F09E9008BC076 /* ViewControllers */,
+				268B261A253F09F3008BC076 /* ViewModels */,
+				268B261B253F0A0A008BC076 /* ViewDatas */,
 			);
-			path = Menu;
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		268B25BC2539BF50008BC076 /* ViewControllers */ = {
@@ -284,6 +310,52 @@
 				268B2601253DD023008BC076 /* Const.swift */,
 			);
 			path = Const;
+			sourceTree = "<group>";
+		};
+		268B2608253F04C1008BC076 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				268B260F253F0719008BC076 /* AchievementsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		268B260C253F04E6008BC076 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				268B2612253F0765008BC076 /* AchievementsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		268B260D253F04F3008BC076 /* ViewDatas */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewDatas;
+			sourceTree = "<group>";
+		};
+		268B2619253F09E9008BC076 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				268B2624253F0BF9008BC076 /* ProfileViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		268B261A253F09F3008BC076 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				268B2628253F0C39008BC076 /* ProfileViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		268B261B253F0A0A008BC076 /* ViewDatas */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewDatas;
 			sourceTree = "<group>";
 		};
 		26D4C79725237EAB00F645A3 /* ViewDatas */ = {
@@ -346,11 +418,10 @@
 			isa = PBXGroup;
 			children = (
 				26D4C78D2523372300F645A3 /* Fitnecs.entitlements */,
-				CEAE88C2251B73F900E7EF87 /* Network */,
 				CEAE8871251B70B700E7EF87 /* Generated */,
-				CEAE88E7251B770300E7EF87 /* Services */,
-				CEAE8770251B577500E7EF87 /* Common */,
 				CEAE876C251B570000E7EF87 /* Extensions */,
+				CEAE88E7251B770300E7EF87 /* Services */,
+				CEAE88C2251B73F900E7EF87 /* Network */,
 				CEAE8794251B636E00E7EF87 /* Stories */,
 				CE842E4E251B508E00C4CD96 /* AppDelegate.swift */,
 				CEAE8769251B562700E7EF87 /* Coordinator.swift */,
@@ -424,7 +495,7 @@
 				268B25B42539BC7F008BC076 /* Achievements */,
 				CE72CF502520FE4A00EEE4FD /* Activity */,
 				CEFAB9462521238E00F58048 /* Geo */,
-				268B25B52539BCAE008BC076 /* Menu */,
+				268B25B52539BCAE008BC076 /* Profile */,
 			);
 			path = Stories;
 			sourceTree = "<group>";
@@ -475,6 +546,7 @@
 		CEAE8871251B70B700E7EF87 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
+				CEAE8770251B577500E7EF87 /* Common */,
 				CEAE88BB251B73A500E7EF87 /* assets-images.swift */,
 				CEAE88BC251B73A500E7EF87 /* fonts.swift */,
 				CEAE88BA251B73A400E7EF87 /* storyboards.swift */,
@@ -487,8 +559,8 @@
 		CEAE8884251B736600E7EF87 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CEAE8885251B736600E7EF87 /* Colors.xcassets */,
 				CEAE8886251B736600E7EF87 /* Localizable.strings */,
+				CEAE8885251B736600E7EF87 /* Colors.xcassets */,
 				CEAE8887251B736600E7EF87 /* Images.xcassets */,
 				26111D45252DE80A00587485 /* GoogleService-Info.plist */,
 				CEAE8888251B736600E7EF87 /* Fonts */,
@@ -643,7 +715,6 @@
 				CEAE8A60251CC0DD00E7EF87 /* ViewControllers */,
 				CEAE8A5A251CC0DD00E7EF87 /* ViewModels */,
 				CEAE8A68251CC0DD00E7EF87 /* ViewDatas */,
-				CEAE8A6C251CC0DD00E7EF87 /* Views */,
 			);
 			name = Main;
 			path = Fitnecs/Stories/Main;
@@ -671,13 +742,6 @@
 				CEAE8A6B251CC0DD00E7EF87 /* MainViewData.swift */,
 			);
 			path = ViewDatas;
-			sourceTree = "<group>";
-		};
-		CEAE8A6C251CC0DD00E7EF87 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		CEAE8A83251CC0DE00E7EF87 /* Auth */ = {
@@ -841,6 +905,7 @@
 			files = (
 				CE72CF522520FE6900EEE4FD /* Activity.storyboard in Resources */,
 				CE842E5B251B509100C4CD96 /* LaunchScreen.storyboard in Resources */,
+				268B260A253F04DB008BC076 /* Achievements.storyboard in Resources */,
 				268B25EC253A2369008BC076 /* Calibri-Regular.ttf in Resources */,
 				CE8B3F1E25212B5200F4FEED /* Geo.storyboard in Resources */,
 				CEAE88A1251B736600E7EF87 /* Images.xcassets in Resources */,
@@ -855,6 +920,7 @@
 				CEAE8905251B797500E7EF87 /* Demo.xcconfig in Resources */,
 				CEAE87A6251B63E300E7EF87 /* PopupContentViewController.xib in Resources */,
 				CEAE89BB251B805700E7EF87 /* Root.storyboard in Resources */,
+				268B261D253F0A50008BC076 /* Profile.storyboard in Resources */,
 				CEAE8AD7251CC0DF00E7EF87 /* Auth.storyboard in Resources */,
 				268B25E8253A2364008BC076 /* Calibri-Italic.ttf in Resources */,
 				CEAE88A0251B736600E7EF87 /* Localizable.strings in Resources */,
@@ -997,6 +1063,7 @@
 				CEAE87AC251B63E300E7EF87 /* CoverTransitionInteractor.swift in Sources */,
 				268B25C32539C089008BC076 /* StatisticsViewModel.swift in Sources */,
 				CEAE8AB1251CC0DE00E7EF87 /* MainViewController.swift in Sources */,
+				268B2620253F0A63008BC076 /* ProfileCoordinator.swift in Sources */,
 				CEAE87A8251B63E300E7EF87 /* TextFieldViewController.swift in Sources */,
 				CEAE8ACD251CC0DE00E7EF87 /* LoginViewModel.swift in Sources */,
 				26D4C795252369D000F645A3 /* Date.swift in Sources */,
@@ -1005,6 +1072,7 @@
 				CEAE88E9251B770300E7EF87 /* StorageService.swift in Sources */,
 				CEAE8AD6251CC0DE00E7EF87 /* AuthCoordinator.swift in Sources */,
 				26D4C792252350EA00F645A3 /* HealthKitService.swift in Sources */,
+				268B2610253F0719008BC076 /* AchievementsViewController.swift in Sources */,
 				CEAE88BE251B73A500E7EF87 /* storyboards.swift in Sources */,
 				268B25B02539AE82008BC076 /* CircleProgressBar.swift in Sources */,
 				26893DBC2521DCB900604B44 /* GeoViewController.swift in Sources */,
@@ -1029,11 +1097,15 @@
 				CEAE89BA251B805700E7EF87 /* RootViewModel.swift in Sources */,
 				CEAE877B251B57DA00E7EF87 /* SmallModalViewData.swift in Sources */,
 				CEAE890D251B7A0800E7EF87 /* UserModel.swift in Sources */,
+				268B2629253F0C39008BC076 /* ProfileViewModel.swift in Sources */,
 				268B25FE253DCB91008BC076 /* StatisticsViewData.swift in Sources */,
 				CEAE89BD251B805700E7EF87 /* RootCoordinator.swift in Sources */,
 				CEAE88C8251B74A400E7EF87 /* AuthorizationAPIService.swift in Sources */,
+				268B2616253F08B6008BC076 /* AchievementsCoordinator.swift in Sources */,
+				268B2625253F0BF9008BC076 /* ProfileViewController.swift in Sources */,
 				CEAE8B34251CD42A00E7EF87 /* HtmlArticleViewModel.swift in Sources */,
 				CEAE88CD251B74DA00E7EF87 /* APIConfig.swift in Sources */,
+				268B2613253F0765008BC076 /* AchievementsViewModel.swift in Sources */,
 				CEFAB9432521111900F58048 /* ActivityViewModel.swift in Sources */,
 				CE842E4F251B508E00C4CD96 /* AppDelegate.swift in Sources */,
 				CEAE88C0251B73A500E7EF87 /* fonts.swift in Sources */,

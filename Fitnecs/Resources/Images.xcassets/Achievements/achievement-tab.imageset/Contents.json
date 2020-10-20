@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "geo-tab1x.png",
+      "filename" : "achievement-tab1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "geo-tab2x.png",
+      "filename" : "achievement-tab2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "geo-tab3x.png",
+      "filename" : "achievement-tab3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

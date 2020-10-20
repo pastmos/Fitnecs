@@ -65,13 +65,17 @@ internal enum Assets {
     }
   }
   internal enum Images {
+    internal static let achievementTab = ImageAsset(name: "achievement-tab")
     internal static let activityTab = ImageAsset(name: "activity-tab")
     internal static let footSteps = ImageAsset(name: "foot-steps")
     internal static let heightIcon = ImageAsset(name: "height-icon")
     internal static let userAvatarTest = ImageAsset(name: "user-avatar-test")
     internal static let weightIcon = ImageAsset(name: "weight-icon")
+    internal static let underConstruction = ImageAsset(name: "under-construction")
     internal static let geoTab = ImageAsset(name: "geo-tab")
     internal static let logo = ImageAsset(name: "logo")
+    internal static let profileTab = ImageAsset(name: "profile-tab")
+    internal static let statisticsTab = ImageAsset(name: "statistics-tab")
   }
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name

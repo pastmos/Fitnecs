@@ -49,6 +49,21 @@ class MainCoordinator: Coordinator {
         return geoCoordinator
     }()
 
+    private lazy var achievementsCoordinator: AchievementsCoordinator = {
+        let achievementsCoordinator = AchievementsCoordinator()
+        return achievementsCoordinator
+    }()
+
+    private lazy var statisticsCoordinator: StatisticsCoordinator = {
+        let statisticsCoordinator = StatisticsCoordinator()
+        return statisticsCoordinator
+    }()
+
+    private lazy var profileCoordinator: ProfileCoordinator = {
+        let profileCoordinator = ProfileCoordinator()
+        return profileCoordinator
+    }()
+
     private var smallModalViewController: SmallModalViewController?
 
 
@@ -73,6 +88,9 @@ class MainCoordinator: Coordinator {
 
         activityCoordinator.start(mainViewController)
         geoCoordinator.start(mainViewController)
+        achievementsCoordinator.start(mainViewController)
+        statisticsCoordinator.start(mainViewController)
+        profileCoordinator.start(mainViewController)
     }
 
     override func finish() {

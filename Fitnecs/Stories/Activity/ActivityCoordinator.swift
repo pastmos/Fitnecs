@@ -20,7 +20,7 @@ class ActivityCoordinator: Coordinator {
 
     private lazy var activityViewController: ActivityViewController = {
         let activityViewController = Storyboards.Activity.activityViewController.instantiate()
-        activityViewController.tabBarItem = UITabBarItem(title: "Активность", image: Assets.Images.activityTab.image, selectedImage: Assets.Images.activityTab.image)
+        activityViewController.tabBarItem = UITabBarItem(title: Strings.Tabs.Activity.title, image: Assets.Images.activityTab.image, selectedImage: Assets.Images.activityTab.image)
         let viewModel = ActivityViewModel()
         viewModel.coordinatorDelegate = self
         activityViewController.viewModel = viewModel
