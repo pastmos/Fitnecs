@@ -77,16 +77,15 @@ class CircularProgressBar: UIView {
             animation.toValue = progress / maxValue
             animation.duration = animationDuration
             foregroundLayer.add(animation, forKey: "foregroundAnimation")
-
         }
 
-        var currentTime:Double = 0
-        let timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { (timer) in
+        var currentTime: Double = 0
+        let timer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { (timer) in
             if currentTime >= animationDuration {
                 self.label.text = isFractional ? "\(Double(progress).roundTo(1))" : "\(Int(progress))"
                 timer.invalidate()
             } else {
-                currentTime += 0.01
+                currentTime += 0.05
                 var currentProgress = (currentTime/animationDuration * progress)
                 currentProgress = isFractional ? currentProgress.roundTo(1) : floor(currentProgress)
 //                if isFractional && currentProgress.truncatingRemainder(dividingBy: 1) < 0.01 {

@@ -30,20 +30,20 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fGd-w0-Sdy">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="992"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1277"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ygn-D1-JaO">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="329.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MyC-2Q-nWr" customClass="CircularProgressBar" customModule="Fitnecs" customModuleProvider="target">
-                                                        <rect key="frame" x="124" y="70" width="166" height="165.5"/>
+                                                        <rect key="frame" x="124" y="50" width="166" height="165.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="MyC-2Q-nWr" secondAttribute="height" multiplier="1:1" id="C9j-Ii-x86"/>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{ Activity index}" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Gf-q4-5k3">
-                                                        <rect key="frame" x="10" y="255.5" width="394" height="44"/>
+                                                        <rect key="frame" x="10" y="235.5" width="394" height="64"/>
                                                         <fontDescription key="fontDescription" name="Circe-Bold" family="Circe" pointSize="23"/>
                                                         <color key="textColor" name="text-gray"/>
                                                         <nil key="highlightedColor"/>
@@ -57,7 +57,7 @@
                                                     <constraint firstAttribute="bottom" secondItem="9Gf-q4-5k3" secondAttribute="bottom" constant="30" id="Zpa-hf-HOU"/>
                                                     <constraint firstItem="MyC-2Q-nWr" firstAttribute="width" secondItem="Ygn-D1-JaO" secondAttribute="width" multiplier="0.4" id="kuZ-Kp-J7f"/>
                                                     <constraint firstItem="MyC-2Q-nWr" firstAttribute="centerX" secondItem="Ygn-D1-JaO" secondAttribute="centerX" id="r6u-VJ-f9f"/>
-                                                    <constraint firstItem="MyC-2Q-nWr" firstAttribute="top" secondItem="Ygn-D1-JaO" secondAttribute="top" constant="70" id="xav-C3-udy"/>
+                                                    <constraint firstItem="MyC-2Q-nWr" firstAttribute="top" secondItem="Ygn-D1-JaO" secondAttribute="top" constant="50" id="xav-C3-udy"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sru-qv-Fii">
@@ -233,29 +233,18 @@
                                                     <constraint firstItem="DZc-hT-D7n" firstAttribute="top" secondItem="Sru-qv-Fii" secondAttribute="top" id="tet-bo-zXg"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qu1-cb-vwU">
-                                                <rect key="frame" x="0.0" y="797.5" width="414" height="114.5"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="97x-Vl-Bmt">
+                                                <rect key="frame" x="0.0" y="797.5" width="414" height="329.5"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ole-Zc-G0u">
-                                                        <rect key="frame" x="40" y="30" width="74.5" height="74.5"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{ Points }" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6sm-nX-8GX">
-                                                                <rect key="frame" x="5" y="27" width="64.5" height="21"/>
-                                                                <fontDescription key="fontDescription" name="Circe-Regular" family="Circe" pointSize="18"/>
-                                                                <color key="textColor" name="dark-blue"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3yT-Ul-XYo" customClass="CircularProgressBar" customModule="Fitnecs" customModuleProvider="target">
+                                                        <rect key="frame" x="124" y="70" width="166" height="165.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstItem="6sm-nX-8GX" firstAttribute="centerY" secondItem="Ole-Zc-G0u" secondAttribute="centerY" id="60m-YL-88l"/>
-                                                            <constraint firstAttribute="trailing" secondItem="6sm-nX-8GX" secondAttribute="trailing" constant="5" id="90V-BJ-rku"/>
-                                                            <constraint firstItem="6sm-nX-8GX" firstAttribute="leading" secondItem="Ole-Zc-G0u" secondAttribute="leading" constant="5" id="BDu-aF-bnA"/>
-                                                            <constraint firstAttribute="width" secondItem="Ole-Zc-G0u" secondAttribute="height" multiplier="1:1" id="mSG-4F-lhk"/>
+                                                            <constraint firstAttribute="width" secondItem="3yT-Ul-XYo" secondAttribute="height" multiplier="1:1" id="hpv-cL-bq8"/>
                                                         </constraints>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{ Activity points }" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qsD-rL-y7E">
-                                                        <rect key="frame" x="134.5" y="54" width="259.5" height="27"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{ Activity points}" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJs-kv-QdN">
+                                                        <rect key="frame" x="10" y="255.5" width="394" height="44"/>
                                                         <fontDescription key="fontDescription" name="Circe-Bold" family="Circe" pointSize="23"/>
                                                         <color key="textColor" name="text-gray"/>
                                                         <nil key="highlightedColor"/>
@@ -263,20 +252,20 @@
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstItem="qsD-rL-y7E" firstAttribute="leading" secondItem="Ole-Zc-G0u" secondAttribute="trailing" constant="20" id="3hN-jH-ubq"/>
-                                                    <constraint firstAttribute="trailing" secondItem="qsD-rL-y7E" secondAttribute="trailing" constant="20" id="4fz-AH-fQd"/>
-                                                    <constraint firstItem="Ole-Zc-G0u" firstAttribute="top" secondItem="Qu1-cb-vwU" secondAttribute="top" constant="30" id="D3a-kz-y5S"/>
-                                                    <constraint firstAttribute="bottom" secondItem="Ole-Zc-G0u" secondAttribute="bottom" constant="10" id="NYq-2o-3dB"/>
-                                                    <constraint firstItem="Ole-Zc-G0u" firstAttribute="width" secondItem="Qu1-cb-vwU" secondAttribute="width" multiplier="0.18" id="Y8t-r0-oD4"/>
-                                                    <constraint firstItem="qsD-rL-y7E" firstAttribute="centerY" secondItem="Ole-Zc-G0u" secondAttribute="centerY" id="wGa-6X-lou"/>
-                                                    <constraint firstItem="Ole-Zc-G0u" firstAttribute="leading" secondItem="Qu1-cb-vwU" secondAttribute="leading" constant="40" id="xIa-Z0-CV7"/>
+                                                    <constraint firstAttribute="bottom" secondItem="GJs-kv-QdN" secondAttribute="bottom" constant="30" id="Amx-f9-uFM"/>
+                                                    <constraint firstItem="3yT-Ul-XYo" firstAttribute="centerX" secondItem="97x-Vl-Bmt" secondAttribute="centerX" id="BP4-Zy-V76"/>
+                                                    <constraint firstItem="3yT-Ul-XYo" firstAttribute="top" secondItem="97x-Vl-Bmt" secondAttribute="top" constant="70" id="dvh-LX-LnB"/>
+                                                    <constraint firstItem="3yT-Ul-XYo" firstAttribute="width" secondItem="97x-Vl-Bmt" secondAttribute="width" multiplier="0.4" id="hS3-U3-TZy"/>
+                                                    <constraint firstAttribute="trailing" secondItem="GJs-kv-QdN" secondAttribute="trailing" constant="10" id="lcK-Oe-3Pk"/>
+                                                    <constraint firstItem="GJs-kv-QdN" firstAttribute="leading" secondItem="97x-Vl-Bmt" secondAttribute="leading" constant="10" id="pUS-Q1-YOw"/>
+                                                    <constraint firstItem="GJs-kv-QdN" firstAttribute="top" secondItem="3yT-Ul-XYo" secondAttribute="bottom" constant="20" id="uwr-Ct-Znl"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eod-rN-R52">
-                                                <rect key="frame" x="0.0" y="912" width="414" height="80"/>
+                                                <rect key="frame" x="0.0" y="1127" width="414" height="150"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="80" id="NeH-2C-QJ7"/>
+                                                    <constraint firstAttribute="height" constant="150" id="NeH-2C-QJ7"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -304,11 +293,10 @@
                     <connections>
                         <outlet property="activityIndexCircleProgress" destination="MyC-2Q-nWr" id="h5t-sP-bPi"/>
                         <outlet property="activityLabel" destination="9Gf-q4-5k3" id="Fe4-ou-Ff8"/>
+                        <outlet property="activityPointsCircleProgress" destination="3yT-Ul-XYo" id="OQ0-HZ-fsm"/>
+                        <outlet property="activityPointsLabel" destination="GJs-kv-QdN" id="6i3-Li-J1q"/>
                         <outlet property="distanceCircleProgress" destination="rLe-cp-jzh" id="eS1-Ed-NdB"/>
                         <outlet property="distanceLabel" destination="XpZ-Wd-ktD" id="N0W-U8-Y8c"/>
-                        <outlet property="pointsCaptionLabel" destination="qsD-rL-y7E" id="F3c-hW-SVs"/>
-                        <outlet property="pointsLabel" destination="6sm-nX-8GX" id="E0n-ZT-RyI"/>
-                        <outlet property="pointsView" destination="Ole-Zc-G0u" id="3GA-Si-WWu"/>
                         <outlet property="sleepCircleProgress" destination="wjh-Be-KXC" id="OD2-rW-Hln"/>
                         <outlet property="sleepLabel" destination="fIC-ln-S48" id="Yqh-Sq-Kle"/>
                         <outlet property="stepsCircleProgress" destination="me9-Lp-Zsg" id="dUx-iC-5Xf"/>
@@ -321,11 +309,8 @@
         </scene>
     </scenes>
     <resources>
-        <namedColor name="dark-blue">
-            <color red="0.1616589427" green="0.33831423519999998" blue="0.84318131210000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
         <namedColor name="text-gray">
-            <color red="0.49806565050000001" green="0.4939963818" blue="0.50196212529999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.49799999594688416" green="0.49399998784065247" blue="0.50199997425079346" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

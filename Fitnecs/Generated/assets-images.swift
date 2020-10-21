@@ -66,15 +66,23 @@ internal enum Assets {
   }
   internal enum Images {
     internal static let achievementTab = ImageAsset(name: "achievement-tab")
+    internal static let awardActive = ImageAsset(name: "award-active")
+    internal static let awardInactive = ImageAsset(name: "award-inactive")
     internal static let activityTab = ImageAsset(name: "activity-tab")
     internal static let footSteps = ImageAsset(name: "foot-steps")
     internal static let heightIcon = ImageAsset(name: "height-icon")
-    internal static let userAvatarTest = ImageAsset(name: "user-avatar-test")
     internal static let weightIcon = ImageAsset(name: "weight-icon")
     internal static let underConstruction = ImageAsset(name: "under-construction")
     internal static let geoTab = ImageAsset(name: "geo-tab")
     internal static let logo = ImageAsset(name: "logo")
+    internal static let aboutMenuItem = ImageAsset(name: "about-menu-item")
+    internal static let logoutMenuItem = ImageAsset(name: "logout-menu-item")
+    internal static let newsMenuItem = ImageAsset(name: "news-menu-item")
+    internal static let physicalMenuItem = ImageAsset(name: "physical-menu-item")
     internal static let profileTab = ImageAsset(name: "profile-tab")
+    internal static let settingsMenuItem = ImageAsset(name: "settings-menu-item")
+    internal static let supportMenuItem = ImageAsset(name: "support-menu-item")
+    internal static let userAvatarTest = ImageAsset(name: "user-avatar-test")
     internal static let statisticsTab = ImageAsset(name: "statistics-tab")
   }
 }

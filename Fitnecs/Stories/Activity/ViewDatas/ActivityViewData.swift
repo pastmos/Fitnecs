@@ -15,6 +15,6 @@ struct ActivityViewData {
     var sleep: Double = 0
     var distance: Double = 0
     var activityIndex: Double = 0
-    var activityPoints: String = "0"
+    var activityPoints: Double = 0
 
 }

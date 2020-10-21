@@ -19,6 +19,7 @@ protocol AchievementsViewModelProtocol: AnyObject {
 
 
     // MARK: Data Sources
+    var awards: [AwardModel] { get }
 
 
     // MARK: Callbacks
@@ -46,6 +47,25 @@ class AchievementsViewModel: AchievementsViewModelProtocol {
     weak var coordinatorDelegate: AchievementsViewModelCoordinatorDelegate?
 
     // MARK: Variables
+    var awards: [AwardModel] = [
+        AwardModel(isActivated: true, number: 1),
+        AwardModel(isActivated: true, number: 2),
+        AwardModel(isActivated: true, number: 3),
+        AwardModel(isActivated: true, number: 4),
+        AwardModel(isActivated: true, number: 5),
+        AwardModel(isActivated: true, number: 6),
+        AwardModel(isActivated: true, number: 7),
+        AwardModel(isActivated: false, number: 8),
+        AwardModel(isActivated: false, number: 9),
+        AwardModel(isActivated: false, number: 10),
+        AwardModel(isActivated: false, number: 11),
+        AwardModel(isActivated: false, number: 12),
+        AwardModel(isActivated: false, number: 13),
+        AwardModel(isActivated: false, number: 14),
+        AwardModel(isActivated: false, number: 15),
+        AwardModel(isActivated: false, number: 16),
+        AwardModel(isActivated: false, number: 17)
+    ]
 
     // MARK: Callbacks
 

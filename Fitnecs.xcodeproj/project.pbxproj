@@ -29,6 +29,8 @@
 		268B2620253F0A63008BC076 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268B261F253F0A63008BC076 /* ProfileCoordinator.swift */; };
 		268B2625253F0BF9008BC076 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268B2624253F0BF9008BC076 /* ProfileViewController.swift */; };
 		268B2629253F0C39008BC076 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268B2628253F0C39008BC076 /* ProfileViewModel.swift */; };
+		26999C98253F2ACC002D1B49 /* AwardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26999C97253F2ACC002D1B49 /* AwardModel.swift */; };
+		26999C9E253F2C0F002D1B49 /* AwardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26999C9D253F2C0F002D1B49 /* AwardCollectionViewCell.swift */; };
 		26D4C78F2523372300F645A3 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26D4C78E2523372300F645A3 /* HealthKit.framework */; };
 		26D4C792252350EA00F645A3 /* HealthKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D4C791252350EA00F645A3 /* HealthKitService.swift */; };
 		26D4C795252369D000F645A3 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D4C794252369D000F645A3 /* Date.swift */; };
@@ -142,6 +144,8 @@
 		268B261F253F0A63008BC076 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		268B2624253F0BF9008BC076 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		268B2628253F0C39008BC076 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		26999C97253F2ACC002D1B49 /* AwardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardModel.swift; sourceTree = "<group>"; };
+		26999C9D253F2C0F002D1B49 /* AwardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardCollectionViewCell.swift; sourceTree = "<group>"; };
 		26D4C78D2523372300F645A3 /* Fitnecs.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Fitnecs.entitlements; sourceTree = "<group>"; };
 		26D4C78E2523372300F645A3 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		26D4C791252350EA00F645A3 /* HealthKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitService.swift; sourceTree = "<group>"; };
@@ -263,6 +267,8 @@
 				268B2615253F08B6008BC076 /* AchievementsCoordinator.swift */,
 				268B2608253F04C1008BC076 /* ViewControllers */,
 				268B260C253F04E6008BC076 /* ViewModels */,
+				26999C9B253F2BD0002D1B49 /* Views */,
+				26999C96253F2AB4002D1B49 /* Models */,
 				268B260D253F04F3008BC076 /* ViewDatas */,
 			);
 			path = Achievements;
@@ -358,6 +364,30 @@
 			path = ViewDatas;
 			sourceTree = "<group>";
 		};
+		26999C96253F2AB4002D1B49 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				26999C97253F2ACC002D1B49 /* AwardModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		26999C9B253F2BD0002D1B49 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				26999CA0253F2C16002D1B49 /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		26999CA0253F2C16002D1B49 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				26999C9D253F2C0F002D1B49 /* AwardCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		26D4C79725237EAB00F645A3 /* ViewDatas */ = {
 			isa = PBXGroup;
 			children = (
@@ -419,6 +449,7 @@
 			children = (
 				26D4C78D2523372300F645A3 /* Fitnecs.entitlements */,
 				CEAE8871251B70B700E7EF87 /* Generated */,
+				CEAE8770251B577500E7EF87 /* Common */,
 				CEAE876C251B570000E7EF87 /* Extensions */,
 				CEAE88E7251B770300E7EF87 /* Services */,
 				CEAE88C2251B73F900E7EF87 /* Network */,
@@ -546,7 +577,6 @@
 		CEAE8871251B70B700E7EF87 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
-				CEAE8770251B577500E7EF87 /* Common */,
 				CEAE88BB251B73A500E7EF87 /* assets-images.swift */,
 				CEAE88BC251B73A500E7EF87 /* fonts.swift */,
 				CEAE88BA251B73A400E7EF87 /* storyboards.swift */,
@@ -1104,11 +1134,13 @@
 				268B2616253F08B6008BC076 /* AchievementsCoordinator.swift in Sources */,
 				268B2625253F0BF9008BC076 /* ProfileViewController.swift in Sources */,
 				CEAE8B34251CD42A00E7EF87 /* HtmlArticleViewModel.swift in Sources */,
+				26999C98253F2ACC002D1B49 /* AwardModel.swift in Sources */,
 				CEAE88CD251B74DA00E7EF87 /* APIConfig.swift in Sources */,
 				268B2613253F0765008BC076 /* AchievementsViewModel.swift in Sources */,
 				CEFAB9432521111900F58048 /* ActivityViewModel.swift in Sources */,
 				CE842E4F251B508E00C4CD96 /* AppDelegate.swift in Sources */,
 				CEAE88C0251B73A500E7EF87 /* fonts.swift in Sources */,
+				26999C9E253F2C0F002D1B49 /* AwardCollectionViewCell.swift in Sources */,
 				CEAE876E251B573700E7EF87 /* UIWindow+TopController.swift in Sources */,
 				CEAE8788251B621600E7EF87 /* SmallModalViewController.swift in Sources */,
 				26D4C79925237EC400F645A3 /* ActivityViewData.swift in Sources */,
@@ -1253,7 +1285,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Fitnecs/Fitnecs.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = VS9ZZ3WKXQ;
 				INFOPLIST_FILE = Fitnecs/Info.plist;
@@ -1262,7 +1294,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.FitnecsApp.Fitnecs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1278,7 +1310,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Fitnecs/Fitnecs.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = VS9ZZ3WKXQ;
 				INFOPLIST_FILE = Fitnecs/Info.plist;
@@ -1287,7 +1319,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.FitnecsApp.Fitnecs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

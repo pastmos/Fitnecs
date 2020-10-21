@@ -250,7 +250,7 @@ internal enum Strings {
       internal static let title = Strings.tr("Localizable", "tabs.geo.title")
     }
     internal enum Profile {
-      /// Меню
+      /// Профиль
       internal static let title = Strings.tr("Localizable", "tabs.profile.title")
     }
     internal enum Statistics {

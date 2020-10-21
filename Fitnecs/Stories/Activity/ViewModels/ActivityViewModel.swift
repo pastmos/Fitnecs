@@ -141,8 +141,8 @@ class ActivityViewModel: ActivityViewModelProtocol {
         return index
     }
 
-    private func getActivityPoints(_ viewData: ActivityViewData) -> String {
-        return "67"
+    private func getActivityPoints(_ viewData: ActivityViewData) -> Double {
+        return 747
     }
 
 

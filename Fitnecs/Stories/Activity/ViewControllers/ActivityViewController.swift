@@ -17,6 +17,7 @@ class ActivityViewController: UIViewController {
     @IBOutlet weak var stepsCircleProgress: CircularProgressBar!
     @IBOutlet weak var sleepCircleProgress: CircularProgressBar!
     @IBOutlet weak var distanceCircleProgress: CircularProgressBar!
+    @IBOutlet weak var activityPointsCircleProgress: CircularProgressBar!
 
     @IBOutlet weak var activityLabel: UILabel! {
         didSet {
@@ -38,13 +39,13 @@ class ActivityViewController: UIViewController {
             distanceLabel.text = Strings.Activity.Distance.label
         }
     }
-    @IBOutlet weak var pointsCaptionLabel: UILabel! {
+
+    @IBOutlet weak var activityPointsLabel: UILabel! {
         didSet {
-            pointsCaptionLabel.text = Strings.Activity.Points.Caption.label
+            activityPointsLabel.text = Strings.Activity.Points.Caption.label
         }
     }
-    @IBOutlet weak var pointsView: UIView!
-    @IBOutlet weak var pointsLabel: UILabel!
+
 
     // MARK: Properties
 
@@ -61,7 +62,7 @@ class ActivityViewController: UIViewController {
         super.viewDidLoad()
 
         viewModel?.updateScreen = { [weak self] data in
-            self?.activityIndexCircleProgress.setProgress(to: data.activityIndex, maxValue: Const.activityIndexDay, lineColor: Assets.Colors.redProgress.color, thickness: 10)
+            self?.activityIndexCircleProgress.setProgress(to: data.activityIndex, maxValue: Const.activityIndexMax, lineColor: Assets.Colors.redProgress.color, thickness: 10)
 
             self?.stepsCircleProgress.setProgress(to: data.steps, maxValue: Const.stepsPerDay, lineColor: Assets.Colors.lightblueProgress.color, isFractional: false)
 
@@ -69,12 +70,9 @@ class ActivityViewController: UIViewController {
 
             self?.distanceCircleProgress.setProgress(to: data.distance, maxValue: Const.distancePerDay, lineColor: Assets.Colors.purpleProgress.color)
 
-            self?.pointsLabel.text = data.activityPoints
+            self?.activityPointsCircleProgress.setProgress(to: data.activityPoints, maxValue: Const.activityPointsMax, lineColor: Assets.Colors.redProgress.color, thickness: 10)
         }
 
-        pointsView.layer.cornerRadius = 12
-        pointsView.layer.borderWidth = 2
-        pointsView.layer.borderColor = Assets.Colors.darkBlue.color.cgColor
 
         viewModel?.start()
     }

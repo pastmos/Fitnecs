@@ -15,5 +15,6 @@ struct Const {
     static let stepsPerDay: Double = 10000
     static let distancePerDay: Double = 7
     static let sleepPerDay: Double = 8
-    static let activityIndexDay: Double = 100
+    static let activityIndexMax: Double = 100
+    static let activityPointsMax: Double = 1000
 }

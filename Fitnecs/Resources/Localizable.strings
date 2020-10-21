@@ -54,7 +54,7 @@
 "tabs.geo.title"                  = "Геопозиция";
 "tabs.statistics.title"           = "Статистика";
 "tabs.achievements.title"         = "Достижения";
-"tabs.profile.title"              = "Меню";
+"tabs.profile.title"              = "Профиль";
 
 //Activity
 "activity.index.label"             = "Индекс подвижности";
