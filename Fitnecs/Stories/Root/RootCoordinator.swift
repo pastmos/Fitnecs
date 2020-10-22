@@ -61,12 +61,6 @@ class RootCoordinator: Coordinator {
     }
 
 
-    // MARK: Public
-
-    func openAuthInterface(from coordinator: Coordinator, with screen: AuthCoordinator.Screen, phone: String = "") {
-        openAuthInterface(with: screen, phone: phone)
-        coordinator.finish()
-    }
 }
 
 
@@ -87,6 +81,11 @@ extension RootCoordinator {
         authCoordinator.delegate = self
         addChildCoordinator(authCoordinator)
         authCoordinator.start()
+    }
+
+    func openAuthInterface(from coordinator: Coordinator, with screen: AuthCoordinator.Screen, phone: String = "") {
+        openAuthInterface(with: screen, phone: phone)
+        coordinator.finish()
     }
 
     func openMainInterface() {

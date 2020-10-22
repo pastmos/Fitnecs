@@ -13,8 +13,8 @@ import Moya
 
 protocol AuthorizationAPIService {
 
-    func registration(username: String, password: String, _ completion: @escaping (Result<RegistrationModel, APIError>) -> Void)
-    func login(username: String, password: String, _ completion: @escaping (Result<LoginModel, APIError>) -> Void)
+    func registration(login: String, password: String, _ completion: @escaping (Result<RegistrationModel, APIError>) -> Void)
+    func login(login: String, password: String, _ completion: @escaping (Result<LoginModel, APIError>) -> Void)
 }
 
 
@@ -24,8 +24,8 @@ class AuthorizationAPIServiceImplementation: BaseAPIService, AuthorizationAPISer
 
     // MARK: AuthorizationAPIService
 
-    func registration(username: String, password: String, _ completion: @escaping (Result<RegistrationModel, APIError>) -> Void) {
-        provider.request(MultiTarget(AuthorizationAPI.tokenAuth(username: username, password: password))) { result in
+    func registration(login: String, password: String, _ completion: @escaping (Result<RegistrationModel, APIError>) -> Void) {
+        provider.request(MultiTarget(AuthorizationAPI.registration(login: login, password: password))) { result in
             let handledResult = self.handleNetworkResult(result, responseObject: RegistrationModel.self)
 
             switch handledResult {
@@ -38,8 +38,8 @@ class AuthorizationAPIServiceImplementation: BaseAPIService, AuthorizationAPISer
         }
     }
 
-    func login(username: String, password: String, _ completion: @escaping (Result<LoginModel, APIError>) -> Void) {
-        provider.request(MultiTarget(AuthorizationAPI.tokenAuth(username: username, password: password))) { result in
+    func login(login: String, password: String, _ completion: @escaping (Result<LoginModel, APIError>) -> Void) {
+        provider.request(MultiTarget(AuthorizationAPI.login(login: login, password: password))) { result in
             let handledResult = self.handleNetworkResult(result, responseObject: LoginModel.self)
 
             switch handledResult {

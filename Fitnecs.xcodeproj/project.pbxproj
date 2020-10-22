@@ -699,8 +699,8 @@
 			children = (
 				CEAE89B6251B805700E7EF87 /* Root.storyboard */,
 				CEAE89B9251B805700E7EF87 /* RootCoordinator.swift */,
-				CEAE89B4251B805700E7EF87 /* ViewModels */,
 				CEAE89B7251B805700E7EF87 /* ViewControllers */,
+				CEAE89B4251B805700E7EF87 /* ViewModels */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -784,7 +784,6 @@
 				CEAE8A91251CC0DE00E7EF87 /* ViewControllers */,
 				CEAE8A84251CC0DE00E7EF87 /* ViewModels */,
 				CEAE8A9B251CC0DE00E7EF87 /* ViewDatas */,
-				CEAE8AA4251CC0DE00E7EF87 /* Views */,
 			);
 			name = Auth;
 			path = Fitnecs/Stories/Auth;
@@ -812,13 +811,6 @@
 				CEAE8A9E251CC0DE00E7EF87 /* LoginViewData.swift */,
 			);
 			path = ViewDatas;
-			sourceTree = "<group>";
-		};
-		CEAE8AA4251CC0DE00E7EF87 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		CEAE8B2C251CD42A00E7EF87 /* ViewModels */ = {

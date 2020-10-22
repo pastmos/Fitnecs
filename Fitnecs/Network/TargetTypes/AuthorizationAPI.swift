@@ -11,10 +11,8 @@ import Moya
 // MARK: - Authorization API
 
 enum AuthorizationAPI {
-    case requestUserPassword(phone: String, acceptBankingInformation: Bool?)
-    case tokenAuth(username: String, password: String)
-    case changePassword(password: String)
-
+    case login(login: String, password: String)
+    case registration(login: String, password: String)
 }
 
 // MARK: - Target Type
@@ -31,35 +29,27 @@ extension AuthorizationAPI: TargetType, AccessTokenAuthorizable {
 
     var path: String {
         switch self {
-        case .requestUserPassword: return "anonymous/request-user-password/"
-        case .tokenAuth:           return "api-token-auth/"
-        case .changePassword:      return "personal/change-password/"
+        case .login:           return "auth/"
+        case .registration:    return "registration/"
         }
     }
 
     var method: Method {
         switch self {
-        case .requestUserPassword, .tokenAuth, .changePassword:
+        case .login, .registration:
             return .post
         }
     }
 
     var task: Task {
         switch self {
-        case .requestUserPassword(let phone, let acceptBankingInformation):
-            var parameters: [String: Any] = ["phone": phone]
 
-            if let acceptBankingInformation = acceptBankingInformation {
-                parameters["acceptBankingInformation"] = acceptBankingInformation
-            }
+        case .login(let username, let password):
+            let parameters = ["login": username, "password": password]
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
 
-        case .tokenAuth(let username, let password):
-            let parameters = ["username": username, "password": password]
-            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
-
-        case .changePassword(let password):
-            let parameters = ["password": password]
+        case .registration(let username, let password):
+            let parameters = ["login": password, "password": password]
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         }
     }
@@ -75,8 +65,7 @@ extension AuthorizationAPI: TargetType, AccessTokenAuthorizable {
 
     var authorizationType: AuthorizationType? {
         switch self {
-        case .requestUserPassword, .tokenAuth: return .none
-        case .changePassword:                  return .custom(APIConfig.tokenType)
+        case .registration, .login: return .none
         }
     }
 
@@ -87,11 +76,8 @@ extension AuthorizationAPI: TargetType, AccessTokenAuthorizable {
 extension AuthorizationAPI {
     var sampleData: Data {
         switch self {
-        case .requestUserPassword, .changePassword:
+        case .login, .registration:
             return stabbedResponse("RequestUserPassword")
-
-        case .tokenAuth:
-            return stabbedResponse("TokenAuth")
         }
     }
 }

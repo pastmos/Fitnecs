@@ -70,7 +70,7 @@ class LoginViewModel: LoginViewModelProtocol {
     func next(from controller: UIViewController) {
         state = .loading
 
-        authorizationAPIService.login(username: loginViewData.login, password: loginViewData.password) { [weak self] result in
+        authorizationAPIService.login(login: loginViewData.login, password: loginViewData.password) { [weak self] result in
             guard let self = self else {
                 return
             }
