@@ -10,7 +10,7 @@ import Foundation
 
 protocol LoginViewDataType {
 
-    var phone: String { get set }
+    var login: String { get set }
     var password: String { get set }
     var nextButtonEnabled: Bool { get }
 
@@ -21,17 +21,17 @@ struct LoginViewData: LoginViewDataType {
 
     // MARK: PhoheViewDataType
 
-    var phone: String
+    var login: String
     var password: String
     var nextButtonEnabled: Bool {
-        return validationService.isPhoneValid(phone) && !password.isEmpty
+        return !login.isEmpty && !password.isEmpty
     }
 
 
     // MARK: Initializers
 
-    init(phone: String = "", password: String = "", validationService: ValidationService = ValidationServiceImplementation()) {
-        self.phone = phone
+    init(login: String = "", password: String = "", validationService: ValidationService = ValidationServiceImplementation()) {
+        self.login = login
         self.password = password
         self.validationService = validationService
     }

@@ -70,15 +70,15 @@ class LoginViewModel: LoginViewModelProtocol {
     func next(from controller: UIViewController) {
         state = .loading
 
-        authorizationAPIService.tokenAuth(username: loginViewData.phone, password: loginViewData.password) { [weak self] result in
+        authorizationAPIService.login(username: loginViewData.login, password: loginViewData.password) { [weak self] result in
             guard let self = self else {
                 return
             }
             switch result {
             case .success(let model):
                 self.storageService.saveInUserDefaults(string: UUID().uuidString, with: .secretKey)
-                self.storageService.saveInKeychain(string: model.key, with: KeychainStorage.Key.token)
-                self.storageService.saveInKeychain(string: self.loginViewData.phone, with: KeychainStorage.Key.username)
+                self.storageService.saveInKeychain(string: model.token, with: KeychainStorage.Key.token)
+                self.storageService.saveInKeychain(string: self.loginViewData.login, with: KeychainStorage.Key.username)
                 self.storageService.saveInKeychain(string: self.loginViewData.password, with: KeychainStorage.Key.password)
                 self.state = .normal
 

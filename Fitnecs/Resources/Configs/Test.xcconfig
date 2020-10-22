@@ -1,26 +1,26 @@
 //
-//  Dev.xcconfig
-//  VTBMobile
+//  Test.xcconfig
+//  Fitnecs
 //
-//  Created by Alexandr Gabrusevich on 9/6/19.
-//  Copyright © 2019 Panov Sergey. All rights reserved.
+//  Created by Panov Sergey on 22.10.2020.
 //
 
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
 
-#include "Pods/Target Support Files/Pods-VTBMobile/Pods-VTBMobile.debug (test).xcconfig"
-#include "Pods/Target Support Files/Pods-VTBMobile/Pods-VTBMobile.release (test).xcconfig"
+#include "Pods/Target Support Files/Pods-Fitnecs/Pods-Fitnecs.release(test).xcconfig"
+#include "Pods/Target Support Files/Pods-Fitnecs/Pods-Fitnecs.debug(test).xcconfig"
 
 // Server URL
-BASE_URL = https:/$()/vtbmobiletest.lab.croc.ru/
+BASE_URL = http:/$()/185.12.30.47/
 
 // Chat Socket
-CHAT_URL = wss:/$()/k4-vo.vtb24.ru/webChat/WebSocket
+CHAT_URL = wss:/$()/k4-vo.vtb24.ru/webChat/WebSocket/
+CHAT_AUTH_URL = https:/k4-vo.vtb24.ru/webChat/
 CHAT_PROJECT_ID = 1
 CHAT_MESSENGER_TYPE = 82
 CHAT_FILE_STORAGE_URL = https:/$()/k4-vo.vtb24.ru/fileStorage/files/thumb/
-SERVER_TYPE = test
+SERVER_TYPE = dev
 
 // Multicard
 MULTICARD_URL = https:/$()/anketa.vtb.ru/kreditnaya-karta/?utm_source=vtbmobileru&utm_medium=vtb&utm_campaign=lk_mobile_credcards_vtbmobileru

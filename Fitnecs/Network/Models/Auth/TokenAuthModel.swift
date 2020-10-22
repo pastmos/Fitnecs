@@ -1,5 +1,5 @@
 //
-//  TokenAuthModel.swift
+//  RegistrationModel.swift
 //  VTBMobile
 //
 //  Created by Panov Sergey on 6/6/19.
@@ -9,18 +9,11 @@
 import Foundation
 
 
-struct TokenAuthModel: Codable {
+struct RegistrationModel: Codable {
 
     private enum CodingKeys: String, CodingKey {
-
-        case key
-        case createdDate = "created"
-        case user
-
+        case token
     }
 
-    let key: String
-    let createdDate: Date
-    let user: UserModel
-
+    let token: String
 }

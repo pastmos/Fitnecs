@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -45,7 +45,7 @@
                                     <constraint firstAttribute="trailing" secondItem="Wrc-LW-vMX" secondAttribute="trailing" constant="20" id="vLg-V6-lzz"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CY2-JB-hJE">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CY2-JB-hJE" customClass="ExpandableContentSizeScrollView" customModule="Fitnecs" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="100" width="414" height="796"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FvX-GU-AiT">
@@ -389,7 +389,7 @@
                     </view>
                     <connections>
                         <outlet property="imageWidth" destination="MJE-ar-mg2" id="1zz-kd-9lt"/>
-                        <outlet property="scrollView" destination="CY2-JB-hJE" id="yiP-Un-fsr"/>
+                        <outlet property="scrollView" destination="CY2-JB-hJE" id="PEF-Eg-ekE"/>
                         <outlet property="userImageView" destination="9aG-wi-osN" id="lFD-ku-Uqz"/>
                     </connections>
                 </viewController>
