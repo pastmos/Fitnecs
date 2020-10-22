@@ -8,26 +8,14 @@
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
 
+//need to be included manually for pods
 #include "Pods/Target Support Files/Pods-Fitnecs/Pods-Fitnecs.release(test).xcconfig"
 #include "Pods/Target Support Files/Pods-Fitnecs/Pods-Fitnecs.debug(test).xcconfig"
 
 // Server URL
 BASE_URL = http:/$()/185.12.30.47/
 
-// Chat Socket
-CHAT_URL = wss:/$()/k4-vo.vtb24.ru/webChat/WebSocket/
-CHAT_AUTH_URL = https:/k4-vo.vtb24.ru/webChat/
-CHAT_PROJECT_ID = 1
-CHAT_MESSENGER_TYPE = 82
-CHAT_FILE_STORAGE_URL = https:/$()/k4-vo.vtb24.ru/fileStorage/files/thumb/
 SERVER_TYPE = dev
 
-// Multicard
-MULTICARD_URL = https:/$()/anketa.vtb.ru/kreditnaya-karta/?utm_source=vtbmobileru&utm_medium=vtb&utm_campaign=lk_mobile_credcards_vtbmobileru
-
-// Multibonus
-MULTIBONUS_URL = https:/$()/bonus.vtb.ru/
-
 // App Settings
-APP_ID = 1477334014
 PRODUCT_BUNDLE_IDENTIFIER = ru.vtbmobile.app2
