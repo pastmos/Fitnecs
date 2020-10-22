@@ -2,7 +2,7 @@
 //  Environment.swift
 //  VTBMobile
 //
-//  Created by Alexandr Gabrusevich on 9/6/19.
+//  Created by Panov Sergey on 9/6/19.
 //  Copyright © 2019 Panov Sergey. All rights reserved.
 //
 
