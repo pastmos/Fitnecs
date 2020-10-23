@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "gray-button-normal.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

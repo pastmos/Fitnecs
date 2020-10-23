@@ -16,8 +16,26 @@ class RegistrationViewController: BaseViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var loginView: UIView!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var loginTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField! {
+        didSet {
+            passwordTextField.placeholder = Strings.Auth.Password.placeholder
+        }
+    }
+    @IBOutlet weak var loginTextField: UITextField! {
+        didSet {
+            loginTextField.placeholder = Strings.Auth.Login.placeholder
+        }
+    }
+    @IBOutlet weak var titleLabel: UILabel! {
+        didSet {
+            titleLabel.text = Strings.Auth.Registration.title
+        }
+    }
+    @IBOutlet weak var registerButton: UIButton! {
+        didSet {
+            registerButton.setTitle(Strings.Auth.Registration.Button.title, for: .normal)
+        }
+    }
 
 
     var viewModel: RegistrationViewModelProtocol?

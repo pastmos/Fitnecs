@@ -3,7 +3,7 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -298,11 +298,11 @@
         <image name="back-button-highlighted" width="12" height="21"/>
         <image name="back-button-normal" width="12" height="21"/>
         <image name="blue-button-disabled" width="296" height="48"/>
-        <image name="blue-button-highlighted" width="25" height="48"/>
-        <image name="blue-button-normal" width="23" height="48"/>
+        <image name="blue-button-highlighted" width="296" height="48"/>
+        <image name="blue-button-normal" width="296" height="48"/>
         <image name="bottom-gradient" width="375" height="88"/>
         <image name="gray-button-highlighted" width="25" height="48"/>
-        <image name="gray-button-normal" width="25" height="48"/>
+        <image name="gray-button-normal" width="296" height="48"/>
         <namedColor name="Style/Dark">
             <color red="0.18431372549019609" green="0.20392156862745098" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

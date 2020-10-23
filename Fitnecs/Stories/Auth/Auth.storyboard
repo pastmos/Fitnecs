@@ -56,7 +56,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="4L9-CQ-hdG"/>
                                                                 </constraints>
-                                                                <state key="normal" title="Войти" backgroundImage="cian-button">
+                                                                <state key="normal" title="Войти" backgroundImage="cian-button-normal">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <userDefinedRuntimeAttributes>
@@ -190,12 +190,16 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="askRegistrationLabel" destination="UUa-Im-AxS" id="xfZ-DB-fuz"/>
+                        <outlet property="enterButton" destination="QQj-AF-IDk" id="RJt-o3-H77"/>
                         <outlet property="headerView" destination="wHR-kc-Y6W" id="IpL-tx-2zS"/>
                         <outlet property="loginTextField" destination="o2p-SW-3ZM" id="HhH-mD-OwX"/>
                         <outlet property="loginView" destination="2G9-r2-qET" id="KL9-rL-UZ0"/>
                         <outlet property="passwordTextField" destination="7Et-hd-Q9N" id="FMt-kc-iUy"/>
+                        <outlet property="registerButton" destination="LB2-q4-nLp" id="WkE-cO-Kzl"/>
                         <outlet property="registerView" destination="O6I-P0-lNi" id="JfC-SJ-RZ5"/>
                         <outlet property="scrollView" destination="x70-xq-cRs" id="xzK-Ec-zj3"/>
+                        <outlet property="titleLabel" destination="6qa-oy-OeT" id="MPK-y2-WgK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3KS-I5-WC1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -284,7 +288,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="g26-Np-dhf"/>
                                                                 </constraints>
-                                                                <state key="normal" title="Зарегистрироваться" backgroundImage="cian-button">
+                                                                <state key="normal" title="Зарегистрироваться" backgroundImage="cian-button-normal">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <userDefinedRuntimeAttributes>
@@ -387,7 +391,9 @@
                         <outlet property="loginTextField" destination="B3D-AT-wjs" id="g5n-LN-mTD"/>
                         <outlet property="loginView" destination="fYc-GV-x6G" id="Ksv-eI-DLY"/>
                         <outlet property="passwordTextField" destination="6Rf-fs-uC7" id="G58-4Z-5Fl"/>
+                        <outlet property="registerButton" destination="y99-SX-voT" id="AZ3-vX-UQs"/>
                         <outlet property="scrollView" destination="o7r-6h-VKR" id="4Fb-YG-rhB"/>
+                        <outlet property="titleLabel" destination="XLS-y3-wRI" id="jA1-Db-Ukj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NV0-oG-9kt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -402,7 +408,7 @@
     </scenes>
     <resources>
         <image name="back-arrow" width="561" height="980"/>
-        <image name="cian-button" width="295" height="48"/>
+        <image name="cian-button-normal" width="295" height="48"/>
         <namedColor name="Style/Cian">
             <color red="0.0" green="0.66666666666666663" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

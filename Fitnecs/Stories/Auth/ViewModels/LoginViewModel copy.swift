@@ -8,10 +8,9 @@
 
 import UIKit
 
-protocol AuthViewModelCoordinatorDelegate: AnyObject {
+protocol AuthViewModelCoordinatorDelegate: ViewModelCoordinatorDelegate {
     func openMainInterface()
     func openRegistartion(from controller: UIViewController)
-    func close(from controller: UIViewController)
 }
 
 

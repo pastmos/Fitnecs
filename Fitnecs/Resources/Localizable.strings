@@ -24,6 +24,8 @@
 "common.button.welcome.title"     = "Пожалуйста";
 "common.currency.symbol"          = "₽";
 "common.error.title"              = "Ошибка";
+"common.error.alert.title"        = "Что-то пошло не так";
+"common.error.alert.text"         = "Попробуйте повторить попытку через некоторое время";
 "common.error.button.retry.title" = "Повторить";
 "common.error.na.title"           = "Недоступно";
 "common.error.text"               = "Что-то пошло не так";
@@ -55,6 +57,23 @@
 "tabs.statistics.title"           = "Статистика";
 "tabs.achievements.title"         = "Достижения";
 "tabs.profile.title"              = "Профиль";
+
+//Auth
+
+"auth.login.placeholder"          = "Введите логин";
+"auth.password.placeholder"       = "Введите пароль";
+
+"auth.registration.title"         = "Регистрация";
+"auth.registration.alert.title"   = "Поздравляем!";
+"auth.registration.alert.text"    = "Вы успешно зарегистрированы в приложении и можете использовать ваши данные для входа";
+"auth.registration.button.title"  = "Зарегистрироваться";
+
+"auth.login.title"                = "FITNECS";
+"auth.login.enter.button.title"   = "Войти";
+"auth.login.ask.registration.title"   = "Еще не зарегистрированы?";
+
+
+
 
 //Activity
 "activity.index.label"             = "Индекс подвижности";

@@ -38,6 +38,45 @@ internal enum Strings {
     }
   }
 
+  internal enum Auth {
+    internal enum Login {
+      /// Введите логин
+      internal static let placeholder = Strings.tr("Localizable", "auth.login.placeholder")
+      /// FITNECS
+      internal static let title = Strings.tr("Localizable", "auth.login.title")
+      internal enum Ask {
+        internal enum Registration {
+          /// Еще не зарегистрированы?
+          internal static let title = Strings.tr("Localizable", "auth.login.ask.registration.title")
+        }
+      }
+      internal enum Enter {
+        internal enum Button {
+          /// Войти
+          internal static let title = Strings.tr("Localizable", "auth.login.enter.button.title")
+        }
+      }
+    }
+    internal enum Password {
+      /// Введите пароль
+      internal static let placeholder = Strings.tr("Localizable", "auth.password.placeholder")
+    }
+    internal enum Registration {
+      /// Регистрация
+      internal static let title = Strings.tr("Localizable", "auth.registration.title")
+      internal enum Alert {
+        /// Вы успешно зарегистрированы в приложении и можете использовать ваши данные для входа
+        internal static let text = Strings.tr("Localizable", "auth.registration.alert.text")
+        /// Поздравляем!
+        internal static let title = Strings.tr("Localizable", "auth.registration.alert.title")
+      }
+      internal enum Button {
+        /// Зарегистрироваться
+        internal static let title = Strings.tr("Localizable", "auth.registration.button.title")
+      }
+    }
+  }
+
   internal enum Common {
     internal enum Appstore {
       /// itms-apps://itunes.apple.com/app/id1477334014
@@ -114,6 +153,12 @@ internal enum Strings {
       internal static let text = Strings.tr("Localizable", "common.error.text")
       /// Ошибка
       internal static let title = Strings.tr("Localizable", "common.error.title")
+      internal enum Alert {
+        /// Попробуйте повторить попытку через некоторое время
+        internal static let text = Strings.tr("Localizable", "common.error.alert.text")
+        /// Что-то пошло не так
+        internal static let title = Strings.tr("Localizable", "common.error.alert.title")
+      }
       internal enum Button {
         internal enum Retry {
           /// Повторить

@@ -102,6 +102,7 @@ class AuthCoordinator: Coordinator {
 // MARK: - AuthViewModelCoordinatorDelegate
 
 extension AuthCoordinator: AuthViewModelCoordinatorDelegate {
+
     func openRegistartion(from controller: UIViewController) {
         let viewModel = RegistrationViewModel()
         viewModel.coordinatorDelegate = self

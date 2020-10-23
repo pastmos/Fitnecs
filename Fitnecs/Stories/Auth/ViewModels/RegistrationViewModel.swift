@@ -76,10 +76,18 @@ class RegistrationViewModel: RegistrationViewModelProtocol {
             switch result {
             case .success(let model):
                 self?.state = .normal
+                let alertViewData = AlertViewData(title: Strings.Auth.Registration.Alert.title,
+                                                  text: Strings.Auth.Registration.Alert.text,
+                                                  closeButtonTitle: Strings.Common.Button.Ok.title) { [weak self] in
+                    self?.coordinatorDelegate?.close(from: controller)
+                }
+                self?.coordinatorDelegate?.showInfoAlert(with: alertViewData, from: controller)
 
             case .failure(let error):
-                let errorViewData = ErrorViewData(error: error)
-                self?.state = .error(viewData: errorViewData)
+                self?.coordinatorDelegate?.showErrorInfoAlert(from: controller)
+
+//                let errorViewData = ErrorViewData(error: error)
+//                self?.state = .error(viewData: errorViewData)
             }
         }
     }
