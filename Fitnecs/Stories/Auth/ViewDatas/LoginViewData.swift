@@ -13,19 +13,33 @@ protocol LoginViewDataType {
     var login: String { get set }
     var password: String { get set }
     var nextButtonEnabled: Bool { get }
-
+    var isLoginValid: Bool { get }
+    var isPasswordValid: Bool { get }
+    var isLoginDataValid: Bool { get }
 }
 
 
 struct LoginViewData: LoginViewDataType {
+    
 
     // MARK: PhoheViewDataType
 
     var login: String
     var password: String
+
+    var isLoginValid: Bool {
+        return !login.isEmpty
+    }
+    var isPasswordValid: Bool {
+        return !password.isEmpty
+    }
+    var isLoginDataValid: Bool {
+        return isPasswordValid && isLoginValid
+    }
     var nextButtonEnabled: Bool {
         return !login.isEmpty && !password.isEmpty
     }
+
 
 
     // MARK: Initializers

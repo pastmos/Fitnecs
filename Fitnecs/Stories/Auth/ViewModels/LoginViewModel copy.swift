@@ -10,6 +10,7 @@ import UIKit
 
 protocol AuthViewModelCoordinatorDelegate: AnyObject {
     func openMainInterface()
+    func openRegistartion(from controller: UIViewController)
     func close(from controller: UIViewController)
 }
 
@@ -23,9 +24,6 @@ protocol LoginViewModelProtocol: AnyObject {
 
     // MARK: Data Sources
 
-
-    var phone: String {get set}
-
     // MARK: Callbacks
 
     var updateState: ((LoginViewDataState) -> Void)? { get set }
@@ -35,7 +33,8 @@ protocol LoginViewModelProtocol: AnyObject {
     // MARK: Events
 
     func start()
-    func openMainInterface()
+    func login(login: String, password: String)
+    func openRegistartion(from controller: UIViewController)
     func back(from controller: UIViewController)
 
 }
@@ -49,31 +48,36 @@ class LoginViewModel: LoginViewModelProtocol {
 
     // MARK: Data Sources
 
-
-
-
     // MARK: Callbacks
 
     var updateState: ((LoginViewDataState) -> Void)?
     var updateScreen: ((LoginViewDataType) -> Void)?
-    
-    var phone: String = ""
 
 
     // MARK: Events
 
     func start() {
         state = .normal
-        updateScreen?(loginViewData)
     }
 
-    func next(from controller: UIViewController) {
+    
+    func login(login: String, password: String) {
+
+        loginViewData.login = login
+        loginViewData.password = password
+        updateScreen?(loginViewData)
+
+        guard loginViewData.isLoginDataValid else {
+            return
+        }
+
         state = .loading
 
         authorizationAPIService.login(login: loginViewData.login, password: loginViewData.password) { [weak self] result in
             guard let self = self else {
                 return
             }
+
             switch result {
             case .success(let model):
                 self.storageService.saveInUserDefaults(string: UUID().uuidString, with: .secretKey)
@@ -82,30 +86,28 @@ class LoginViewModel: LoginViewModelProtocol {
                 self.storageService.saveInKeychain(string: self.loginViewData.password, with: KeychainStorage.Key.password)
                 self.state = .normal
 
-               
+                self.coordinatorDelegate?.openMainInterface()
 
             case .failure(let error):
-                if error == .notConnectedToInternet {
-                    self.state = .normal
-                    let alertViewData = AlertViewData.viewData(with: error)
-//                    self.coordinatorDelegate?.showInfoAlert(with: alertViewData, from: controller)
-                }
-                else {
-                    let errorViewData = ErrorViewData(error: error)
-                    self.state = .error(viewData: errorViewData)
-                }
+                let errorViewData = ErrorViewData(error: error)
+                self.state = .error(viewData: errorViewData)
             }
         }
+
+
+        self.coordinatorDelegate?.openMainInterface()
     }
-    
-    func openMainInterface() {
-        coordinatorDelegate?.openMainInterface()
+
+
+    func openRegistartion(from controller: UIViewController) {
+        coordinatorDelegate?.openRegistartion(from: controller)
     }
 
  
     func back(from controller: UIViewController) {
         coordinatorDelegate?.close(from: controller)
     }
+
 
 
     // MARK: Initializers
@@ -132,10 +134,6 @@ class LoginViewModel: LoginViewModelProtocol {
             updateState?(state)
         }
     }
-    private var loginViewData: LoginViewDataType {
-        didSet {
-            updateScreen?(loginViewData)
-        }
-    }
+    private var loginViewData: LoginViewDataType
 
 }

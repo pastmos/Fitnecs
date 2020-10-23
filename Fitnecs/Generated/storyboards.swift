@@ -26,6 +26,8 @@ internal enum Storyboards {
     internal static let storyboardName = "Auth"
 
     internal static let loginViewController = SceneType<Fitnecs.LoginViewController>(storyboard: Auth.self, identifier: "LoginViewController")
+
+    internal static let registrationViewController = SceneType<Fitnecs.RegistrationViewController>(storyboard: Auth.self, identifier: "RegistrationViewController")
   }
   internal enum Common: StoryboardType {
     internal static let storyboardName = "Common"

@@ -2,25 +2,25 @@
 //  LoginViewController.swift
 //  VTBMobile
 //
-//  Created by Alexandr Gabrusevich on 11/20/19.
+//  Created by Panov Sergey on 11/20/19.
 //  Copyright © 2019 Panov Sergey. All rights reserved.
 //
 
 import UIKit
 import SwiftMessages
 
-class LoginViewController: BaseViewController {
+class RegistrationViewController: BaseViewController {
 
     // MARK: Properties
+
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var loginView: UIView!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginTextField: UITextField!
-    @IBOutlet weak var registerView: UIView!
-    @IBOutlet weak var headerView: UIView!
 
 
-    var viewModel: LoginViewModelProtocol?
+    var viewModel: RegistrationViewModelProtocol?
 
     var keyboardHeight: CGFloat = 0
     var difference: CGFloat = 0
@@ -67,14 +67,10 @@ class LoginViewController: BaseViewController {
         super.viewWillDisappear(animated)
     }
 
+
     // MARK: Actions
-    @IBAction func toMainScreen(_ sender: Any) {
-
-        viewModel?.login(login: loginTextField.text ?? "", password: passwordTextField.text ?? "")
-
-    }
     @IBAction func registrationDidTap(_ sender: Any) {
-        viewModel?.openRegistartion(from: self)
+        viewModel?.registration(from: self, login: loginTextField.text ?? "", password: passwordTextField.text ?? "")
     }
 
     @IBAction func viewDidTap(_ sender: Any) {
@@ -86,7 +82,7 @@ class LoginViewController: BaseViewController {
                 keyboardHeight = keyboardSize.height
             }
         contentOffset = self.scrollView.contentOffset.y
-        difference = keyboardHeight - (view.bounds.height - (registerView.bounds.height + headerView.bounds.height) + self.scrollView.contentOffset.y)
+        difference = keyboardHeight - (view.bounds.height - (headerView.bounds.height) + self.scrollView.contentOffset.y)
         if difference > 0 {
             self.scrollView.contentOffset.y += difference
         }
@@ -98,6 +94,9 @@ class LoginViewController: BaseViewController {
         self.scrollView.contentOffset.y = contentOffset
     }
 
+    @IBAction func backDidTap(_ sender: Any) {
+        viewModel?.back(from: self)
+    }
     // MARK: Private
 
     private func setLoginState(isValid: Bool) {

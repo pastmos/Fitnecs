@@ -48,7 +48,6 @@ class AuthCoordinator: Coordinator {
     private lazy var loginViewController: LoginViewController = {
         let viewModel = LoginViewModel()
         viewModel.coordinatorDelegate = self
-        viewModel.phone = self.phone
 
         let loginViewController = Storyboards.Auth.loginViewController.instantiate()
         loginViewController.viewModel = viewModel
@@ -103,6 +102,16 @@ class AuthCoordinator: Coordinator {
 // MARK: - AuthViewModelCoordinatorDelegate
 
 extension AuthCoordinator: AuthViewModelCoordinatorDelegate {
+    func openRegistartion(from controller: UIViewController) {
+        let viewModel = RegistrationViewModel()
+        viewModel.coordinatorDelegate = self
+
+        let smsViewController = Storyboards.Auth.registrationViewController.instantiate()
+        smsViewController.viewModel = viewModel
+
+        controller.navigationController?.pushViewController(smsViewController, animated: true)
+    }
+
    
     func openMainInterface() {
         delegate?.openMainInterface(from: self)

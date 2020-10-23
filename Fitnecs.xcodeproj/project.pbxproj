@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		26111D46252DE80A00587485 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26111D45252DE80A00587485 /* GoogleService-Info.plist */; };
 		263D7CD92541866400132B9E /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263D7CD82541866400132B9E /* LoginModel.swift */; };
+		2648F2F52542E1DB00CD893A /* ActivityViewController copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2648F2F42542E1DB00CD893A /* ActivityViewController copy.swift */; };
+		2648F2F92542E1ED00CD893A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2648F2F82542E1ED00CD893A /* LoginViewController.swift */; };
+		2648F2FC2542E1EF00CD893A /* LoginViewModel copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2648F2FB2542E1EF00CD893A /* LoginViewModel copy.swift */; };
 		2652CB5425388A200013827D /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2652CB5325388A200013827D /* Double.swift */; };
 		26893DBC2521DCB900604B44 /* GeoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26893DBB2521DCB900604B44 /* GeoViewController.swift */; };
 		268B25B02539AE82008BC076 /* CircleProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268B25AF2539AE82008BC076 /* CircleProgressBar.swift */; };
@@ -100,16 +103,15 @@
 		CEAE8AB1251CC0DE00E7EF87 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE8A63251CC0DD00E7EF87 /* MainViewController.swift */; };
 		CEAE8AB5251CC0DE00E7EF87 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE8A67251CC0DD00E7EF87 /* MainCoordinator.swift */; };
 		CEAE8AB8251CC0DE00E7EF87 /* MainViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE8A6B251CC0DD00E7EF87 /* MainViewData.swift */; };
-		CEAE8ACD251CC0DE00E7EF87 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE8A86251CC0DE00E7EF87 /* LoginViewModel.swift */; };
+		CEAE8ACD251CC0DE00E7EF87 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE8A86251CC0DE00E7EF87 /* RegistrationViewModel.swift */; };
 		CEAE8AD6251CC0DE00E7EF87 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE8A8F251CC0DE00E7EF87 /* AuthCoordinator.swift */; };
 		CEAE8AD7251CC0DF00E7EF87 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEAE8A90251CC0DE00E7EF87 /* Auth.storyboard */; };
-		CEAE8ADE251CC0DF00E7EF87 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE8A98251CC0DE00E7EF87 /* LoginViewController.swift */; };
+		CEAE8ADE251CC0DF00E7EF87 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE8A98251CC0DE00E7EF87 /* RegistrationViewController.swift */; };
 		CEAE8AE3251CC0DF00E7EF87 /* LoginViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE8A9E251CC0DE00E7EF87 /* LoginViewData.swift */; };
 		CEAE8AF3251CC38A00E7EF87 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE8AF2251CC38A00E7EF87 /* MainViewModel.swift */; };
 		CEAE8B26251CCCAA00E7EF87 /* DateFormatter+DecodingStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE8B25251CCCA900E7EF87 /* DateFormatter+DecodingStrategy.swift */; };
 		CEAE8B2A251CD34500E7EF87 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE8B29251CD34500E7EF87 /* ValidationService.swift */; };
 		CEAE8B34251CD42A00E7EF87 /* HtmlArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE8B30251CD42A00E7EF87 /* HtmlArticleViewModel.swift */; };
-		CEFAB940252110FB00F58048 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFAB93F252110FB00F58048 /* ActivityViewController.swift */; };
 		CEFAB9432521111900F58048 /* ActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFAB9422521111900F58048 /* ActivityViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +122,9 @@
 		263D7CD82541866400132B9E /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		2648F2912541A05C00CD893A /* Test.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Test.xcconfig; sourceTree = "<group>"; };
 		2648F2922541A07D00CD893A /* Prod.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Prod.xcconfig; sourceTree = "<group>"; };
+		2648F2F42542E1DB00CD893A /* ActivityViewController copy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityViewController copy.swift"; sourceTree = "<group>"; };
+		2648F2F82542E1ED00CD893A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2648F2FB2542E1EF00CD893A /* LoginViewModel copy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewModel copy.swift"; sourceTree = "<group>"; };
 		2652CB5325388A200013827D /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		26893DBB2521DCB900604B44 /* GeoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoViewController.swift; sourceTree = "<group>"; };
 		268B25AF2539AE82008BC076 /* CircleProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressBar.swift; sourceTree = "<group>"; };
@@ -221,16 +226,15 @@
 		CEAE8A63251CC0DD00E7EF87 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CEAE8A67251CC0DD00E7EF87 /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		CEAE8A6B251CC0DD00E7EF87 /* MainViewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewData.swift; sourceTree = "<group>"; };
-		CEAE8A86251CC0DE00E7EF87 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		CEAE8A86251CC0DE00E7EF87 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		CEAE8A8F251CC0DE00E7EF87 /* AuthCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		CEAE8A90251CC0DE00E7EF87 /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
-		CEAE8A98251CC0DE00E7EF87 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CEAE8A98251CC0DE00E7EF87 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		CEAE8A9E251CC0DE00E7EF87 /* LoginViewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewData.swift; sourceTree = "<group>"; };
 		CEAE8AF2251CC38A00E7EF87 /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		CEAE8B25251CCCA900E7EF87 /* DateFormatter+DecodingStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+DecodingStrategy.swift"; sourceTree = "<group>"; };
 		CEAE8B29251CD34500E7EF87 /* ValidationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
 		CEAE8B30251CD42A00E7EF87 /* HtmlArticleViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HtmlArticleViewModel.swift; sourceTree = "<group>"; };
-		CEFAB93F252110FB00F58048 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		CEFAB9422521111900F58048 /* ActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
 		DA1B0B9F795597889D8A30A7 /* Pods-Fitnecs.release(prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitnecs.release(prod).xcconfig"; path = "Target Support Files/Pods-Fitnecs/Pods-Fitnecs.release(prod).xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -792,7 +796,8 @@
 		CEAE8A84251CC0DE00E7EF87 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				CEAE8A86251CC0DE00E7EF87 /* LoginViewModel.swift */,
+				2648F2FB2542E1EF00CD893A /* LoginViewModel copy.swift */,
+				CEAE8A86251CC0DE00E7EF87 /* RegistrationViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -800,7 +805,8 @@
 		CEAE8A91251CC0DE00E7EF87 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				CEAE8A98251CC0DE00E7EF87 /* LoginViewController.swift */,
+				2648F2F82542E1ED00CD893A /* LoginViewController.swift */,
+				CEAE8A98251CC0DE00E7EF87 /* RegistrationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -825,7 +831,7 @@
 		CEFAB93C252110C600F58048 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				CEFAB93F252110FB00F58048 /* ActivityViewController.swift */,
+				2648F2F42542E1DB00CD893A /* ActivityViewController copy.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1062,6 +1068,7 @@
 				CEAE8789251B621600E7EF87 /* HtmlArticleViewController.swift in Sources */,
 				26999CC52540A5CC002D1B49 /* ExpandableContentSizeScrollView.swift in Sources */,
 				CEAE88BD251B73A500E7EF87 /* strings.swift in Sources */,
+				2648F2F52542E1DB00CD893A /* ActivityViewController copy.swift in Sources */,
 				CEAE877A251B57DA00E7EF87 /* InfoViewData.swift in Sources */,
 				CEAE878A251B621600E7EF87 /* InfoViewController.swift in Sources */,
 				268B25C02539C076008BC076 /* StatisticsViewController.swift in Sources */,
@@ -1086,12 +1093,13 @@
 				CEAE8AB1251CC0DE00E7EF87 /* MainViewController.swift in Sources */,
 				268B2620253F0A63008BC076 /* ProfileCoordinator.swift in Sources */,
 				CEAE87A8251B63E300E7EF87 /* TextFieldViewController.swift in Sources */,
-				CEAE8ACD251CC0DE00E7EF87 /* LoginViewModel.swift in Sources */,
+				CEAE8ACD251CC0DE00E7EF87 /* RegistrationViewModel.swift in Sources */,
 				26D4C795252369D000F645A3 /* Date.swift in Sources */,
 				CEAE876A251B562700E7EF87 /* Coordinator.swift in Sources */,
 				CEAE88C9251B74A400E7EF87 /* BaseAPIService.swift in Sources */,
 				CEAE88E9251B770300E7EF87 /* StorageService.swift in Sources */,
 				CEAE8AD6251CC0DE00E7EF87 /* AuthCoordinator.swift in Sources */,
+				2648F2FC2542E1EF00CD893A /* LoginViewModel copy.swift in Sources */,
 				26D4C792252350EA00F645A3 /* HealthKitService.swift in Sources */,
 				268B2610253F0719008BC076 /* AchievementsViewController.swift in Sources */,
 				CEAE88BE251B73A500E7EF87 /* storyboards.swift in Sources */,
@@ -1112,15 +1120,15 @@
 				CEAE8787251B621600E7EF87 /* AlertViewController.swift in Sources */,
 				CEAE8B2A251CD34500E7EF87 /* ValidationService.swift in Sources */,
 				CEAE8AB5251CC0DE00E7EF87 /* MainCoordinator.swift in Sources */,
-				CEAE8ADE251CC0DF00E7EF87 /* LoginViewController.swift in Sources */,
+				CEAE8ADE251CC0DF00E7EF87 /* RegistrationViewController.swift in Sources */,
 				CEAE88D1251B74FA00E7EF87 /* AuthorizationAPI.swift in Sources */,
 				CEAE8AB8251CC0DE00E7EF87 /* MainViewData.swift in Sources */,
-				CEFAB940252110FB00F58048 /* ActivityViewController.swift in Sources */,
 				CEAE89BA251B805700E7EF87 /* RootViewModel.swift in Sources */,
 				CEAE877B251B57DA00E7EF87 /* SmallModalViewData.swift in Sources */,
 				CEAE890D251B7A0800E7EF87 /* UserModel.swift in Sources */,
 				268B2629253F0C39008BC076 /* ProfileViewModel.swift in Sources */,
 				268B25FE253DCB91008BC076 /* StatisticsViewData.swift in Sources */,
+				2648F2F92542E1ED00CD893A /* LoginViewController.swift in Sources */,
 				CEAE89BD251B805700E7EF87 /* RootCoordinator.swift in Sources */,
 				CEAE88C8251B74A400E7EF87 /* AuthorizationAPIService.swift in Sources */,
 				268B2616253F08B6008BC076 /* AchievementsCoordinator.swift in Sources */,
