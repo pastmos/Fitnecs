@@ -2,8 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>SERVER_TYPE</key>
-	<string>$(SERVER_TYPE)</string>
+	<key>BASE_URL</key>
+	<string>$(BASE_URL)</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -38,6 +38,8 @@
 	<string>Доступ к геолокации необходим приложению для позиционирования пользователя</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Доступ к геолокации необходим приложению для позиционирования пользователя</string>
+	<key>SERVER_TYPE</key>
+	<string>$(SERVER_TYPE)</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Calibri-Regular.ttf</string>
@@ -63,8 +65,6 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
-	<key>BASE_URL</key>
-	<string>$(BASE_URL)</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
