@@ -60,6 +60,10 @@ internal enum Strings {
     internal enum Password {
       /// Введите пароль
       internal static let placeholder = Strings.tr("Localizable", "auth.password.placeholder")
+      internal enum Confirmation {
+        /// Подтверждение пароля
+        internal static let placeholder = Strings.tr("Localizable", "auth.password.confirmation.placeholder")
+      }
     }
     internal enum Registration {
       /// Регистрация

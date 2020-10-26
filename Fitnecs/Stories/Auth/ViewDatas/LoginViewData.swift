@@ -2,7 +2,7 @@
 //  LoginViewData.swift
 //  VTBMobile
 //
-//  Created by Alexandr Gabrusevich on 11/20/19.
+//  Created by Panov Sergey on 11/20/19.
 //  Copyright © 2019 Panov Sergey. All rights reserved.
 //
 
@@ -10,10 +10,10 @@ import Foundation
 
 protocol LoginViewDataType {
 
-    var login: String { get set }
+    var email: String { get set }
     var password: String { get set }
     var nextButtonEnabled: Bool { get }
-    var isLoginValid: Bool { get }
+    var isEmailValid: Bool { get }
     var isPasswordValid: Bool { get }
     var isLoginDataValid: Bool { get }
 }
@@ -24,36 +24,33 @@ struct LoginViewData: LoginViewDataType {
 
     // MARK: PhoheViewDataType
 
-    var login: String
+    var email: String
     var password: String
 
-    var isLoginValid: Bool {
-        return !login.isEmpty
+    var isEmailValid: Bool {
+        return !email.isEmpty
     }
     var isPasswordValid: Bool {
         return !password.isEmpty
     }
     var isLoginDataValid: Bool {
-        return isPasswordValid && isLoginValid
+        return isPasswordValid && isEmailValid
     }
     var nextButtonEnabled: Bool {
-        return !login.isEmpty && !password.isEmpty
+        return !email.isEmpty && !password.isEmpty
     }
 
 
 
     // MARK: Initializers
 
-    init(login: String = "", password: String = "", validationService: ValidationService = ValidationServiceImplementation()) {
-        self.login = login
+    init(email: String = "", password: String = "") {
+        self.email = email
         self.password = password
-        self.validationService = validationService
     }
 
 
     // MARK: Private
-
-    private let validationService: ValidationService
 
 }
 

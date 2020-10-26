@@ -21,13 +21,13 @@ protocol RegistrationViewModelProtocol: AnyObject {
     // MARK: Callbacks
 
     var updateState: ((LoginViewDataState) -> Void)? { get set }
-    var updateScreen: ((LoginViewDataType) -> Void)? { get set }
+    var updateScreen: ((RegisterViewDataType) -> Void)? { get set }
 
 
     // MARK: Events
 
     func start()
-    func registration(from controller: UIViewController, login: String, password: String)
+    func registration(from controller: UIViewController, data: RegisterViewDataType)
     func back(from controller: UIViewController)
 
 }
@@ -48,7 +48,7 @@ class RegistrationViewModel: RegistrationViewModelProtocol {
     // MARK: Callbacks
 
     var updateState: ((LoginViewDataState) -> Void)?
-    var updateScreen: ((LoginViewDataType) -> Void)?
+    var updateScreen: ((RegisterViewDataType) -> Void)?
 
 
     // MARK: Events
@@ -59,19 +59,18 @@ class RegistrationViewModel: RegistrationViewModelProtocol {
     }
 
 
-    func registration(from controller: UIViewController, login: String, password: String) {
-        self.loginViewData.login = login
-        self.loginViewData.password = password
+    func registration(from controller: UIViewController, data: RegisterViewDataType) {
+        self.registerViewData = data
 
-        updateScreen?(loginViewData)
+        updateScreen?(registerViewData)
 
-        guard loginViewData.isLoginDataValid else {
+        guard registerViewData.isRegisterDataValid else {
             return
         }
 
         state = .loading
 
-        authorizationAPIService.registration(login: loginViewData.login, password: loginViewData.password) { [weak self] result in
+        authorizationAPIService.registration(data: registerViewData) { [weak self] result in
 
             switch result {
             case .success(let model):
@@ -108,7 +107,7 @@ class RegistrationViewModel: RegistrationViewModelProtocol {
         self.validationService = validationService
         self.storageService = storageService
         self.state = state
-        loginViewData = LoginViewData()
+        registerViewData = RegisterViewData()
     }
 
 
@@ -122,6 +121,6 @@ class RegistrationViewModel: RegistrationViewModelProtocol {
             updateState?(state)
         }
     }
-    private var loginViewData: LoginViewDataType
+    private var registerViewData: RegisterViewDataType
 
 }

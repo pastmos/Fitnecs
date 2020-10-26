@@ -11,7 +11,8 @@
 		263D7CD92541866400132B9E /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263D7CD82541866400132B9E /* LoginModel.swift */; };
 		2648F2F52542E1DB00CD893A /* ActivityViewController copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2648F2F42542E1DB00CD893A /* ActivityViewController copy.swift */; };
 		2648F2F92542E1ED00CD893A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2648F2F82542E1ED00CD893A /* LoginViewController.swift */; };
-		2648F2FC2542E1EF00CD893A /* LoginViewModel copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2648F2FB2542E1EF00CD893A /* LoginViewModel copy.swift */; };
+		2648F2FC2542E1EF00CD893A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2648F2FB2542E1EF00CD893A /* LoginViewModel.swift */; };
+		2648F3062547275F00CD893A /* RegisterViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2648F3052547275F00CD893A /* RegisterViewData.swift */; };
 		2652CB5425388A200013827D /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2652CB5325388A200013827D /* Double.swift */; };
 		26893DBC2521DCB900604B44 /* GeoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26893DBB2521DCB900604B44 /* GeoViewController.swift */; };
 		268B25B02539AE82008BC076 /* CircleProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268B25AF2539AE82008BC076 /* CircleProgressBar.swift */; };
@@ -124,7 +125,8 @@
 		2648F2922541A07D00CD893A /* Prod.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Prod.xcconfig; sourceTree = "<group>"; };
 		2648F2F42542E1DB00CD893A /* ActivityViewController copy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityViewController copy.swift"; sourceTree = "<group>"; };
 		2648F2F82542E1ED00CD893A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		2648F2FB2542E1EF00CD893A /* LoginViewModel copy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewModel copy.swift"; sourceTree = "<group>"; };
+		2648F2FB2542E1EF00CD893A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		2648F3052547275F00CD893A /* RegisterViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewData.swift; sourceTree = "<group>"; };
 		2652CB5325388A200013827D /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		26893DBB2521DCB900604B44 /* GeoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoViewController.swift; sourceTree = "<group>"; };
 		268B25AF2539AE82008BC076 /* CircleProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressBar.swift; sourceTree = "<group>"; };
@@ -796,7 +798,7 @@
 		CEAE8A84251CC0DE00E7EF87 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				2648F2FB2542E1EF00CD893A /* LoginViewModel copy.swift */,
+				2648F2FB2542E1EF00CD893A /* LoginViewModel.swift */,
 				CEAE8A86251CC0DE00E7EF87 /* RegistrationViewModel.swift */,
 			);
 			path = ViewModels;
@@ -815,6 +817,7 @@
 			isa = PBXGroup;
 			children = (
 				CEAE8A9E251CC0DE00E7EF87 /* LoginViewData.swift */,
+				2648F3052547275F00CD893A /* RegisterViewData.swift */,
 			);
 			path = ViewDatas;
 			sourceTree = "<group>";
@@ -1099,7 +1102,7 @@
 				CEAE88C9251B74A400E7EF87 /* BaseAPIService.swift in Sources */,
 				CEAE88E9251B770300E7EF87 /* StorageService.swift in Sources */,
 				CEAE8AD6251CC0DE00E7EF87 /* AuthCoordinator.swift in Sources */,
-				2648F2FC2542E1EF00CD893A /* LoginViewModel copy.swift in Sources */,
+				2648F2FC2542E1EF00CD893A /* LoginViewModel.swift in Sources */,
 				26D4C792252350EA00F645A3 /* HealthKitService.swift in Sources */,
 				268B2610253F0719008BC076 /* AchievementsViewController.swift in Sources */,
 				CEAE88BE251B73A500E7EF87 /* storyboards.swift in Sources */,
@@ -1132,6 +1135,7 @@
 				CEAE89BD251B805700E7EF87 /* RootCoordinator.swift in Sources */,
 				CEAE88C8251B74A400E7EF87 /* AuthorizationAPIService.swift in Sources */,
 				268B2616253F08B6008BC076 /* AchievementsCoordinator.swift in Sources */,
+				2648F3062547275F00CD893A /* RegisterViewData.swift in Sources */,
 				268B2625253F0BF9008BC076 /* ProfileViewController.swift in Sources */,
 				CEAE8B34251CD42A00E7EF87 /* HtmlArticleViewModel.swift in Sources */,
 				26999C98253F2ACC002D1B49 /* AwardModel.swift in Sources */,

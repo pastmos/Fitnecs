@@ -13,9 +13,9 @@
 #include "Pods/Target Support Files/Pods-Fitnecs/Pods-Fitnecs.debug(prod).xcconfig"
 
 // Server URL
-BASE_URL = http:/$()/185.12.30.47/
+BASE_URL = http:/$()/fitnecs.msharks.ru/
 
-SERVER_TYPE = dev
+SERVER_TYPE = prod
 
 // App Settings
 PRODUCT_BUNDLE_IDENTIFIER = ru.FitnecsApp.Fitnecs

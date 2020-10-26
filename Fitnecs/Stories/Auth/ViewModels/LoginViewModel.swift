@@ -32,7 +32,7 @@ protocol LoginViewModelProtocol: AnyObject {
     // MARK: Events
 
     func start()
-    func login(login: String, password: String)
+    func login(data: LoginViewDataType)
     func openRegistartion(from controller: UIViewController)
     func back(from controller: UIViewController)
 
@@ -60,10 +60,9 @@ class LoginViewModel: LoginViewModelProtocol {
     }
 
     
-    func login(login: String, password: String) {
+    func login(data: LoginViewDataType) {
 
-        loginViewData.login = login
-        loginViewData.password = password
+        loginViewData = data
         updateScreen?(loginViewData)
 
         guard loginViewData.isLoginDataValid else {
@@ -72,7 +71,7 @@ class LoginViewModel: LoginViewModelProtocol {
 
         state = .loading
 
-        authorizationAPIService.login(login: loginViewData.login, password: loginViewData.password) { [weak self] result in
+        authorizationAPIService.login(data: loginViewData) { [weak self] result in
             guard let self = self else {
                 return
             }
@@ -81,7 +80,7 @@ class LoginViewModel: LoginViewModelProtocol {
             case .success(let model):
                 self.storageService.saveInUserDefaults(string: UUID().uuidString, with: .secretKey)
                 self.storageService.saveInKeychain(string: model.token, with: KeychainStorage.Key.token)
-                self.storageService.saveInKeychain(string: self.loginViewData.login, with: KeychainStorage.Key.username)
+                self.storageService.saveInKeychain(string: self.loginViewData.email, with: KeychainStorage.Key.username)
                 self.storageService.saveInKeychain(string: self.loginViewData.password, with: KeychainStorage.Key.password)
                 self.state = .normal
 

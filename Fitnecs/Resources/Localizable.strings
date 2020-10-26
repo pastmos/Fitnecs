@@ -62,6 +62,7 @@
 
 "auth.login.placeholder"          = "Введите логин";
 "auth.password.placeholder"       = "Введите пароль";
+"auth.password.confirmation.placeholder"  = "Подтверждение пароля";
 
 "auth.registration.title"         = "Регистрация";
 "auth.registration.alert.title"   = "Поздравляем!";

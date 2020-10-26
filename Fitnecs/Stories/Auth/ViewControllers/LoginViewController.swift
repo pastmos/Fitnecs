@@ -80,7 +80,7 @@ class LoginViewController: BaseViewController {
         }
 
         viewModel?.updateScreen = { [weak self] viewData in
-            self?.setLoginState(isValid: viewData.isLoginValid)
+            self?.setLoginState(isValid: viewData.isEmailValid)
             self?.setPasswordState(isValid: viewData.isPasswordValid)
         }
 
@@ -98,7 +98,11 @@ class LoginViewController: BaseViewController {
     // MARK: Actions
     @IBAction func toMainScreen(_ sender: Any) {
 
-        viewModel?.login(login: loginTextField.text ?? "", password: passwordTextField.text ?? "")
+        var data = LoginViewData()
+        data.email = loginTextField.text ?? ""
+        data.password = passwordTextField.text ?? ""
+
+        viewModel?.login(data: data)
 
     }
     @IBAction func registrationDidTap(_ sender: Any) {

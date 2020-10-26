@@ -11,8 +11,8 @@ import Moya
 // MARK: - Authorization API
 
 enum AuthorizationAPI {
-    case login(login: String, password: String)
-    case registration(login: String, password: String)
+    case login(data: LoginViewDataType)
+    case registration(data: RegisterViewDataType)
 }
 
 // MARK: - Target Type
@@ -29,8 +29,8 @@ extension AuthorizationAPI: TargetType, AccessTokenAuthorizable {
 
     var path: String {
         switch self {
-        case .login:           return "auth/"
-        case .registration:    return "registration/"
+        case .login:           return "login/"
+        case .registration:    return "register/"
         }
     }
 
@@ -44,12 +44,12 @@ extension AuthorizationAPI: TargetType, AccessTokenAuthorizable {
     var task: Task {
         switch self {
 
-        case .login(let username, let password):
-            let parameters = ["login": username, "password": password]
+        case .login(let data):
+            let parameters = [ "email": data.email, "password": data.password]
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
 
-        case .registration(let username, let password):
-            let parameters = ["login": password, "password": password]
+        case .registration(let data):
+            let parameters = ["name": data.name, "email": data.email, "password": data.password, "password_confirmation": data.passwordConfirmation]
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         }
     }

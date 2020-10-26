@@ -26,6 +26,13 @@ class RegistrationViewController: BaseViewController {
             loginTextField.placeholder = Strings.Auth.Login.placeholder
         }
     }
+    @IBOutlet weak var passwordConfirmationTextField: UITextField! {
+        didSet {
+            passwordConfirmationTextField.placeholder = Strings.Auth.Password.Confirmation.placeholder
+        }
+    }
+
+
     @IBOutlet weak var titleLabel: UILabel! {
         didSet {
             titleLabel.text = Strings.Auth.Registration.title
@@ -70,7 +77,7 @@ class RegistrationViewController: BaseViewController {
         }
 
         viewModel?.updateScreen = { [weak self] viewData in
-            self?.setLoginState(isValid: viewData.isLoginValid)
+            self?.setLoginState(isValid: viewData.isEmailValid)
             self?.setPasswordState(isValid: viewData.isPasswordValid)
         }
 
@@ -88,7 +95,8 @@ class RegistrationViewController: BaseViewController {
 
     // MARK: Actions
     @IBAction func registrationDidTap(_ sender: Any) {
-        viewModel?.registration(from: self, login: loginTextField.text ?? "", password: passwordTextField.text ?? "")
+        let data = RegisterViewData(name: "", email: loginTextField.text ?? "", password:  passwordTextField.text ?? "", passwordConfirmation: passwordConfirmationTextField.text ?? "")
+        viewModel?.registration(from: self, data: data )
     }
 
     @IBAction func viewDidTap(_ sender: Any) {

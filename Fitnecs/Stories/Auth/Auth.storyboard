@@ -328,6 +328,20 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Подтверждение пароля" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Ae-n9-8le">
+                                                                <rect key="frame" x="30" y="204" width="274" height="43"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="43" id="p5j-vX-25P"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                        <integer key="value" value="6"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </textField>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.30207416370000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -335,11 +349,14 @@
                                                             <constraint firstItem="6Rf-fs-uC7" firstAttribute="top" secondItem="B3D-AT-wjs" secondAttribute="bottom" constant="36" id="Dom-Zq-mkN"/>
                                                             <constraint firstAttribute="trailing" secondItem="B3D-AT-wjs" secondAttribute="trailing" constant="30" id="HL6-8B-QJk"/>
                                                             <constraint firstAttribute="trailing" secondItem="6Rf-fs-uC7" secondAttribute="trailing" constant="30" id="Ihr-9L-39t"/>
+                                                            <constraint firstAttribute="trailing" secondItem="1Ae-n9-8le" secondAttribute="trailing" constant="30" id="JgD-wn-EBM"/>
                                                             <constraint firstItem="B3D-AT-wjs" firstAttribute="top" secondItem="fYc-GV-x6G" secondAttribute="top" constant="46" id="OV5-4V-tOg"/>
                                                             <constraint firstAttribute="width" secondItem="fYc-GV-x6G" secondAttribute="height" multiplier="334:381" id="W46-SW-7aH"/>
                                                             <constraint firstItem="6Rf-fs-uC7" firstAttribute="leading" secondItem="fYc-GV-x6G" secondAttribute="leading" constant="30" id="aSX-wZ-21C"/>
+                                                            <constraint firstItem="1Ae-n9-8le" firstAttribute="top" secondItem="6Rf-fs-uC7" secondAttribute="bottom" constant="36" id="bTW-yJ-Qaa"/>
                                                             <constraint firstAttribute="bottom" secondItem="y99-SX-voT" secondAttribute="bottom" constant="40" id="d8U-qx-FOv"/>
                                                             <constraint firstItem="y99-SX-voT" firstAttribute="leading" secondItem="fYc-GV-x6G" secondAttribute="leading" constant="42" id="hTA-oM-Are"/>
+                                                            <constraint firstItem="1Ae-n9-8le" firstAttribute="leading" secondItem="fYc-GV-x6G" secondAttribute="leading" constant="30" id="qxi-aq-fyj"/>
                                                             <constraint firstAttribute="trailing" secondItem="y99-SX-voT" secondAttribute="trailing" constant="42" id="vMg-c0-tO6"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
@@ -390,6 +407,7 @@
                         <outlet property="headerView" destination="oD9-PB-eXX" id="B0X-FO-KdG"/>
                         <outlet property="loginTextField" destination="B3D-AT-wjs" id="g5n-LN-mTD"/>
                         <outlet property="loginView" destination="fYc-GV-x6G" id="Ksv-eI-DLY"/>
+                        <outlet property="passwordConfirmationTextField" destination="1Ae-n9-8le" id="yXJ-CY-kNR"/>
                         <outlet property="passwordTextField" destination="6Rf-fs-uC7" id="G58-4Z-5Fl"/>
                         <outlet property="registerButton" destination="y99-SX-voT" id="AZ3-vX-UQs"/>
                         <outlet property="scrollView" destination="o7r-6h-VKR" id="4Fb-YG-rhB"/>
