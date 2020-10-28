@@ -27,6 +27,7 @@ class ProfileViewController: UIViewController {
 
     // MARK: Lifecycle
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
         userImageView.makeRounded()
@@ -37,6 +38,10 @@ class ProfileViewController: UIViewController {
         }
 
         viewModel?.start()
+    }
+
+    @IBAction func exitDidTap(_ sender: Any) {
+        viewModel?.logout()
     }
 
 }

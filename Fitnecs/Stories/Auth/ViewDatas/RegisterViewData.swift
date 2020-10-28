@@ -13,10 +13,11 @@ protocol RegisterViewDataType {
     var email: String { get set }
     var password: String { get set }
     var passwordConfirmation: String { get set }
-    var nextButtonEnabled: Bool { get }
     var isEmailValid: Bool { get }
     var isPasswordValid: Bool { get }
+    var isPasswordConfirmationValid: Bool { get }
     var isRegisterDataValid: Bool { get }
+    var arePasswordsEqual: Bool { get }
 }
 
 
@@ -31,18 +32,22 @@ struct RegisterViewData: RegisterViewDataType {
     var passwordConfirmation: String
 
     var isEmailValid: Bool {
-        return !email.isEmpty
+        return email.count > 8
     }
     var isPasswordValid: Bool {
-        return (password.count > 8) && (passwordConfirmation.count > 8) && (password == passwordConfirmation)
+        return password.count > 8
     }
-    var isRegisterDataValid: Bool {
-        return isPasswordValid && isEmailValid
-    }
-    var nextButtonEnabled: Bool {
-        return !email.isEmpty && !password.isEmpty
+    var isPasswordConfirmationValid: Bool {
+        return passwordConfirmation.count > 8
     }
 
+    var arePasswordsEqual: Bool {
+        return password == passwordConfirmation
+    }
+
+    var isRegisterDataValid: Bool {
+        return isPasswordValid && isEmailValid && isPasswordConfirmationValid && arePasswordsEqual
+    }
 
 
     // MARK: Initializers

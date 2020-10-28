@@ -30,8 +30,8 @@
             filePath = "Fitnecs/Stories/Auth/ViewControllers/RegistrationViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "registrationDidTap(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,8 +46,852 @@
             filePath = "Fitnecs/Stories/Auth/ViewControllers/RegistrationViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1A7D37DD-00BA-4DBC-A230-4AC7AEDD9706"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Stories/Auth/ViewModels/RegistrationViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "registration(from:data:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1A7D37DD-00BA-4DBC-A230-4AC7AEDD9706 - d5b16eb2d356a720"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fitnecs.RegistrationViewModel.registration(from: __C.UIViewController, data: Fitnecs.RegisterViewDataType) -&gt; ()"
+                  moduleName = "Fitnecs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/panovsergey/Desktop/Fitnecs/Fitnecs/Stories/Auth/ViewModels/RegistrationViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "860">
+               </Location>
+               <Location
+                  uuid = "1A7D37DD-00BA-4DBC-A230-4AC7AEDD9706 - d0005d2c36fe9d6f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Fitnecs.RegistrationModel, Fitnecs.APIError&gt;) -&gt; () in Fitnecs.RegistrationViewModel.registration(from: __C.UIViewController, data: Fitnecs.RegisterViewDataType) -&gt; ()"
+                  moduleName = "Fitnecs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/panovsergey/Desktop/Fitnecs/Fitnecs/Stories/Auth/ViewModels/RegistrationViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "76">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B3ABD722-8E03-4C65-AA2A-60D4C3B02340"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Stories/Auth/ViewModels/RegistrationViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "registration(from:data:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B3ABD722-8E03-4C65-AA2A-60D4C3B02340 - d0005d2c36fe9d90"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Fitnecs.RegistrationModel, Fitnecs.APIError&gt;) -&gt; () in Fitnecs.RegistrationViewModel.registration(from: __C.UIViewController, data: Fitnecs.RegisterViewDataType) -&gt; ()"
+                  moduleName = "Fitnecs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/panovsergey/Desktop/Fitnecs/Fitnecs/Stories/Auth/ViewModels/RegistrationViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  uuid = "B3ABD722-8E03-4C65-AA2A-60D4C3B02340 - d0005d2c36fe9d90"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Fitnecs.RegistrationModel, Fitnecs.APIError&gt;) -&gt; () in Fitnecs.RegistrationViewModel.registration(from: __C.UIViewController, data: Fitnecs.RegisterViewDataType) -&gt; ()"
+                  moduleName = "Fitnecs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/panovsergey/Desktop/Fitnecs/Fitnecs/Stories/Auth/ViewModels/RegistrationViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "152">
+               </Location>
+               <Location
+                  uuid = "B3ABD722-8E03-4C65-AA2A-60D4C3B02340 - d0005d2c36fe9d90"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Fitnecs.RegistrationModel, Fitnecs.APIError&gt;) -&gt; () in Fitnecs.RegistrationViewModel.registration(from: __C.UIViewController, data: Fitnecs.RegisterViewDataType) -&gt; ()"
+                  moduleName = "Fitnecs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/panovsergey/Desktop/Fitnecs/Fitnecs/Stories/Auth/ViewModels/RegistrationViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "1200">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "137F4C7B-16DC-49E0-A0B8-86DA2AE770B1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Network/TargetTypes/AuthorizationAPI.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "baseURL"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "00404EDB-BA0C-4780-B992-69A10E2B7904"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Network/TargetTypes/AuthorizationAPI.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "baseURL"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1B9B1AAA-02E3-433F-B05E-83896258963C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Network/TargetTypes/AuthorizationAPI.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "task"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "90B7C9B1-C41A-46E1-8DF7-BBDCFCD22A93"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Stories/Root/ViewModels/RootViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "openApp()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FB89BCEC-EE34-4A45-9AA6-B72F2471CC83"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Stories/Auth/ViewModels/LoginViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "login(data:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FB89BCEC-EE34-4A45-9AA6-B72F2471CC83 - c30e98e4a694ff9b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fitnecs.LoginViewModel.login(data: Fitnecs.LoginViewDataType) -&gt; ()"
+                  moduleName = "Fitnecs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/panovsergey/Desktop/Fitnecs/Fitnecs/Stories/Auth/ViewModels/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "536">
+               </Location>
+               <Location
+                  uuid = "FB89BCEC-EE34-4A45-9AA6-B72F2471CC83 - 5596c2d9f28b09e9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Fitnecs.LoginModel, Fitnecs.APIError&gt;) -&gt; () in Fitnecs.LoginViewModel.login(data: Fitnecs.LoginViewDataType) -&gt; ()"
+                  moduleName = "Fitnecs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/panovsergey/Desktop/Fitnecs/Fitnecs/Stories/Auth/ViewModels/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "216">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D4D11CEF-82AB-47D4-A571-528A14055D03"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Stories/Auth/ViewModels/LoginViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "login(data:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D4D11CEF-82AB-47D4-A571-528A14055D03 - 5596c2d9f28b0897"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Fitnecs.LoginModel, Fitnecs.APIError&gt;) -&gt; () in Fitnecs.LoginViewModel.login(data: Fitnecs.LoginViewDataType) -&gt; ()"
+                  moduleName = "Fitnecs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/panovsergey/Desktop/Fitnecs/Fitnecs/Stories/Auth/ViewModels/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "332">
+               </Location>
+               <Location
+                  uuid = "D4D11CEF-82AB-47D4-A571-528A14055D03 - 5596c2d9f28b0897"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Fitnecs.LoginModel, Fitnecs.APIError&gt;) -&gt; () in Fitnecs.LoginViewModel.login(data: Fitnecs.LoginViewDataType) -&gt; ()"
+                  moduleName = "Fitnecs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/panovsergey/Desktop/Fitnecs/Fitnecs/Stories/Auth/ViewModels/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "372">
+               </Location>
+               <Location
+                  uuid = "D4D11CEF-82AB-47D4-A571-528A14055D03 - 5596c2d9f28b0897"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Fitnecs.LoginModel, Fitnecs.APIError&gt;) -&gt; () in Fitnecs.LoginViewModel.login(data: Fitnecs.LoginViewDataType) -&gt; ()"
+                  moduleName = "Fitnecs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/panovsergey/Desktop/Fitnecs/Fitnecs/Stories/Auth/ViewModels/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "1680">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "79CC0F51-92A0-4581-A1AD-8706164FA9E0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Network/Services/AuthorizationAPIService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "login(data:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FA4120E6-84BB-443A-A2DF-2F67DB0A1075"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Network/TargetTypes/AuthorizationAPI.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "task"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "37665CD7-A7FB-4693-AE45-E0504A068CAF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Stories/Profile/ViewControllers/ProfileViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "exitDidTap(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0D9DF43F-FD25-411B-92CC-026462CC3211"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Stories/Profile/ViewModels/ProfileViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "logout()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7B3B01FF-CBB5-4EDC-AAF4-88213C2AF493"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Stories/Root/RootCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "start()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BEFB2769-86E4-440D-BF16-89E40926D935"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Stories/Main/MainCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "finish()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8DB0FE19-37EB-4793-BB30-F6908B7AA2DB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Stories/Root/RootCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "openAuthInterface(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D8FA1A62-6677-4F44-9B6B-49638B6921AC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Stories/Root/RootCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "openAuthInterface(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1950E0CC-8C12-463C-9BC8-97390465CB7D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Stories/Main/MainCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "finish()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5ECD53F8-A0E2-4542-8A60-4BCA10FFDE5D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Stories/Root/RootCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "start()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9974F81B-5549-4CC7-A4B6-1CC60967A5E5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Stories/Root/ViewModels/RootViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "start()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D7380F99-2DC3-467D-894F-7EED5BC3075F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Stories/Root/ViewControllers/RootViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9401B210-4131-4948-9F23-E29F33987EC2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Stories/Root/RootCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "rootViewController"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9E83ADA2-C4EF-4BA5-B100-3E208CB899DF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Stories/Root/ViewModels/RootViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "login(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9E83ADA2-C4EF-4BA5-B100-3E208CB899DF - 16f44c371d2410d6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Fitnecs.LoginModel, Fitnecs.APIError&gt;) -&gt; () in Fitnecs.RootViewModel.(login in _9E9254DDD6FF8B7758E9F0125C1EDD4B)(Fitnecs.LoginViewData) -&gt; ()"
+                  moduleName = "Fitnecs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/panovsergey/Desktop/Fitnecs/Fitnecs/Stories/Root/ViewModels/RootViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "436">
+               </Location>
+               <Location
+                  uuid = "9E83ADA2-C4EF-4BA5-B100-3E208CB899DF - 16f44c371d2410d6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Fitnecs.LoginModel, Fitnecs.APIError&gt;) -&gt; () in Fitnecs.RootViewModel.(login in _9E9254DDD6FF8B7758E9F0125C1EDD4B)(Fitnecs.LoginViewData) -&gt; ()"
+                  moduleName = "Fitnecs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/panovsergey/Desktop/Fitnecs/Fitnecs/Stories/Root/ViewModels/RootViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "488">
+               </Location>
+               <Location
+                  uuid = "9E83ADA2-C4EF-4BA5-B100-3E208CB899DF - 16f44c371d2410d6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Fitnecs.LoginModel, Fitnecs.APIError&gt;) -&gt; () in Fitnecs.RootViewModel.(login in _9E9254DDD6FF8B7758E9F0125C1EDD4B)(Fitnecs.LoginViewData) -&gt; ()"
+                  moduleName = "Fitnecs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/panovsergey/Desktop/Fitnecs/Fitnecs/Stories/Root/ViewModels/RootViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "1748">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "34F1D359-0696-472C-B6B0-30DABFA1F805"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Stories/Root/ViewModels/RootViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "login(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3750A50F-DB2C-47E9-B692-8B3D2E5E0184"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Stories/Root/RootCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "openMainInterface()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "90A4D0F4-031A-4760-9BC7-917E0E335B2A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Stories/Root/RootCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "openMain()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "16AC9351-F13C-4BE8-BC21-506639E1BBD0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Stories/Root/ViewControllers/RootViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7F04F97D-237C-4D08-811D-876D200963CD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Stories/Root/ViewModels/RootViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "login(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7F04F97D-237C-4D08-811D-876D200963CD - 573d9bdc00eaa276"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fitnecs.RootViewModel.(login in _9E9254DDD6FF8B7758E9F0125C1EDD4B)(Fitnecs.LoginViewData) -&gt; ()"
+                  moduleName = "Fitnecs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/panovsergey/Desktop/Fitnecs/Fitnecs/Stories/Root/ViewModels/RootViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "168">
+               </Location>
+               <Location
+                  uuid = "7F04F97D-237C-4D08-811D-876D200963CD - 16f44c371d241390"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Fitnecs.LoginModel, Fitnecs.APIError&gt;) -&gt; () in Fitnecs.RootViewModel.(login in _9E9254DDD6FF8B7758E9F0125C1EDD4B)(Fitnecs.LoginViewData) -&gt; ()"
+                  moduleName = "Fitnecs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/panovsergey/Desktop/Fitnecs/Fitnecs/Stories/Root/ViewModels/RootViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "204">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E4581FC8-9857-4F88-A686-B3A7C87570D8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Stories/Root/RootCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "openAuth()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "17D45653-3239-465D-9D4D-110C9836C744"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Stories/Root/RootCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
+            landmarkName = "didFinish(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "78651465-DC37-4EBE-A767-78681416FF29"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Stories/Auth/ViewControllers/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A6A4F8DC-41AE-4C5A-9F71-F44B054AFFD3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Stories/Auth/ViewControllers/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "67F0694F-7216-47CA-B3A5-A330BD32E529"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Stories/Auth/ViewModels/LoginViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "start()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5B7B3C4A-7F00-4CD7-9CC5-02516031052A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Stories/Auth/AuthCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "navigationController"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B14D8721-B706-4F5A-9CC2-3B34611F00DA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Stories/Root/ViewModels/RootViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "login(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B14D8721-B706-4F5A-9CC2-3B34611F00DA - 16f44c371d2410d6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Fitnecs.LoginModel, Fitnecs.APIError&gt;) -&gt; () in Fitnecs.RootViewModel.(login in _9E9254DDD6FF8B7758E9F0125C1EDD4B)(Fitnecs.LoginViewData) -&gt; ()"
+                  moduleName = "Fitnecs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/panovsergey/Desktop/Fitnecs/Fitnecs/Stories/Root/ViewModels/RootViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "436">
+               </Location>
+               <Location
+                  uuid = "B14D8721-B706-4F5A-9CC2-3B34611F00DA - 16f44c371d2410d6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Fitnecs.LoginModel, Fitnecs.APIError&gt;) -&gt; () in Fitnecs.RootViewModel.(login in _9E9254DDD6FF8B7758E9F0125C1EDD4B)(Fitnecs.LoginViewData) -&gt; ()"
+                  moduleName = "Fitnecs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/panovsergey/Desktop/Fitnecs/Fitnecs/Stories/Root/ViewModels/RootViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "488">
+               </Location>
+               <Location
+                  uuid = "B14D8721-B706-4F5A-9CC2-3B34611F00DA - 16f44c371d2410d6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Fitnecs.LoginModel, Fitnecs.APIError&gt;) -&gt; () in Fitnecs.RootViewModel.(login in _9E9254DDD6FF8B7758E9F0125C1EDD4B)(Fitnecs.LoginViewData) -&gt; ()"
+                  moduleName = "Fitnecs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/panovsergey/Desktop/Fitnecs/Fitnecs/Stories/Root/ViewModels/RootViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "1748">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7CF60F67-4496-40E6-96DD-8899F86AD4ED"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Stories/Activity/ViewControllers/ActivityViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>

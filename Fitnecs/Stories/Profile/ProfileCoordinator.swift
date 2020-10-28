@@ -39,8 +39,15 @@ class ProfileCoordinator: Coordinator {
         tabController.viewControllers = controllers
     }
 
+    override func finish() {
+        delegate?.didFinish(from: self)
+    }
 }
 
 extension ProfileCoordinator: ProfileViewModelCoordinatorDelegate {
+
+    func openAuth() {
+        self.finish()
+    }
 
 }

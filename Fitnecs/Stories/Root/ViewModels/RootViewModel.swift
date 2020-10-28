@@ -6,12 +6,15 @@
 //  Copyright © 2019 Panov Sergey. All rights reserved.
 //
 
+import Foundation
+
 protocol RootViewModelProtocol: AnyObject {
 
     // MARK: Delegates
 
     var coordinatorDelegate: RootViewModelCoordinatorDelegate? { get set }
 
+    var updateState: ((LoginViewDataState) -> Void)? { get set }
 
     // MARK: Events
 
@@ -22,16 +25,19 @@ protocol RootViewModelProtocol: AnyObject {
 
 protocol RootViewModelCoordinatorDelegate: AnyObject {
 
-    func openOnboarding()
+    //func openOnboarding()
     func openAuth()
     func openMain()
-    func openCode()
-    func openPassword()
+    //func openCode()
+    //func openPassword()
 
 }
 
 
 class RootViewModel: RootViewModelProtocol {
+
+    var updateState: ((LoginViewDataState) -> Void)?
+
 
     // MARK: Delegates
 
@@ -41,15 +47,17 @@ class RootViewModel: RootViewModelProtocol {
     // MARK: Events
 
     func start() {
+        state = .normal
         openApp()
     }
 
 
     // MARK: Initializers
 
-    init(storageService: StorageService = StorageServiceImplementation(), authorizationAPIService: AuthorizationAPIService = AuthorizationAPIServiceImplementation()) {
+    init(storageService: StorageService = StorageServiceImplementation(), authorizationAPIService: AuthorizationAPIService = AuthorizationAPIServiceImplementation(), state: LoginViewDataState = .normal) {
         self.storageService = storageService
         self.authorizationAPIService = authorizationAPIService
+        self.state = state
     }
 
 
@@ -67,23 +75,50 @@ class RootViewModel: RootViewModelProtocol {
     }
 
     private func openApp() {
-        if let wasLunchedBefore = storageService.boolFromUserDefaults(with: UserDefaultsStorage.Key.firstLunch), wasLunchedBefore {
-            if let confirmationNumber = storageService.numberFromUserDefaults(with: UserDefaultsStorage.Key.confirmation) {
-                switch ConfirmationModelType.type(number: confirmationNumber) {
-                case .without:  coordinatorDelegate?.openMain()
-                case .code:     coordinatorDelegate?.openCode()
-                case .password: coordinatorDelegate?.openPassword()
-                case .none:
-                    coordinatorDelegate?.openAuth()
-                }
-            }
-            else {
-                coordinatorDelegate?.openAuth()
-            }
-        }
-        else {
+        guard let email = self.storageService.stringFromKeychain(with: KeychainStorage.Key.username),
+              let password = self.storageService.stringFromKeychain(with: KeychainStorage.Key.password),
+              !email.isEmpty,
+              !password.isEmpty else {
             clearKeychain()
             coordinatorDelegate?.openAuth()
+            return
+        }
+
+        let data = LoginViewData(email: email, password: password)
+        login(data)
+    }
+
+    private func login(_ data: LoginViewData) {
+
+        state = .loading
+        authorizationAPIService.login(data: data) { [weak self] result in
+            guard let self = self else {
+                return
+            }
+
+            switch result {
+            case .success(let model):
+                self.storageService.saveInUserDefaults(string: UUID().uuidString, with: .secretKey)
+                self.storageService.saveInKeychain(string: model.token, with: KeychainStorage.Key.token)
+                self.storageService.saveInKeychain(string: data.email, with: KeychainStorage.Key.username)
+                self.storageService.saveInKeychain(string: data.password, with: KeychainStorage.Key.password)
+                //self.state = .normal
+
+                self.state = .normal
+                self.coordinatorDelegate?.openMain()
+
+            case .failure(let error):
+                //let errorViewData = ErrorViewData(error: error)
+                //self.state = .error(viewData: errorViewData)
+                self.coordinatorDelegate?.openAuth()
+            }
+        }
+
+    }
+
+    private var state: LoginViewDataState {
+        didSet {
+            updateState?(state)
         }
     }
 }

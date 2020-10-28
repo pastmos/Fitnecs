@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		26111D46252DE80A00587485 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26111D45252DE80A00587485 /* GoogleService-Info.plist */; };
 		263D7CD92541866400132B9E /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263D7CD82541866400132B9E /* LoginModel.swift */; };
-		2648F2F52542E1DB00CD893A /* ActivityViewController copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2648F2F42542E1DB00CD893A /* ActivityViewController copy.swift */; };
+		2648F2F52542E1DB00CD893A /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2648F2F42542E1DB00CD893A /* ActivityViewController.swift */; };
 		2648F2F92542E1ED00CD893A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2648F2F82542E1ED00CD893A /* LoginViewController.swift */; };
 		2648F2FC2542E1EF00CD893A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2648F2FB2542E1EF00CD893A /* LoginViewModel.swift */; };
 		2648F3062547275F00CD893A /* RegisterViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2648F3052547275F00CD893A /* RegisterViewData.swift */; };
@@ -123,7 +123,7 @@
 		263D7CD82541866400132B9E /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		2648F2912541A05C00CD893A /* Test.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Test.xcconfig; sourceTree = "<group>"; };
 		2648F2922541A07D00CD893A /* Prod.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Prod.xcconfig; sourceTree = "<group>"; };
-		2648F2F42542E1DB00CD893A /* ActivityViewController copy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityViewController copy.swift"; sourceTree = "<group>"; };
+		2648F2F42542E1DB00CD893A /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		2648F2F82542E1ED00CD893A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2648F2FB2542E1EF00CD893A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		2648F3052547275F00CD893A /* RegisterViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewData.swift; sourceTree = "<group>"; };
@@ -834,7 +834,7 @@
 		CEFAB93C252110C600F58048 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				2648F2F42542E1DB00CD893A /* ActivityViewController copy.swift */,
+				2648F2F42542E1DB00CD893A /* ActivityViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1071,7 +1071,7 @@
 				CEAE8789251B621600E7EF87 /* HtmlArticleViewController.swift in Sources */,
 				26999CC52540A5CC002D1B49 /* ExpandableContentSizeScrollView.swift in Sources */,
 				CEAE88BD251B73A500E7EF87 /* strings.swift in Sources */,
-				2648F2F52542E1DB00CD893A /* ActivityViewController copy.swift in Sources */,
+				2648F2F52542E1DB00CD893A /* ActivityViewController.swift in Sources */,
 				CEAE877A251B57DA00E7EF87 /* InfoViewData.swift in Sources */,
 				CEAE878A251B621600E7EF87 /* InfoViewController.swift in Sources */,
 				268B25C02539C076008BC076 /* StatisticsViewController.swift in Sources */,

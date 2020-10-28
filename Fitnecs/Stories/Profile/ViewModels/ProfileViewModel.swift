@@ -8,6 +8,7 @@
 import UIKit
 
 protocol ProfileViewModelCoordinatorDelegate: AnyObject {
+    func openAuth()
     func close(from controller: UIViewController)
 }
 
@@ -30,6 +31,7 @@ protocol ProfileViewModelProtocol: AnyObject {
     // MARK: Events
 
     func start()
+    func logout()
     func back(from controller: UIViewController)
 
 }
@@ -47,14 +49,16 @@ class ProfileViewModel: ProfileViewModelProtocol {
 
     // MARK: Variables
 
+    var storageService: StorageService
+
     // MARK: Callbacks
 
     var updateState: ((ProfileState) -> Void)?
     var updateScreen: ((ChartStatisticsViewData) -> Void)?
 
 
-    init() {
-
+    init(storageService: StorageService = StorageServiceImplementation()) {
+        self.storageService = storageService
     }
 
     // MARK: Functions
@@ -62,11 +66,24 @@ class ProfileViewModel: ProfileViewModelProtocol {
     func start() {
 
 
-    }
 
+    }
 
     func back(from controller: UIViewController) {
         coordinatorDelegate?.close(from: controller)
+    }
+
+    func logout() {
+        clearKeychain()
+        coordinatorDelegate?.openAuth()
+    }
+
+    private func clearKeychain() {
+        storageService.removeFromKeychain(forKeys: [KeychainStorage.Key.token,
+                                                    KeychainStorage.Key.username,
+                                                    KeychainStorage.Key.password,
+                                                    KeychainStorage.Key.code])
+        storageService.removeFromUserDefaults(forKey: .secretKey)
     }
 
 }

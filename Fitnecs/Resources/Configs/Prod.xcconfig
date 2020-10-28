@@ -13,7 +13,7 @@
 #include "Pods/Target Support Files/Pods-Fitnecs/Pods-Fitnecs.debug(prod).xcconfig"
 
 // Server URL
-BASE_URL = http:/$()/fitnecs.msharks.ru/
+BASE_URL = https:/$()/fitnecs.msharks.ru/
 
 SERVER_TYPE = prod
 

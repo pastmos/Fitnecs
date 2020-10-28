@@ -10,10 +10,8 @@ import Foundation
 struct LoginModel: Codable {
 
     private enum CodingKeys: String, CodingKey {
-        case success
         case token
     }
 
-    let success: String
     let token: String
 }

@@ -36,6 +36,11 @@ class ActivityCoordinator: Coordinator {
     func start(_ tabController: UITabBarController) {
         tabController.viewControllers = [activityViewController]
     }
+
+    override func finish() {
+        delegate?.didFinish(from: self)
+    }
+
     
 }
 

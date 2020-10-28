@@ -60,7 +60,7 @@
 
 //Auth
 
-"auth.login.placeholder"          = "Введите логин";
+"auth.login.placeholder"          = "Введите email";
 "auth.password.placeholder"       = "Введите пароль";
 "auth.password.confirmation.placeholder"  = "Подтверждение пароля";
 

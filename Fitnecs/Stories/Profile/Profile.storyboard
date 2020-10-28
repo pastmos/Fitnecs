@@ -309,6 +309,7 @@
                                                                     </imageView>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <gestureRecognizers/>
                                                                 <constraints>
                                                                     <constraint firstItem="7ew-D0-Hc1" firstAttribute="leading" secondItem="iUA-jt-IjL" secondAttribute="trailing" constant="20" id="1cU-CH-P5I"/>
                                                                     <constraint firstAttribute="bottom" secondItem="AM4-W1-NCe" secondAttribute="bottom" id="AsO-dz-a0B"/>
@@ -321,6 +322,9 @@
                                                                     <constraint firstAttribute="trailing" secondItem="7ew-D0-Hc1" secondAttribute="trailing" constant="30" id="lTq-lB-Osk"/>
                                                                     <constraint firstItem="iUA-jt-IjL" firstAttribute="height" secondItem="QaI-BX-MUc" secondAttribute="height" multiplier="0.4" id="qhe-xp-tpj"/>
                                                                 </constraints>
+                                                                <connections>
+                                                                    <outletCollection property="gestureRecognizers" destination="yBn-Vk-VXa" appends="YES" id="neQ-Om-2Cb"/>
+                                                                </connections>
                                                             </view>
                                                         </subviews>
                                                     </stackView>
@@ -394,6 +398,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tJP-tj-Z4I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="yBn-Vk-VXa">
+                    <connections>
+                        <action selector="exitDidTap:" destination="Gl5-wV-hYW" id="1F7-Ga-myd"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-194.20289855072465" y="136.60714285714286"/>
         </scene>

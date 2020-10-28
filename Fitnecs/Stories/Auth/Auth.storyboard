@@ -128,7 +128,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O6I-P0-lNi">
                                                 <rect key="frame" x="0.0" y="531" width="414" height="329.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Еше не зарегистрированы?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUa-Im-AxS">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Еще не зарегистрированы?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUa-Im-AxS">
                                                         <rect key="frame" x="20" y="100" width="374" height="114.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" name="main-text-color"/>
@@ -146,12 +146,17 @@
                                                             <action selector="registrationDidTap:" destination="2lb-Jd-abZ" eventType="touchUpInside" id="NlD-Bq-bwQ"/>
                                                         </connections>
                                                     </button>
+                                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="24d-5K-pQg">
+                                                        <rect key="frame" x="197" y="28" width="20" height="20"/>
+                                                    </activityIndicatorView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="LB2-q4-nLp" firstAttribute="centerX" secondItem="O6I-P0-lNi" secondAttribute="centerX" id="5mI-kA-m0w"/>
                                                     <constraint firstItem="UUa-Im-AxS" firstAttribute="leading" secondItem="O6I-P0-lNi" secondAttribute="leading" constant="20" symbolic="YES" id="8ux-EW-3jB"/>
                                                     <constraint firstAttribute="trailing" secondItem="UUa-Im-AxS" secondAttribute="trailing" constant="20" symbolic="YES" id="9NA-w5-KGd"/>
+                                                    <constraint firstItem="24d-5K-pQg" firstAttribute="centerX" secondItem="O6I-P0-lNi" secondAttribute="centerX" id="FKb-oX-bGE"/>
+                                                    <constraint firstItem="24d-5K-pQg" firstAttribute="centerY" secondItem="O6I-P0-lNi" secondAttribute="centerY" id="f0y-xd-5Ig"/>
                                                     <constraint firstItem="LB2-q4-nLp" firstAttribute="top" secondItem="UUa-Im-AxS" secondAttribute="bottom" constant="-5" id="jsY-JN-fqV"/>
                                                     <constraint firstItem="UUa-Im-AxS" firstAttribute="top" secondItem="O6I-P0-lNi" secondAttribute="top" constant="100" id="oaT-9M-6bY"/>
                                                     <constraint firstAttribute="bottom" secondItem="LB2-q4-nLp" secondAttribute="bottom" constant="70" id="tc0-es-8fM"/>
@@ -190,6 +195,7 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="24d-5K-pQg" id="Hy5-ri-NRa"/>
                         <outlet property="askRegistrationLabel" destination="UUa-Im-AxS" id="xfZ-DB-fuz"/>
                         <outlet property="enterButton" destination="QQj-AF-IDk" id="RJt-o3-H77"/>
                         <outlet property="headerView" destination="wHR-kc-Y6W" id="IpL-tx-2zS"/>
@@ -387,16 +393,21 @@
                                     <constraint firstItem="LQ0-wb-Vao" firstAttribute="leading" secondItem="o7r-6h-VKR" secondAttribute="leading" id="qOn-2w-ZaC"/>
                                 </constraints>
                             </scrollView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Nir-9L-11y">
+                                <rect key="frame" x="197" y="558" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lGQ-52-y5U"/>
                         <color key="backgroundColor" red="0.89019607840000003" green="1" blue="0.7725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="lGQ-52-y5U" firstAttribute="leading" secondItem="8OE-vf-YjS" secondAttribute="leading" constant="-6" id="AdY-5J-LJE"/>
+                            <constraint firstItem="Nir-9L-11y" firstAttribute="centerX" secondItem="lGQ-52-y5U" secondAttribute="centerX" id="KCl-SC-Nbk"/>
                             <constraint firstItem="o7r-6h-VKR" firstAttribute="leading" secondItem="lGQ-52-y5U" secondAttribute="leading" id="Yx8-vk-obM"/>
                             <constraint firstItem="lGQ-52-y5U" firstAttribute="top" secondItem="8OE-vf-YjS" secondAttribute="top" constant="-10" id="Z0V-tI-vEn"/>
                             <constraint firstItem="o7r-6h-VKR" firstAttribute="top" secondItem="dVg-UY-TT6" secondAttribute="top" id="cuZ-GB-Hx8"/>
                             <constraint firstAttribute="bottom" secondItem="o7r-6h-VKR" secondAttribute="bottom" id="j0g-om-0mD"/>
+                            <constraint firstItem="Nir-9L-11y" firstAttribute="centerY" secondItem="lGQ-52-y5U" secondAttribute="centerY" id="mad-Pj-4xA"/>
                             <constraint firstItem="o7r-6h-VKR" firstAttribute="trailing" secondItem="lGQ-52-y5U" secondAttribute="trailing" id="mrl-lt-kcf"/>
                         </constraints>
                         <connections>
@@ -404,6 +415,7 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="Nir-9L-11y" id="qeh-Gp-VHj"/>
                         <outlet property="headerView" destination="oD9-PB-eXX" id="B0X-FO-KdG"/>
                         <outlet property="loginTextField" destination="B3D-AT-wjs" id="g5n-LN-mTD"/>
                         <outlet property="loginView" destination="fYc-GV-x6G" id="Ksv-eI-DLY"/>

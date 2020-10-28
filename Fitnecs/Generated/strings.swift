@@ -40,7 +40,7 @@ internal enum Strings {
 
   internal enum Auth {
     internal enum Login {
-      /// Введите логин
+      /// Введите email
       internal static let placeholder = Strings.tr("Localizable", "auth.login.placeholder")
       /// FITNECS
       internal static let title = Strings.tr("Localizable", "auth.login.title")

@@ -39,6 +39,11 @@ class AchievementsCoordinator: Coordinator {
         tabController.viewControllers = controllers
     }
 
+    override func finish() {
+        delegate?.didFinish(from: self)
+    }
+
+
 }
 
 extension AchievementsCoordinator: AchievementsViewModelCoordinatorDelegate {

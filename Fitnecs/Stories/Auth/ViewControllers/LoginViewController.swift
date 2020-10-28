@@ -16,12 +16,12 @@ class LoginViewController: BaseViewController {
     @IBOutlet weak var loginView: UIView!
     @IBOutlet weak var passwordTextField: UITextField! {
         didSet {
-            passwordTextField.placeholder = Strings.Auth.Login.placeholder
+            passwordTextField.placeholder = Strings.Auth.Password.placeholder
         }
     }
     @IBOutlet weak var loginTextField: UITextField! {
         didSet {
-            loginTextField.placeholder = Strings.Auth.Password.placeholder
+            loginTextField.placeholder = Strings.Auth.Login.placeholder
         }
     }
     @IBOutlet weak var registerView: UIView!
@@ -46,6 +46,7 @@ class LoginViewController: BaseViewController {
             registerButton.setTitle(Strings.Auth.Registration.Button.title, for: .normal)
         }
     }
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
 
     var viewModel: LoginViewModelProtocol?
@@ -70,9 +71,9 @@ class LoginViewController: BaseViewController {
             DispatchQueue.main.async {
                 switch state {
                 case .normal:
-                  return
+                    self?.activityIndicator.stopAnimating()
                 case .loading:
-                  return
+                    self?.activityIndicator.startAnimating()
                 case .error(let viewData):
                   return
                 }
@@ -97,14 +98,10 @@ class LoginViewController: BaseViewController {
 
     // MARK: Actions
     @IBAction func toMainScreen(_ sender: Any) {
-
-        var data = LoginViewData()
-        data.email = loginTextField.text ?? ""
-        data.password = passwordTextField.text ?? ""
-
+        let data = LoginViewData(email: loginTextField.text ?? "", password: passwordTextField.text ?? "")
         viewModel?.login(data: data)
-
     }
+
     @IBAction func registrationDidTap(_ sender: Any) {
         viewModel?.openRegistartion(from: self)
     }

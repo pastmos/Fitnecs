@@ -13,6 +13,8 @@ class RootViewController: UIViewController {
 
     // MARK: Properties
 
+    @IBOutlet weak var activitiIndicator: UIActivityIndicatorView!
+
     var viewModel: RootViewModelProtocol?
 
 
@@ -21,6 +23,20 @@ class RootViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         forceLightMode()
+
+        viewModel?.updateState = { [weak self] state in
+            DispatchQueue.main.async {
+                switch state {
+                case .normal:
+                    self?.activitiIndicator.stopAnimating()
+                case .loading:
+                    self?.activitiIndicator.startAnimating()
+                case .error(let viewData):
+                  return
+                }
+            }
+        }
+
         viewModel?.start()
     }
 

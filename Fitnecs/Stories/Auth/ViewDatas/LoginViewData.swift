@@ -12,7 +12,6 @@ protocol LoginViewDataType {
 
     var email: String { get set }
     var password: String { get set }
-    var nextButtonEnabled: Bool { get }
     var isEmailValid: Bool { get }
     var isPasswordValid: Bool { get }
     var isLoginDataValid: Bool { get }
@@ -35,9 +34,6 @@ struct LoginViewData: LoginViewDataType {
     }
     var isLoginDataValid: Bool {
         return isPasswordValid && isEmailValid
-    }
-    var nextButtonEnabled: Bool {
-        return !email.isEmpty && !password.isEmpty
     }
 
 

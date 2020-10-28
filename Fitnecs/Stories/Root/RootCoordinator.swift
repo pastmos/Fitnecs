@@ -28,13 +28,7 @@ class RootCoordinator: Coordinator {
     weak var delegate: RootCoordinatorDelegate?
 
     private lazy var rootViewController: RootViewController = {
-        let viewModel = RootViewModel()
-        viewModel.coordinatorDelegate = self
-
-        let controller = Storyboards.Root.rootViewController.instantiate()
-        controller.viewModel = viewModel
-
-        return controller
+       return createRootViewController()
     }()
 
 
@@ -54,6 +48,7 @@ class RootCoordinator: Coordinator {
             rootController.removeFromParent()
         }
         window?.rootViewController = rootViewController
+
     }
 
     override func finish() {
@@ -75,16 +70,15 @@ extension RootCoordinator {
 //        onboardingCoordinator.start()
     }
 
-    func openAuthInterface(with screen: AuthCoordinator.Screen, phone: String = "") {
+    func openAuthInterface(with screen: AuthCoordinator.Screen) {
         let authCoordinator = AuthCoordinator(rootViewController: rootViewController, screenToLoadFirst: screen)
-        authCoordinator.phone = phone
         authCoordinator.delegate = self
         addChildCoordinator(authCoordinator)
         authCoordinator.start()
     }
 
-    func openAuthInterface(from coordinator: Coordinator, with screen: AuthCoordinator.Screen, phone: String = "") {
-        openAuthInterface(with: screen, phone: phone)
+    func openAuthInterface(from coordinator: Coordinator, with screen: AuthCoordinator.Screen) {
+        openAuthInterface(with: screen)
         coordinator.finish()
     }
 
@@ -93,6 +87,16 @@ extension RootCoordinator {
         mainCoordinator.delegate = self
         addChildCoordinator(mainCoordinator)
         mainCoordinator.start()
+    }
+
+    private func createRootViewController() -> RootViewController {
+        let viewModel = RootViewModel()
+        viewModel.coordinatorDelegate = self
+
+        let controller = Storyboards.Root.rootViewController.instantiate()
+        controller.viewModel = viewModel
+
+        return controller
     }
 
 }
@@ -140,6 +144,14 @@ extension RootCoordinator: AuthCoordinatorDelegate {
 
 }
 
+extension RootCoordinator: ProfileCoordinatorDelegate {
+
+    func didFinish(from coordinator: ProfileCoordinator) {
+        coordinator.finish()
+    }
+
+}
+
 
 // MARK: - MainCoordinatorDelegate
 
@@ -147,6 +159,11 @@ extension RootCoordinator: MainCoordinatorDelegate {
 
     func didFinish(from coordinator: MainCoordinator) {
         removeChildCoordinator(coordinator)
+
+        let rootViewController = createRootViewController()
+        self.rootViewController = rootViewController
+        window?.rootViewController = rootViewController
+
     }
 
 }

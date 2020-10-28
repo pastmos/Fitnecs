@@ -57,13 +57,17 @@ class LoginViewModel: LoginViewModelProtocol {
 
     func start() {
         state = .normal
+
+        if let email = self.storageService.stringFromKeychain(with: KeychainStorage.Key.username),
+              !email.isEmpty {
+            loginViewData.email = email
+        }
     }
 
     
     func login(data: LoginViewDataType) {
 
         loginViewData = data
-        updateScreen?(loginViewData)
 
         guard loginViewData.isLoginDataValid else {
             return
@@ -92,8 +96,6 @@ class LoginViewModel: LoginViewModelProtocol {
             }
         }
 
-
-        self.coordinatorDelegate?.openMainInterface()
     }
 
 
@@ -132,6 +134,10 @@ class LoginViewModel: LoginViewModelProtocol {
             updateState?(state)
         }
     }
-    private var loginViewData: LoginViewDataType
+    private var loginViewData: LoginViewDataType {
+        didSet {
+            updateScreen?(loginViewData)
+        }
+    }
 
 }

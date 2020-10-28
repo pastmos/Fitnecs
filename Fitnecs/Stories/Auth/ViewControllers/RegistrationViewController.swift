@@ -43,6 +43,7 @@ class RegistrationViewController: BaseViewController {
             registerButton.setTitle(Strings.Auth.Registration.Button.title, for: .normal)
         }
     }
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
 
     var viewModel: RegistrationViewModelProtocol?
@@ -67,9 +68,9 @@ class RegistrationViewController: BaseViewController {
             DispatchQueue.main.async {
                 switch state {
                 case .normal:
-                  return
+                    self?.activityIndicator.stopAnimating()
                 case .loading:
-                  return
+                    self?.activityIndicator.startAnimating()
                 case .error(let viewData):
                   return
                 }
@@ -78,7 +79,8 @@ class RegistrationViewController: BaseViewController {
 
         viewModel?.updateScreen = { [weak self] viewData in
             self?.setLoginState(isValid: viewData.isEmailValid)
-            self?.setPasswordState(isValid: viewData.isPasswordValid)
+            self?.setPasswordState(isValid: viewData.isPasswordValid  && viewData.arePasswordsEqual)
+            self?.setPasswordConfirmationState(isValid: viewData.isPasswordConfirmationValid && viewData.arePasswordsEqual)
         }
 
         viewModel?.start()
@@ -95,7 +97,7 @@ class RegistrationViewController: BaseViewController {
 
     // MARK: Actions
     @IBAction func registrationDidTap(_ sender: Any) {
-        let data = RegisterViewData(name: "", email: loginTextField.text ?? "", password:  passwordTextField.text ?? "", passwordConfirmation: passwordConfirmationTextField.text ?? "")
+        let data = RegisterViewData(name: "test", email: loginTextField.text ?? "", password:  passwordTextField.text ?? "", passwordConfirmation: passwordConfirmationTextField.text ?? "")
         viewModel?.registration(from: self, data: data )
     }
 
@@ -135,6 +137,11 @@ class RegistrationViewController: BaseViewController {
         passwordTextField.layer.borderColor = UIColor.red.cgColor
     }
 
+    private func setPasswordConfirmationState(isValid: Bool) {
+        passwordConfirmationTextField.layer.borderWidth = isValid ?  0 : 1
+        passwordConfirmationTextField.layer.borderColor = UIColor.red.cgColor
+    }
+
     private func  setTextFieldPaddings() {
         let loginPaddingView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 7, height: 20))
         loginTextField.leftView = loginPaddingView
@@ -142,6 +149,9 @@ class RegistrationViewController: BaseViewController {
         let passwordPaddingView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 7, height: 20))
         passwordTextField.leftView = passwordPaddingView
         passwordTextField.leftViewMode = .always
+        let passwordConfirmPaddingView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 7, height: 20))
+        passwordConfirmationTextField.leftView = passwordConfirmPaddingView
+        passwordConfirmationTextField.leftViewMode = .always
     }
 
 }

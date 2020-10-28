@@ -15,7 +15,7 @@ import SafariServices
 protocol MainCoordinatorDelegate: AnyObject {
 
     func didFinish(from coordinator: MainCoordinator)
-    func openAuthInterface(from coordinator: Coordinator, with screen: AuthCoordinator.Screen, phone: String)
+    func openAuthInterface(from coordinator: Coordinator, with screen: AuthCoordinator.Screen)
 }
 
 
@@ -41,26 +41,31 @@ class MainCoordinator: Coordinator {
 
     private lazy var activityCoordinator: ActivityCoordinator = {
         let activityCoordinator = ActivityCoordinator()
+        activityCoordinator.delegate = self
         return activityCoordinator
     }()
 
     private lazy var geoCoordinator: GeoCoordinator = {
         let geoCoordinator = GeoCoordinator()
+        geoCoordinator.delegate = self
         return geoCoordinator
     }()
 
     private lazy var achievementsCoordinator: AchievementsCoordinator = {
         let achievementsCoordinator = AchievementsCoordinator()
+        achievementsCoordinator.delegate = self
         return achievementsCoordinator
     }()
 
     private lazy var statisticsCoordinator: StatisticsCoordinator = {
         let statisticsCoordinator = StatisticsCoordinator()
+        statisticsCoordinator.delegate = self
         return statisticsCoordinator
     }()
 
     private lazy var profileCoordinator: ProfileCoordinator = {
         let profileCoordinator = ProfileCoordinator()
+        profileCoordinator.delegate = self
         return profileCoordinator
     }()
 
@@ -109,7 +114,7 @@ class MainCoordinator: Coordinator {
 extension MainCoordinator: MainViewModelCoordinatorDelegate {
     
     func openAuthInterface() {
-        delegate?.openAuthInterface(from: self, with: .login, phone: "")
+        delegate?.openAuthInterface(from: self, with: .login)
     }
 
    
@@ -152,3 +157,37 @@ extension MainCoordinator: MainViewModelCoordinatorDelegate {
  
 
 }
+
+
+extension MainCoordinator: ActivityCoordinatorDelegate {
+    func didFinish(from coordinator: ActivityCoordinator) {
+        self.finish()
+    }
+}
+
+
+extension MainCoordinator: GeoCoordinatorDelegate {
+    func didFinish(from coordinator: GeoCoordinator) {
+        self.finish()
+    }
+}
+
+extension MainCoordinator: AchievementsCoordinatorDelegate {
+    func didFinish(from coordinator: AchievementsCoordinator) {
+        self.finish()
+    }
+}
+
+
+extension MainCoordinator: StatisticsCoordinatorDelegate {
+    func didFinish(from coordinator: StatisticsCoordinator) {
+        self.finish()
+    }
+}
+
+extension MainCoordinator: ProfileCoordinatorDelegate {
+    func didFinish(from coordinator: ProfileCoordinator) {
+        self.finish()
+    }
+}
+

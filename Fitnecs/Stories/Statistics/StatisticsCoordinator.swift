@@ -39,6 +39,11 @@ class StatisticsCoordinator: Coordinator {
         tabController.viewControllers = controllers
     }
 
+    override func finish() {
+        delegate?.didFinish(from: self)
+    }
+
+
 }
 
 extension StatisticsCoordinator: StatisticsViewModelCoordinatorDelegate {
