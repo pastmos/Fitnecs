@@ -28,8 +28,8 @@ extension UploadAPI: TargetType, AccessTokenAuthorizable {
 
     var path: String {
         switch self {
-        case .getInterval:  return "api/v1/data/get-dates"
-        case .uploadData:   return "/api/v1/data/store"
+        case .getInterval:  return "data/get-dates"
+        case .uploadData:   return "data/store"
         }
     }
 
@@ -46,25 +46,13 @@ extension UploadAPI: TargetType, AccessTokenAuthorizable {
         switch self {
 
         case .getInterval:
-            return .requestParameters(parameters: [:], encoding: JSONEncoding.default)
+            return .requestPlain
 
         case .uploadData(let data):
-            let parameters = [
-                "activeEnergyBurned": data.activeEnergyBurned,
-                "bloodPressureDiastolic": data.bloodPressureDiastolic,
-                "bloodPressureSystolic": data.bloodPressureSystolic,
-                "bodyMass": data.bodyMass,
-                "bodyMassIndex": data.bodyMassIndex,
-                "bodyTemperature": data.bodyTemperature,
-                "distanceWalkingRunning": data.distanceWalkingRunning,
-                "flightsClimbed": data.flightsClimbed,
-                "heartRate": data.heartRate,
-                "height": data.height,
-                "oxygenSaturation": data.oxygenSaturation,
-                "stepCount": data.stepCount,
-                "sleepAnalysis": data.sleepAnalysis
-            ] as [String : Any]
-            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+            guard let data = data as? Encodable else {
+                return .requestData(Data())
+            }
+            return .requestJSONEncodable(data)
         }
     }
 

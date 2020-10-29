@@ -30,4 +30,9 @@ extension String {
         return htmlToAttributedString.string
     }
 
+
+    var date: Date? {
+        let dateFormatter = ISO8601DateFormatter()
+        return dateFormatter.date(from: self)
+    }
 }

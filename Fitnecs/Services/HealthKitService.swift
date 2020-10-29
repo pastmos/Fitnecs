@@ -12,23 +12,23 @@ protocol HealthKitServiceProtocol {
     func authoriseHealthKitAccess(_ completion: @escaping (Bool) -> ())
 
     //Old version support
-    func getStepCount(startDate: Date, endDate: Date, completion: @escaping (Double)->())
-    func getDailyDistance(startDate: Date, endDate: Date, completion: @escaping (Double)->())
-    func getSleep(startDate: Date, endDate: Date, limit: Int, completion: @escaping ([HKSample]?, HKUnit) -> ())
+    func getStepCount(_ startDate: Date, _ endDate: Date, completion: @escaping (Double)->())
+    func getDailyDistance(_ startDate: Date, _ endDate: Date, completion: @escaping (Double)->())
+    func getSleep(_ startDate: Date, _ endDate: Date, limit: Int, completion: @escaping ([HKSample]?, HKUnit) -> ())
     //-------------------
 
-    func getStepCount(startDate: Date, endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ())
-    func getDistanceWalkingRunning(startDate: Date, endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ())
-    func getActiveEnergyBurned(startDate: Date, endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ())
-    func getOxygenSaturation(startDate: Date, endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ())
-    func getBodyMassIndex(startDate: Date, endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ())
-    func getBloodPressureSystolic(startDate: Date, endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ())
-    func getBloodPressureDiastolic(startDate: Date, endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ())
-    func getHeight(startDate: Date, endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ())
-    func getBodyMass(startDate: Date, endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ())
-    func getHeartRate(startDate: Date, endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ())
-    func getFlightsClimbed(startDate: Date, endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ())
-    func getSleepAnalysis(startDate: Date, endDate: Date, completion: @escaping ([HKCategorySample], HKUnit) -> ())
+    func getStepCount(_ startDate: Date, _ endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ())
+    func getDistanceWalkingRunning(_ startDate: Date, _ endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ())
+    func getActiveEnergyBurned(_ startDate: Date, _ endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ())
+    func getOxygenSaturation(_ startDate: Date, _ endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ())
+    func getBodyMassIndex(_ startDate: Date, _ endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ())
+    func getBloodPressureSystolic(_ startDate: Date, _ endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ())
+    func getBloodPressureDiastolic(_ startDate: Date, _ endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ())
+    func getHeight(_ startDate: Date, _ endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ())
+    func getBodyMass(_ startDate: Date, _ endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ())
+    func getHeartRate(_ startDate: Date, _ endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ())
+    func getFlightsClimbed(_ startDate: Date, _ endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ())
+    func getSleepAnalysis(_ startDate: Date, _ endDate: Date, completion: @escaping ([HKCategorySample], HKUnit) -> ())
 }
 
 
@@ -70,21 +70,21 @@ class HealthKitService: HealthKitServiceProtocol {
 
 // Old version support -------
     //Steps
-        func getStepCount(startDate: Date, endDate: Date, completion: @escaping (Double)->()) {
+        func getStepCount(_ startDate: Date, _ endDate: Date, completion: @escaping (Double)->()) {
             statisticsQuery(startDate: startDate, endDate: endDate, type: .stepCount) { total in
                 completion(total)
             }
         }
 
         //Distance
-        func getDailyDistance(startDate: Date, endDate: Date, completion: @escaping (Double)->()) {
+        func getDailyDistance(_ startDate: Date, _ endDate: Date, completion: @escaping (Double)->()) {
             statisticsQuery(startDate: startDate, endDate: endDate, type: .distanceWalkingRunning, unit: .meter()) { total in
                 completion(total)
             }
         }
 
     //Sleep
-       func getSleep(startDate: Date, endDate: Date, limit: Int = 100, completion: @escaping ([HKSample]?, HKUnit) -> ()) {
+       func getSleep(_ startDate: Date, _ endDate: Date, limit: Int = 100, completion: @escaping ([HKSample]?, HKUnit) -> ()) {
            sampleQueryCategory(startDate: startDate, endDate: endDate, type: .sleepAnalysis, unit: .minute()) { samples, unit in
                completion(samples, unit)
            }
@@ -97,21 +97,21 @@ class HealthKitService: HealthKitServiceProtocol {
     //Sample queries
 
     //StepCount
-    func getStepCount(startDate: Date, endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ()) {
+    func getStepCount(_ startDate: Date, _ endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ()) {
         sampleQuery(startDate: startDate, endDate: endDate, type: .stepCount, unit: .count()) { samples, unit in
             completion(samples, unit)
         }
     }
 
     //DistanceWalkingRunning
-    func getDistanceWalkingRunning(startDate: Date, endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ()) {
+    func getDistanceWalkingRunning(_ startDate: Date, _ endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ()) {
         sampleQuery(startDate: startDate, endDate: endDate, type: .distanceWalkingRunning, unit: .meter()) { samples, unit in
             completion(samples, unit)
         }
     }
 
     //ActiveEnergyBurned
-    func getActiveEnergyBurned(startDate: Date, endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ()) {
+    func getActiveEnergyBurned(_ startDate: Date, _ endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ()) {
         sampleQuery(startDate: startDate, endDate: endDate, type: .activeEnergyBurned, unit: .kilocalorie()) { samples, unit in
             completion(samples, unit)
         }
@@ -119,28 +119,28 @@ class HealthKitService: HealthKitServiceProtocol {
 
 
     //OxygenSaturation
-    func getOxygenSaturation(startDate: Date, endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ()) {
+    func getOxygenSaturation(_ startDate: Date, _ endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ()) {
         sampleQuery(startDate: startDate, endDate: endDate, type: .oxygenSaturation, unit: .percent()) { samples, unit in
             completion(samples, unit)
         }
     }
 
     //BodyMassIndex
-    func getBodyMassIndex(startDate: Date, endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ()) {
+    func getBodyMassIndex(_ startDate: Date, _ endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ()) {
         sampleQuery(startDate: startDate, endDate: endDate, type: .bodyMassIndex, unit: .count()) { samples, unit in
             completion(samples, unit)
         }
     }
 
     //BloodPressureSystolic
-    func getBloodPressureSystolic(startDate: Date, endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ()) {
+    func getBloodPressureSystolic(_ startDate: Date, _ endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ()) {
         sampleQuery(startDate: startDate, endDate: endDate, type: .bloodPressureSystolic, unit: .millimeterOfMercury()) { samples, unit in
             completion(samples, unit)
         }
     }
 
     //BloodPressureDiastolic
-    func getBloodPressureDiastolic(startDate: Date, endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ()) {
+    func getBloodPressureDiastolic(_ startDate: Date, _ endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ()) {
         sampleQuery(startDate: startDate, endDate: endDate, type: .bloodPressureDiastolic, unit: .millimeterOfMercury()) { samples, unit in
             completion(samples, unit)
         }
@@ -148,7 +148,7 @@ class HealthKitService: HealthKitServiceProtocol {
 
     
     //Height
-    func getHeight(startDate: Date, endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ()) {
+    func getHeight(_ startDate: Date, _ endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ()) {
         sampleQuery(startDate: startDate, endDate: endDate, type: .height, unit: .meter()) { samples, unit in
             completion(samples, unit)
         }
@@ -156,21 +156,21 @@ class HealthKitService: HealthKitServiceProtocol {
 
 
     //BodyMass
-    func getBodyMass(startDate: Date, endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ()) {
+    func getBodyMass(_ startDate: Date, _ endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ()) {
         sampleQuery(startDate: startDate, endDate: endDate, type: .bodyMass, unit: .gram()) { samples, unit in
             completion(samples, unit)
         }
     }
 
     //HeartRate
-    func getHeartRate(startDate: Date, endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ()) {
+    func getHeartRate(_ startDate: Date, _ endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ()) {
         sampleQuery(startDate: startDate, endDate: endDate, type: .heartRate, unit: HKUnit(from: "count/min")) { samples, unit in
             completion(samples, unit)
         }
     }
 
     //FlightsClimbed
-    func getFlightsClimbed(startDate: Date, endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ()) {
+    func getFlightsClimbed(_ startDate: Date, _ endDate: Date, completion: @escaping ([HKQuantitySample], HKUnit) -> ()) {
         sampleQuery(startDate: startDate, endDate: endDate, type: .flightsClimbed, unit: .count()) { samples, unit in
             completion(samples, unit)
         }
@@ -178,7 +178,7 @@ class HealthKitService: HealthKitServiceProtocol {
 
 
     //SleepAnalysis
-    func getSleepAnalysis(startDate: Date, endDate: Date, completion: @escaping ([HKCategorySample], HKUnit) -> ()) {
+    func getSleepAnalysis(_ startDate: Date, _ endDate: Date, completion: @escaping ([HKCategorySample], HKUnit) -> ()) {
         sampleQueryCategory(startDate: startDate, endDate: endDate, type: .sleepAnalysis, unit: .minute()) { samples, unit in
             completion(samples, unit)
         }

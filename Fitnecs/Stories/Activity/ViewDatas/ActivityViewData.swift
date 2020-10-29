@@ -38,16 +38,70 @@ struct ActivityData: ActivityDataType, Encodable {
     var bloodPressureDiastolic: [IntDataSample] = []
     var bodyTemperature: [DoubleDataSample] = []
     var sleepAnalysis: [IntDataSample] = []
+
+    private enum CodingKeys: String, CodingKey {
+        case distanceWalkingRunning
+        case stepCount
+        case flightsClimbed
+        case activeEnergyBurned
+        case oxygenSaturation
+        case height
+        case bodyMass
+        case bodyMassIndex
+        case heartRate
+        case bloodPressureSystolic
+        case bloodPressureDiastolic
+        case bodyTemperature
+        case sleepAnalysis
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(distanceWalkingRunning, forKey: .distanceWalkingRunning)
+        try container.encode(stepCount, forKey: .stepCount)
+        try container.encode(flightsClimbed, forKey: .flightsClimbed)
+        try container.encode(activeEnergyBurned, forKey: .activeEnergyBurned)
+        try container.encode(oxygenSaturation, forKey: .oxygenSaturation)
+        try container.encode(height, forKey: .height)
+        try container.encode(bodyMass, forKey: .bodyMass)
+        try container.encode(bodyMassIndex, forKey: .bodyMassIndex)
+        try container.encode(heartRate, forKey: .heartRate)
+        try container.encode(bloodPressureSystolic, forKey: .bloodPressureSystolic)
+        try container.encode(bloodPressureDiastolic, forKey: .bloodPressureDiastolic)
+        try container.encode(sleepAnalysis, forKey: .sleepAnalysis)
+    }
 }
 
 struct IntDataSample: Encodable {
     var value: Int
-    var date: Date
+    var date: String
+
+    private enum CodingKeys: String, CodingKey {
+        case value
+        case date
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(value, forKey: .value)
+        try container.encode(date, forKey: .date)
+    }
 }
 
 struct DoubleDataSample: Encodable {
     var value: Double
-    var date: Date
+    var date: String
+
+    private enum CodingKeys: String, CodingKey {
+        case value
+        case date
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(value, forKey: .value)
+        try container.encode(date, forKey: .date)
+    }
 }
 
 

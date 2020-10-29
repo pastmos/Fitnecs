@@ -55,7 +55,7 @@ class ActivityViewController: UIViewController {
     // MARK: Lifecycle
 
     override func viewWillAppear(_ animated: Bool) {
-        viewModel?.start()
+        viewModel?.getActivityViewData()
     }
 
     override func viewDidLoad() {

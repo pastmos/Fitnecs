@@ -7,9 +7,9 @@
 
 struct UploadDataResponseModel: Codable {
 
-    private enum CodingKeys: String, CodingKey {
-        case token
-    }
-
-    let token: String
+//    private enum CodingKeys: String, CodingKey {
+//        case token
+//    }
+//
+//    let token: String
 }

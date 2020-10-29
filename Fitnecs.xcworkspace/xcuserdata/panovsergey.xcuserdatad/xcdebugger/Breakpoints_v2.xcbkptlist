@@ -992,5 +992,324 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2731C5DF-25C9-44C7-961A-23040854C464"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Stories/Activity/ViewModels/ActivityViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "290"
+            endingLineNumber = "290"
+            landmarkName = "uploadData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2731C5DF-25C9-44C7-961A-23040854C464 - 623af5a123dd44b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fitnecs.ActivityViewModel.(uploadData in _ECBAEEFD9B5D35CE2558F2FADF65FD2B)() -&gt; ()"
+                  moduleName = "Fitnecs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/panovsergey/Desktop/Fitnecs/Fitnecs/Stories/Activity/ViewModels/ActivityViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "273"
+                  endingLineNumber = "273"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "2731C5DF-25C9-44C7-961A-23040854C464 - 715166dbf2947e28"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Fitnecs.UploadDataResponseModel, Fitnecs.APIError&gt;) -&gt; () in Fitnecs.ActivityViewModel.(uploadData in _ECBAEEFD9B5D35CE2558F2FADF65FD2B)() -&gt; ()"
+                  moduleName = "Fitnecs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/panovsergey/Desktop/Fitnecs/Fitnecs/Stories/Activity/ViewModels/ActivityViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "274"
+                  endingLineNumber = "274"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6185BB33-459D-447F-AC1F-2C4A2A8F2835"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Network/TargetTypes/UploadAPI.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "task"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CC5CA0D9-969A-4514-99EC-B707CF7F5951"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Stories/Activity/ViewModels/ActivityViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "start()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CC5CA0D9-969A-4514-99EC-B707CF7F5951 - 777ea847f99e1301"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Bool) -&gt; () in Fitnecs.ActivityViewModel.start() -&gt; ()"
+                  moduleName = "Fitnecs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/panovsergey/Desktop/Fitnecs/Fitnecs/Stories/Activity/ViewModels/ActivityViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "184">
+               </Location>
+               <Location
+                  uuid = "CC5CA0D9-969A-4514-99EC-B707CF7F5951 - c67cd0e26fac202e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Fitnecs.GetIntervalResponseModel, Fitnecs.APIError&gt;) -&gt; () in closure #2 (Swift.Bool) -&gt; () in Fitnecs.ActivityViewModel.start() -&gt; ()"
+                  moduleName = "Fitnecs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/panovsergey/Desktop/Fitnecs/Fitnecs/Stories/Activity/ViewModels/ActivityViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "388">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3DFA7788-AAFE-4DA5-9532-CEBDAA9DAB87"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Stories/Activity/ViewModels/ActivityViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "start()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3DFA7788-AAFE-4DA5-9532-CEBDAA9DAB87 - ee245b24c73cdd5a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool) -&gt; () in Fitnecs.ActivityViewModel.start() -&gt; ()"
+                  moduleName = "Fitnecs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/panovsergey/Desktop/Fitnecs/Fitnecs/Stories/Activity/ViewModels/ActivityViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "184">
+               </Location>
+               <Location
+                  uuid = "3DFA7788-AAFE-4DA5-9532-CEBDAA9DAB87 - c67cd0e26fac2f74"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Fitnecs.GetIntervalResponseModel, Fitnecs.APIError&gt;) -&gt; () in closure #1 (Swift.Bool) -&gt; () in Fitnecs.ActivityViewModel.start() -&gt; ()"
+                  moduleName = "Fitnecs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/panovsergey/Desktop/Fitnecs/Fitnecs/Stories/Activity/ViewModels/ActivityViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "132">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D2624AD3-E967-424C-89C7-D16916C85ABA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Extensions/String.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "date"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E8D3EF68-DD08-4778-A6EF-6F9F01AE9946"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Stories/Activity/ViewModels/ActivityViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "start()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4BD8770D-F2E7-4DB8-9640-EEE4749D37B1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Stories/Activity/ViewModels/ActivityViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "start()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4BD8770D-F2E7-4DB8-9640-EEE4749D37B1 - c67cd0e26fac2f36"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Fitnecs.GetIntervalResponseModel, Fitnecs.APIError&gt;) -&gt; () in closure #1 (Swift.Bool) -&gt; () in Fitnecs.ActivityViewModel.start() -&gt; ()"
+                  moduleName = "Fitnecs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/panovsergey/Desktop/Fitnecs/Fitnecs/Stories/Activity/ViewModels/ActivityViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "400">
+               </Location>
+               <Location
+                  uuid = "4BD8770D-F2E7-4DB8-9640-EEE4749D37B1 - c67cd0e26fac2f36"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Fitnecs.GetIntervalResponseModel, Fitnecs.APIError&gt;) -&gt; () in closure #1 (Swift.Bool) -&gt; () in Fitnecs.ActivityViewModel.start() -&gt; ()"
+                  moduleName = "Fitnecs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/panovsergey/Desktop/Fitnecs/Fitnecs/Stories/Activity/ViewModels/ActivityViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "480">
+               </Location>
+               <Location
+                  uuid = "4BD8770D-F2E7-4DB8-9640-EEE4749D37B1 - c67cd0e26fac2f36"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Fitnecs.GetIntervalResponseModel, Fitnecs.APIError&gt;) -&gt; () in closure #1 (Swift.Bool) -&gt; () in Fitnecs.ActivityViewModel.start() -&gt; ()"
+                  moduleName = "Fitnecs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/panovsergey/Desktop/Fitnecs/Fitnecs/Stories/Activity/ViewModels/ActivityViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "1012">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "892A9084-C704-4BAE-A65F-274C6632C4A5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Network/Services/UploadAPIService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "getInterval(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "892A9084-C704-4BAE-A65F-274C6632C4A5 - cdb0e40fe7781cb4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fitnecs.UploadAPIServiceImplementation.getInterval((Swift.Result&lt;Fitnecs.GetIntervalResponseModel, Fitnecs.APIError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Fitnecs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/panovsergey/Desktop/Fitnecs/Fitnecs/Network/Services/UploadAPIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "892A9084-C704-4BAE-A65F-274C6632C4A5 - 461241735110ee3c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Moya.Response, Moya.MoyaError&gt;) -&gt; () in Fitnecs.UploadAPIServiceImplementation.getInterval((Swift.Result&lt;Fitnecs.GetIntervalResponseModel, Fitnecs.APIError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Fitnecs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/panovsergey/Desktop/Fitnecs/Fitnecs/Network/Services/UploadAPIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "276">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0E4B8F5B-6911-4990-A408-15CC4A37AC1D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fitnecs/Network/Services/UploadAPIService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "getInterval(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

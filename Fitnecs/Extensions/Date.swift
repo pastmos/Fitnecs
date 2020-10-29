@@ -78,4 +78,9 @@ extension Date {
         return lhs.timeIntervalSinceReferenceDate - rhs.timeIntervalSinceReferenceDate
     }
 
+    func format() -> String {
+        let dateFormatter = ISO8601DateFormatter()
+        return dateFormatter.string(from: self)
+    }
+
 }

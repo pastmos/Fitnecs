@@ -92,7 +92,7 @@
 		CEAE88C9251B74A400E7EF87 /* BaseAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE88C6251B74A400E7EF87 /* BaseAPIService.swift */; };
 		CEAE88CD251B74DA00E7EF87 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE88CC251B74DA00E7EF87 /* APIConfig.swift */; };
 		CEAE88D1251B74FA00E7EF87 /* AuthorizationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE88CF251B74FA00E7EF87 /* AuthorizationAPI.swift */; };
-		CEAE88E1251B75EF00E7EF87 /* String+HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE88E0251B75EF00E7EF87 /* String+HTML.swift */; };
+		CEAE88E1251B75EF00E7EF87 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE88E0251B75EF00E7EF87 /* String.swift */; };
 		CEAE88E9251B770300E7EF87 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE88E8251B770300E7EF87 /* StorageService.swift */; };
 		CEAE88FB251B782F00E7EF87 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE88F7251B782F00E7EF87 /* ErrorModel.swift */; };
 		CEAE88FC251B782F00E7EF87 /* RegisterResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE88F9251B782F00E7EF87 /* RegisterResponseModel.swift */; };
@@ -220,7 +220,7 @@
 		CEAE88C6251B74A400E7EF87 /* BaseAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAPIService.swift; sourceTree = "<group>"; };
 		CEAE88CC251B74DA00E7EF87 /* APIConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
 		CEAE88CF251B74FA00E7EF87 /* AuthorizationAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationAPI.swift; sourceTree = "<group>"; };
-		CEAE88E0251B75EF00E7EF87 /* String+HTML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+HTML.swift"; sourceTree = "<group>"; };
+		CEAE88E0251B75EF00E7EF87 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		CEAE88E8251B770300E7EF87 /* StorageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		CEAE88F7251B782F00E7EF87 /* ErrorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 		CEAE88F9251B782F00E7EF87 /* RegisterResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterResponseModel.swift; sourceTree = "<group>"; };
@@ -493,7 +493,7 @@
 			isa = PBXGroup;
 			children = (
 				CEAE8B25251CCCA900E7EF87 /* DateFormatter+DecodingStrategy.swift */,
-				CEAE88E0251B75EF00E7EF87 /* String+HTML.swift */,
+				CEAE88E0251B75EF00E7EF87 /* String.swift */,
 				CEAE876D251B573700E7EF87 /* UIWindow+TopController.swift */,
 				26D4C794252369D000F645A3 /* Date.swift */,
 				26D4C7AA252481AF00F645A3 /* UIImageView.swift */,
@@ -1105,7 +1105,7 @@
 				CEAE8B26251CCCAA00E7EF87 /* DateFormatter+DecodingStrategy.swift in Sources */,
 				CEAE8778251B57DA00E7EF87 /* HtmlArticleViewData.swift in Sources */,
 				2648F32F254AB84F00CD893A /* UploadAPI.swift in Sources */,
-				CEAE88E1251B75EF00E7EF87 /* String+HTML.swift in Sources */,
+				CEAE88E1251B75EF00E7EF87 /* String.swift in Sources */,
 				CEAE8906251B797500E7EF87 /* Environment.swift in Sources */,
 				CEAE87A7251B63E300E7EF87 /* BaseViewController.swift in Sources */,
 				CE8B3F2525212CE500F4FEED /* GeoCoordinator.swift in Sources */,

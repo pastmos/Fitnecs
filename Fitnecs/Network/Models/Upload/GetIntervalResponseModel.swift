@@ -8,8 +8,10 @@
 struct GetIntervalResponseModel: Codable {
 
     private enum CodingKeys: String, CodingKey {
-        case token
+        case dateBegin
+        case dateFinish
     }
 
-    let token: String
+    let dateBegin: String
+    let dateFinish: String
 }
