@@ -20,6 +20,7 @@ struct ErrorModel: Codable, Equatable {
 
         case error
         case detail
+        case message
 
     }
 
@@ -29,6 +30,11 @@ struct ErrorModel: Codable, Equatable {
 
     init(from decoder: Decoder) throws {
         let dict = try decoder.container(keyedBy: CodingKeys.self)
+
+        if let message = try dict.decodeIfPresent(String.self, forKey: .message) {
+            self.message = message
+            return
+        }
 
         if let message = try dict.decodeIfPresent(String.self, forKey: .error) {
             self.message = message

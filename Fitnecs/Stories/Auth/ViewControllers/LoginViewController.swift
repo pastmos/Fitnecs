@@ -68,14 +68,18 @@ class LoginViewController: BaseViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(sender:)), name: UIResponder.keyboardWillHideNotification, object: nil);
 
         viewModel?.updateState = { [weak self] state in
+            guard let self = self else {
+                return
+            }
             DispatchQueue.main.async {
                 switch state {
                 case .normal:
-                    self?.activityIndicator.stopAnimating()
+                    self.activityIndicator.stopAnimating()
                 case .loading:
-                    self?.activityIndicator.startAnimating()
+                    self.activityIndicator.startAnimating()
                 case .error(let viewData):
-                  return
+                  self.activityIndicator.stopAnimating()
+                    self.viewModel?.showErrorMassage(from: self, viewData)
                 }
             }
         }

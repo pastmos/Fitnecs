@@ -34,6 +34,7 @@ protocol LoginViewModelProtocol: AnyObject {
     func start()
     func login(data: LoginViewDataType)
     func openRegistartion(from controller: UIViewController)
+    func showErrorMassage(from controller: UIViewController, _ errorData: ErrorViewDataType)
     func back(from controller: UIViewController)
 
 }
@@ -82,8 +83,11 @@ class LoginViewModel: LoginViewModelProtocol {
 
             switch result {
             case .success(let model):
+                guard let token = model.token, !token.isEmpty else {
+                    return
+                }
                 self.storageService.saveInUserDefaults(string: UUID().uuidString, with: .secretKey)
-                self.storageService.saveInKeychain(string: model.token, with: KeychainStorage.Key.token)
+                self.storageService.saveInKeychain(string: token, with: KeychainStorage.Key.token)
                 self.storageService.saveInKeychain(string: self.loginViewData.email, with: KeychainStorage.Key.username)
                 self.storageService.saveInKeychain(string: self.loginViewData.password, with: KeychainStorage.Key.password)
                 self.state = .normal
@@ -101,6 +105,11 @@ class LoginViewModel: LoginViewModelProtocol {
 
     func openRegistartion(from controller: UIViewController) {
         coordinatorDelegate?.openRegistartion(from: controller)
+    }
+
+    func showErrorMassage(from controller: UIViewController, _ errorData: ErrorViewDataType) {
+        let alert = AlertViewData(title: "Ошибка!", text: errorData.message, closeButtonTitle: "Ок", action: nil, close: nil)
+        coordinatorDelegate?.showInfoAlert(with: alert, from: controller)//showErrorInfoAlert(from: controller)
     }
 
  

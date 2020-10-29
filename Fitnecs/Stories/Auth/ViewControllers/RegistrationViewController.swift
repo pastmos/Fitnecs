@@ -72,7 +72,7 @@ class RegistrationViewController: BaseViewController {
                 case .loading:
                     self?.activityIndicator.startAnimating()
                 case .error(let viewData):
-                  return
+                    self?.activityIndicator.stopAnimating()
                 }
             }
         }

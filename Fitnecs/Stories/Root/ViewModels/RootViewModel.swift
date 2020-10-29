@@ -98,8 +98,11 @@ class RootViewModel: RootViewModelProtocol {
 
             switch result {
             case .success(let model):
+                guard let token = model.token, !token.isEmpty else {
+                    return
+                }
                 self.storageService.saveInUserDefaults(string: UUID().uuidString, with: .secretKey)
-                self.storageService.saveInKeychain(string: model.token, with: KeychainStorage.Key.token)
+                self.storageService.saveInKeychain(string: token, with: KeychainStorage.Key.token)
                 self.storageService.saveInKeychain(string: data.email, with: KeychainStorage.Key.username)
                 self.storageService.saveInKeychain(string: data.password, with: KeychainStorage.Key.password)
                 //self.state = .normal
