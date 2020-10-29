@@ -8,8 +8,23 @@
 import UIKit
 import Charts
 
+protocol ActivityDataType {
+    var distanceWalkingRunning: [IntDataSample] { get set }
+    var stepCount: [IntDataSample] { get set }
+    var flightsClimbed: [IntDataSample] { get set }
+    var activeEnergyBurned: [DoubleDataSample] { get set }
+    var oxygenSaturation: [DoubleDataSample] { get set }
+    var height: [DoubleDataSample] { get set }
+    var bodyMass: [DoubleDataSample] { get set }
+    var bodyMassIndex: [DoubleDataSample] { get set }
+    var heartRate: [IntDataSample] { get set }
+    var bloodPressureSystolic: [IntDataSample] { get set }
+    var bloodPressureDiastolic: [IntDataSample] { get set }
+    var bodyTemperature: [DoubleDataSample] { get set }
+    var sleepAnalysis: [IntDataSample] { get set }
+}
 
-struct ActivityData {
+struct ActivityData: ActivityDataType, Encodable {
     var distanceWalkingRunning: [IntDataSample] = []
     var stepCount: [IntDataSample] = []
     var flightsClimbed: [IntDataSample] = []
@@ -25,12 +40,12 @@ struct ActivityData {
     var sleepAnalysis: [IntDataSample] = []
 }
 
-struct IntDataSample {
+struct IntDataSample: Encodable {
     var value: Int
     var date: Date
 }
 
-struct DoubleDataSample {
+struct DoubleDataSample: Encodable {
     var value: Double
     var date: Date
 }

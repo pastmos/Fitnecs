@@ -1,5 +1,5 @@
 //
-//  LoginModel.swift
+//  LoginResponseModel.swift
 //  Fitnecs
 //
 //  Created by Panov Sergey on 22.10.2020.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LoginModel: Decodable {
+struct LoginResponseModel: Decodable {
 
     private enum CodingKeys: String, CodingKey {
         case token
@@ -16,7 +16,7 @@ struct LoginModel: Decodable {
     let token: String?
 
     init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: LoginModel.CodingKeys.self)
+        let container = try decoder.container(keyedBy: LoginResponseModel.CodingKeys.self)
 
         self.token = try? container.decode(String.self, forKey: .token)
     }

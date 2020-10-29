@@ -13,8 +13,8 @@ import Moya
 
 protocol AuthorizationAPIService {
 
-    func registration(data: RegisterViewDataType, _ completion: @escaping (Result<RegistrationModel, APIError>) -> Void)
-    func login(data: LoginViewDataType, _ completion: @escaping (Result<LoginModel, APIError>) -> Void)
+    func registration(data: RegisterViewDataType, _ completion: @escaping (Result<RegisterResponseModel, APIError>) -> Void)
+    func login(data: LoginViewDataType, _ completion: @escaping (Result<LoginResponseModel, APIError>) -> Void)
 }
 
 
@@ -24,9 +24,9 @@ class AuthorizationAPIServiceImplementation: BaseAPIService, AuthorizationAPISer
 
     // MARK: AuthorizationAPIService
 
-    func registration(data: RegisterViewDataType, _ completion: @escaping (Result<RegistrationModel, APIError>) -> Void) {
+    func registration(data: RegisterViewDataType, _ completion: @escaping (Result<RegisterResponseModel, APIError>) -> Void) {
         provider.request(MultiTarget(AuthorizationAPI.registration(data: data))) { result in
-            let handledResult = self.handleNetworkResult(result, responseObject: RegistrationModel.self)
+            let handledResult = self.handleNetworkResult(result, responseObject: RegisterResponseModel.self)
 
             switch handledResult {
             case .success(let responseObject):
@@ -38,9 +38,9 @@ class AuthorizationAPIServiceImplementation: BaseAPIService, AuthorizationAPISer
         }
     }
 
-    func login(data: LoginViewDataType, _ completion: @escaping (Result<LoginModel, APIError>) -> Void) {
+    func login(data: LoginViewDataType, _ completion: @escaping (Result<LoginResponseModel, APIError>) -> Void) {
         provider.request(MultiTarget(AuthorizationAPI.login(data: data))) { result in
-            let handledResult = self.handleNetworkResult(result, responseObject: LoginModel.self)
+            let handledResult = self.handleNetworkResult(result, responseObject: LoginResponseModel.self)
 
             switch handledResult {
             case .success(let responseObject):
