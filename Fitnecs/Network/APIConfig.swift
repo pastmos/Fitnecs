@@ -12,5 +12,6 @@ enum APIConfig {
     static let baseURL = Environment.baseURL
     static let baseApiURL = baseURL + "api/"
     static let apiVersion = "v1"
-    static let tokenType = "x_api_key"
+    static let authHeader = "x-api-key"
+    static let tokenType = ""
 }

@@ -57,7 +57,8 @@ extension UploadAPI: TargetType, AccessTokenAuthorizable {
     }
 
     var headers: [String: String]? {
-        let headers = ["Content-Type": "application/json"]
+        let token = StorageServiceImplementation().stringFromKeychain(with: .token) ?? ""
+        let headers = ["Content-Type": "application/json" , APIConfig.authHeader: token]
         return headers
     }
 
@@ -78,3 +79,6 @@ extension UploadAPI: TargetType, AccessTokenAuthorizable {
         return Data()
     }
 }
+
+
+

@@ -22,6 +22,7 @@ protocol ActivityDataType {
     var bloodPressureDiastolic: [IntDataSample] { get set }
     var bodyTemperature: [DoubleDataSample] { get set }
     var sleepAnalysis: [IntDataSample] { get set }
+    var source: Int { get set }
 }
 
 struct ActivityData: ActivityDataType, Encodable {
@@ -38,6 +39,7 @@ struct ActivityData: ActivityDataType, Encodable {
     var bloodPressureDiastolic: [IntDataSample] = []
     var bodyTemperature: [DoubleDataSample] = []
     var sleepAnalysis: [IntDataSample] = []
+    var source: Int = 1
 
     private enum CodingKeys: String, CodingKey {
         case distanceWalkingRunning
@@ -53,6 +55,7 @@ struct ActivityData: ActivityDataType, Encodable {
         case bloodPressureDiastolic
         case bodyTemperature
         case sleepAnalysis
+        case source
     }
 
     func encode(to encoder: Encoder) throws {
@@ -69,6 +72,7 @@ struct ActivityData: ActivityDataType, Encodable {
         try container.encode(bloodPressureSystolic, forKey: .bloodPressureSystolic)
         try container.encode(bloodPressureDiastolic, forKey: .bloodPressureDiastolic)
         try container.encode(sleepAnalysis, forKey: .sleepAnalysis)
+        try container.encode(source, forKey: .source)
     }
 }
 

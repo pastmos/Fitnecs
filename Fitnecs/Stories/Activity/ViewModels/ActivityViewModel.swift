@@ -164,19 +164,13 @@ class ActivityViewModel: ActivityViewModelProtocol {
     private func getActivityUploadData(startDate: Date, endDate: Date) {
 
         let dispatchGroup = DispatchGroup()
-//        let now = Date()
-//        let startDay = now.startOfDay - 3600 * 24 * 7
-        let startDay = startDate
-        let endDay = endDate
-
 
         //StepCount
         dispatchGroup.enter()
         self.healthService?.getStepCount(startDate, endDate) { [weak self] samples, unit in
-            self?.data.stepCount = samples.map{IntDataSample(value: Int($0.quantity.doubleValue(for: unit)), date: $0.startDate.format())}
+            self?.data.stepCount = samples.map{ IntDataSample(value: Int($0.quantity.doubleValue(for: unit)), date: $0.startDate.format())}
             dispatchGroup.leave()
         }
-
 
         //DistanceWalkingRunning
         dispatchGroup.enter()
@@ -185,14 +179,12 @@ class ActivityViewModel: ActivityViewModelProtocol {
             dispatchGroup.leave()
         }
 
-
         //FlightsClimbed
         dispatchGroup.enter()
         self.healthService?.getFlightsClimbed(startDate, endDate) { [weak self] samples, unit in
             self?.data.flightsClimbed = samples.map{IntDataSample(value: Int($0.quantity.doubleValue(for: unit)), date: $0.startDate.format())}
             dispatchGroup.leave()
         }
-
 
         //ActiveEnergyBurned
         dispatchGroup.enter()
@@ -201,16 +193,12 @@ class ActivityViewModel: ActivityViewModelProtocol {
             dispatchGroup.leave()
         }
 
-
-
         //OxygenSaturation
         dispatchGroup.enter()
         self.healthService?.getOxygenSaturation(startDate, endDate) { [weak self] samples, unit in
             self?.data.oxygenSaturation = samples.map{DoubleDataSample(value: $0.quantity.doubleValue(for: unit), date: $0.startDate.format())}
             dispatchGroup.leave()
         }
-
-
 
         //Height
         dispatchGroup.enter()
@@ -219,17 +207,12 @@ class ActivityViewModel: ActivityViewModelProtocol {
             dispatchGroup.leave()
         }
 
-
-
-
         //BodyMass
         dispatchGroup.enter()
         self.healthService?.getBodyMass(startDate, endDate) { [weak self] samples, unit in
             self?.data.height = samples.map{DoubleDataSample(value: $0.quantity.doubleValue(for: unit), date: $0.startDate.format())}
             dispatchGroup.leave()
         }
-
-
 
         //BodyMassIndex
         dispatchGroup.enter()
@@ -238,18 +221,12 @@ class ActivityViewModel: ActivityViewModelProtocol {
             dispatchGroup.leave()
         }
 
-
-
-
         //HeartRate
         dispatchGroup.enter()
         self.healthService?.getHeartRate(startDate, endDate) { [weak self] samples, unit in
             self?.data.heartRate = samples.map{IntDataSample(value: Int($0.quantity.doubleValue(for: unit)), date: $0.startDate.format())}
             dispatchGroup.leave()
         }
-
-
-
 
         //BloodPressureSystolic
         dispatchGroup.enter()
@@ -258,9 +235,6 @@ class ActivityViewModel: ActivityViewModelProtocol {
             dispatchGroup.leave()
         }
 
-
-
-
         //BloodPressureDiastolic
         dispatchGroup.enter()
         self.healthService?.getBloodPressureDiastolic(startDate, endDate) { [weak self] samples, unit in
@@ -268,18 +242,12 @@ class ActivityViewModel: ActivityViewModelProtocol {
             dispatchGroup.leave()
         }
 
-
-
-
         //SleepAnalysis
         dispatchGroup.enter()
         self.healthService?.getSleepAnalysis(startDate, endDate) { [weak self] samples, unit in
-
             self?.data.sleepAnalysis = samples.map{IntDataSample(value: Int($0.endDate.timeIntervalSince($0.startDate)), date: $0.startDate.format())}
             dispatchGroup.leave()
         }
-
-
 
         dispatchGroup.notify(queue: DispatchQueue.main) { [weak self] in
             self?.uploadData()
@@ -288,11 +256,11 @@ class ActivityViewModel: ActivityViewModelProtocol {
 
     private func uploadData() {
         uploadService?.uploadData(data: data) { result in
-
+            print(result)
         }
     }
 
-    private func getActivityIndex(_ viewData: ActivityViewData) -> Double{
+    private func getActivityIndex(_ viewData: ActivityViewData) -> Double {
         let index = weekSteps.reduce(0, +) / Double(Const.daysInWeek) / 100
         return index
     }
@@ -300,8 +268,6 @@ class ActivityViewModel: ActivityViewModelProtocol {
     private func getActivityPoints(_ viewData: ActivityViewData) -> Double {
         return 747
     }
-
-
 
     func back(from controller: UIViewController) {
         coordinatorDelegate?.close(from: controller)

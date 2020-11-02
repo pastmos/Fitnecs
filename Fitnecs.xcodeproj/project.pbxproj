@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18C33B3EA5C0733FB06AD272 /* Pods_Fitnecs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08ACED771143D2198230F4F3 /* Pods_Fitnecs.framework */; };
 		26111D46252DE80A00587485 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26111D45252DE80A00587485 /* GoogleService-Info.plist */; };
 		263D7CD92541866400132B9E /* LoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263D7CD82541866400132B9E /* LoginResponseModel.swift */; };
 		2648F2F52542E1DB00CD893A /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2648F2F42542E1DB00CD893A /* ActivityViewController.swift */; };
@@ -17,6 +18,7 @@
 		2648F332254AE3C600CD893A /* UploadAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2648F331254AE3C600CD893A /* UploadAPIService.swift */; };
 		2648F338254AE52200CD893A /* GetIntervalResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2648F337254AE52200CD893A /* GetIntervalResponseModel.swift */; };
 		2648F33C254AE55300CD893A /* UploadDataResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2648F33B254AE55300CD893A /* UploadDataResponseModel.swift */; };
+		26504D8A2550615D0070A5B8 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 26504D892550615D0070A5B8 /* .swiftlint.yml */; };
 		2652CB5425388A200013827D /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2652CB5325388A200013827D /* Double.swift */; };
 		26893DBC2521DCB900604B44 /* GeoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26893DBB2521DCB900604B44 /* GeoViewController.swift */; };
 		268B25B02539AE82008BC076 /* CircleProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268B25AF2539AE82008BC076 /* CircleProgressBar.swift */; };
@@ -47,7 +49,6 @@
 		26D4C795252369D000F645A3 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D4C794252369D000F645A3 /* Date.swift */; };
 		26D4C79925237EC400F645A3 /* ActivityViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D4C79825237EC400F645A3 /* ActivityViewData.swift */; };
 		26D4C7AB252481AF00F645A3 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D4C7AA252481AF00F645A3 /* UIImageView.swift */; };
-		44466BB62CC488D70499FA12 /* Pods_Fitnecs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 492BC87A6A80A02F3C404DD4 /* Pods_Fitnecs.framework */; };
 		CE72CF522520FE6900EEE4FD /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE72CF512520FE6900EEE4FD /* Activity.storyboard */; };
 		CE842E4F251B508E00C4CD96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE842E4E251B508E00C4CD96 /* AppDelegate.swift */; };
 		CE842E5B251B509100C4CD96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE842E59251B509100C4CD96 /* LaunchScreen.storyboard */; };
@@ -121,8 +122,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		03A06246C76396DA4E62A50D /* Pods-Fitnecs.release(test).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitnecs.release(test).xcconfig"; path = "Target Support Files/Pods-Fitnecs/Pods-Fitnecs.release(test).xcconfig"; sourceTree = "<group>"; };
-		205ADD6D532C706129052E1A /* Pods-Fitnecs.debug(test).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitnecs.debug(test).xcconfig"; path = "Target Support Files/Pods-Fitnecs/Pods-Fitnecs.debug(test).xcconfig"; sourceTree = "<group>"; };
+		08ACED771143D2198230F4F3 /* Pods_Fitnecs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fitnecs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26111D45252DE80A00587485 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		263D7CD82541866400132B9E /* LoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseModel.swift; sourceTree = "<group>"; };
 		2648F2912541A05C00CD893A /* Test.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Test.xcconfig; sourceTree = "<group>"; };
@@ -135,6 +135,7 @@
 		2648F331254AE3C600CD893A /* UploadAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadAPIService.swift; sourceTree = "<group>"; };
 		2648F337254AE52200CD893A /* GetIntervalResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetIntervalResponseModel.swift; sourceTree = "<group>"; };
 		2648F33B254AE55300CD893A /* UploadDataResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadDataResponseModel.swift; sourceTree = "<group>"; };
+		26504D892550615D0070A5B8 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		2652CB5325388A200013827D /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		26893DBB2521DCB900604B44 /* GeoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoViewController.swift; sourceTree = "<group>"; };
 		268B25AF2539AE82008BC076 /* CircleProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressBar.swift; sourceTree = "<group>"; };
@@ -172,8 +173,8 @@
 		26D4C794252369D000F645A3 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		26D4C79825237EC400F645A3 /* ActivityViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewData.swift; sourceTree = "<group>"; };
 		26D4C7AA252481AF00F645A3 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
-		492BC87A6A80A02F3C404DD4 /* Pods_Fitnecs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fitnecs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5FFD409E509E52EFFAED22AD /* Pods-Fitnecs.debug(prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitnecs.debug(prod).xcconfig"; path = "Target Support Files/Pods-Fitnecs/Pods-Fitnecs.debug(prod).xcconfig"; sourceTree = "<group>"; };
+		4D0A983AE7F1067C01EE0DA3 /* Pods-Fitnecs.release(test).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitnecs.release(test).xcconfig"; path = "Target Support Files/Pods-Fitnecs/Pods-Fitnecs.release(test).xcconfig"; sourceTree = "<group>"; };
+		7A48E13ECEBD132BE2E14E3D /* Pods-Fitnecs.debug(prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitnecs.debug(prod).xcconfig"; path = "Target Support Files/Pods-Fitnecs/Pods-Fitnecs.debug(prod).xcconfig"; sourceTree = "<group>"; };
 		CE72CF512520FE6900EEE4FD /* Activity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Activity.storyboard; sourceTree = "<group>"; };
 		CE842E4B251B508E00C4CD96 /* Fitnecs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fitnecs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE842E4E251B508E00C4CD96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -246,7 +247,8 @@
 		CEAE8B29251CD34500E7EF87 /* ValidationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
 		CEAE8B30251CD42A00E7EF87 /* HtmlArticleViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HtmlArticleViewModel.swift; sourceTree = "<group>"; };
 		CEFAB9422521111900F58048 /* ActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
-		DA1B0B9F795597889D8A30A7 /* Pods-Fitnecs.release(prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitnecs.release(prod).xcconfig"; path = "Target Support Files/Pods-Fitnecs/Pods-Fitnecs.release(prod).xcconfig"; sourceTree = "<group>"; };
+		FCC0F8D03621CAC5AEB8110D /* Pods-Fitnecs.release(prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitnecs.release(prod).xcconfig"; path = "Target Support Files/Pods-Fitnecs/Pods-Fitnecs.release(prod).xcconfig"; sourceTree = "<group>"; };
+		FFB4A5F67FE39DD540D07468 /* Pods-Fitnecs.debug(test).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitnecs.debug(test).xcconfig"; path = "Target Support Files/Pods-Fitnecs/Pods-Fitnecs.debug(test).xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,7 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26D4C78F2523372300F645A3 /* HealthKit.framework in Frameworks */,
-				44466BB62CC488D70499FA12 /* Pods_Fitnecs.framework in Frameworks */,
+				18C33B3EA5C0733FB06AD272 /* Pods_Fitnecs.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,10 +424,10 @@
 		2C446CBFA930B2DDF15DB1A7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				205ADD6D532C706129052E1A /* Pods-Fitnecs.debug(test).xcconfig */,
-				5FFD409E509E52EFFAED22AD /* Pods-Fitnecs.debug(prod).xcconfig */,
-				03A06246C76396DA4E62A50D /* Pods-Fitnecs.release(test).xcconfig */,
-				DA1B0B9F795597889D8A30A7 /* Pods-Fitnecs.release(prod).xcconfig */,
+				FFB4A5F67FE39DD540D07468 /* Pods-Fitnecs.debug(test).xcconfig */,
+				7A48E13ECEBD132BE2E14E3D /* Pods-Fitnecs.debug(prod).xcconfig */,
+				4D0A983AE7F1067C01EE0DA3 /* Pods-Fitnecs.release(test).xcconfig */,
+				FCC0F8D03621CAC5AEB8110D /* Pods-Fitnecs.release(prod).xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -433,8 +435,9 @@
 		A2D40832CDEC5EC6B9613EF7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				26504D892550615D0070A5B8 /* .swiftlint.yml */,
 				26D4C78E2523372300F645A3 /* HealthKit.framework */,
-				492BC87A6A80A02F3C404DD4 /* Pods_Fitnecs.framework */,
+				08ACED771143D2198230F4F3 /* Pods_Fitnecs.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -901,14 +904,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE842E5F251B509100C4CD96 /* Build configuration list for PBXNativeTarget "Fitnecs" */;
 			buildPhases = (
-				40E675216E11AC36864D3D3E /* [CP] Check Pods Manifest.lock */,
+				B39F8FB47A45E880116136A7 /* [CP] Check Pods Manifest.lock */,
 				CEAE87B2251B660A00E7EF87 /* SwiftGen */,
 				CE842E47251B508E00C4CD96 /* Sources */,
 				CE842E48251B508E00C4CD96 /* Frameworks */,
 				CE842E49251B508E00C4CD96 /* Resources */,
 				26111D49252DF38500587485 /* Crashlytics Firebase script */,
-				E1F5FF791F9D6F0392A52D3A /* [CP] Embed Pods Frameworks */,
-				00C28D099962889924048349 /* [CP] Copy Pods Resources */,
+				C925588BF11FC65AD8DA897E /* [CP] Embed Pods Frameworks */,
+				02C970F6D680F5333C8F8249 /* [CP] Copy Pods Resources */,
+				26504D7E255059AD0070A5B8 /* SwiftLynt */,
 			);
 			buildRules = (
 			);
@@ -966,6 +970,7 @@
 				268B25E6253A2361008BC076 /* Calibri-Bold.ttf in Resources */,
 				268B25EA253A2366008BC076 /* Calibri-Light.ttf in Resources */,
 				26111D46252DE80A00587485 /* GoogleService-Info.plist in Resources */,
+				26504D8A2550615D0070A5B8 /* .swiftlint.yml in Resources */,
 				CEAE8AAE251CC0DE00E7EF87 /* Main.storyboard in Resources */,
 				CEAE87B0251B63E300E7EF87 /* BaseCoverContentViewController.xib in Resources */,
 				CEAE87A6251B63E300E7EF87 /* PopupContentViewController.xib in Resources */,
@@ -983,7 +988,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		00C28D099962889924048349 /* [CP] Copy Pods Resources */ = {
+		02C970F6D680F5333C8F8249 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1020,7 +1025,25 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
-		40E675216E11AC36864D3D3E /* [CP] Check Pods Manifest.lock */ = {
+		26504D7E255059AD0070A5B8 /* SwiftLynt */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLynt;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		B39F8FB47A45E880116136A7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1042,6 +1065,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C925588BF11FC65AD8DA897E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fitnecs/Pods-Fitnecs-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fitnecs/Pods-Fitnecs-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fitnecs/Pods-Fitnecs-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		CEAE87B2251B660A00E7EF87 /* SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1059,23 +1099,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"${PODS_ROOT}/SwiftGen/bin/swiftgen\"\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
-		};
-		E1F5FF791F9D6F0392A52D3A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Fitnecs/Pods-Fitnecs-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Fitnecs/Pods-Fitnecs-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fitnecs/Pods-Fitnecs-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
