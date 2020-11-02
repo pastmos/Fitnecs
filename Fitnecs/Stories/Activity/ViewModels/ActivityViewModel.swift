@@ -64,7 +64,7 @@ class ActivityViewModel: ActivityViewModelProtocol {
 
     let locationManager = CLLocationManager()
 
-    var weekSteps: [Double] = [0,0,0,0,0,0,0]
+    var weekSteps: [Double] = [0, 0, 0, 0, 0, 0, 0]
 
     init(healthService: HealthKitServiceProtocol = HealthKitService(), uploadService: UploadAPIService = UploadAPIServiceImplementation()) {
         self.healthService = healthService
@@ -75,12 +75,12 @@ class ActivityViewModel: ActivityViewModelProtocol {
 
     func start() {
 
-        healthService?.authoriseHealthKitAccess() { [weak self] isAuthorized in
+        healthService?.authoriseHealthKitAccess{ [weak self] isAuthorized in
             guard let self = self, isAuthorized else {
                 return
             }
 
-            self.uploadService?.getInterval() { [weak self] result in
+            self.uploadService?.getInterval { [weak self] result in
                 switch result {
                 case .success(let model):
                     guard let startDate = model.dateBegin.date, let endDate = model.dateFinish.date  else {
@@ -115,21 +115,21 @@ class ActivityViewModel: ActivityViewModelProtocol {
         }
 
         dispatchGroup.enter()
-        self.healthService?.getSleep(startDay - Const.hourSeconds*6, endDay - Const.hourSeconds*6, limit: 100) { samples, unit in
+        self.healthService?.getSleep(startDay - Const.hourSeconds * 6, endDay - Const.hourSeconds * 6, limit: 100) { samples, _ in
             defer {
                 dispatchGroup.leave()
             }
             guard let samples = samples as? [HKCategorySample], !samples.isEmpty else {
                 return
             }
-            let overall = samples.map{$0.endDate.timeIntervalSince($0.startDate)}.reduce(0, +) / Const.hourSeconds
+            let overall = samples.map { $0.endDate.timeIntervalSince($0.startDate) }.reduce(0, +)
 
             self.viewData.sleep = Double(overall).roundTo(2)
         }
 
         dispatchGroup.enter()
         self.healthService?.getDailyDistance(startDay, endDay) { meters in
-            self.viewData.distance = (meters/1000).roundTo(2)
+            self.viewData.distance = (meters / 1000).roundTo(2)
             dispatchGroup.leave()
         }
 
@@ -168,84 +168,84 @@ class ActivityViewModel: ActivityViewModelProtocol {
         //StepCount
         dispatchGroup.enter()
         self.healthService?.getStepCount(startDate, endDate) { [weak self] samples, unit in
-            self?.data.stepCount = samples.map{ IntDataSample(value: Int($0.quantity.doubleValue(for: unit)), date: $0.startDate.format())}
+            self?.data.stepCount = samples.map { IntDataSample(value: Int($0.quantity.doubleValue(for: unit)), date: $0.startDate.format()) }
             dispatchGroup.leave()
         }
 
         //DistanceWalkingRunning
         dispatchGroup.enter()
         self.healthService?.getDistanceWalkingRunning(startDate, endDate) { [weak self] samples, unit in
-            self?.data.distanceWalkingRunning = samples.map{IntDataSample(value: Int($0.quantity.doubleValue(for: unit)), date: $0.startDate.format())}
+            self?.data.distanceWalkingRunning = samples.map { IntDataSample(value: Int($0.quantity.doubleValue(for: unit)), date: $0.startDate.format()) }
             dispatchGroup.leave()
         }
 
         //FlightsClimbed
         dispatchGroup.enter()
         self.healthService?.getFlightsClimbed(startDate, endDate) { [weak self] samples, unit in
-            self?.data.flightsClimbed = samples.map{IntDataSample(value: Int($0.quantity.doubleValue(for: unit)), date: $0.startDate.format())}
+            self?.data.flightsClimbed = samples.map { IntDataSample(value: Int($0.quantity.doubleValue(for: unit)), date: $0.startDate.format()) }
             dispatchGroup.leave()
         }
 
         //ActiveEnergyBurned
         dispatchGroup.enter()
         self.healthService?.getActiveEnergyBurned(startDate, endDate) { [weak self] samples, unit in
-            self?.data.activeEnergyBurned = samples.map{DoubleDataSample(value: $0.quantity.doubleValue(for: unit), date: $0.startDate.format())}
+            self?.data.activeEnergyBurned = samples.map { DoubleDataSample(value: $0.quantity.doubleValue(for: unit), date: $0.startDate.format()) }
             dispatchGroup.leave()
         }
 
         //OxygenSaturation
         dispatchGroup.enter()
         self.healthService?.getOxygenSaturation(startDate, endDate) { [weak self] samples, unit in
-            self?.data.oxygenSaturation = samples.map{DoubleDataSample(value: $0.quantity.doubleValue(for: unit), date: $0.startDate.format())}
+            self?.data.oxygenSaturation = samples.map { DoubleDataSample(value: $0.quantity.doubleValue(for: unit), date: $0.startDate.format()) }
             dispatchGroup.leave()
         }
 
         //Height
         dispatchGroup.enter()
         self.healthService?.getHeight(startDate, endDate) { [weak self] samples, unit in
-            self?.data.height = samples.map{DoubleDataSample(value: $0.quantity.doubleValue(for: unit), date: $0.startDate.format())}
+            self?.data.height = samples.map { DoubleDataSample(value: $0.quantity.doubleValue(for: unit), date: $0.startDate.format()) }
             dispatchGroup.leave()
         }
 
         //BodyMass
         dispatchGroup.enter()
         self.healthService?.getBodyMass(startDate, endDate) { [weak self] samples, unit in
-            self?.data.height = samples.map{DoubleDataSample(value: $0.quantity.doubleValue(for: unit), date: $0.startDate.format())}
+            self?.data.height = samples.map { DoubleDataSample(value: $0.quantity.doubleValue(for: unit), date: $0.startDate.format()) }
             dispatchGroup.leave()
         }
 
         //BodyMassIndex
         dispatchGroup.enter()
         self.healthService?.getBodyMassIndex(startDate, endDate) { [weak self] samples, unit in
-            self?.data.height = samples.map{DoubleDataSample(value: $0.quantity.doubleValue(for: unit), date: $0.startDate.format())}
+            self?.data.height = samples.map { DoubleDataSample(value: $0.quantity.doubleValue(for: unit), date: $0.startDate.format()) }
             dispatchGroup.leave()
         }
 
         //HeartRate
         dispatchGroup.enter()
         self.healthService?.getHeartRate(startDate, endDate) { [weak self] samples, unit in
-            self?.data.heartRate = samples.map{IntDataSample(value: Int($0.quantity.doubleValue(for: unit)), date: $0.startDate.format())}
+            self?.data.heartRate = samples.map { IntDataSample(value: Int($0.quantity.doubleValue(for: unit)), date: $0.startDate.format()) }
             dispatchGroup.leave()
         }
 
         //BloodPressureSystolic
         dispatchGroup.enter()
         self.healthService?.getBloodPressureSystolic(startDate, endDate) { [weak self] samples, unit in
-            self?.data.bloodPressureSystolic = samples.map{IntDataSample(value: Int($0.quantity.doubleValue(for: unit)), date: $0.startDate.format())}
+            self?.data.bloodPressureSystolic = samples.map { IntDataSample(value: Int($0.quantity.doubleValue(for: unit)), date: $0.startDate.format()) }
             dispatchGroup.leave()
         }
 
         //BloodPressureDiastolic
         dispatchGroup.enter()
         self.healthService?.getBloodPressureDiastolic(startDate, endDate) { [weak self] samples, unit in
-            self?.data.bloodPressureDiastolic = samples.map{IntDataSample(value: Int($0.quantity.doubleValue(for: unit)), date: $0.startDate.format())}
+            self?.data.bloodPressureDiastolic = samples.map { IntDataSample(value: Int($0.quantity.doubleValue(for: unit)), date: $0.startDate.format()) }
             dispatchGroup.leave()
         }
 
         //SleepAnalysis
         dispatchGroup.enter()
-        self.healthService?.getSleepAnalysis(startDate, endDate) { [weak self] samples, unit in
-            self?.data.sleepAnalysis = samples.map{IntDataSample(value: Int($0.endDate.timeIntervalSince($0.startDate)), date: $0.startDate.format())}
+        self.healthService?.getSleepAnalysis(startDate, endDate) { [weak self] samples, _ in
+            self?.data.sleepAnalysis = samples.map{IntDataSample(value: Int($0.endDate.timeIntervalSince($0.startDate)), date: $0.startDate.format()) }
             dispatchGroup.leave()
         }
 

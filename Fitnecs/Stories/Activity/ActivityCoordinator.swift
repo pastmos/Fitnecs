@@ -28,23 +28,23 @@ class ActivityCoordinator: Coordinator {
     }()
 
     weak var delegate: ActivityCoordinatorDelegate?
-    
+
     override init() {
-       
+
     }
-    
+
     func start(_ tabController: UITabBarController) {
         tabController.viewControllers = [activityViewController]
     }
 
     override func finish() {
         delegate?.didFinish(from: self)
+
     }
 
-    
+
 }
 
 extension ActivityCoordinator: ActivityViewModelCoordinatorDelegate {
-   
-    
+
 }

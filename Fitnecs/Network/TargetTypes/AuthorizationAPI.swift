@@ -45,7 +45,7 @@ extension AuthorizationAPI: TargetType, AccessTokenAuthorizable {
         switch self {
 
         case .login(let data):
-            let parameters = [ "email": data.email, "password": data.password]
+            let parameters = [ "email": data.email, "password": data.password ]
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
 
         case .registration(let data):
