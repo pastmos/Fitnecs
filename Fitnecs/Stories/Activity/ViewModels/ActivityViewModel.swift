@@ -90,9 +90,6 @@ class ActivityViewModel: ActivityViewModelProtocol {
 
                 case .failure(let error):
                     let errorViewData = ErrorViewData(error: error)
-                    let endDate = Date()
-                    let startDate = endDate - 7 * 24 * 60 * 60
-                    self?.getActivityUploadData(startDate: startDate, endDate: endDate)
                 //self.state = .error(viewData: errorViewData)
                 }
             }

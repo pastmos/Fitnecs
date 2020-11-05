@@ -32,10 +32,8 @@ extension String {
 
 
     var date: Date? {
-        //let formatter = ISO8601DateFormatter()
-        let formatter = DateFormatter()
+        let formatter = ISO8601DateFormatter()
         formatter.timeZone = TimeZone(secondsFromGMT: 0)
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         return formatter.date(from: self)
     }
 }
