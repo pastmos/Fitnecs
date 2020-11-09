@@ -53,9 +53,9 @@ class AuthCoordinator: Coordinator {
         loginViewController.viewModel = viewModel
         return loginViewController
     }()
-    
+
     var phone: String = ""
-    
+
 
     enum Screen {
         case login, phone, code, password
@@ -74,17 +74,17 @@ class AuthCoordinator: Coordinator {
 
 
     // MARK: Coordinator
-    
+
     override func start() {
-        
+
         rootViewController.addChild(navigationController)
         rootViewController.view.addSubview(navigationController.view)
-        
+
         navigationController.view.snp.makeConstraints({ maker in
             maker.edges.equalToSuperview()
         })
-        
-        
+
+
         navigationController.didMove(toParent: rootViewController)
     }
 
@@ -113,7 +113,7 @@ extension AuthCoordinator: AuthViewModelCoordinatorDelegate {
         controller.navigationController?.pushViewController(smsViewController, animated: true)
     }
 
-   
+
     func openMainInterface() {
         delegate?.openMainInterface(from: self)
     }

@@ -8,6 +8,7 @@
 import CoreLocation
 
 protocol GeofencingServiceProtocol {
+    var locationManager: CLLocationManager { get set }
     func monitorRegionAtLocation(center: CLLocationCoordinate2D, identifier: String )
 }
 
@@ -25,7 +26,7 @@ class GeofencingService: GeofencingServiceProtocol {
             if CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
 
                 // Register the region.
-                let maxDistance = self.locationManager.maximumRegionMonitoringDistance
+                let maxDistance = Double(100)
                 let region = CLCircularRegion(center: center,
                                               radius: maxDistance, identifier: identifier)
                 region.notifyOnEntry = true
@@ -34,5 +35,14 @@ class GeofencingService: GeofencingServiceProtocol {
                 self.locationManager.startMonitoring(for: region)
             }
         }
+    }
+
+    func stopMonitoringAllRegions() {
+
+        //stop monitoring all monitored regions
+        for region in locationManager.monitoredRegions {
+            locationManager.stopMonitoring(for: region)
+        }
+
     }
 }

@@ -154,6 +154,8 @@ class ActivityViewModel: ActivityViewModelProtocol {
 
             // Request for use in background
             self.locationManager.requestAlwaysAuthorization()
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in
+            })
         }
 
     }
