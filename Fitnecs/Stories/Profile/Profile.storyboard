@@ -272,6 +272,7 @@
                                                                     </imageView>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <gestureRecognizers/>
                                                                 <constraints>
                                                                     <constraint firstItem="7dC-uC-WuN" firstAttribute="centerY" secondItem="385-2Z-dyi" secondAttribute="centerY" id="2yr-TB-Ryr"/>
                                                                     <constraint firstItem="7dC-uC-WuN" firstAttribute="leading" secondItem="385-2Z-dyi" secondAttribute="leading" constant="20" symbolic="YES" id="4B0-Fs-ZGk"/>
@@ -284,6 +285,9 @@
                                                                     <constraint firstAttribute="trailing" secondItem="jMf-Sw-oeP" secondAttribute="trailing" constant="20" id="oLK-BH-iNS"/>
                                                                     <constraint firstAttribute="bottom" secondItem="jMf-Sw-oeP" secondAttribute="bottom" id="xq3-L8-i0S"/>
                                                                 </constraints>
+                                                                <connections>
+                                                                    <outletCollection property="gestureRecognizers" destination="73O-sL-jhq" appends="YES" id="luw-X2-pvt"/>
+                                                                </connections>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QaI-BX-MUc">
                                                                 <rect key="frame" x="0.0" y="300" width="414" height="60"/>
@@ -401,6 +405,11 @@
                 <tapGestureRecognizer id="yBn-Vk-VXa">
                     <connections>
                         <action selector="exitDidTap:" destination="Gl5-wV-hYW" id="1F7-Ga-myd"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="73O-sL-jhq">
+                    <connections>
+                        <action selector="settingsDidTap:" destination="Gl5-wV-hYW" id="lJg-7L-is3"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

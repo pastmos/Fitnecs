@@ -15,23 +15,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     static var shared: AppDelegate? {
         return UIApplication.shared.delegate as? AppDelegate
     }
-    
+
     var window: UIWindow?
     var appCoordinator: AppCoordinator!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+
         window = UIWindow()
         GMSServices.provideAPIKey(Environment.googleApiKey)
         FirebaseApp.configure()
 
+        UNUserNotificationCenter.current().delegate = self
+
         startApp()
-        
+
         return true
     }
 
 
+}
 
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler(.alert)
+    }
 }
 
 private extension AppDelegate {

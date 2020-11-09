@@ -44,6 +44,9 @@ class ProfileViewController: UIViewController {
         viewModel?.logout()
     }
 
+    @IBAction func settingsDidTap(_ sender: Any) {
+        viewModel?.settings()
+    }
 }
 
 
