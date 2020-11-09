@@ -65,7 +65,7 @@ class LoginViewModel: LoginViewModelProtocol {
         }
     }
 
-    
+
     func login(data: LoginViewDataType) {
 
         loginViewData = data

@@ -19,6 +19,7 @@
 		2648F338254AE52200CD893A /* GetIntervalResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2648F337254AE52200CD893A /* GetIntervalResponseModel.swift */; };
 		2648F33C254AE55300CD893A /* UploadDataResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2648F33B254AE55300CD893A /* UploadDataResponseModel.swift */; };
 		26504D8A2550615D0070A5B8 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 26504D892550615D0070A5B8 /* .swiftlint.yml */; };
+		26504DEA255961510070A5B8 /* GeofencingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26504DE9255961500070A5B8 /* GeofencingService.swift */; };
 		2652CB5425388A200013827D /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2652CB5325388A200013827D /* Double.swift */; };
 		26893DBC2521DCB900604B44 /* GeoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26893DBB2521DCB900604B44 /* GeoViewController.swift */; };
 		268B25B02539AE82008BC076 /* CircleProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268B25AF2539AE82008BC076 /* CircleProgressBar.swift */; };
@@ -136,6 +137,7 @@
 		2648F337254AE52200CD893A /* GetIntervalResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetIntervalResponseModel.swift; sourceTree = "<group>"; };
 		2648F33B254AE55300CD893A /* UploadDataResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadDataResponseModel.swift; sourceTree = "<group>"; };
 		26504D892550615D0070A5B8 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		26504DE9255961500070A5B8 /* GeofencingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofencingService.swift; sourceTree = "<group>"; };
 		2652CB5325388A200013827D /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		26893DBB2521DCB900604B44 /* GeoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoViewController.swift; sourceTree = "<group>"; };
 		268B25AF2539AE82008BC076 /* CircleProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressBar.swift; sourceTree = "<group>"; };
@@ -691,6 +693,7 @@
 				CEAE88E8251B770300E7EF87 /* StorageService.swift */,
 				CEAE8B29251CD34500E7EF87 /* ValidationService.swift */,
 				26D4C791252350EA00F645A3 /* HealthKitService.swift */,
+				26504DE9255961500070A5B8 /* GeofencingService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1111,6 +1114,7 @@
 				CEAE8760251B557C00E7EF87 /* AppCoordinator.swift in Sources */,
 				CEAE87A5251B63E300E7EF87 /* PopupContentViewController.swift in Sources */,
 				263D7CD92541866400132B9E /* LoginResponseModel.swift in Sources */,
+				26504DEA255961510070A5B8 /* GeofencingService.swift in Sources */,
 				CEAE8789251B621600E7EF87 /* HtmlArticleViewController.swift in Sources */,
 				26999CC52540A5CC002D1B49 /* ExpandableContentSizeScrollView.swift in Sources */,
 				CEAE88BD251B73A500E7EF87 /* strings.swift in Sources */,
