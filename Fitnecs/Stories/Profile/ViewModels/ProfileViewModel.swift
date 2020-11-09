@@ -32,6 +32,7 @@ protocol ProfileViewModelProtocol: AnyObject {
 
     func start()
     func logout()
+    func settings()
     func back(from controller: UIViewController)
 
 }
@@ -76,6 +77,10 @@ class ProfileViewModel: ProfileViewModelProtocol {
     func logout() {
         clearKeychain()
         coordinatorDelegate?.openAuth()
+    }
+
+    func settings() {
+        
     }
 
     private func clearKeychain() {
