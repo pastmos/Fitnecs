@@ -66,8 +66,6 @@ class ProfileViewModel: ProfileViewModelProtocol {
 
     func start() {
 
-
-
     }
 
     func back(from controller: UIViewController) {

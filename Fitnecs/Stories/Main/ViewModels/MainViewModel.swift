@@ -52,8 +52,14 @@ class MainViewModel: NSObject, MainViewModelProtocol {
     }
 
     private func addRegionMonitorPoints() {
-        let lattitude = CLLocationDegrees(55.99760912877097)
-        let longitude = CLLocationDegrees(37.236750113246444)
+
+        //0 километр
+        let lattitude = CLLocationDegrees(55.75582509134279)
+        let longitude = CLLocationDegrees(37.61771221201922)
+
+//        //Азбука
+//        let lattitude = CLLocationDegrees(55.99760912877097)
+//        let longitude = CLLocationDegrees(37.236750113246444)
         let regionCenter = CLLocationCoordinate2D(latitude: lattitude, longitude: longitude)
         geofencingService.monitorRegionAtLocation(center: regionCenter, identifier: "Азбука Вкуса")
     }
