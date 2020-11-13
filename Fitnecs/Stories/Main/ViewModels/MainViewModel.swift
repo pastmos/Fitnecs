@@ -53,15 +53,29 @@ class MainViewModel: NSObject, MainViewModelProtocol {
 
     private func addRegionMonitorPoints() {
 
-        //0 километр
-        let lattitude = CLLocationDegrees(55.75582509134279)
-        let longitude = CLLocationDegrees(37.61771221201922)
+        //точка Жени
+        let lattitude1 = CLLocationDegrees(55.63320613268208)
+        let longitude1 = CLLocationDegrees(37.60338947971395)
 
-//        //Азбука
-//        let lattitude = CLLocationDegrees(55.99760912877097)
-//        let longitude = CLLocationDegrees(37.236750113246444)
-        let regionCenter = CLLocationCoordinate2D(latitude: lattitude, longitude: longitude)
-        geofencingService.monitorRegionAtLocation(center: regionCenter, identifier: "Азбука Вкуса")
+        //точка Дениса
+        let lattitude2 = CLLocationDegrees(55.791721)
+        let longitude2 = CLLocationDegrees(37.258575)
+
+
+//        //0 километр
+//        let lattitude = CLLocationDegrees(55.75582509134279)
+//        let longitude = CLLocationDegrees(37.61771221201922)
+
+        //Азбука
+        let lattitude3 = CLLocationDegrees(55.99760912877097)
+        let longitude3 = CLLocationDegrees(37.236750113246444)
+
+        let regionCenter1 = CLLocationCoordinate2D(latitude: lattitude1, longitude: longitude1)
+        let regionCenter2 = CLLocationCoordinate2D(latitude: lattitude2, longitude: longitude2)
+        let regionCenter3 = CLLocationCoordinate2D(latitude: lattitude3, longitude: longitude3)
+        geofencingService.monitorRegionAtLocation(center: regionCenter1, identifier: "Жени")
+        geofencingService.monitorRegionAtLocation(center: regionCenter2, identifier: "Дениса")
+        geofencingService.monitorRegionAtLocation(center: regionCenter3, identifier: "Азбука Вкуса")
     }
 
     private func showLocalNotification(zone: String, isEnter: Bool) {
@@ -70,7 +84,7 @@ class MainViewModel: NSObject, MainViewModelProtocol {
 
         content.title = "Поздравляем!"
         content.subtitle = ""
-        content.body = isEnter ? "Вы вошли в зону \(zone)" : "Вы вышли из зоны \(zone)"
+        content.body = isEnter ? "Вы вошли в зону \(zone)" : "Вы покинули зону \(zone)"
         content.badge = 1
 
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
@@ -89,15 +103,15 @@ extension MainViewModel: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         print("Entered the region!")
         showLocalNotification(zone: region.identifier, isEnter: true)
-        let data = AlertViewData(title: "Поздравляем!", text: "Вы вошли в зону \(region.identifier)", closeButtonTitle: "OK")
-        coordinatorDelegate?.showInfoAlert(with: data)
+//        let data = AlertViewData(title: "Поздравляем!", text: "Вы вошли в зону \(region.identifier)", closeButtonTitle: "OK")
+//        coordinatorDelegate?.showInfoAlert(with: data)
     }
 
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
         print("Exit the region!")
         showLocalNotification(zone: region.identifier, isEnter: false)
-        let data = AlertViewData(title: "Поздравляем!", text: "Вы вышли из зоны \(region.identifier)", closeButtonTitle: "OK")
-        coordinatorDelegate?.showInfoAlert(with: data)
+//        let data = AlertViewData(title: "Поздравляем!", text: "Вы вышли из зоны \(region.identifier)", closeButtonTitle: "OK")
+//        coordinatorDelegate?.showInfoAlert(with: data)
     }
 
 }
