@@ -49,7 +49,7 @@ class AppCoordinator: Coordinator {
         reachability?.unreachableBlock = { [weak self] _ in
             self?.showNoInternetMessage()
         }
-        
+
         //reachability?.startNotifier()
 
     }
