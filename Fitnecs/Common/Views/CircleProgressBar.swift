@@ -138,7 +138,8 @@ class CircularProgressBar: UIView {
         gradient.endPoint = CGPoint(x: 0.5, y: 0)
         if #available(iOS 12.0, *) {
             gradient.type = .conic
-        }else {
+        }
+        else {
             // Fallback on earlier versions
         }
 

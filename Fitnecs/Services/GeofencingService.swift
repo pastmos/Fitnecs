@@ -26,7 +26,7 @@ class GeofencingService: GeofencingServiceProtocol {
             if CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
 
                 // Register the region.
-                let maxDistance = Double(100)
+                let maxDistance = Double(20)
                 let region = CLCircularRegion(center: center,
                                               radius: maxDistance, identifier: identifier)
                 region.notifyOnEntry = true
