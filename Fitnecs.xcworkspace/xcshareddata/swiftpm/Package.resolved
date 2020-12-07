@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "PastySwift",
+        "repositoryURL": "https://github.com/pastmos/PastySwift",
+        "state": {
+          "branch": null,
+          "revision": "3893a38d4822dddd72782e0da37441d1ac7db798",
+          "version": "1.0.3"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

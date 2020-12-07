@@ -32,6 +32,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        print("Background")
+    }
+
+    func applicationWillResignActive(_ application: UIApplication) {
+        print("Activated")
+    }
 
 }
 

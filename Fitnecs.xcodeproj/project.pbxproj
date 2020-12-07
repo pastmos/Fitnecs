@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,7 @@
 		26504D8A2550615D0070A5B8 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 26504D892550615D0070A5B8 /* .swiftlint.yml */; };
 		26504DEA255961510070A5B8 /* GeofencingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26504DE9255961500070A5B8 /* GeofencingService.swift */; };
 		2652CB5425388A200013827D /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2652CB5325388A200013827D /* Double.swift */; };
+		2676D369257E65690002A6F6 /* PastySwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2676D368257E65690002A6F6 /* PastySwift */; };
 		26893DBC2521DCB900604B44 /* GeoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26893DBB2521DCB900604B44 /* GeoViewController.swift */; };
 		268B25B02539AE82008BC076 /* CircleProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268B25AF2539AE82008BC076 /* CircleProgressBar.swift */; };
 		268B25B72539BF23008BC076 /* Statistics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 268B25B62539BF23008BC076 /* Statistics.storyboard */; };
@@ -258,6 +259,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2676D369257E65690002A6F6 /* PastySwift in Frameworks */,
 				26D4C78F2523372300F645A3 /* HealthKit.framework in Frameworks */,
 				18C33B3EA5C0733FB06AD272 /* Pods_Fitnecs.framework in Frameworks */,
 			);
@@ -922,6 +924,9 @@
 			dependencies = (
 			);
 			name = Fitnecs;
+			packageProductDependencies = (
+				2676D368257E65690002A6F6 /* PastySwift */,
+			);
 			productName = Fitnecs;
 			productReference = CE842E4B251B508E00C4CD96 /* Fitnecs.app */;
 			productType = "com.apple.product-type.application";
@@ -950,6 +955,9 @@
 				Base,
 			);
 			mainGroup = CE842E42251B508D00C4CD96;
+			packageReferences = (
+				2676D367257E65680002A6F6 /* XCRemoteSwiftPackageReference "PastySwift" */,
+			);
 			productRefGroup = CE842E4C251B508E00C4CD96 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1579,6 +1587,25 @@
 			defaultConfigurationName = "Release(Test)";
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2676D367257E65680002A6F6 /* XCRemoteSwiftPackageReference "PastySwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pastmos/PastySwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2676D368257E65690002A6F6 /* PastySwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2676D367257E65680002A6F6 /* XCRemoteSwiftPackageReference "PastySwift" */;
+			productName = PastySwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CE842E43251B508D00C4CD96 /* Project object */;
 }
