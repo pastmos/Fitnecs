@@ -22,6 +22,14 @@
 		26504DEA255961510070A5B8 /* GeofencingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26504DE9255961500070A5B8 /* GeofencingService.swift */; };
 		2652CB5425388A200013827D /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2652CB5325388A200013827D /* Double.swift */; };
 		2676D369257E65690002A6F6 /* PastySwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2676D368257E65690002A6F6 /* PastySwift */; };
+		2676D3882580FAED0002A6F6 /* SFUIDisplay-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2676D3802580FAEC0002A6F6 /* SFUIDisplay-Thin.otf */; };
+		2676D3892580FAED0002A6F6 /* SFUIDisplay-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2676D3812580FAEC0002A6F6 /* SFUIDisplay-Ultralight.otf */; };
+		2676D38A2580FAED0002A6F6 /* SFUIDisplay-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2676D3822580FAED0002A6F6 /* SFUIDisplay-Light.otf */; };
+		2676D38B2580FAED0002A6F6 /* SFUIDisplay-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2676D3832580FAED0002A6F6 /* SFUIDisplay-Black.otf */; };
+		2676D38C2580FAED0002A6F6 /* SFUIDisplay-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2676D3842580FAED0002A6F6 /* SFUIDisplay-Bold.otf */; };
+		2676D38D2580FAED0002A6F6 /* SFUIDisplay-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2676D3852580FAED0002A6F6 /* SFUIDisplay-Semibold.otf */; };
+		2676D38E2580FAED0002A6F6 /* SFUIDisplay-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2676D3862580FAED0002A6F6 /* SFUIDisplay-Medium.otf */; };
+		2676D38F2580FAED0002A6F6 /* SFUIDisplay-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2676D3872580FAED0002A6F6 /* SFUIDisplay-Heavy.otf */; };
 		26893DBC2521DCB900604B44 /* GeoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26893DBB2521DCB900604B44 /* GeoViewController.swift */; };
 		268B25B02539AE82008BC076 /* CircleProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268B25AF2539AE82008BC076 /* CircleProgressBar.swift */; };
 		268B25B72539BF23008BC076 /* Statistics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 268B25B62539BF23008BC076 /* Statistics.storyboard */; };
@@ -140,6 +148,14 @@
 		26504D892550615D0070A5B8 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		26504DE9255961500070A5B8 /* GeofencingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofencingService.swift; sourceTree = "<group>"; };
 		2652CB5325388A200013827D /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		2676D3802580FAEC0002A6F6 /* SFUIDisplay-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Thin.otf"; sourceTree = "<group>"; };
+		2676D3812580FAEC0002A6F6 /* SFUIDisplay-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Ultralight.otf"; sourceTree = "<group>"; };
+		2676D3822580FAED0002A6F6 /* SFUIDisplay-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Light.otf"; sourceTree = "<group>"; };
+		2676D3832580FAED0002A6F6 /* SFUIDisplay-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Black.otf"; sourceTree = "<group>"; };
+		2676D3842580FAED0002A6F6 /* SFUIDisplay-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Bold.otf"; sourceTree = "<group>"; };
+		2676D3852580FAED0002A6F6 /* SFUIDisplay-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Semibold.otf"; sourceTree = "<group>"; };
+		2676D3862580FAED0002A6F6 /* SFUIDisplay-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Medium.otf"; sourceTree = "<group>"; };
+		2676D3872580FAED0002A6F6 /* SFUIDisplay-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Heavy.otf"; sourceTree = "<group>"; };
 		26893DBB2521DCB900604B44 /* GeoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoViewController.swift; sourceTree = "<group>"; };
 		268B25AF2539AE82008BC076 /* CircleProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressBar.swift; sourceTree = "<group>"; };
 		268B25B62539BF23008BC076 /* Statistics.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Statistics.storyboard; sourceTree = "<group>"; };
@@ -635,6 +651,14 @@
 		CEAE8888251B736600E7EF87 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				2676D3832580FAED0002A6F6 /* SFUIDisplay-Black.otf */,
+				2676D3842580FAED0002A6F6 /* SFUIDisplay-Bold.otf */,
+				2676D3872580FAED0002A6F6 /* SFUIDisplay-Heavy.otf */,
+				2676D3822580FAED0002A6F6 /* SFUIDisplay-Light.otf */,
+				2676D3862580FAED0002A6F6 /* SFUIDisplay-Medium.otf */,
+				2676D3852580FAED0002A6F6 /* SFUIDisplay-Semibold.otf */,
+				2676D3802580FAEC0002A6F6 /* SFUIDisplay-Thin.otf */,
+				2676D3812580FAEC0002A6F6 /* SFUIDisplay-Ultralight.otf */,
 				268B25E4253A235A008BC076 /* Calibri-Bold.ttf */,
 				268B25E2253A235A008BC076 /* Calibri-Italic.ttf */,
 				268B25E3253A235A008BC076 /* Calibri-Light.ttf */,
@@ -994,6 +1018,14 @@
 				CEAE889F251B736600E7EF87 /* Colors.xcassets in Resources */,
 				CEAE877F251B58A100E7EF87 /* Common.storyboard in Resources */,
 				CEAE8786251B621600E7EF87 /* AlertViewController.xib in Resources */,
+				2676D3882580FAED0002A6F6 /* SFUIDisplay-Thin.otf in Resources */,
+				2676D3892580FAED0002A6F6 /* SFUIDisplay-Ultralight.otf in Resources */,
+				2676D38A2580FAED0002A6F6 /* SFUIDisplay-Light.otf in Resources */,
+				2676D38B2580FAED0002A6F6 /* SFUIDisplay-Black.otf in Resources */,
+				2676D38C2580FAED0002A6F6 /* SFUIDisplay-Bold.otf in Resources */,
+				2676D38D2580FAED0002A6F6 /* SFUIDisplay-Semibold.otf in Resources */,
+				2676D38E2580FAED0002A6F6 /* SFUIDisplay-Medium.otf in Resources */,
+				2676D38F2580FAED0002A6F6 /* SFUIDisplay-Heavy.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

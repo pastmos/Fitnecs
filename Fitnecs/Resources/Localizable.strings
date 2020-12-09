@@ -59,19 +59,18 @@
 "tabs.profile.title"              = "Профиль";
 
 //Auth
-
-"auth.login.placeholder"          = "Введите email";
-"auth.password.placeholder"       = "Введите пароль";
+"auth.login.placeholder"          = "Ваш логин";
+"auth.password.placeholder"       = "Пароль";
 "auth.password.confirmation.placeholder"  = "Подтверждение пароля";
 
 "auth.registration.title"         = "Регистрация";
 "auth.registration.alert.title"   = "Поздравляем!";
 "auth.registration.alert.text"    = "Вы успешно зарегистрированы в приложении и можете использовать ваши данные для входа";
-"auth.registration.button.title"  = "Зарегистрироваться";
+"auth.registration.button.title"  = "Регистрация";
 
 "auth.login.title"                = "FITNECS";
 "auth.login.enter.button.title"   = "Войти";
-"auth.login.ask.registration.title"   = "Еще не зарегистрированы?";
+"auth.login.ask.registration.title"   = "Нет аккаунта?";
 
 
 

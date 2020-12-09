@@ -49,6 +49,7 @@ internal enum Assets {
     internal static let mainRootBackground = ColorAsset(name: "main-root-background")
     internal static let mainTextColor = ColorAsset(name: "main-text-color")
     internal static let searchBackground = ColorAsset(name: "search-background")
+    internal static let underlineColor = ColorAsset(name: "underline-color")
     internal enum Style {
       internal static let background1 = ColorAsset(name: "Style/Background 1")
       internal static let background = ColorAsset(name: "Style/Background")
@@ -73,7 +74,8 @@ internal enum Assets {
     internal static let footSteps = ImageAsset(name: "foot-steps")
     internal static let heightIcon = ImageAsset(name: "height-icon")
     internal static let weightIcon = ImageAsset(name: "weight-icon")
-    internal static let authBackground = ImageAsset(name: "auth-background")
+    internal static let authLogo = ImageAsset(name: "auth-logo")
+    internal static let buttonNormal = ImageAsset(name: "button-normal")
     internal static let alertButtonHighlighted = ImageAsset(name: "alert-button-highlighted")
     internal static let alertButtonNormal = ImageAsset(name: "alert-button-normal")
     internal static let backArrow = ImageAsset(name: "back-arrow")

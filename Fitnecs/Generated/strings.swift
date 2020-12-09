@@ -40,13 +40,13 @@ internal enum Strings {
 
   internal enum Auth {
     internal enum Login {
-      /// Введите email
+      /// Ваш логин
       internal static let placeholder = Strings.tr("Localizable", "auth.login.placeholder")
       /// FITNECS
       internal static let title = Strings.tr("Localizable", "auth.login.title")
       internal enum Ask {
         internal enum Registration {
-          /// Еще не зарегистрированы?
+          /// Нет аккаунта?
           internal static let title = Strings.tr("Localizable", "auth.login.ask.registration.title")
         }
       }
@@ -58,7 +58,7 @@ internal enum Strings {
       }
     }
     internal enum Password {
-      /// Введите пароль
+      /// Пароль
       internal static let placeholder = Strings.tr("Localizable", "auth.password.placeholder")
       internal enum Confirmation {
         /// Подтверждение пароля
@@ -75,7 +75,7 @@ internal enum Strings {
         internal static let title = Strings.tr("Localizable", "auth.registration.alert.title")
       }
       internal enum Button {
-        /// Зарегистрироваться
+        /// Регистрация
         internal static let title = Strings.tr("Localizable", "auth.registration.button.title")
       }
     }

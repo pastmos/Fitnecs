@@ -13,24 +13,34 @@ class LoginViewController: BaseViewController {
 
     // MARK: Properties
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var loginView: UIView!
     @IBOutlet weak var passwordTextField: UITextField! {
         didSet {
-            passwordTextField.placeholder = Strings.Auth.Password.placeholder
+            let attributes = [
+                NSAttributedString.Key.font: FontFamily.SFUIDisplay.light.font(size: 11)
+            ]
+
+            passwordTextField.attributedPlaceholder = NSAttributedString(string: Strings.Auth.Password.placeholder, attributes: attributes)
         }
     }
     @IBOutlet weak var loginTextField: UITextField! {
         didSet {
-            loginTextField.placeholder = Strings.Auth.Login.placeholder
+            let attributes = [
+                NSAttributedString.Key.font: FontFamily.SFUIDisplay.light.font(size: 11)
+            ]
+
+            loginTextField.attributedPlaceholder = NSAttributedString(string: Strings.Auth.Login.placeholder, attributes: attributes)
         }
     }
-    @IBOutlet weak var registerView: UIView!
+
     @IBOutlet weak var headerView: UIView!
-    @IBOutlet weak var titleLabel: UILabel! {
-        didSet {
-            titleLabel.text = Strings.Auth.Login.title
-        }
-    }
+    @IBOutlet weak var centerView: UIView!
+    @IBOutlet weak var registerView: UIView!
+    @IBOutlet weak var registerViewTop: NSLayoutConstraint!
+    @IBOutlet weak var enterButtonTop: NSLayoutConstraint!
+    @IBOutlet weak var logoTop: NSLayoutConstraint!
+
     @IBOutlet weak var enterButton: UIButton! {
         didSet {
             enterButton.setTitle(Strings.Auth.Login.Enter.Button.title, for: .normal)
@@ -55,13 +65,15 @@ class LoginViewController: BaseViewController {
     var difference: CGFloat = 0
     var contentOffset: CGFloat = 0
 
+    var keyboardIsShown = false
+
     // MARK: Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setTextFieldPaddings()
-        self.view.backgroundColor = Assets.Colors.fitnecsBaseColor.color
+        //self.view.backgroundColor = .white
 
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(sender:)), name: UIResponder.keyboardWillShowNotification, object: nil)
 
@@ -92,6 +104,18 @@ class LoginViewController: BaseViewController {
         viewModel?.start()
     }
 
+    override func viewDidLayoutSubviews() {
+        if view.bounds.height - (headerView.bounds.height + centerView.bounds.height) < 100 {
+            enterButtonTop.constant = 60
+            logoTop.constant = 50
+        }
+
+        let bottomSpace = askRegistrationLabel.bounds.height + registerButton.bounds.height + 80
+        let registerTop = view.bounds.height - headerView.bounds.height - centerView.bounds.height - bottomSpace
+        registerViewTop.constant = registerTop > 0 ? registerTop : 15
+
+    }
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
@@ -115,20 +139,32 @@ class LoginViewController: BaseViewController {
     }
 
     @objc func keyboardWillShow(sender: NSNotification) {
+        guard !keyboardIsShown else {
+            return
+        }
         if let keyboardSize = (sender.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
                 keyboardHeight = keyboardSize.height
             }
-        contentOffset = self.scrollView.contentOffset.y
-        difference = keyboardHeight - (view.bounds.height - (registerView.bounds.height + headerView.bounds.height) + self.scrollView.contentOffset.y)
+        self.keyboardIsShown = true
+        let emptyDiff = view.bounds.height - (registerView.bounds.height + headerView.bounds.height + centerView.bounds.height)
+        let emptySpace = emptyDiff > 0 ? emptyDiff : 0
+        difference = (keyboardHeight - (emptySpace + registerView.bounds.height)) - self.scrollView.contentOffset.y
         if difference > 0 {
-            self.scrollView.contentOffset.y += difference
+            self.scrollView.contentOffset.y += difference + 20
+        }
+        else {
+            difference = 0
         }
 
 
     }
 
     @objc func keyboardWillHide(sender: NSNotification) {
-        self.scrollView.contentOffset.y = contentOffset
+        self.keyboardIsShown = false
+        guard difference > 0 else {
+            return
+        }
+        self.scrollView.contentOffset.y -= difference + 20
     }
 
     // MARK: Private
@@ -144,10 +180,10 @@ class LoginViewController: BaseViewController {
     }
 
     private func  setTextFieldPaddings() {
-        let loginPaddingView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 7, height: 20))
+        let loginPaddingView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 20))
         loginTextField.leftView = loginPaddingView
         loginTextField.leftViewMode = .always
-        let passwordPaddingView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 7, height: 20))
+        let passwordPaddingView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 20))
         passwordTextField.leftView = passwordPaddingView
         passwordTextField.leftViewMode = .always
     }
