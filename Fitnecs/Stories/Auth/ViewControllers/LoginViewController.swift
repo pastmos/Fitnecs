@@ -34,6 +34,9 @@ class LoginViewController: BaseViewController {
         }
     }
 
+    @IBOutlet weak var loginUnderlineView: UIView!
+    @IBOutlet weak var passwordUnderlineView: UIView!
+
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var centerView: UIView!
     @IBOutlet weak var registerView: UIView!
@@ -132,6 +135,8 @@ class LoginViewController: BaseViewController {
 
     @IBAction func registrationDidTap(_ sender: Any) {
         viewModel?.openRegistartion(from: self)
+        setLoginState(isValid: true)
+        setPasswordState(isValid: true)
     }
 
     @IBAction func viewDidTap(_ sender: Any) {
@@ -170,13 +175,11 @@ class LoginViewController: BaseViewController {
     // MARK: Private
 
     private func setLoginState(isValid: Bool) {
-        loginTextField.layer.borderWidth = isValid ?  0 : 1
-        loginTextField.layer.borderColor = UIColor.red.cgColor
+        loginUnderlineView.backgroundColor = isValid ? Assets.Colors.underlineColor.color : .red
     }
 
     private func setPasswordState(isValid: Bool) {
-        passwordTextField.layer.borderWidth = isValid ?  0 : 1
-        passwordTextField.layer.borderColor = UIColor.red.cgColor
+        passwordUnderlineView.backgroundColor = isValid ? Assets.Colors.underlineColor.color : .red
     }
 
     private func  setTextFieldPaddings() {

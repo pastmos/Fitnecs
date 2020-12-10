@@ -85,8 +85,8 @@ class RegistrationViewModel: RegistrationViewModelProtocol {
             case .failure(let error):
                 self?.coordinatorDelegate?.showErrorInfoAlert(from: controller)
 
-//                let errorViewData = ErrorViewData(error: error)
-//                self?.state = .error(viewData: errorViewData)
+                let errorViewData = ErrorViewData(error: error)
+                self?.state = .error(viewData: errorViewData)
             }
         }
     }
