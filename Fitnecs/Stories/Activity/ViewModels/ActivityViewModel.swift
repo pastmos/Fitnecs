@@ -121,7 +121,7 @@ class ActivityViewModel: ActivityViewModelProtocol {
             }
             let overall = samples.map { $0.endDate.timeIntervalSince($0.startDate) }.reduce(0, +)
 
-            self.viewData.sleep = Double(overall).roundTo(2)
+            self.viewData.sleep = Double(overall / 3600).roundTo(2)
         }
 
         dispatchGroup.enter()

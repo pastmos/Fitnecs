@@ -84,8 +84,7 @@ class ProfileViewModel: ProfileViewModelProtocol {
     private func clearKeychain() {
         storageService.removeFromKeychain(forKeys: [KeychainStorage.Key.token,
                                                     KeychainStorage.Key.username,
-                                                    KeychainStorage.Key.password,
-                                                    KeychainStorage.Key.code])
+                                                    KeychainStorage.Key.password])
         storageService.removeFromUserDefaults(forKey: .secretKey)
     }
 

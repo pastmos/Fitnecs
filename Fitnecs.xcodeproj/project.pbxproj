@@ -33,6 +33,7 @@
 		2676D3932582240C0002A6F6 /* NavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2676D3922582240C0002A6F6 /* NavigationBar.xib */; };
 		2676D396258225890002A6F6 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2676D395258225890002A6F6 /* NavigationBar.swift */; };
 		2682F1C2258267FA00915865 /* StatisticsViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2682F1C1258267FA00915865 /* StatisticsViewData.swift */; };
+		2682F1C52587907300915865 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2682F1C42587907300915865 /* UIView.swift */; };
 		26893DBC2521DCB900604B44 /* GeoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26893DBB2521DCB900604B44 /* GeoViewController.swift */; };
 		268B25B02539AE82008BC076 /* CircleProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268B25AF2539AE82008BC076 /* CircleProgressBar.swift */; };
 		268B25E6253A2361008BC076 /* Calibri-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 268B25E4253A235A008BC076 /* Calibri-Bold.ttf */; };
@@ -157,6 +158,7 @@
 		2676D3922582240C0002A6F6 /* NavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBar.xib; sourceTree = "<group>"; };
 		2676D395258225890002A6F6 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		2682F1C1258267FA00915865 /* StatisticsViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewData.swift; sourceTree = "<group>"; };
+		2682F1C42587907300915865 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		26893DBB2521DCB900604B44 /* GeoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoViewController.swift; sourceTree = "<group>"; };
 		268B25AF2539AE82008BC076 /* CircleProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressBar.swift; sourceTree = "<group>"; };
 		268B25E2253A235A008BC076 /* Calibri-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri-Italic.ttf"; sourceTree = "<group>"; };
@@ -483,6 +485,7 @@
 				26D4C7AA252481AF00F645A3 /* UIImageView.swift */,
 				2652CB5325388A200013827D /* Double.swift */,
 				26999CC72540A5F1002D1B49 /* NSLayoutConstraint.swift */,
+				2682F1C42587907300915865 /* UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1137,6 +1140,7 @@
 				2648F32F254AB84F00CD893A /* UploadAPI.swift in Sources */,
 				CEAE88E1251B75EF00E7EF87 /* String.swift in Sources */,
 				CEAE8906251B797500E7EF87 /* Environment.swift in Sources */,
+				2682F1C52587907300915865 /* UIView.swift in Sources */,
 				CEAE87A7251B63E300E7EF87 /* BaseViewController.swift in Sources */,
 				CE8B3F2525212CE500F4FEED /* GeoCoordinator.swift in Sources */,
 				CEAE87AE251B63E300E7EF87 /* CoverTransitionManager.swift in Sources */,
