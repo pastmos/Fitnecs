@@ -119,14 +119,59 @@ struct ActivityViewData {
 }
 
 struct UserViewData {
-    var avatarImage: UIImage
-    var todayStatus: String
-    var normalStatus: String
+    var avatarImage: UIImage = UIImage()
+    var todayStatus: String = ""
+    var normalStatus: String = ""
     var points: Int = 0
     var activityIndex: Double = 0
     var yesterdayActivityIndex: Double = 0
 }
 
 struct ChartViewData {
-    var chartItems: Chart
+    var steps: [Int] = [0, 0, 0, 0, 0, 0, 0] {
+        didSet {
+            stepsChart = createBarsArr(array: steps.map { Double($0) }, type: .steps)
+        }
+    }
+    var calories: [Int] = [0, 0, 0, 0, 0, 0, 0] {
+        didSet {
+            caloriesChart = createBarsArr(array: calories.map { Double($0) }, type: .calories)
+        }
+    }
+    var distance: [Double] = [0, 0, 0, 0, 0, 0, 0] {
+        didSet {
+            distanceChart = createBarsArr(array: distance.map { Double($0) }, type: .distance)
+        }
+    }
+    var stepsChart: BarLineScatterCandleBubbleChartData?
+    var caloriesChart: BarLineScatterCandleBubbleChartData?
+    var distanceChart: BarLineScatterCandleBubbleChartData?
+
+    private func createBarsArr(array: [Double], type: ChartType) -> BarLineScatterCandleBubbleChartData {
+        var dataEntries: [BarChartDataEntry] = []
+
+        for i in 0..<array.count {
+            let dataEntry = BarChartDataEntry(x: Double(i + 1), y: array[array.count - i - 1])
+            dataEntries.append(dataEntry)
+        }
+        var description = ""
+        switch type {
+        case .steps:
+            description = "Пройдено шагов в день"
+        case .calories:
+            description = "Потрачено калорий в день"
+        case .distance:
+            description = "Пройдено км в день"
+        }
+        let chartDataSet = BarChartDataSet(entries: dataEntries, label: description)
+        let chartData = BarChartData(dataSet: chartDataSet)
+        return chartData
+    }
+}
+
+
+enum ChartType {
+    case steps
+    case calories
+    case distance
 }

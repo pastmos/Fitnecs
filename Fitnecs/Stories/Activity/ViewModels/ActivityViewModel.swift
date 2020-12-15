@@ -27,8 +27,9 @@ protocol ActivityViewModelProtocol: AnyObject {
     // MARK: Callbacks
 
     var updateState: ((ActivityState) -> Void)? { get set }
-    var updateScreen: ((ActivityViewData) -> Void)? { get set }
-
+    var updateUser: ((UserViewData) -> Void)? { get set }
+    var updateActivity: ((ActivityViewData) -> Void)? { get set }
+    var updateChart: ((ChartViewData) -> Void)? { get set }
 
     // MARK: Events
 
@@ -54,23 +55,32 @@ class ActivityViewModel: ActivityViewModelProtocol {
     var healthService: HealthKitServiceProtocol?
     var uploadService: UploadAPIService?
 
-    var data: ActivityData = ActivityData()
-    var viewData: ActivityViewData = ActivityViewData()
-
     // MARK: Callbacks
 
     var updateState: ((ActivityState) -> Void)?
-    var updateScreen: ((ActivityViewData) -> Void)?
+    var updateUser: ((UserViewData) -> Void)?
+    var updateActivity: ((ActivityViewData) -> Void)?
+    var updateChart: ((ChartViewData) -> Void)?
 
     let locationManager = CLLocationManager()
 
-    var weekSteps: [Double] = [0, 0, 0, 0, 0, 0, 0]
+    var data: ActivityData = ActivityData()
 
-    var userAvatar: UIImage?
-
-    var userData: UserViewData?
-    var activitiesData: ActivityViewData?
-    var chartData: ChartViewData?
+    var userData: UserViewData = UserViewData() {
+        didSet {
+            //updateUser?(userData)
+        }
+    }
+    var activitiesData: ActivityViewData = ActivityViewData() {
+        didSet {
+            //updateActivity?(activitiesData)
+        }
+    }
+    var chartData: ChartViewData = ChartViewData() {
+        didSet {
+            //updateChart?(chartData)
+        }
+    }
 
     init(healthService: HealthKitServiceProtocol = HealthKitService(), uploadService: UploadAPIService = UploadAPIServiceImplementation()) {
         self.healthService = healthService
@@ -81,7 +91,7 @@ class ActivityViewModel: ActivityViewModelProtocol {
 
     func start() {
 
-        healthService?.authoriseHealthKitAccess{ [weak self] isAuthorized in
+        healthService?.authoriseHealthKitAccess { [weak self] isAuthorized in
             guard let self = self, isAuthorized else {
                 return
             }
@@ -111,39 +121,44 @@ class ActivityViewModel: ActivityViewModelProtocol {
         let endDay = now.endOfDay
 
 
+        //Steps daily
         dispatchGroup.enter()
         self.healthService?.getStepCount(startDay, endDay) { steps in
-            self.viewData.steps = steps
+            self.activitiesData.steps = steps
             dispatchGroup.leave()
         }
 
+        //Sleep daily
         dispatchGroup.enter()
-        self.healthService?.getSleep(startDay - Const.hourSeconds * 6, endDay - Const.hourSeconds * 6, limit: 100) { samples, _ in
-            defer {
-                dispatchGroup.leave()
-            }
-            guard let samples = samples as? [HKCategorySample], !samples.isEmpty else {
-                return
-            }
+        self.healthService?.getSleepAnalysis(startDay - Const.hourSeconds * 6, endDay - Const.hourSeconds * 6) { samples, _ in
             let overall = samples.map { $0.endDate.timeIntervalSince($0.startDate) }.reduce(0, +)
-
-            self.viewData.sleepHours = Double(overall / 3600).roundTo(2)
+            self.activitiesData.sleepHours = Double(overall / 3600).roundTo(2)
+            dispatchGroup.leave()
         }
 
+        //Distance daily
         dispatchGroup.enter()
         self.healthService?.getDailyDistance(startDay, endDay) { meters in
-            self.viewData.kilometers = (meters / 1000).roundTo(2)
+            self.activitiesData.kilometers = (meters / 1000).roundTo(2)
+            dispatchGroup.leave()
+        }
+
+        //Calories daily
+        dispatchGroup.enter()
+        self.healthService?.getActiveEnergyBurned(startDay, endDay) { samples, unit in
+            self.activitiesData.calories = samples.map { $0.quantity.doubleValue(for: unit) }.reduce(0, +)
             dispatchGroup.leave()
         }
 
 
+        //Distance, Steps, Calories weekly
         for i in 0..<Const.daysInWeek {
             let startDay = now.addingTimeInterval(-Const.daySeconds * Double(i + 1)).startOfDay
             let endDay = now.addingTimeInterval(-Const.daySeconds * Double(i)).startOfDay
 
             dispatchGroup.enter()
             self.healthService?.getStepCount(startDay, endDay) { steps in
-                self.weekSteps[i] = steps
+                self.chartData.steps[i] = Int(steps)
                 dispatchGroup.leave()
             }
         }
@@ -154,11 +169,21 @@ class ActivityViewModel: ActivityViewModelProtocol {
                 return
             }
 
-            self.updateScreen?(self.viewData)
+            //Temporary hard data(waiting for backend)
+            self.userData.activityIndex = 68
+            self.userData.yesterdayActivityIndex = 37
+            self.userData.avatarImage = UIImage(named: "user-avatar")!
+            self.userData.normalStatus = "Ленивец"
+            self.userData.todayStatus = "Гепард"
+            self.userData.points = 150
 
-            // Request for use in background
+            self.updateUser?(self.userData)
+            self.updateActivity?(self.activitiesData)
+            self.updateChart?(self.chartData)
+
+            // Request location + notification auth
             self.locationManager.requestAlwaysAuthorization()
-            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { didAllow, error in
             })
         }
 

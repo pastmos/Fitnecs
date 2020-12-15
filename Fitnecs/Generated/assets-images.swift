@@ -92,6 +92,7 @@ internal enum Assets {
     internal static let grayButtonHiglighted = ImageAsset(name: "gray-button-higlighted")
     internal static let grayButtonNormal = ImageAsset(name: "gray-button-normal")
     internal static let underConstruction = ImageAsset(name: "under-construction")
+    internal static let userAvatar = ImageAsset(name: "user-avatar")
     internal static let launchLogo = ImageAsset(name: "launch-logo")
     internal static let achievementInactiveTab = ImageAsset(name: "achievement-inactive-tab")
     internal static let achievementTab = ImageAsset(name: "achievement-tab")
