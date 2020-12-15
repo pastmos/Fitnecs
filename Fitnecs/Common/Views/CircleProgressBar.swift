@@ -20,7 +20,7 @@ class CircularProgressBar: UIView {
 
         topLabel = makeLabel(withText: "индекс подвижности", 10, color: Assets.Colors.greyTextColor.color, width: self.bounds.width * 0.27, lines: 2, center: pathCenter)
         bottomLabel = makeLabel(withText: " вчера", 10, color: Assets.Colors.mainTextColor.color, width: 0, lines: 1, center: pathCenter)
-        bottomYesterdayIndexLabel = makeLabel(withText: String(describing: yesterdayIndex), 10, color: Assets.Colors.mainTextColor.color, width: 0, lines: 1, center: pathCenter)
+        bottomYesterdayIndexLabel = makeLabel(withText: String(describing: yesterdayIndex), 10, color: Assets.Colors.blueText.color, width: 0, lines: 1, center: pathCenter)
         yesterdayIndexLabel = makeLabel(withText: String(Int(yesterdayIndex)), 10, color: .white, width: 8, lines: 1, center: yesterdayIndexView.center)
 
         bottomYesterdayIndexStack = UIStackView()

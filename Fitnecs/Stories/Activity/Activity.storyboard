@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,6 +12,12 @@
     <customFonts key="customFonts">
         <array key="Circe-Regular.ttf">
             <string>Circe-Regular</string>
+        </array>
+        <array key="SFUIDisplay-Bold.otf">
+            <string>SFUIDisplay-Bold</string>
+        </array>
+        <array key="SFUIDisplay-Medium.otf">
+            <string>SFUIDisplay-Medium</string>
         </array>
     </customFonts>
     <scenes>
@@ -31,27 +38,99 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sru-qv-Fii">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="DZc-hT-D7n">
-                                                        <rect key="frame" x="15" y="0.0" width="384" height="150"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FDe-1H-W5i">
+                                                        <rect key="frame" x="37" y="52" width="182" height="74"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BAw-Dh-nr5">
-                                                                <rect key="frame" x="0.0" y="0.0" width="177" height="150"/>
-                                                                <color key="backgroundColor" systemColor="systemYellowColor"/>
-                                                            </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UXT-Wb-wup">
-                                                                <rect key="frame" x="207" y="0.0" width="177" height="150"/>
-                                                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="A3g-Rf-YN5">
+                                                                <rect key="frame" x="0.0" y="0.0" width="182" height="24"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сегодня ты" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8N-GQ-lP0">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="107.5" height="24"/>
+                                                                        <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="20"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Гепард" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkx-Do-FUy">
+                                                                        <rect key="frame" x="115.5" y="0.0" width="66.5" height="24"/>
+                                                                        <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="20"/>
+                                                                        <color key="textColor" name="blue-text"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HmW-z3-o5i">
+                                                                <rect key="frame" x="0.0" y="32" width="175.5" height="17"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="хотя в основном" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zUl-Bs-cib">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="108" height="17"/>
+                                                                        <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="14"/>
+                                                                        <color key="textColor" name="text-grey"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ленивец" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQy-dY-yHU">
+                                                                        <rect key="frame" x="118" y="0.0" width="57.5" height="17"/>
+                                                                        <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="14"/>
+                                                                        <color key="textColor" name="blue-transparent-text"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="двигайся больше..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Psu-FM-nu7">
+                                                                <rect key="frame" x="0.0" y="57" width="125" height="17"/>
+                                                                <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="14"/>
+                                                                <color key="textColor" name="text-grey"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7Q1-bY-rAk">
+                                                        <rect key="frame" x="315" y="41" width="46.5" height="77.5"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nd3-1T-tm7">
+                                                                <rect key="frame" x="0.0" y="0.0" width="46.5" height="46.5"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="Nd3-1T-tm7" secondAttribute="height" multiplier="1:1" id="Xcy-cQ-N2v"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XUs-4K-1tW">
+                                                                <rect key="frame" x="0.0" y="51.5" width="46.5" height="26"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="points-image" translatesAutoresizingMaskIntoConstraints="NO" id="mae-mB-Hom">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="46.5" height="26"/>
+                                                                    </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="150" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="at9-US-pGd">
+                                                                        <rect key="frame" x="3" y="5" width="40.5" height="21"/>
+                                                                        <fontDescription key="fontDescription" name="SFUIDisplay-Bold" family="SF UI Display" pointSize="16"/>
+                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="XUs-4K-1tW" secondAttribute="height" multiplier="48:27" id="8qg-tL-ozV"/>
+                                                                    <constraint firstItem="mae-mB-Hom" firstAttribute="top" secondItem="XUs-4K-1tW" secondAttribute="top" id="AqJ-zH-r06"/>
+                                                                    <constraint firstItem="at9-US-pGd" firstAttribute="leading" secondItem="XUs-4K-1tW" secondAttribute="leading" constant="3" id="KMc-ml-ilp"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="mae-mB-Hom" secondAttribute="bottom" id="WMO-U3-jOD"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="at9-US-pGd" secondAttribute="bottom" id="aSg-3H-4zC"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="mae-mB-Hom" secondAttribute="trailing" id="iZj-n7-1WG"/>
+                                                                    <constraint firstItem="at9-US-pGd" firstAttribute="top" secondItem="XUs-4K-1tW" secondAttribute="top" constant="5" id="k1j-6e-2xJ"/>
+                                                                    <constraint firstItem="mae-mB-Hom" firstAttribute="leading" secondItem="XUs-4K-1tW" secondAttribute="leading" id="q0z-78-DCN"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="at9-US-pGd" secondAttribute="trailing" constant="3" id="qXO-g5-APR"/>
+                                                                </constraints>
                                                             </view>
                                                         </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="Nd3-1T-tm7" firstAttribute="width" secondItem="7Q1-bY-rAk" secondAttribute="width" multiplier="0.125604" constant="40.444444444444443" id="bNi-Qm-fPP"/>
+                                                        </constraints>
                                                     </stackView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="DZc-hT-D7n" secondAttribute="bottom" id="Wcm-cF-V1C"/>
-                                                    <constraint firstAttribute="height" constant="150" id="aIb-C0-Em9"/>
-                                                    <constraint firstItem="DZc-hT-D7n" firstAttribute="leading" secondItem="Sru-qv-Fii" secondAttribute="leading" constant="15" id="dpo-D4-QiY"/>
-                                                    <constraint firstAttribute="trailing" secondItem="DZc-hT-D7n" secondAttribute="trailing" constant="15" id="r5I-VA-Xk4"/>
-                                                    <constraint firstItem="DZc-hT-D7n" firstAttribute="top" secondItem="Sru-qv-Fii" secondAttribute="top" id="tet-bo-zXg"/>
+                                                    <constraint firstItem="7Q1-bY-rAk" firstAttribute="top" secondItem="Sru-qv-Fii" secondAttribute="top" constant="41" id="6QR-IE-T3a"/>
+                                                    <constraint firstItem="FDe-1H-W5i" firstAttribute="leading" secondItem="Sru-qv-Fii" secondAttribute="leading" constant="37" id="B5d-Il-fCn"/>
+                                                    <constraint firstAttribute="trailing" secondItem="7Q1-bY-rAk" secondAttribute="trailing" constant="52.5" id="nXf-DV-GVg"/>
+                                                    <constraint firstAttribute="bottom" secondItem="FDe-1H-W5i" secondAttribute="bottom" constant="24" id="rSG-gF-pb2"/>
+                                                    <constraint firstItem="FDe-1H-W5i" firstAttribute="top" secondItem="Sru-qv-Fii" secondAttribute="top" constant="52" id="ycn-mi-GIk"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ygn-D1-JaO">
@@ -152,6 +231,8 @@
                     </view>
                     <connections>
                         <outlet property="activityIndexCircleProgress" destination="MyC-2Q-nWr" id="h5t-sP-bPi"/>
+                        <outlet property="avatarImage" destination="Nd3-1T-tm7" id="4W2-nj-1jm"/>
+                        <outlet property="pointsLabel" destination="at9-US-pGd" id="ATG-Dl-Q47"/>
                         <outlet property="sleepCircleProgress" destination="me9-Lp-Zsg" id="j5u-XA-ydO"/>
                         <outlet property="sleepLabel" destination="sdz-sr-UgT" id="hPS-EO-wiL"/>
                         <outlet property="yesterdayActivityIndexCircleProgress" destination="3R9-zY-eah" id="3Ga-KV-941"/>
@@ -163,17 +244,21 @@
         </scene>
     </scenes>
     <resources>
+        <image name="points-image" width="48" height="27"/>
+        <namedColor name="blue-text">
+            <color red="0.050980392156862744" green="0.41568627450980389" blue="0.79607843137254897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="blue-transparent-text">
+            <color red="0.050980392156862744" green="0.41568627450980389" blue="0.79607843137254897" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="text-grey">
+            <color red="0.16078431372549018" green="0.16078431372549018" blue="0.16078431372549018" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

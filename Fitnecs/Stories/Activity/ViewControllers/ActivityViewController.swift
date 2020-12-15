@@ -23,6 +23,8 @@ class ActivityViewController: UIViewController {
         }
     }
 
+    @IBOutlet weak var avatarImage: UIImageView!
+    @IBOutlet weak var pointsLabel: UILabel!
     // MARK: Properties
 
     var viewModel: ActivityViewModelProtocol?
@@ -61,6 +63,7 @@ class ActivityViewController: UIViewController {
     }
 
     override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         yesterdayActivityIndexCircleProgress.removeYesterdayIndexView()
     }
 

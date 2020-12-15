@@ -112,11 +112,21 @@ struct DoubleDataSample: Encodable {
 
 
 struct ActivityViewData {
-
+    var sleepHours: Double = 0
+    var kilometers: Double = 0
     var steps: Double = 0
-    var sleep: Double = 0
-    var distance: Double = 0
-    var activityIndex: Double = 0
-    var activityPoints: Double = 0
+    var calories: Double = 0
+}
 
+struct UserViewData {
+    var avatarImage: UIImage
+    var todayStatus: String
+    var normalStatus: String
+    var points: Int = 0
+    var activityIndex: Double = 0
+    var yesterdayActivityIndex: Double = 0
+}
+
+struct ChartViewData {
+    var chartItems: Chart
 }

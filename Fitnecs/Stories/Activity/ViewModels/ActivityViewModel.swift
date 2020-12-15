@@ -66,6 +66,12 @@ class ActivityViewModel: ActivityViewModelProtocol {
 
     var weekSteps: [Double] = [0, 0, 0, 0, 0, 0, 0]
 
+    var userAvatar: UIImage?
+
+    var userData: UserViewData?
+    var activitiesData: ActivityViewData?
+    var chartData: ChartViewData?
+
     init(healthService: HealthKitServiceProtocol = HealthKitService(), uploadService: UploadAPIService = UploadAPIServiceImplementation()) {
         self.healthService = healthService
         self.uploadService = uploadService
@@ -121,12 +127,12 @@ class ActivityViewModel: ActivityViewModelProtocol {
             }
             let overall = samples.map { $0.endDate.timeIntervalSince($0.startDate) }.reduce(0, +)
 
-            self.viewData.sleep = Double(overall / 3600).roundTo(2)
+            self.viewData.sleepHours = Double(overall / 3600).roundTo(2)
         }
 
         dispatchGroup.enter()
         self.healthService?.getDailyDistance(startDay, endDay) { meters in
-            self.viewData.distance = (meters / 1000).roundTo(2)
+            self.viewData.kilometers = (meters / 1000).roundTo(2)
             dispatchGroup.leave()
         }
 
@@ -148,8 +154,6 @@ class ActivityViewModel: ActivityViewModelProtocol {
                 return
             }
 
-            self.viewData.activityIndex = self.getActivityIndex(self.viewData)
-            self.viewData.activityPoints = self.getActivityPoints(self.viewData)
             self.updateScreen?(self.viewData)
 
             // Request for use in background
@@ -244,7 +248,7 @@ class ActivityViewModel: ActivityViewModelProtocol {
         //SleepAnalysis
         dispatchGroup.enter()
         self.healthService?.getSleepAnalysis(startDate, endDate) { [weak self] samples, _ in
-            self?.data.sleepAnalysis = samples.map{IntDataSample(value: Int($0.endDate.timeIntervalSince($0.startDate)), date: $0.startDate.format()) }
+            self?.data.sleepAnalysis = samples.map {IntDataSample(value: Int($0.endDate.timeIntervalSince($0.startDate)), date: $0.startDate.format()) }
             dispatchGroup.leave()
         }
 
@@ -257,15 +261,6 @@ class ActivityViewModel: ActivityViewModelProtocol {
         uploadService?.uploadData(data: data) { result in
             print(result)
         }
-    }
-
-    private func getActivityIndex(_ viewData: ActivityViewData) -> Double {
-        let index = weekSteps.reduce(0, +) / Double(Const.daysInWeek) / 100
-        return index
-    }
-
-    private func getActivityPoints(_ viewData: ActivityViewData) -> Double {
-        return 747
     }
 
     func back(from controller: UIViewController) {

@@ -24,6 +24,8 @@ internal enum Assets {
   internal enum Colors {
     internal static let backgroundProgress = ColorAsset(name: "background-progress")
     internal static let blueProgress = ColorAsset(name: "blue-progress")
+    internal static let blueText = ColorAsset(name: "blue-text")
+    internal static let blueTransparentText = ColorAsset(name: "blue-transparent-text")
     internal static let circleGradientEnd = ColorAsset(name: "circle-gradient-end")
     internal static let circleGradientStart = ColorAsset(name: "circle-gradient-start")
     internal static let circleYesterdayBackground = ColorAsset(name: "circle-yesterday-background")
@@ -33,7 +35,7 @@ internal enum Assets {
     internal static let lightblueProgress = ColorAsset(name: "lightblue-progress")
     internal static let purpleProgress = ColorAsset(name: "purple-progress")
     internal static let redProgress = ColorAsset(name: "red-progress")
-    internal static let textGray = ColorAsset(name: "text-gray")
+    internal static let textGrey = ColorAsset(name: "text-grey")
     internal static let alertBackground = ColorAsset(name: "alert-background")
     internal static let alertFormBackground = ColorAsset(name: "alert-form-background")
     internal static let alertSeparator = ColorAsset(name: "alert-separator")
@@ -75,6 +77,7 @@ internal enum Assets {
   internal enum Images {
     internal static let awardActive = ImageAsset(name: "award-active")
     internal static let awardInactive = ImageAsset(name: "award-inactive")
+    internal static let pointsImage = ImageAsset(name: "points-image")
     internal static let authLogo = ImageAsset(name: "auth-logo")
     internal static let launchScreen = ImageAsset(name: "launch-screen")
     internal static let alertButtonHighlighted = ImageAsset(name: "alert-button-highlighted")
