@@ -9,6 +9,7 @@ import UIKit
 
 protocol ActivityCoordinatorDelegate: AnyObject {
     func didFinish(from coordinator: ActivityCoordinator)
+    func openAuth(from coordinator: ActivityCoordinator)
 }
 
 
@@ -60,6 +61,11 @@ extension ActivityCoordinator: ActivityViewModelCoordinatorDelegate {
 extension ActivityCoordinator: ProfileCoordinatorDelegate {
     func didFinish(from coordinator: ProfileCoordinator) {
         removeChildCoordinator(coordinator)
+    }
+
+    func openAuth() {
+        delegate?.openAuth(from: self)
+        self.finish()
     }
 
 }

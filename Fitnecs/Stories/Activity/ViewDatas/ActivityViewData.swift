@@ -122,7 +122,8 @@ struct UserViewData {
     var avatarImage: UIImage = UIImage()
     var todayStatus: String = ""
     var normalStatus: String = ""
-    var points: Int = 0
+    var motivation: String = ""
+    var points: String = ""
     var activityIndex: Double = 0
     var yesterdayActivityIndex: Double = 0
 }

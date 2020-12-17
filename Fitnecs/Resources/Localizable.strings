@@ -73,7 +73,8 @@
 "auth.login.ask.registration.title"   = "Нет аккаунта?";
 
 
-
+//Profile
+"profile.spend.label"              = "потратить баллы";
 
 //Activity
 "activity.index.label"             = "Индекс подвижности";

@@ -119,14 +119,11 @@ extension MainCoordinator: MainViewModelCoordinatorDelegate {
         self.smallModalViewController = smallModalViewController
     }
 
- 
-
     func open(url: URL, from controller: UIViewController) {
         let browserController = SFSafariViewController(url: url)
         controller.present(browserController, animated: true, completion: nil)
     }
 
- 
     func close(from controller: UIViewController, _ completion: (() -> Void)? = nil) {
         if let navigationController = controller.navigationController {
             navigationController.popViewController(animated: true)
@@ -138,12 +135,14 @@ extension MainCoordinator: MainViewModelCoordinatorDelegate {
         }
     }
 
- 
-
 }
 
 
 extension MainCoordinator: ActivityCoordinatorDelegate {
+    func openAuth(from coordinator: ActivityCoordinator) {
+        openAuthInterface()
+    }
+
     func didFinish(from coordinator: ActivityCoordinator) {
         self.finish()
     }

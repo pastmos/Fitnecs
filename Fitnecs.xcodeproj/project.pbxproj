@@ -21,6 +21,7 @@
 		26504D8A2550615D0070A5B8 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 26504D892550615D0070A5B8 /* .swiftlint.yml */; };
 		26504DEA255961510070A5B8 /* GeofencingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26504DE9255961500070A5B8 /* GeofencingService.swift */; };
 		2652CB5425388A200013827D /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2652CB5325388A200013827D /* Double.swift */; };
+		265EB321258B914500C507D6 /* ProfileViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265EB320258B914500C507D6 /* ProfileViewData.swift */; };
 		2676D369257E65690002A6F6 /* PastySwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2676D368257E65690002A6F6 /* PastySwift */; };
 		2676D3882580FAED0002A6F6 /* SFUIDisplay-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2676D3802580FAEC0002A6F6 /* SFUIDisplay-Thin.otf */; };
 		2676D3892580FAED0002A6F6 /* SFUIDisplay-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2676D3812580FAEC0002A6F6 /* SFUIDisplay-Ultralight.otf */; };
@@ -151,6 +152,7 @@
 		26504D892550615D0070A5B8 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		26504DE9255961500070A5B8 /* GeofencingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofencingService.swift; sourceTree = "<group>"; };
 		2652CB5325388A200013827D /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		265EB320258B914500C507D6 /* ProfileViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewData.swift; sourceTree = "<group>"; };
 		2676D3802580FAEC0002A6F6 /* SFUIDisplay-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Thin.otf"; sourceTree = "<group>"; };
 		2676D3812580FAEC0002A6F6 /* SFUIDisplay-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Ultralight.otf"; sourceTree = "<group>"; };
 		2676D3822580FAED0002A6F6 /* SFUIDisplay-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Light.otf"; sourceTree = "<group>"; };
@@ -384,6 +386,7 @@
 		268B261B253F0A0A008BC076 /* ViewDatas */ = {
 			isa = PBXGroup;
 			children = (
+				265EB320258B914500C507D6 /* ProfileViewData.swift */,
 			);
 			path = ViewDatas;
 			sourceTree = "<group>";
@@ -1211,6 +1214,7 @@
 				268B2629253F0C39008BC076 /* ProfileViewModel.swift in Sources */,
 				2648F2F92542E1ED00CD893A /* LoginViewController.swift in Sources */,
 				CEAE89BD251B805700E7EF87 /* RootCoordinator.swift in Sources */,
+				265EB321258B914500C507D6 /* ProfileViewData.swift in Sources */,
 				CEAE88C8251B74A400E7EF87 /* AuthorizationAPIService.swift in Sources */,
 				268B2616253F08B6008BC076 /* AchievementsCoordinator.swift in Sources */,
 				2648F3062547275F00CD893A /* RegisterViewData.swift in Sources */,

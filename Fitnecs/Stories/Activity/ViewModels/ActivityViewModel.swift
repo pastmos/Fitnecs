@@ -184,7 +184,8 @@ class ActivityViewModel: ActivityViewModelProtocol {
                 self.userData.avatarImage = UIImage(named: "user-avatar")!
                 self.userData.normalStatus = "Ленивец"
                 self.userData.todayStatus = "Гепард"
-                self.userData.points = 150
+                self.userData.points = "150"
+                self.userData.motivation = "двигайся больше..."
 
                 self.activitiesData.kilometersItemData = ActivityItemViewData(image: Assets.Images.distanceIcon.image, amount: self.kilometers, unit: "", isActive: false, type: .distance)
                 self.activitiesData.stepsItemData = ActivityItemViewData(image: Assets.Images.stepsIcon.image, amount: self.steps, unit: "", isActive: true, type: .steps)

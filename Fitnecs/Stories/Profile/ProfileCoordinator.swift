@@ -9,6 +9,7 @@ import UIKit
 
 protocol ProfileCoordinatorDelegate: AnyObject {
     func didFinish(from coordinator: ProfileCoordinator)
+    func openAuth()
 }
 
 
@@ -20,7 +21,6 @@ class ProfileCoordinator: Coordinator {
 
     private lazy var profileViewController: ProfileViewController = {
         let profileViewController = Storyboards.Profile.profileViewController.instantiate()
-        profileViewController.tabBarItem = UITabBarItem(title: Strings.Tabs.Profile.title, image: Assets.Images.profileTab.image, selectedImage: Assets.Images.profileTab.image)
         let viewModel = ProfileViewModel()
         viewModel.coordinatorDelegate = self
         profileViewController.viewModel = viewModel
@@ -47,6 +47,7 @@ class ProfileCoordinator: Coordinator {
 extension ProfileCoordinator: ProfileViewModelCoordinatorDelegate {
 
     func openAuth() {
+        delegate?.openAuth()
         self.finish()
     }
 

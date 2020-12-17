@@ -85,6 +85,10 @@ class ActivityViewController: UIViewController {
             self.yesterdayActivityIndexCircleProgress.setProgress(to: 54, maxValue: Const.activityIndexMax, startColor: Assets.Colors.circleYesterdayGradientEnd.color, endColor: Assets.Colors.circleYesterdayGradientEnd.color, thickness: 2, isFractional: false, type: .yesterdayIndex, yesterdayIndex: 54)
 
             self.avatarImage.image = data.avatarImage
+            self.pointsLabel.text = String(data.points)
+            self.todayStatusLabel.text = data.todayStatus
+            self.normalStatusLabel.text = data.normalStatus
+            self.motivationLabel.text = data.motivation
         }
 
         viewModel?.updateActivity = { [weak self] data in

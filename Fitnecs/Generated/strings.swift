@@ -285,6 +285,13 @@ internal enum Strings {
     }
   }
 
+  internal enum Profile {
+    internal enum Spend {
+      /// потратить баллы
+      internal static let label = Strings.tr("Localizable", "profile.spend.label")
+    }
+  }
+
   internal enum Tabs {
     internal enum Achievements {
       /// Достижения
