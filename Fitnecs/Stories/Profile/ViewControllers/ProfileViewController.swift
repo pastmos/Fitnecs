@@ -95,8 +95,8 @@ extension ProfileViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         scrollView.backgroundColor = scrollView.contentOffset.y < 0 ? .white : .white
         if scrollView.contentOffset.y < 0 {
-            editCenterYConstraint.constant = -scrollView.contentOffset.y * 0.10
-            editCenterXConstraint.constant = -scrollView.contentOffset.y * 0.10
+            editCenterYConstraint.constant = -scrollView.contentOffset.y * 0.12
+            editCenterXConstraint.constant = -scrollView.contentOffset.y * 0.12
             let newConstraint = imageWidth.constraintWithMultiplier(imageMultiplier * (1 + abs(scrollView.contentOffset.y) / 300))
             view.removeConstraint(imageWidth)
             view.addConstraint(newConstraint)
