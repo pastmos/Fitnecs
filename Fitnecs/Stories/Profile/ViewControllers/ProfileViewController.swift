@@ -33,11 +33,17 @@ class ProfileViewController: UIViewController {
         userImageView.makeRounded()
         imageMultiplier = imageWidth.multiplier
 
+        //self.scrollView.inset
+
         viewModel?.updateScreen = { [weak self] data in
 
         }
 
         viewModel?.start()
+    }
+
+    @IBAction func backDidTap(_ sender: Any) {
+        viewModel?.back(from: self)
     }
 
     @IBAction func exitDidTap(_ sender: Any) {

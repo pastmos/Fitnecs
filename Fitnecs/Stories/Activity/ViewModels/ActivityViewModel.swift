@@ -11,6 +11,7 @@ import HealthKit
 import Charts
 
 protocol ActivityViewModelCoordinatorDelegate: AnyObject {
+    func openProfile(controller: UIViewController)
     func close(from controller: UIViewController)
 }
 
@@ -29,12 +30,14 @@ protocol ActivityViewModelProtocol: AnyObject {
     var updateState: ((ActivityState) -> Void)? { get set }
     var updateUser: ((UserViewData) -> Void)? { get set }
     var updateActivity: ((ActivityViewData) -> Void)? { get set }
-    var updateChart: ((ChartViewData) -> Void)? { get set }
+    var updateChart: ((ChartViewData, ChartType) -> Void)? { get set }
 
     // MARK: Events
 
     func start()
     func getActivityViewData()
+    func activityItemDidTap(_ type: ChartType)
+    func profileDidTap(controller: UIViewController)
     func back(from controller: UIViewController)
 
 }
@@ -60,27 +63,21 @@ class ActivityViewModel: ActivityViewModelProtocol {
     var updateState: ((ActivityState) -> Void)?
     var updateUser: ((UserViewData) -> Void)?
     var updateActivity: ((ActivityViewData) -> Void)?
-    var updateChart: ((ChartViewData) -> Void)?
+    var updateChart: ((ChartViewData, ChartType) -> Void)?
 
     let locationManager = CLLocationManager()
 
     var data: ActivityData = ActivityData()
 
-    var userData: UserViewData = UserViewData() {
-        didSet {
-            //updateUser?(userData)
-        }
-    }
-    var activitiesData: ActivityViewData = ActivityViewData() {
-        didSet {
-            //updateActivity?(activitiesData)
-        }
-    }
-    var chartData: ChartViewData = ChartViewData() {
-        didSet {
-            //updateChart?(chartData)
-        }
-    }
+    var userData: UserViewData = UserViewData()
+    var activitiesData: ActivityViewData = ActivityViewData(kilometersItemData: ActivityItemViewData(), stepsItemData: ActivityItemViewData(), caloriesItemData: ActivityItemViewData())
+    var chartData: ChartViewData = ChartViewData()
+
+    var steps: String = ""
+    var kilometers: String = ""
+    var calories: String = ""
+
+    var state: ActivityState = .normal
 
     init(healthService: HealthKitServiceProtocol = HealthKitService(), uploadService: UploadAPIService = UploadAPIServiceImplementation()) {
         self.healthService = healthService
@@ -124,7 +121,7 @@ class ActivityViewModel: ActivityViewModelProtocol {
         //Steps daily
         dispatchGroup.enter()
         self.healthService?.getStepCount(startDay, endDay) { steps in
-            self.activitiesData.steps = steps
+            self.steps = String(Int(steps))
             dispatchGroup.leave()
         }
 
@@ -139,14 +136,14 @@ class ActivityViewModel: ActivityViewModelProtocol {
         //Distance daily
         dispatchGroup.enter()
         self.healthService?.getDailyDistance(startDay, endDay) { meters in
-            self.activitiesData.kilometers = (meters / 1000).roundTo(2)
+            self.kilometers = String((meters / 1000).roundTo(2))
             dispatchGroup.leave()
         }
 
         //Calories daily
         dispatchGroup.enter()
         self.healthService?.getActiveEnergyBurned(startDay, endDay) { samples, unit in
-            self.activitiesData.calories = samples.map { $0.quantity.doubleValue(for: unit) }.reduce(0, +)
+            self.calories = String(Int(samples.map { $0.quantity.doubleValue(for: unit) }.reduce(0, +)))
             dispatchGroup.leave()
         }
 
@@ -161,35 +158,53 @@ class ActivityViewModel: ActivityViewModelProtocol {
                 self.chartData.steps[i] = Int(steps)
                 dispatchGroup.leave()
             }
-        }
 
-
-        dispatchGroup.notify(queue: DispatchQueue.main) { [weak self] in
-            guard let self = self else {
-                return
+            dispatchGroup.enter()
+            self.healthService?.getDailyDistance(startDay, endDay) { meters in
+                self.chartData.distance[i] = (meters / 1000).roundTo(2)
+                dispatchGroup.leave()
             }
 
-            //Temporary hard data(waiting for backend)
-            self.userData.activityIndex = 68
-            self.userData.yesterdayActivityIndex = 37
-            self.userData.avatarImage = UIImage(named: "user-avatar")!
-            self.userData.normalStatus = "Ленивец"
-            self.userData.todayStatus = "Гепард"
-            self.userData.points = 150
+            dispatchGroup.enter()
+            self.healthService?.getActiveEnergyBurned(startDay, endDay) { samples, unit in
+                self.chartData.calories[i] = Int(samples.map { $0.quantity.doubleValue(for: unit) }.reduce(0, +))
+                dispatchGroup.leave()
+            }
 
-            self.updateUser?(self.userData)
-            self.updateActivity?(self.activitiesData)
-            self.updateChart?(self.chartData)
 
-            // Request location + notification auth
-            self.locationManager.requestAlwaysAuthorization()
-            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { didAllow, error in
-            })
+            dispatchGroup.notify(queue: DispatchQueue.main) { [weak self] in
+                guard let self = self else {
+                    return
+                }
+
+
+                //Temporary hard data(waiting for backend)
+                self.userData.activityIndex = 68
+                self.userData.yesterdayActivityIndex = 37
+                self.userData.avatarImage = UIImage(named: "user-avatar")!
+                self.userData.normalStatus = "Ленивец"
+                self.userData.todayStatus = "Гепард"
+                self.userData.points = 150
+
+                self.activitiesData.kilometersItemData = ActivityItemViewData(image: Assets.Images.distanceIcon.image, amount: self.kilometers, unit: "", isActive: false, type: .distance)
+                self.activitiesData.stepsItemData = ActivityItemViewData(image: Assets.Images.stepsIcon.image, amount: self.steps, unit: "", isActive: true, type: .steps)
+                self.activitiesData.caloriesItemData = ActivityItemViewData(image: Assets.Images.caloriesIcon.image, amount: self.calories, unit: "", isActive: false, type: .calories)
+
+                self.updateUser?(self.userData)
+                self.updateActivity?(self.activitiesData)
+                self.updateChart?(self.chartData, .steps)
+
+
+                // Request location + notification auth
+                self.locationManager.requestAlwaysAuthorization()
+                UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { didAllow, error in
+                })
+            }
+
         }
-
     }
 
-    private func getActivityUploadData(startDate: Date, endDate: Date) {
+    func getActivityUploadData(startDate: Date, endDate: Date) {
 
         let dispatchGroup = DispatchGroup()
 
@@ -273,7 +288,7 @@ class ActivityViewModel: ActivityViewModelProtocol {
         //SleepAnalysis
         dispatchGroup.enter()
         self.healthService?.getSleepAnalysis(startDate, endDate) { [weak self] samples, _ in
-            self?.data.sleepAnalysis = samples.map {IntDataSample(value: Int($0.endDate.timeIntervalSince($0.startDate)), date: $0.startDate.format()) }
+            self?.data.sleepAnalysis = samples.map { IntDataSample(value: Int($0.endDate.timeIntervalSince($0.startDate)), date: $0.startDate.format()) }
             dispatchGroup.leave()
         }
 
@@ -286,6 +301,22 @@ class ActivityViewModel: ActivityViewModelProtocol {
         uploadService?.uploadData(data: data) { result in
             print(result)
         }
+    }
+
+    func activityItemDidTap(_ type: ChartType) {
+        switch type {
+        case .steps:
+            updateChart?(chartData, .steps)
+        case .calories:
+            updateChart?(chartData, .calories)
+        case .distance:
+            updateChart?(chartData, .distance)
+
+        }
+    }
+
+    func profileDidTap(controller: UIViewController) {
+        coordinatorDelegate?.openProfile(controller: controller)
     }
 
     func back(from controller: UIViewController) {

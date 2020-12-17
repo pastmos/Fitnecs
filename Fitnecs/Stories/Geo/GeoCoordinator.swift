@@ -28,21 +28,24 @@ class GeoCoordinator: Coordinator {
     }()
 
     weak var delegate: GeoCoordinatorDelegate?
-    
+
     override init() {
-       
+
     }
-    
+
     func start(_ tabController: UITabBarController) {
+        let geoNavigationController = BaseNavigationController(rootViewController: geoViewController)
+        geoNavigationController.navigationBar.isHidden = true
+
         var controllers = tabController.viewControllers
-        controllers?.append(geoViewController)
+        controllers?.append(geoNavigationController)
         tabController.viewControllers = controllers
     }
-    
+
 }
 
 extension GeoCoordinator: GeoViewModelCoordinatorDelegate {
-   
-    
+
+
 }
 

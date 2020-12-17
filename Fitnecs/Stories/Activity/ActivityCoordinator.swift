@@ -34,7 +34,9 @@ class ActivityCoordinator: Coordinator {
     }
 
     func start(_ tabController: UITabBarController) {
-        tabController.viewControllers = [activityViewController]
+        let activityNavigationController = BaseNavigationController(rootViewController: activityViewController)
+        activityNavigationController.navigationBar.isHidden = true
+        tabController.viewControllers = [activityNavigationController]
     }
 
     override func finish() {
@@ -46,5 +48,18 @@ class ActivityCoordinator: Coordinator {
 }
 
 extension ActivityCoordinator: ActivityViewModelCoordinatorDelegate {
+    func openProfile(controller: UIViewController) {
+        let profileCoordinator = ProfileCoordinator(controller: controller)
+        profileCoordinator.delegate = self
+        addChildCoordinator(profileCoordinator)
+        profileCoordinator.start()
+    }
+
+}
+
+extension ActivityCoordinator: ProfileCoordinatorDelegate {
+    func didFinish(from coordinator: ProfileCoordinator) {
+        removeChildCoordinator(coordinator)
+    }
 
 }

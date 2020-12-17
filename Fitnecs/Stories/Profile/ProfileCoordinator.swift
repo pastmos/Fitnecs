@@ -29,14 +29,14 @@ class ProfileCoordinator: Coordinator {
 
     weak var delegate: ProfileCoordinatorDelegate?
 
-    override init() {
+    var baseViewController: UIViewController?
 
+    init(controller: UIViewController) {
+        baseViewController = controller
     }
 
-    func start(_ tabController: UITabBarController) {
-        var controllers = tabController.viewControllers
-        controllers?.append(profileViewController)
-        tabController.viewControllers = controllers
+    override func start() {
+        baseViewController?.navigationController?.pushViewController(profileViewController, animated: true)
     }
 
     override func finish() {

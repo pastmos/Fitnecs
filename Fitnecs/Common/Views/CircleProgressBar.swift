@@ -112,7 +112,8 @@ class CircularProgressBar: UIView {
                 var currentProgress = (currentTime / animationDuration * progress)
                 currentProgress = isFractional ? currentProgress.roundTo(1) : floor(currentProgress)
 
-                self.label.text = isFractional ? "\(Double(currentProgress))" : "\(Int(currentProgress))"
+                let text = isFractional ? "\(Double(currentProgress))" : "\(Int(currentProgress))"
+                self.label.text = currentProgress != 0  ? text : ""
             }
         }
         timer.fire()

@@ -113,9 +113,9 @@ struct DoubleDataSample: Encodable {
 
 struct ActivityViewData {
     var sleepHours: Double = 0
-    var kilometers: Double = 0
-    var steps: Double = 0
-    var calories: Double = 0
+    var kilometersItemData: ActivityItemViewData
+    var stepsItemData:  ActivityItemViewData
+    var caloriesItemData:  ActivityItemViewData
 }
 
 struct UserViewData {

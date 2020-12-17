@@ -34,8 +34,11 @@ class AchievementsCoordinator: Coordinator {
     }
 
     func start(_ tabController: UITabBarController) {
+        let achievementsNavigationController = BaseNavigationController(rootViewController: achievementsViewController)
+        achievementsNavigationController.navigationBar.isHidden = true
+
         var controllers = tabController.viewControllers
-        controllers?.append(achievementsViewController)
+        controllers?.append(achievementsNavigationController)
         tabController.viewControllers = controllers
     }
 
