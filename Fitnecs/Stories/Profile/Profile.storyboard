@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -37,19 +37,19 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FvX-GU-AiT">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="2490"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="2510"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KjX-UN-acO">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="2109"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9aG-wi-osN">
-                                                        <rect key="frame" x="134.5" y="126" width="145" height="145"/>
+                                                        <rect key="frame" x="134.5" y="1806" width="145" height="145"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="9aG-wi-osN" secondAttribute="height" multiplier="1:1" id="fqH-Yo-cqF"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{ Name }" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vaN-yJ-5gX">
-                                                        <rect key="frame" x="72.5" y="286" width="269" height="24"/>
+                                                        <rect key="frame" x="72.5" y="1966" width="269" height="23.5"/>
                                                         <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -74,7 +74,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{ Spend }" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvD-P0-FSA">
-                                                        <rect key="frame" x="294" y="99" width="100" height="17"/>
+                                                        <rect key="frame" x="294" y="99" width="100" height="1697"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="100" id="45y-a7-RX1"/>
                                                         </constraints>
@@ -83,12 +83,25 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jdh-WO-ZBr">
-                                                        <rect key="frame" x="226" y="225.5" width="45" height="45"/>
+                                                        <rect key="frame" x="226" y="2325.5" width="45" height="45"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit-photo" translatesAutoresizingMaskIntoConstraints="NO" id="1dw-hj-4jF">
+                                                                <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                                            </imageView>
+                                                        </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <gestureRecognizers/>
                                                         <constraints>
+                                                            <constraint firstItem="1dw-hj-4jF" firstAttribute="top" secondItem="jdh-WO-ZBr" secondAttribute="top" id="HcB-Zy-zs2"/>
                                                             <constraint firstAttribute="width" constant="45" id="JN7-Q6-7od"/>
+                                                            <constraint firstAttribute="trailing" secondItem="1dw-hj-4jF" secondAttribute="trailing" id="PUF-vX-PqS"/>
                                                             <constraint firstAttribute="width" secondItem="jdh-WO-ZBr" secondAttribute="height" multiplier="1:1" id="SBy-73-7WC"/>
+                                                            <constraint firstItem="1dw-hj-4jF" firstAttribute="leading" secondItem="jdh-WO-ZBr" secondAttribute="leading" id="Vg2-T9-UgA"/>
+                                                            <constraint firstAttribute="bottom" secondItem="1dw-hj-4jF" secondAttribute="bottom" id="a4C-YZ-VyN"/>
                                                         </constraints>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="1RN-Y2-Plo" appends="YES" id="koe-Xc-yNx"/>
+                                                        </connections>
                                                     </view>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -306,10 +319,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xSA-0c-SEA">
-                                                <rect key="frame" x="0.0" y="2440" width="414" height="50"/>
+                                                <rect key="frame" x="0.0" y="2440" width="414" height="70"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="IXE-18-cFt"/>
+                                                    <constraint firstAttribute="height" constant="70" id="IXE-18-cFt"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -379,6 +392,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tJP-tj-Z4I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="0DX-pA-khf" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="yBn-Vk-VXa">
                     <connections>
                         <action selector="exitDidTap:" destination="Gl5-wV-hYW" id="1F7-Ga-myd"/>
@@ -394,12 +408,18 @@
                         <action selector="backDidTap:" destination="Gl5-wV-hYW" id="cTt-je-wJj"/>
                     </connections>
                 </tapGestureRecognizer>
+                <tapGestureRecognizer id="1RN-Y2-Plo">
+                    <connections>
+                        <action selector="editAvatarDidTap:" destination="0DX-pA-khf" id="Atj-0I-CRc"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-194.20289855072465" y="136.60714285714286"/>
         </scene>
     </scenes>
     <resources>
         <image name="back-arrow" width="12" height="20"/>
+        <image name="edit-photo" width="44" height="44"/>
         <image name="points-bar" width="48" height="24"/>
         <namedColor name="blue-text">
             <color red="0.050999999046325684" green="0.41600000858306885" blue="0.79600000381469727" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
