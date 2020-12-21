@@ -2,7 +2,7 @@
 //  BaseNavigationController.swift
 //  VTBMobile
 //
-//  Created by Aliaksandr Habrusevich on 10/30/19.
+//  Created by Panov Sergey on 10/30/19.
 //  Copyright © 2019 Panov Sergey. All rights reserved.
 //
 

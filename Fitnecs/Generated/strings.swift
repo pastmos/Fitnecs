@@ -13,6 +13,13 @@ internal enum Strings {
   /// Ошибка
   internal static let error = Strings.tr("Localizable", "error")
 
+  internal enum Achievements {
+    internal enum Top {
+      /// Получено за:
+      internal static let label = Strings.tr("Localizable", "Achievements.top.label")
+    }
+  }
+
   internal enum Activity {
     internal enum Distance {
       /// Дистанция

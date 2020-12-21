@@ -47,11 +47,12 @@ extension Date {
     func lastWeekDaysArray() -> [String] {
         let weekdays = self.weekdays()
         let weekDaysAmount = 7
-        let currentDayNum = self.dayOfTheWeekNum() - 1
+        let currentDayIndex = (self.dayOfTheWeekNum() - 1) >= 0 ? self.dayOfTheWeekNum() : weekDaysAmount + self.dayOfTheWeekNum()
         var finalDaysArray: [String] = [""]
 
         for i in 0..<weekDaysAmount {
-            finalDaysArray.append(weekdays[(currentDayNum + i) % weekDaysAmount])
+            let index = (currentDayIndex + i) % weekDaysAmount
+            finalDaysArray.append(weekdays[index])
         }
 
         return finalDaysArray
@@ -59,13 +60,13 @@ extension Date {
 
     func weekdays() -> [String] {
         return [
+            "Вс",
             "Пн",
             "Вт",
             "Ср",
             "Чт",
             "Пт",
-            "Сб",
-            "Вс"
+            "Сб"
         ]
     }
 

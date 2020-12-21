@@ -109,6 +109,7 @@ internal enum Assets {
     internal static let activityTab = ImageAsset(name: "activity-tab")
     internal static let geoInactiveTab = ImageAsset(name: "geo-inactive-tab")
     internal static let geoTab = ImageAsset(name: "geo-tab")
+    internal static let editPhoto = ImageAsset(name: "edit-photo")
     internal static let pointsBar = ImageAsset(name: "points-bar")
     internal static let userAvatarTest = ImageAsset(name: "user-avatar-test")
     internal static let statisticsTab = ImageAsset(name: "statistics-tab")

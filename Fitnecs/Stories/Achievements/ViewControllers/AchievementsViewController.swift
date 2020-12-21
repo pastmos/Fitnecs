@@ -8,22 +8,26 @@
 import UIKit
 
 
-// MARK: - ActivityViewController
+// MARK: - AchievementsViewController
 
 class AchievementsViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionHeight: NSLayoutConstraint!
 
+//    @IBOutlet weak var achievementTopLabel: UILabel! {
+//        didSet {
+//            achievementTopLabel.text = Strings.Achievements.Top.label
+//        }
+//    }
+//
+//    @IBOutlet weak var achievementLabel: UILabel!
     // MARK: Properties
 
     var viewModel: AchievementsViewModelProtocol?
 
 
     // MARK: Lifecycle
-
-    override func viewWillAppear(_ animated: Bool) {
-        viewModel?.start()
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,14 +36,18 @@ class AchievementsViewController: UIViewController {
 
         }
 
-
-        //viewModel?.start()
+        viewModel?.start()
     }
 
+    override func viewDidLayoutSubviews() {
+        view.layoutIfNeeded()
+        let height = collectionView.collectionViewLayout.collectionViewContentSize.height
+        collectionHeight.constant = height + 40
+    }
 
 }
 
-extension AchievementsViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout,  UICollectionViewDataSource {
+extension AchievementsViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
 
 
         func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -72,6 +80,9 @@ extension AchievementsViewController: UICollectionViewDelegate, UICollectionView
         let totalSpace = flowLayout.sectionInset.left
             + flowLayout.sectionInset.right
             + (flowLayout.minimumInteritemSpacing * CGFloat(noOfCellsInRow - 1))
+
+        print(collectionView.bounds.width)
+        print(totalSpace)
 
         let size = Int((collectionView.bounds.width - totalSpace) / CGFloat(noOfCellsInRow))
 

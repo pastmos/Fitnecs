@@ -2,7 +2,7 @@
 //  CoverPresentTransitionAnimator.swift
 //  CustomPresentation
 //
-//  Created by Alex Habrusevich on 6/23/19.
+//  Created by Panov Sergey on 6/23/19.
 //  Copyright © 2019 Panov Sergey. All rights reserved.
 //
 

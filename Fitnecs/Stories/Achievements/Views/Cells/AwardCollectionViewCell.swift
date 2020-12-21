@@ -15,7 +15,7 @@ class AwardCollectionViewCell: UICollectionViewCell, Reusable {
 
     func configure(with model: AwardModel) {
 
-        awardImage.image = (model.isActivated ?? false) ? Assets.Images.awardActive.image : Assets.Images.awardInactive.image
+        awardImage.image = (model.isActivated ?? false) ? Assets.Images.userAvatar.image : Assets.Images.userAvatar.image
 
         numberLabel.text = (model.isActivated ?? false) ? String(describing: model.number ?? 0) : ""
     }

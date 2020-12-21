@@ -72,6 +72,8 @@
 "auth.login.enter.button.title"   = "Войти";
 "auth.login.ask.registration.title"   = "Нет аккаунта?";
 
+//Achievements
+"Achievements.top.label"          = "Получено за:";
 
 //Profile
 "profile.spend.label"              = "потратить баллы";
