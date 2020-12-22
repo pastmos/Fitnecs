@@ -22,6 +22,10 @@
 		26504DEA255961510070A5B8 /* GeofencingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26504DE9255961500070A5B8 /* GeofencingService.swift */; };
 		2652CB5425388A200013827D /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2652CB5325388A200013827D /* Double.swift */; };
 		265EB321258B914500C507D6 /* ProfileViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265EB320258B914500C507D6 /* ProfileViewData.swift */; };
+		266C81922590CB2C0065DD74 /* AchievementsViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266C81912590CB2C0065DD74 /* AchievementsViewData.swift */; };
+		266C81952590D92D0065DD74 /* AchievementCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266C81942590D92D0065DD74 /* AchievementCard.swift */; };
+		266C81982590E2E80065DD74 /* AchievementsCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 266C81972590E2E80065DD74 /* AchievementsCard.xib */; };
+		266C819B2590E31D0065DD74 /* AchievementsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266C819A2590E31D0065DD74 /* AchievementsCard.swift */; };
 		2676D369257E65690002A6F6 /* PastySwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2676D368257E65690002A6F6 /* PastySwift */; };
 		2676D3882580FAED0002A6F6 /* SFUIDisplay-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2676D3802580FAEC0002A6F6 /* SFUIDisplay-Thin.otf */; };
 		2676D3892580FAED0002A6F6 /* SFUIDisplay-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2676D3812580FAEC0002A6F6 /* SFUIDisplay-Ultralight.otf */; };
@@ -153,6 +157,10 @@
 		26504DE9255961500070A5B8 /* GeofencingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofencingService.swift; sourceTree = "<group>"; };
 		2652CB5325388A200013827D /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		265EB320258B914500C507D6 /* ProfileViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewData.swift; sourceTree = "<group>"; };
+		266C81912590CB2C0065DD74 /* AchievementsViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsViewData.swift; sourceTree = "<group>"; };
+		266C81942590D92D0065DD74 /* AchievementCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementCard.swift; sourceTree = "<group>"; };
+		266C81972590E2E80065DD74 /* AchievementsCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AchievementsCard.xib; sourceTree = "<group>"; };
+		266C819A2590E31D0065DD74 /* AchievementsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsCard.swift; sourceTree = "<group>"; };
 		2676D3802580FAEC0002A6F6 /* SFUIDisplay-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Thin.otf"; sourceTree = "<group>"; };
 		2676D3812580FAEC0002A6F6 /* SFUIDisplay-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Ultralight.otf"; sourceTree = "<group>"; };
 		2676D3822580FAED0002A6F6 /* SFUIDisplay-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Light.otf"; sourceTree = "<group>"; };
@@ -363,6 +371,8 @@
 		268B260D253F04F3008BC076 /* ViewDatas */ = {
 			isa = PBXGroup;
 			children = (
+				266C81912590CB2C0065DD74 /* AchievementsViewData.swift */,
+				266C81942590D92D0065DD74 /* AchievementCard.swift */,
 			);
 			path = ViewDatas;
 			sourceTree = "<group>";
@@ -403,6 +413,8 @@
 			isa = PBXGroup;
 			children = (
 				26999CA0253F2C16002D1B49 /* Cells */,
+				266C81972590E2E80065DD74 /* AchievementsCard.xib */,
+				266C819A2590E31D0065DD74 /* AchievementsCard.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1011,6 +1023,7 @@
 				2676D38A2580FAED0002A6F6 /* SFUIDisplay-Light.otf in Resources */,
 				2676D38B2580FAED0002A6F6 /* SFUIDisplay-Black.otf in Resources */,
 				2676D38C2580FAED0002A6F6 /* SFUIDisplay-Bold.otf in Resources */,
+				266C81982590E2E80065DD74 /* AchievementsCard.xib in Resources */,
 				2676D38D2580FAED0002A6F6 /* SFUIDisplay-Semibold.otf in Resources */,
 				2676D38E2580FAED0002A6F6 /* SFUIDisplay-Medium.otf in Resources */,
 				2676D3932582240C0002A6F6 /* NavigationBar.xib in Resources */,
@@ -1181,6 +1194,7 @@
 				CEAE8ACD251CC0DE00E7EF87 /* RegistrationViewModel.swift in Sources */,
 				26D4C795252369D000F645A3 /* Date.swift in Sources */,
 				CEAE876A251B562700E7EF87 /* Coordinator.swift in Sources */,
+				266C81922590CB2C0065DD74 /* AchievementsViewData.swift in Sources */,
 				CEAE88C9251B74A400E7EF87 /* BaseAPIService.swift in Sources */,
 				CEAE88E9251B770300E7EF87 /* StorageService.swift in Sources */,
 				CEAE8AD6251CC0DE00E7EF87 /* AuthCoordinator.swift in Sources */,
@@ -1208,6 +1222,8 @@
 				CEAE8ADE251CC0DF00E7EF87 /* RegistrationViewController.swift in Sources */,
 				CEAE88D1251B74FA00E7EF87 /* AuthorizationAPI.swift in Sources */,
 				CEAE8AB8251CC0DE00E7EF87 /* MainViewData.swift in Sources */,
+				266C81952590D92D0065DD74 /* AchievementCard.swift in Sources */,
+				266C819B2590E31D0065DD74 /* AchievementsCard.swift in Sources */,
 				CEAE89BA251B805700E7EF87 /* RootViewModel.swift in Sources */,
 				CEAE877B251B57DA00E7EF87 /* SmallModalViewData.swift in Sources */,
 				CEAE890D251B7A0800E7EF87 /* UserModel.swift in Sources */,

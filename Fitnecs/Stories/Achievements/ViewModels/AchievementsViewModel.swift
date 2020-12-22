@@ -25,7 +25,8 @@ protocol AchievementsViewModelProtocol: AnyObject {
     // MARK: Callbacks
 
     var updateState: ((AchievementsState) -> Void)? { get set }
-    var updateScreen: ((ChartStatisticsViewData) -> Void)? { get set }
+    var updateScreen: ((AchievementsViewData) -> Void)? { get set }
+    var updateAwards: (() -> Void)? { get set }
 
 
     // MARK: Events
@@ -47,40 +48,47 @@ class AchievementsViewModel: AchievementsViewModelProtocol {
     weak var coordinatorDelegate: AchievementsViewModelCoordinatorDelegate?
 
     // MARK: Variables
-    var awards: [AwardModel] = [
-        AwardModel(isActivated: true, number: 1),
-        AwardModel(isActivated: true, number: 2),
-        AwardModel(isActivated: true, number: 3),
-        AwardModel(isActivated: true, number: 4),
-        AwardModel(isActivated: true, number: 5),
-        AwardModel(isActivated: true, number: 6),
-        AwardModel(isActivated: true, number: 7),
-        AwardModel(isActivated: false, number: 8),
-        AwardModel(isActivated: false, number: 9),
-        AwardModel(isActivated: false, number: 10),
-        AwardModel(isActivated: false, number: 11),
-        AwardModel(isActivated: false, number: 12),
-        AwardModel(isActivated: false, number: 13),
-        AwardModel(isActivated: false, number: 14),
-        AwardModel(isActivated: false, number: 15),
-        AwardModel(isActivated: false, number: 16),
-        AwardModel(isActivated: false, number: 17)
-    ]
+    var awards: [AwardModel] = [] {
+        didSet {
+            updateAwards?()
+        }
+    }
+
+    var cards: [AchievementCard] = []
 
     // MARK: Callbacks
 
     var updateState: ((AchievementsState) -> Void)?
-    var updateScreen: ((ChartStatisticsViewData) -> Void)?
+    var updateScreen: ((AchievementsViewData) -> Void)?
+    var updateAwards: (() -> Void)?
 
-
-    init() {
-
-    }
 
     // MARK: Functions
 
     func start() {
 
+
+        //Network request to be done later
+        awards = [
+            AwardModel(isActivated: true, text: "10 000 шагов за день"),
+            AwardModel(isActivated: false, text: "30 000 шагов за день"),
+            AwardModel(isActivated: false, text: "50 000 шагов за день"),
+            AwardModel(isActivated: true, text: "10 000 шагов 5 дней подряд"),
+            AwardModel(isActivated: true, text: "2000 ккал сожжено за день"),
+            AwardModel(isActivated: false, text: "3 000 шагов за 1 час")
+        ]
+
+        cards = [
+            AchievementCard(title: "Улитка месяца", description: "Вы были самый медленный среди 150 000 человек", image: UIImage(named:"snail-card")),
+            AchievementCard(title: "Царь зверей", description: "Двигаетесь только когда это нужно вам. Не надо так)", image: UIImage(named:"lion-card")),
+            AchievementCard(title: "Любитель слоняться", description: "Медленно но уверено преодолеваете огромные расстояния", image: UIImage(named:"elephant-card")),
+        ]
+
+
+        let data = AchievementsViewData(days: "356" + Strings.Achievements.Days.label, achievmentDescription: "Нерегулярное преодолевание коротких расстояний с высокой скоростью", cards: cards)
+
+
+        updateScreen?(data)
 
     }
 

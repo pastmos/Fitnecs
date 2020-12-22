@@ -14,9 +14,31 @@ internal enum Strings {
   internal static let error = Strings.tr("Localizable", "error")
 
   internal enum Achievements {
+    internal enum Achieve {
+      /// достигли
+      internal static let label = Strings.tr("Localizable", "achievements.achieve.label")
+    }
+    internal enum All {
+      internal enum Achieve {
+        /// Все чего вы
+        internal static let label = Strings.tr("Localizable", "achievements.all.achieve.label")
+      }
+    }
+    internal enum Days {
+      ///  дней
+      internal static let label = Strings.tr("Localizable", "achievements.days.label")
+    }
+    internal enum For {
+      /// Получено за:
+      internal static let label = Strings.tr("Localizable", "achievements.for.label")
+    }
+    internal enum Overall {
+      /// и это всего за
+      internal static let label = Strings.tr("Localizable", "achievements.overall.label")
+    }
     internal enum Top {
       /// Получено за:
-      internal static let label = Strings.tr("Localizable", "Achievements.top.label")
+      internal static let label = Strings.tr("Localizable", "achievements.top.label")
     }
   }
 

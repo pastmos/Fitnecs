@@ -165,6 +165,8 @@ struct ChartViewData {
             description = "Пройдено км в день"
         }
         let chartDataSet = BarChartDataSet(entries: dataEntries, label: description)
+//        let set: [UIColor] = [.red]
+//        chartDataSet.setColors(set, alpha: 1)
         let chartData = BarChartData(dataSet: chartDataSet)
         return chartData
     }

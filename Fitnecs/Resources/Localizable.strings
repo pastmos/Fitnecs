@@ -73,7 +73,12 @@
 "auth.login.ask.registration.title"   = "Нет аккаунта?";
 
 //Achievements
-"Achievements.top.label"          = "Получено за:";
+"achievements.top.label"           = "Получено за:";
+"achievements.all.achieve.label"   = "Все чего вы";
+"achievements.achieve.label"       = "достигли";
+"achievements.overall.label"       = "и это всего за";
+"achievements.days.label"          = " дней";
+"achievements.for.label"           = "Получено за:";
 
 //Profile
 "profile.spend.label"              = "потратить баллы";

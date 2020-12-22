@@ -9,5 +9,5 @@ import UIKit
 
 struct AwardModel {
     let isActivated: Bool?
-    let number: Int?
+    let text: String?
 }

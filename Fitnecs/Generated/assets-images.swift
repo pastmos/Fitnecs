@@ -81,6 +81,9 @@ internal enum Assets {
   internal enum Images {
     internal static let awardActive = ImageAsset(name: "award-active")
     internal static let awardInactive = ImageAsset(name: "award-inactive")
+    internal static let elephantCard = ImageAsset(name: "elephant-card")
+    internal static let lionCard = ImageAsset(name: "lion-card")
+    internal static let snailCard = ImageAsset(name: "snail-card")
     internal static let bluePointerTick = ImageAsset(name: "blue-pointer-tick")
     internal static let caloriesIcon = ImageAsset(name: "calories-icon")
     internal static let distanceIcon = ImageAsset(name: "distance-icon")
