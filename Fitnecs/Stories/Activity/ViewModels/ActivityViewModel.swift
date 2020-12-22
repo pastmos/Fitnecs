@@ -11,6 +11,7 @@ import HealthKit
 import Charts
 
 protocol ActivityViewModelCoordinatorDelegate: AnyObject {
+    func openProfile(controller: UIViewController)
     func close(from controller: UIViewController)
 }
 
@@ -27,13 +28,16 @@ protocol ActivityViewModelProtocol: AnyObject {
     // MARK: Callbacks
 
     var updateState: ((ActivityState) -> Void)? { get set }
-    var updateScreen: ((ActivityViewData) -> Void)? { get set }
-
+    var updateUser: ((UserViewData) -> Void)? { get set }
+    var updateActivity: ((ActivityViewData) -> Void)? { get set }
+    var updateChart: ((ChartViewData, ChartType) -> Void)? { get set }
 
     // MARK: Events
 
     func start()
     func getActivityViewData()
+    func activityItemDidTap(_ type: ChartType)
+    func profileDidTap(controller: UIViewController)
     func back(from controller: UIViewController)
 
 }
@@ -54,17 +58,26 @@ class ActivityViewModel: ActivityViewModelProtocol {
     var healthService: HealthKitServiceProtocol?
     var uploadService: UploadAPIService?
 
-    var data: ActivityData = ActivityData()
-    var viewData: ActivityViewData = ActivityViewData()
-
     // MARK: Callbacks
 
     var updateState: ((ActivityState) -> Void)?
-    var updateScreen: ((ActivityViewData) -> Void)?
+    var updateUser: ((UserViewData) -> Void)?
+    var updateActivity: ((ActivityViewData) -> Void)?
+    var updateChart: ((ChartViewData, ChartType) -> Void)?
 
     let locationManager = CLLocationManager()
 
-    var weekSteps: [Double] = [0, 0, 0, 0, 0, 0, 0]
+    var data: ActivityData = ActivityData()
+
+    var userData: UserViewData = UserViewData()
+    var activitiesData: ActivityViewData = ActivityViewData(kilometersItemData: ActivityItemViewData(), stepsItemData: ActivityItemViewData(), caloriesItemData: ActivityItemViewData())
+    var chartData: ChartViewData = ChartViewData()
+
+    var steps: String = ""
+    var kilometers: String = ""
+    var calories: String = ""
+
+    var state: ActivityState = .normal
 
     init(healthService: HealthKitServiceProtocol = HealthKitService(), uploadService: UploadAPIService = UploadAPIServiceImplementation()) {
         self.healthService = healthService
@@ -75,7 +88,7 @@ class ActivityViewModel: ActivityViewModelProtocol {
 
     func start() {
 
-        healthService?.authoriseHealthKitAccess{ [weak self] isAuthorized in
+        healthService?.authoriseHealthKitAccess { [weak self] isAuthorized in
             guard let self = self, isAuthorized else {
                 return
             }
@@ -105,62 +118,94 @@ class ActivityViewModel: ActivityViewModelProtocol {
         let endDay = now.endOfDay
 
 
+        //Steps daily
         dispatchGroup.enter()
         self.healthService?.getStepCount(startDay, endDay) { steps in
-            self.viewData.steps = steps
+            self.steps = String(Int(steps))
             dispatchGroup.leave()
         }
 
+        //Sleep daily
         dispatchGroup.enter()
-        self.healthService?.getSleep(startDay - Const.hourSeconds * 6, endDay - Const.hourSeconds * 6, limit: 100) { samples, _ in
-            defer {
-                dispatchGroup.leave()
-            }
-            guard let samples = samples as? [HKCategorySample], !samples.isEmpty else {
-                return
-            }
+        self.healthService?.getSleepAnalysis(startDay - Const.hourSeconds * 6, endDay - Const.hourSeconds * 6) { samples, _ in
             let overall = samples.map { $0.endDate.timeIntervalSince($0.startDate) }.reduce(0, +)
-
-            self.viewData.sleep = Double(overall).roundTo(2)
+            self.activitiesData.sleepHours = Double(overall / 3600).roundTo(2)
+            dispatchGroup.leave()
         }
 
+        //Distance daily
         dispatchGroup.enter()
         self.healthService?.getDailyDistance(startDay, endDay) { meters in
-            self.viewData.distance = (meters / 1000).roundTo(2)
+            self.kilometers = String((meters / 1000).roundTo(2))
+            dispatchGroup.leave()
+        }
+
+        //Calories daily
+        dispatchGroup.enter()
+        self.healthService?.getActiveEnergyBurned(startDay, endDay) { samples, unit in
+            self.calories = String(Int(samples.map { $0.quantity.doubleValue(for: unit) }.reduce(0, +)))
             dispatchGroup.leave()
         }
 
 
+        //Distance, Steps, Calories weekly
         for i in 0..<Const.daysInWeek {
             let startDay = now.addingTimeInterval(-Const.daySeconds * Double(i + 1)).startOfDay
             let endDay = now.addingTimeInterval(-Const.daySeconds * Double(i)).startOfDay
 
             dispatchGroup.enter()
             self.healthService?.getStepCount(startDay, endDay) { steps in
-                self.weekSteps[i] = steps
+                self.chartData.steps[i] = Int(steps)
                 dispatchGroup.leave()
             }
-        }
 
-
-        dispatchGroup.notify(queue: DispatchQueue.main) { [weak self] in
-            guard let self = self else {
-                return
+            dispatchGroup.enter()
+            self.healthService?.getDailyDistance(startDay, endDay) { meters in
+                self.chartData.distance[i] = (meters / 1000).roundTo(2)
+                dispatchGroup.leave()
             }
 
-            self.viewData.activityIndex = self.getActivityIndex(self.viewData)
-            self.viewData.activityPoints = self.getActivityPoints(self.viewData)
-            self.updateScreen?(self.viewData)
+            dispatchGroup.enter()
+            self.healthService?.getActiveEnergyBurned(startDay, endDay) { samples, unit in
+                self.chartData.calories[i] = Int(samples.map { $0.quantity.doubleValue(for: unit) }.reduce(0, +))
+                dispatchGroup.leave()
+            }
 
-            // Request for use in background
-            self.locationManager.requestAlwaysAuthorization()
-            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in
-            })
+
+            dispatchGroup.notify(queue: DispatchQueue.main) { [weak self] in
+                guard let self = self else {
+                    return
+                }
+
+
+                //Temporary hard data(waiting for backend)
+                self.userData.activityIndex = 68
+                self.userData.yesterdayActivityIndex = 37
+                self.userData.avatarImage = UIImage(named: "user-avatar")!
+                self.userData.normalStatus = "Ленивец"
+                self.userData.todayStatus = "Гепард"
+                self.userData.points = "150"
+                self.userData.motivation = "двигайся больше..."
+
+                self.activitiesData.kilometersItemData = ActivityItemViewData(image: Assets.Images.distanceIcon.image, amount: self.kilometers, unit: "", isActive: false, type: .distance)
+                self.activitiesData.stepsItemData = ActivityItemViewData(image: Assets.Images.stepsIcon.image, amount: self.steps, unit: "", isActive: true, type: .steps)
+                self.activitiesData.caloriesItemData = ActivityItemViewData(image: Assets.Images.caloriesIcon.image, amount: self.calories, unit: "", isActive: false, type: .calories)
+
+                self.updateUser?(self.userData)
+                self.updateActivity?(self.activitiesData)
+                self.updateChart?(self.chartData, .steps)
+
+
+                // Request location + notification auth
+                self.locationManager.requestAlwaysAuthorization()
+                UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { didAllow, error in
+                })
+            }
+
         }
-
     }
 
-    private func getActivityUploadData(startDate: Date, endDate: Date) {
+    func getActivityUploadData(startDate: Date, endDate: Date) {
 
         let dispatchGroup = DispatchGroup()
 
@@ -244,7 +289,7 @@ class ActivityViewModel: ActivityViewModelProtocol {
         //SleepAnalysis
         dispatchGroup.enter()
         self.healthService?.getSleepAnalysis(startDate, endDate) { [weak self] samples, _ in
-            self?.data.sleepAnalysis = samples.map{IntDataSample(value: Int($0.endDate.timeIntervalSince($0.startDate)), date: $0.startDate.format()) }
+            self?.data.sleepAnalysis = samples.map { IntDataSample(value: Int($0.endDate.timeIntervalSince($0.startDate)), date: $0.startDate.format()) }
             dispatchGroup.leave()
         }
 
@@ -259,13 +304,20 @@ class ActivityViewModel: ActivityViewModelProtocol {
         }
     }
 
-    private func getActivityIndex(_ viewData: ActivityViewData) -> Double {
-        let index = weekSteps.reduce(0, +) / Double(Const.daysInWeek) / 100
-        return index
+    func activityItemDidTap(_ type: ChartType) {
+        switch type {
+        case .steps:
+            updateChart?(chartData, .steps)
+        case .calories:
+            updateChart?(chartData, .calories)
+        case .distance:
+            updateChart?(chartData, .distance)
+
+        }
     }
 
-    private func getActivityPoints(_ viewData: ActivityViewData) -> Double {
-        return 747
+    func profileDidTap(controller: UIViewController) {
+        coordinatorDelegate?.openProfile(controller: controller)
     }
 
     func back(from controller: UIViewController) {

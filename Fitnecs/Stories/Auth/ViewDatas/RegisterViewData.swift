@@ -32,13 +32,13 @@ struct RegisterViewData: RegisterViewDataType {
     var passwordConfirmation: String
 
     var isEmailValid: Bool {
-        return email.count > 8
+        return email.count >= 5
     }
     var isPasswordValid: Bool {
-        return password.count > 8
+        return password.count >= 8
     }
     var isPasswordConfirmationValid: Bool {
-        return passwordConfirmation.count > 8
+        return passwordConfirmation.count >= 8
     }
 
     var arePasswordsEqual: Bool {

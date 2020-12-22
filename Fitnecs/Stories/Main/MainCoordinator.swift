@@ -57,18 +57,6 @@ class MainCoordinator: Coordinator {
         return achievementsCoordinator
     }()
 
-    private lazy var statisticsCoordinator: StatisticsCoordinator = {
-        let statisticsCoordinator = StatisticsCoordinator()
-        statisticsCoordinator.delegate = self
-        return statisticsCoordinator
-    }()
-
-    private lazy var profileCoordinator: ProfileCoordinator = {
-        let profileCoordinator = ProfileCoordinator()
-        profileCoordinator.delegate = self
-        return profileCoordinator
-    }()
-
     private var smallModalViewController: SmallModalViewController?
 
 
@@ -86,16 +74,14 @@ class MainCoordinator: Coordinator {
         rootViewController.addChild(mainViewController)
         rootViewController.view.addSubview(mainViewController.view)
 
-        mainViewController.view.snp.makeConstraints({ maker in
+        mainViewController.view.snp.makeConstraints { maker in
             maker.edges.equalToSuperview()
-        })
+        }
         mainViewController.didMove(toParent: rootViewController)
 
         activityCoordinator.start(mainViewController)
         geoCoordinator.start(mainViewController)
         achievementsCoordinator.start(mainViewController)
-        statisticsCoordinator.start(mainViewController)
-        profileCoordinator.start(mainViewController)
     }
 
     override func finish() {
@@ -112,12 +98,10 @@ class MainCoordinator: Coordinator {
 // MARK: - MainViewModelCoordinatorDelegate
 
 extension MainCoordinator: MainViewModelCoordinatorDelegate {
-    
+
     func openAuthInterface() {
         delegate?.openAuthInterface(from: self, with: .login)
     }
-
-   
 
     func openSmallModal(viewData: SmallModalViewDataType, from controller: UIViewController, dismiss: (() -> Void)?) {
         let smallModalViewController = Storyboards.Common.smallModalViewController.instantiate()
@@ -135,14 +119,11 @@ extension MainCoordinator: MainViewModelCoordinatorDelegate {
         self.smallModalViewController = smallModalViewController
     }
 
- 
-
     func open(url: URL, from controller: UIViewController) {
         let browserController = SFSafariViewController(url: url)
         controller.present(browserController, animated: true, completion: nil)
     }
 
- 
     func close(from controller: UIViewController, _ completion: (() -> Void)? = nil) {
         if let navigationController = controller.navigationController {
             navigationController.popViewController(animated: true)
@@ -154,12 +135,14 @@ extension MainCoordinator: MainViewModelCoordinatorDelegate {
         }
     }
 
- 
-
 }
 
 
 extension MainCoordinator: ActivityCoordinatorDelegate {
+    func openAuth(from coordinator: ActivityCoordinator) {
+        openAuthInterface()
+    }
+
     func didFinish(from coordinator: ActivityCoordinator) {
         self.finish()
     }
@@ -177,17 +160,3 @@ extension MainCoordinator: AchievementsCoordinatorDelegate {
         self.finish()
     }
 }
-
-
-extension MainCoordinator: StatisticsCoordinatorDelegate {
-    func didFinish(from coordinator: StatisticsCoordinator) {
-        self.finish()
-    }
-}
-
-extension MainCoordinator: ProfileCoordinatorDelegate {
-    func didFinish(from coordinator: ProfileCoordinator) {
-        self.finish()
-    }
-}
-

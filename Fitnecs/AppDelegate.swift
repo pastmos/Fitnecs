@@ -40,6 +40,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("Activated")
     }
 
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        UIApplication.shared.applicationIconBadgeNumber = 0
+    }
+
 }
 
 extension AppDelegate: UNUserNotificationCenterDelegate {

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "elephant-card.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

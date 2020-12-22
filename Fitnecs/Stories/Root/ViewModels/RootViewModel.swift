@@ -69,8 +69,7 @@ class RootViewModel: RootViewModelProtocol {
     private func clearKeychain() {
         storageService.removeFromKeychain(forKeys: [KeychainStorage.Key.token,
                                                     KeychainStorage.Key.username,
-                                                    KeychainStorage.Key.password,
-                                                    KeychainStorage.Key.code])
+                                                    KeychainStorage.Key.password])
         storageService.removeFromUserDefaults(forKey: .secretKey)
     }
 
@@ -131,21 +130,17 @@ class RootViewModel: RootViewModelProtocol {
 
 extension UserDefaultsStorage.Key {
 
-    static let firstLunch = UserDefaultsStorage.Key("was-lunched-before")
-    static let needRateApp = UserDefaultsStorage.Key("is-rate-app")
-    static let confirmation = UserDefaultsStorage.Key("confirmation")
+//    static let firstLunch = UserDefaultsStorage.Key("was-lunched-before")
+//    static let needRateApp = UserDefaultsStorage.Key("is-rate-app")
+//    static let confirmation = UserDefaultsStorage.Key("confirmation")
 
 }
 
 extension KeychainStorage.Key {
 
     static let token = KeychainStorage.Key("token")
-    static let chatToken = KeychainStorage.Key("chatToken")
     static let username = KeychainStorage.Key("username")
     static let password = KeychainStorage.Key("password")
-    static let userRegion = KeychainStorage.Key("userRegion")
-    static let rootRegion = KeychainStorage.Key("rootRegion")
-    static let code = KeychainStorage.Key("code")
 }
 
 extension UserDefaultsStorage.Key {

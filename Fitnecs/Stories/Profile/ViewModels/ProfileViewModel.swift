@@ -25,7 +25,7 @@ protocol ProfileViewModelProtocol: AnyObject {
     // MARK: Callbacks
 
     var updateState: ((ProfileState) -> Void)? { get set }
-    var updateScreen: ((ChartStatisticsViewData) -> Void)? { get set }
+    var updateScreen: ((ProfileViewData) -> Void)? { get set }
 
 
     // MARK: Events
@@ -55,8 +55,9 @@ class ProfileViewModel: ProfileViewModelProtocol {
     // MARK: Callbacks
 
     var updateState: ((ProfileState) -> Void)?
-    var updateScreen: ((ChartStatisticsViewData) -> Void)?
+    var updateScreen: ((ProfileViewData) -> Void)?
 
+    var state: ProfileState = .normal
 
     init(storageService: StorageService = StorageServiceImplementation()) {
         self.storageService = storageService
@@ -65,6 +66,13 @@ class ProfileViewModel: ProfileViewModelProtocol {
     // MARK: Functions
 
     func start() {
+        state = .loading
+
+        //network request to be added later
+
+        state = .normal
+        let data = ProfileViewData(name: "Панов Сергей", email: "passt@yandex.ru", userImage: "user-avatar", points: "150")
+        updateScreen?(data)
 
     }
 
@@ -84,8 +92,7 @@ class ProfileViewModel: ProfileViewModelProtocol {
     private func clearKeychain() {
         storageService.removeFromKeychain(forKeys: [KeychainStorage.Key.token,
                                                     KeychainStorage.Key.username,
-                                                    KeychainStorage.Key.password,
-                                                    KeychainStorage.Key.code])
+                                                    KeychainStorage.Key.password])
         storageService.removeFromUserDefaults(forKey: .secretKey)
     }
 

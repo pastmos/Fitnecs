@@ -9,6 +9,7 @@ import UIKit
 
 protocol ActivityCoordinatorDelegate: AnyObject {
     func didFinish(from coordinator: ActivityCoordinator)
+    func openAuth(from coordinator: ActivityCoordinator)
 }
 
 
@@ -20,7 +21,7 @@ class ActivityCoordinator: Coordinator {
 
     private lazy var activityViewController: ActivityViewController = {
         let activityViewController = Storyboards.Activity.activityViewController.instantiate()
-        activityViewController.tabBarItem = UITabBarItem(title: Strings.Tabs.Activity.title, image: Assets.Images.activityTab.image, selectedImage: Assets.Images.activityTab.image)
+        activityViewController.tabBarItem = UITabBarItem(title: Strings.Tabs.Activity.title, image: Assets.Images.activityInactiveTab.image, selectedImage: Assets.Images.activityTab.image)
         let viewModel = ActivityViewModel()
         viewModel.coordinatorDelegate = self
         activityViewController.viewModel = viewModel
@@ -34,7 +35,9 @@ class ActivityCoordinator: Coordinator {
     }
 
     func start(_ tabController: UITabBarController) {
-        tabController.viewControllers = [activityViewController]
+        let activityNavigationController = BaseNavigationController(rootViewController: activityViewController)
+        activityNavigationController.navigationBar.isHidden = true
+        tabController.viewControllers = [activityNavigationController]
     }
 
     override func finish() {
@@ -46,5 +49,23 @@ class ActivityCoordinator: Coordinator {
 }
 
 extension ActivityCoordinator: ActivityViewModelCoordinatorDelegate {
+    func openProfile(controller: UIViewController) {
+        let profileCoordinator = ProfileCoordinator(controller: controller)
+        profileCoordinator.delegate = self
+        addChildCoordinator(profileCoordinator)
+        profileCoordinator.start()
+    }
+
+}
+
+extension ActivityCoordinator: ProfileCoordinatorDelegate {
+    func didFinish(from coordinator: ProfileCoordinator) {
+        removeChildCoordinator(coordinator)
+    }
+
+    func openAuth() {
+        delegate?.openAuth(from: self)
+        self.finish()
+    }
 
 }

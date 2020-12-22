@@ -112,11 +112,69 @@ struct DoubleDataSample: Encodable {
 
 
 struct ActivityViewData {
+    var sleepHours: Double = 0
+    var kilometersItemData: ActivityItemViewData
+    var stepsItemData:  ActivityItemViewData
+    var caloriesItemData:  ActivityItemViewData
+}
 
-    var steps: Double = 0
-    var sleep: Double = 0
-    var distance: Double = 0
+struct UserViewData {
+    var avatarImage: UIImage = UIImage()
+    var todayStatus: String = ""
+    var normalStatus: String = ""
+    var motivation: String = ""
+    var points: String = ""
     var activityIndex: Double = 0
-    var activityPoints: Double = 0
+    var yesterdayActivityIndex: Double = 0
+}
 
+struct ChartViewData {
+    var steps: [Int] = [0, 0, 0, 0, 0, 0, 0] {
+        didSet {
+            stepsChart = createBarsArr(array: steps.map { Double($0) }, type: .steps)
+        }
+    }
+    var calories: [Int] = [0, 0, 0, 0, 0, 0, 0] {
+        didSet {
+            caloriesChart = createBarsArr(array: calories.map { Double($0) }, type: .calories)
+        }
+    }
+    var distance: [Double] = [0, 0, 0, 0, 0, 0, 0] {
+        didSet {
+            distanceChart = createBarsArr(array: distance.map { Double($0) }, type: .distance)
+        }
+    }
+    var stepsChart: BarLineScatterCandleBubbleChartData?
+    var caloriesChart: BarLineScatterCandleBubbleChartData?
+    var distanceChart: BarLineScatterCandleBubbleChartData?
+
+    private func createBarsArr(array: [Double], type: ChartType) -> BarLineScatterCandleBubbleChartData {
+        var dataEntries: [BarChartDataEntry] = []
+
+        for i in 0..<array.count {
+            let dataEntry = BarChartDataEntry(x: Double(i + 1), y: array[array.count - i - 1])
+            dataEntries.append(dataEntry)
+        }
+        var description = ""
+        switch type {
+        case .steps:
+            description = "Пройдено шагов в день"
+        case .calories:
+            description = "Потрачено калорий в день"
+        case .distance:
+            description = "Пройдено км в день"
+        }
+        let chartDataSet = BarChartDataSet(entries: dataEntries, label: description)
+//        let set: [UIColor] = [.red]
+//        chartDataSet.setColors(set, alpha: 1)
+        let chartData = BarChartData(dataSet: chartDataSet)
+        return chartData
+    }
+}
+
+
+enum ChartType {
+    case steps
+    case calories
+    case distance
 }

@@ -58,11 +58,6 @@ internal enum Storyboards {
 
     internal static let rootViewController = SceneType<Fitnecs.RootViewController>(storyboard: Root.self, identifier: "RootViewController")
   }
-  internal enum Statistics: StoryboardType {
-    internal static let storyboardName = "Statistics"
-
-    internal static let statisticsViewController = SceneType<Fitnecs.StatisticsViewController>(storyboard: Statistics.self, identifier: "StatisticsViewController")
-  }
 }
 // swiftlint:enable explicit_type_interface identifier_name line_length type_body_length type_name
 

@@ -59,22 +59,29 @@
 "tabs.profile.title"              = "Профиль";
 
 //Auth
-
-"auth.login.placeholder"          = "Введите email";
-"auth.password.placeholder"       = "Введите пароль";
+"auth.login.placeholder"          = "Ваш логин";
+"auth.password.placeholder"       = "Пароль";
 "auth.password.confirmation.placeholder"  = "Подтверждение пароля";
 
 "auth.registration.title"         = "Регистрация";
 "auth.registration.alert.title"   = "Поздравляем!";
 "auth.registration.alert.text"    = "Вы успешно зарегистрированы в приложении и можете использовать ваши данные для входа";
-"auth.registration.button.title"  = "Зарегистрироваться";
+"auth.registration.button.title"  = "Регистрация";
 
 "auth.login.title"                = "FITNECS";
 "auth.login.enter.button.title"   = "Войти";
-"auth.login.ask.registration.title"   = "Еще не зарегистрированы?";
+"auth.login.ask.registration.title"   = "Нет аккаунта?";
 
+//Achievements
+"achievements.top.label"           = "Получено за:";
+"achievements.all.achieve.label"   = "Все чего вы";
+"achievements.achieve.label"       = "достигли";
+"achievements.overall.label"       = "и это всего за";
+"achievements.days.label"          = " дней";
+"achievements.for.label"           = "Получено за:";
 
-
+//Profile
+"profile.spend.label"              = "потратить баллы";
 
 //Activity
 "activity.index.label"             = "Индекс подвижности";

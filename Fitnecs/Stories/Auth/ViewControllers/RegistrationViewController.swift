@@ -14,24 +14,44 @@ class RegistrationViewController: BaseViewController {
     // MARK: Properties
 
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var navigationBar: NavigationBar! {
+        didSet {
+            navigationBar.bind(title: Strings.Auth.Registration.title)
+        }
+    }
+    @IBOutlet weak var loginUnderlineView: UIView!
+    @IBOutlet weak var passwordUnderlineView: UIView!
+    @IBOutlet weak var confirmationUnderlineView: UIView!
+
+    @IBOutlet weak var registrationView: UIView!
     @IBOutlet weak var loginView: UIView!
     @IBOutlet weak var passwordTextField: UITextField! {
         didSet {
-            passwordTextField.placeholder = Strings.Auth.Password.placeholder
+            let attributes = [
+                NSAttributedString.Key.font: FontFamily.SFUIDisplay.light.font(size: 11)
+            ]
+
+            passwordTextField.attributedPlaceholder = NSAttributedString(string: Strings.Auth.Password.placeholder, attributes: attributes)
         }
     }
     @IBOutlet weak var loginTextField: UITextField! {
         didSet {
-            loginTextField.placeholder = Strings.Auth.Login.placeholder
+            let attributes = [
+                NSAttributedString.Key.font: FontFamily.SFUIDisplay.light.font(size: 11)
+            ]
+
+            loginTextField.attributedPlaceholder = NSAttributedString(string: Strings.Auth.Login.placeholder, attributes: attributes)
         }
     }
     @IBOutlet weak var passwordConfirmationTextField: UITextField! {
         didSet {
-            passwordConfirmationTextField.placeholder = Strings.Auth.Password.Confirmation.placeholder
+            let attributes = [
+                NSAttributedString.Key.font: FontFamily.SFUIDisplay.light.font(size: 11)
+            ]
+
+            passwordConfirmationTextField.attributedPlaceholder = NSAttributedString(string: Strings.Auth.Password.Confirmation.placeholder, attributes: attributes)
         }
     }
-
 
     @IBOutlet weak var titleLabel: UILabel! {
         didSet {
@@ -45,6 +65,8 @@ class RegistrationViewController: BaseViewController {
     }
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
+    @IBOutlet weak var registrationToHeader: NSLayoutConstraint!
+    @IBOutlet weak var registerButtonTop: NSLayoutConstraint!
 
     var viewModel: RegistrationViewModelProtocol?
 
@@ -52,17 +74,20 @@ class RegistrationViewController: BaseViewController {
     var difference: CGFloat = 0
     var contentOffset: CGFloat = 0
 
+    var keyboardIsShown = false
+
     // MARK: Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationBar.delegate = self
         setTextFieldPaddings()
         self.view.backgroundColor = Assets.Colors.fitnecsBaseColor.color
 
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(sender:)), name: UIResponder.keyboardWillShowNotification, object: nil);
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(sender:)), name: UIResponder.keyboardWillShowNotification, object: nil)
 
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(sender:)), name: UIResponder.keyboardWillHideNotification, object: nil);
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(sender:)), name: UIResponder.keyboardWillHideNotification, object: nil)
 
         viewModel?.updateState = { [weak self] state in
             DispatchQueue.main.async {
@@ -79,25 +104,22 @@ class RegistrationViewController: BaseViewController {
 
         viewModel?.updateScreen = { [weak self] viewData in
             self?.setLoginState(isValid: viewData.isEmailValid)
-            self?.setPasswordState(isValid: viewData.isPasswordValid  && viewData.arePasswordsEqual)
+            self?.setPasswordState(isValid: viewData.isPasswordValid && viewData.arePasswordsEqual)
             self?.setPasswordConfirmationState(isValid: viewData.isPasswordConfirmationValid && viewData.arePasswordsEqual)
         }
 
         viewModel?.start()
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    override func viewDidLayoutSubviews() {
+        registrationToHeader.constant = view.bounds.height / 12
+        registerButtonTop.constant = view.bounds.height / 12
     }
 
 
     // MARK: Actions
     @IBAction func registrationDidTap(_ sender: Any) {
-        let data = RegisterViewData(name: "test", email: loginTextField.text ?? "", password:  passwordTextField.text ?? "", passwordConfirmation: passwordConfirmationTextField.text ?? "")
+        let data = RegisterViewData(name: "test", email: loginTextField.text ?? "", password: passwordTextField.text ?? "", passwordConfirmation: passwordConfirmationTextField.text ?? "")
         viewModel?.registration(from: self, data: data )
     }
 
@@ -106,11 +128,18 @@ class RegistrationViewController: BaseViewController {
     }
 
     @objc func keyboardWillShow(sender: NSNotification) {
+        guard !keyboardIsShown else {
+            return
+        }
         if let keyboardSize = (sender.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
                 keyboardHeight = keyboardSize.height
             }
+        self.keyboardIsShown = true
+
         contentOffset = self.scrollView.contentOffset.y
-        difference = keyboardHeight - (view.bounds.height - (headerView.bounds.height) + self.scrollView.contentOffset.y)
+        let buttonY = registerButton.convert(registerButton.bounds, to: self.view).maxY
+        let buttonToBottom = view.bounds.height - buttonY
+        difference = keyboardHeight - buttonToBottom
         if difference > 0 {
             self.scrollView.contentOffset.y += difference
         }
@@ -119,39 +148,43 @@ class RegistrationViewController: BaseViewController {
     }
 
     @objc func keyboardWillHide(sender: NSNotification) {
+        self.keyboardIsShown = false
         self.scrollView.contentOffset.y = contentOffset
     }
 
-    @IBAction func backDidTap(_ sender: Any) {
-        viewModel?.back(from: self)
-    }
+
     // MARK: Private
 
     private func setLoginState(isValid: Bool) {
-        loginTextField.layer.borderWidth = isValid ?  0 : 1
-        loginTextField.layer.borderColor = UIColor.red.cgColor
+        loginUnderlineView.backgroundColor = isValid ? Assets.Colors.underlineColor.color : .red
     }
 
     private func setPasswordState(isValid: Bool) {
-        passwordTextField.layer.borderWidth = isValid ?  0 : 1
-        passwordTextField.layer.borderColor = UIColor.red.cgColor
+        passwordUnderlineView.backgroundColor = isValid ? Assets.Colors.underlineColor.color : .red
     }
 
     private func setPasswordConfirmationState(isValid: Bool) {
-        passwordConfirmationTextField.layer.borderWidth = isValid ?  0 : 1
-        passwordConfirmationTextField.layer.borderColor = UIColor.red.cgColor
+        confirmationUnderlineView.backgroundColor = isValid ? Assets.Colors.underlineColor.color : .red
     }
 
     private func  setTextFieldPaddings() {
-        let loginPaddingView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 7, height: 20))
+        let loginPaddingView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 20))
         loginTextField.leftView = loginPaddingView
         loginTextField.leftViewMode = .always
-        let passwordPaddingView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 7, height: 20))
+        let passwordPaddingView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 20))
         passwordTextField.leftView = passwordPaddingView
         passwordTextField.leftViewMode = .always
-        let passwordConfirmPaddingView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 7, height: 20))
+        let passwordConfirmPaddingView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 20))
         passwordConfirmationTextField.leftView = passwordConfirmPaddingView
         passwordConfirmationTextField.leftViewMode = .always
+    }
+
+}
+
+
+extension RegistrationViewController: NavigationBarDelegate {
+    func backDidTap() {
+        viewModel?.back(from: self)
     }
 
 }

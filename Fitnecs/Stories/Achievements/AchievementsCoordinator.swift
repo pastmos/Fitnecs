@@ -20,7 +20,7 @@ class AchievementsCoordinator: Coordinator {
 
     private lazy var achievementsViewController: AchievementsViewController = {
         let achievementsViewController = Storyboards.Achievements.achievementsViewController.instantiate()
-        achievementsViewController.tabBarItem = UITabBarItem(title: Strings.Tabs.Achievements.title, image: Assets.Images.achievementTab.image, selectedImage: Assets.Images.achievementTab.image)
+        achievementsViewController.tabBarItem = UITabBarItem(title: Strings.Tabs.Achievements.title, image: Assets.Images.achievementInactiveTab.image, selectedImage: Assets.Images.achievementTab.image)
         let viewModel = AchievementsViewModel()
         viewModel.coordinatorDelegate = self
         achievementsViewController.viewModel = viewModel
@@ -34,8 +34,11 @@ class AchievementsCoordinator: Coordinator {
     }
 
     func start(_ tabController: UITabBarController) {
+        let achievementsNavigationController = BaseNavigationController(rootViewController: achievementsViewController)
+        achievementsNavigationController.navigationBar.isHidden = true
+
         var controllers = tabController.viewControllers
-        controllers?.append(achievementsViewController)
+        controllers?.append(achievementsNavigationController)
         tabController.viewControllers = controllers
     }
 

@@ -42,6 +42,14 @@
 	<string>$(SERVER_TYPE)</string>
 	<key>UIAppFonts</key>
 	<array>
+		<string>SFUIDisplay-Ultrallight.otf</string>
+		<string>SFUIDisplay-Thin.otf</string>
+		<string>SFUIDisplay-Semibold.otf</string>
+		<string>SFUIDisplay-Medium.otf</string>
+		<string>SFUIDisplay-Light.otf</string>
+		<string>SFUIDisplay-Heavy.otf</string>
+		<string>SFUIDisplay-Bold.otf</string>
+		<string>SFUIDisplay-Black.otf</string>
 		<string>Calibri-Regular.ttf</string>
 		<string>Calibri-Bold.ttf</string>
 		<string>Calibri-Light.ttf</string>

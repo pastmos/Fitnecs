@@ -11,13 +11,15 @@ import Reusable
 class AwardCollectionViewCell: UICollectionViewCell, Reusable {
 
     @IBOutlet weak var awardImage: UIImageView!
-    @IBOutlet weak var numberLabel: UILabel!
+
+    @IBOutlet weak var textLabel: UILabel!
 
     func configure(with model: AwardModel) {
 
         awardImage.image = (model.isActivated ?? false) ? Assets.Images.awardActive.image : Assets.Images.awardInactive.image
 
-        numberLabel.text = (model.isActivated ?? false) ? String(describing: model.number ?? 0) : ""
+        textLabel.text = String(describing: model.text ?? "")
+        textLabel.textColor = (model.isActivated ?? false) ? Assets.Colors.textDark.color : Assets.Colors.textGrey.color
     }
 
 }

@@ -34,7 +34,18 @@ internal enum FontFamily {
     internal static let thin = FontConvertible(name: "Circe-Thin", family: "Circe", path: "Circe-Thin.ttf")
     internal static let all: [FontConvertible] = [bold, extraBold, extraLight, light, regular, thin]
   }
-  internal static let allCustomFonts: [FontConvertible] = [Calibri.all, Circe.all].flatMap { $0 }
+  internal enum SFUIDisplay {
+    internal static let black = FontConvertible(name: "SFUIDisplay-Black", family: "SF UI Display", path: "SFUIDisplay-Black.otf")
+    internal static let bold = FontConvertible(name: "SFUIDisplay-Bold", family: "SF UI Display", path: "SFUIDisplay-Bold.otf")
+    internal static let heavy = FontConvertible(name: "SFUIDisplay-Heavy", family: "SF UI Display", path: "SFUIDisplay-Heavy.otf")
+    internal static let light = FontConvertible(name: "SFUIDisplay-Light", family: "SF UI Display", path: "SFUIDisplay-Light.otf")
+    internal static let medium = FontConvertible(name: "SFUIDisplay-Medium", family: "SF UI Display", path: "SFUIDisplay-Medium.otf")
+    internal static let semibold = FontConvertible(name: "SFUIDisplay-Semibold", family: "SF UI Display", path: "SFUIDisplay-Semibold.otf")
+    internal static let thin = FontConvertible(name: "SFUIDisplay-Thin", family: "SF UI Display", path: "SFUIDisplay-Thin.otf")
+    internal static let ultralight = FontConvertible(name: "SFUIDisplay-Ultralight", family: "SF UI Display", path: "SFUIDisplay-Ultralight.otf")
+    internal static let all: [FontConvertible] = [black, bold, heavy, light, medium, semibold, thin, ultralight]
+  }
+  internal static let allCustomFonts: [FontConvertible] = [Calibri.all, Circe.all, SFUIDisplay.all].flatMap { $0 }
   internal static func registerAllCustomFonts() {
     allCustomFonts.forEach { $0.register() }
   }

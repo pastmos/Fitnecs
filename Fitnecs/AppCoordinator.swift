@@ -108,10 +108,7 @@ extension AppCoordinator {
     func clearAuthData() {
         storageService.removeFromKeychain(forKeys: [KeychainStorage.Key.token,
                                                     KeychainStorage.Key.username,
-                                                    KeychainStorage.Key.password,
-                                                    KeychainStorage.Key.code])
-        storageService.removeFromUserDefaults(forKey: .confirmation)
-        storageService.removeFromUserDefaults(forKey: .secretKey)
+                                                    KeychainStorage.Key.password])
     }
 }
 

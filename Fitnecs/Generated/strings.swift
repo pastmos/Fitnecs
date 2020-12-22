@@ -13,6 +13,35 @@ internal enum Strings {
   /// Ошибка
   internal static let error = Strings.tr("Localizable", "error")
 
+  internal enum Achievements {
+    internal enum Achieve {
+      /// достигли
+      internal static let label = Strings.tr("Localizable", "achievements.achieve.label")
+    }
+    internal enum All {
+      internal enum Achieve {
+        /// Все чего вы
+        internal static let label = Strings.tr("Localizable", "achievements.all.achieve.label")
+      }
+    }
+    internal enum Days {
+      ///  дней
+      internal static let label = Strings.tr("Localizable", "achievements.days.label")
+    }
+    internal enum For {
+      /// Получено за:
+      internal static let label = Strings.tr("Localizable", "achievements.for.label")
+    }
+    internal enum Overall {
+      /// и это всего за
+      internal static let label = Strings.tr("Localizable", "achievements.overall.label")
+    }
+    internal enum Top {
+      /// Получено за:
+      internal static let label = Strings.tr("Localizable", "achievements.top.label")
+    }
+  }
+
   internal enum Activity {
     internal enum Distance {
       /// Дистанция
@@ -40,13 +69,13 @@ internal enum Strings {
 
   internal enum Auth {
     internal enum Login {
-      /// Введите email
+      /// Ваш логин
       internal static let placeholder = Strings.tr("Localizable", "auth.login.placeholder")
       /// FITNECS
       internal static let title = Strings.tr("Localizable", "auth.login.title")
       internal enum Ask {
         internal enum Registration {
-          /// Еще не зарегистрированы?
+          /// Нет аккаунта?
           internal static let title = Strings.tr("Localizable", "auth.login.ask.registration.title")
         }
       }
@@ -58,7 +87,7 @@ internal enum Strings {
       }
     }
     internal enum Password {
-      /// Введите пароль
+      /// Пароль
       internal static let placeholder = Strings.tr("Localizable", "auth.password.placeholder")
       internal enum Confirmation {
         /// Подтверждение пароля
@@ -75,7 +104,7 @@ internal enum Strings {
         internal static let title = Strings.tr("Localizable", "auth.registration.alert.title")
       }
       internal enum Button {
-        /// Зарегистрироваться
+        /// Регистрация
         internal static let title = Strings.tr("Localizable", "auth.registration.button.title")
       }
     }
@@ -282,6 +311,13 @@ internal enum Strings {
           }
         }
       }
+    }
+  }
+
+  internal enum Profile {
+    internal enum Spend {
+      /// потратить баллы
+      internal static let label = Strings.tr("Localizable", "profile.spend.label")
     }
   }
 
