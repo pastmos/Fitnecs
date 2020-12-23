@@ -158,17 +158,17 @@ struct ChartViewData {
         var description = ""
         switch type {
         case .steps:
-            description = "Пройдено шагов в день"
+            description = Strings.Activity.Day.Steps.label
         case .calories:
-            description = "Потрачено калорий в день"
+            description = Strings.Activity.Day.Calories.label
         case .distance:
-            description = "Пройдено км в день"
+            description = Strings.Activity.Day.Distance.label
         }
         let chartDataSet = BarChartDataSet(entries: dataEntries, label: description)
-//        let set: [UIColor] = [Assets.Colors.chartBarColor.color]
-//        chartDataSet.setColors(set, alpha: 1)
+        let set: [UIColor] = [Assets.Colors.chartBarColor.color]
+        chartDataSet.setColors(set, alpha: 1)
         let chartData = BarChartData(dataSet: chartDataSet)
-//        chartData.barWidth = Double(0.25)
+        chartData.barWidth = Double(0.4)
         return chartData
     }
 }

@@ -92,6 +92,9 @@
 "activity.steps.unit.label"        = "шагов";
 "activity.calories.unit.label"     = "ккал";
 "activity.distance.unit.label"     = "км";
+"activity.day.steps.label"         = "Пройдено шагов в день";
+"activity.day.calories.label"      = "Потрачено калорий в день";
+"activity.day.distance.label"      = "Пройдено км в день";
 
 
 //Network Errors

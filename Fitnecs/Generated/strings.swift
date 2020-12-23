@@ -49,6 +49,20 @@ internal enum Strings {
         internal static let label = Strings.tr("Localizable", "activity.calories.unit.label")
       }
     }
+    internal enum Day {
+      internal enum Calories {
+        /// Потрачено калорий в день
+        internal static let label = Strings.tr("Localizable", "activity.day.calories.label")
+      }
+      internal enum Distance {
+        /// Пройдено км в день
+        internal static let label = Strings.tr("Localizable", "activity.day.distance.label")
+      }
+      internal enum Steps {
+        /// Пройдено шагов в день
+        internal static let label = Strings.tr("Localizable", "activity.day.steps.label")
+      }
+    }
     internal enum Distance {
       /// Дистанция
       internal static let label = Strings.tr("Localizable", "activity.distance.label")

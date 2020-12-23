@@ -116,19 +116,19 @@ class ActivityViewController: UIViewController {
             let weekDays = self.getWeekDays()
             self.chartView.animate(yAxisDuration: 1)
 
-//            self.chartView.xAxis.drawGridLinesEnabled = false
-//            //self.chartView.xAxis.drawLabelsEnabled = false
-//            self.chartView.xAxis.drawAxisLineEnabled = false
-//            self.chartView.rightAxis.enabled = false
-//            //self.chartView.leftAxis.enabled = false
-//            self.chartView.drawBordersEnabled = false
-//
-//            self.chartView.scaleYEnabled = false
-//            self.chartView.scaleXEnabled = false
+            self.chartView.xAxis.drawGridLinesEnabled = false
+            self.chartView.xAxis.drawAxisLineEnabled = false
+            self.chartView.rightAxis.enabled = false
+            self.chartView.leftAxis.enabled = true
+            self.chartView.drawBordersEnabled = false
+
+            self.chartView.scaleYEnabled = false
+            self.chartView.scaleXEnabled = false
 
             self.chartView.xAxis.labelPosition = .bottom
+            self.chartView.legend.enabled = false
 
-            //self.chartView.drawBarShadowEnabled = true
+            self.chartView.drawBarShadowEnabled = true
 
             self.chartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: weekDays)
             switch type {
@@ -142,10 +142,7 @@ class ActivityViewController: UIViewController {
                 self.chartView.data = data.distanceChart
                 self.distanceItem.setState(true)
             }
-
-
         }
-
 
         viewModel?.start()
     }
