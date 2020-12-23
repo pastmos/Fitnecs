@@ -69,13 +69,39 @@ class ActivityViewModel: ActivityViewModelProtocol {
 
     var data: ActivityData = ActivityData()
 
-    var userData: UserViewData = UserViewData()
-    var activitiesData: ActivityViewData = ActivityViewData(kilometersItemData: ActivityItemViewData(), stepsItemData: ActivityItemViewData(), caloriesItemData: ActivityItemViewData())
+    var userData: UserViewData = UserViewData() {
+        didSet {
+            self.updateUser?(self.userData)
+        }
+    }
+
+    var activitiesData: ActivityViewData = ActivityViewData(
+        kilometersItemData: ActivityItemViewData(image: Assets.Images.distanceIcon.image, amount: "", unit: "", isActive: false, type: .distance), stepsItemData: ActivityItemViewData(image: Assets.Images.stepsIcon.image, amount: "", unit: "", isActive: false, type: .steps),
+        caloriesItemData: ActivityItemViewData(image: Assets.Images.caloriesIcon.image, amount: "", unit: "", isActive: false, type: .calories)) {
+        didSet {
+            self.updateActivity?(self.activitiesData)
+        }
+    }
+
     var chartData: ChartViewData = ChartViewData()
 
-    var steps: String = ""
-    var kilometers: String = ""
-    var calories: String = ""
+    var steps: String = "" {
+        didSet {
+            self.activitiesData.stepsItemData.amount = steps
+        }
+    }
+    var kilometers: String = "" {
+        didSet {
+            self.activitiesData.kilometersItemData.amount = kilometers
+        }
+    }
+    var calories: String = "" {
+        didSet {
+            self.activitiesData.caloriesItemData.amount = calories
+        }
+    }
+
+    var selectedActivitytype: ChartType = .steps
 
     var state: ActivityState = .normal
 
@@ -121,7 +147,9 @@ class ActivityViewModel: ActivityViewModelProtocol {
         //Steps daily
         dispatchGroup.enter()
         self.healthService?.getStepCount(startDay, endDay) { steps in
-            self.steps = String(Int(steps))
+            DispatchQueue.main.async {
+                self.steps = String(Int(steps))
+            }
             dispatchGroup.leave()
         }
 
@@ -129,21 +157,27 @@ class ActivityViewModel: ActivityViewModelProtocol {
         dispatchGroup.enter()
         self.healthService?.getSleepAnalysis(startDay - Const.hourSeconds * 6, endDay - Const.hourSeconds * 6) { samples, _ in
             let overall = samples.map { $0.endDate.timeIntervalSince($0.startDate) }.reduce(0, +)
-            self.activitiesData.sleepHours = Double(overall / 3600).roundTo(2)
+            DispatchQueue.main.async {
+                self.activitiesData.sleepHours = Double(overall / 3600).roundTo(2)
+            }
             dispatchGroup.leave()
         }
 
         //Distance daily
         dispatchGroup.enter()
         self.healthService?.getDailyDistance(startDay, endDay) { meters in
-            self.kilometers = String((meters / 1000).roundTo(2))
+            DispatchQueue.main.async {
+                self.kilometers = String((meters / 1000).roundTo(2))
+            }
             dispatchGroup.leave()
         }
 
         //Calories daily
         dispatchGroup.enter()
         self.healthService?.getActiveEnergyBurned(startDay, endDay) { samples, unit in
-            self.calories = String(Int(samples.map { $0.quantity.doubleValue(for: unit) }.reduce(0, +)))
+            DispatchQueue.main.async {
+                self.calories = String(Int(samples.map { $0.quantity.doubleValue(for: unit) }.reduce(0, +)))
+            }
             dispatchGroup.leave()
         }
 
@@ -171,37 +205,28 @@ class ActivityViewModel: ActivityViewModelProtocol {
                 dispatchGroup.leave()
             }
 
+        }
 
-            dispatchGroup.notify(queue: DispatchQueue.main) { [weak self] in
-                guard let self = self else {
-                    return
-                }
-
-
-                //Temporary hard data(waiting for backend)
-                self.userData.activityIndex = 68
-                self.userData.yesterdayActivityIndex = 37
-                self.userData.avatarImage = UIImage(named: "user-avatar")!
-                self.userData.normalStatus = "Ленивец"
-                self.userData.todayStatus = "Гепард"
-                self.userData.points = "150"
-                self.userData.motivation = "двигайся больше..."
-
-                self.activitiesData.kilometersItemData = ActivityItemViewData(image: Assets.Images.distanceIcon.image, amount: self.kilometers, unit: "", isActive: false, type: .distance)
-                self.activitiesData.stepsItemData = ActivityItemViewData(image: Assets.Images.stepsIcon.image, amount: self.steps, unit: "", isActive: true, type: .steps)
-                self.activitiesData.caloriesItemData = ActivityItemViewData(image: Assets.Images.caloriesIcon.image, amount: self.calories, unit: "", isActive: false, type: .calories)
-
-                self.updateUser?(self.userData)
-                self.updateActivity?(self.activitiesData)
-                self.updateChart?(self.chartData, .steps)
-
-
-                // Request location + notification auth
-                self.locationManager.requestAlwaysAuthorization()
-                UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { didAllow, error in
-                })
+        dispatchGroup.notify(queue: DispatchQueue.main) { [weak self] in
+            guard let self = self else {
+                return
             }
 
+            //Temporary hard data(waiting for backend)
+            self.userData.activityIndex = 68
+            self.userData.yesterdayActivityIndex = 37
+            self.userData.avatarImage = UIImage(named: "user-avatar")!
+            self.userData.normalStatus = "Ленивец"
+            self.userData.todayStatus = "Гепард"
+            self.userData.points = "150"
+            self.userData.motivation = "двигайся больше..."
+
+            self.updateChart?(self.chartData, self.selectedActivitytype)
+
+            // Request location + notification auth
+            self.locationManager.requestAlwaysAuthorization()
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { didAllow, error in
+            })
         }
     }
 
@@ -308,10 +333,13 @@ class ActivityViewModel: ActivityViewModelProtocol {
         switch type {
         case .steps:
             updateChart?(chartData, .steps)
+            selectedActivitytype = .steps
         case .calories:
             updateChart?(chartData, .calories)
+            selectedActivitytype = .calories
         case .distance:
             updateChart?(chartData, .distance)
+            selectedActivitytype = .distance
 
         }
     }

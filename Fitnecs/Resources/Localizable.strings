@@ -89,6 +89,10 @@
 "activity.sleep.label"             = "Сон";
 "activity.distance.label"          = "Дистанция";
 "activity.points.caption.label"    = "Баллы\nактивности";
+"activity.steps.unit.label"        = "шагов";
+"activity.calories.unit.label"     = "ккал";
+"activity.distance.unit.label"     = "км";
+
 
 //Network Errors
 "network.error.no.internet.text"      = "Соединение с интернетом отсутствует. Проверьте настройки APN в параметрах передачи данных вашего устройства. Установите значение APN \"vtb\" и выполните перезагрузку.";

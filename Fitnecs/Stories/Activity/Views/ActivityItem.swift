@@ -57,13 +57,13 @@ class ActivityItem: UIView {
 
         case .steps:
             image = Assets.Images.stepsIcon.image
-            unitLabel.text = "шагов"
+            unitLabel.text = Strings.Activity.Steps.Unit.label
         case .calories:
             image = Assets.Images.caloriesIcon.image
-            unitLabel.text = "ккал"
+            unitLabel.text = Strings.Activity.Calories.Unit.label
         case .distance:
             image = Assets.Images.distanceIcon.image
-            unitLabel.text = "км"
+            unitLabel.text = Strings.Activity.Distance.Unit.label
         case .none:
             print("")
         }

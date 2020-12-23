@@ -26,6 +26,7 @@ internal enum Assets {
     internal static let blueProgress = ColorAsset(name: "blue-progress")
     internal static let blueText = ColorAsset(name: "blue-text")
     internal static let blueTransparentText = ColorAsset(name: "blue-transparent-text")
+    internal static let chartBarColor = ColorAsset(name: "chart-bar-color")
     internal static let circleGradientEnd = ColorAsset(name: "circle-gradient-end")
     internal static let circleGradientStart = ColorAsset(name: "circle-gradient-start")
     internal static let circleYesterdayBackground = ColorAsset(name: "circle-yesterday-background")

@@ -108,17 +108,42 @@ class ActivityViewController: UIViewController {
             guard let self = self else {
                 return
             }
+
+            self.activityItemsArray.forEach { item in
+                item.setState(false)
+            }
+
             let weekDays = self.getWeekDays()
             self.chartView.animate(yAxisDuration: 1)
+
+//            self.chartView.xAxis.drawGridLinesEnabled = false
+//            //self.chartView.xAxis.drawLabelsEnabled = false
+//            self.chartView.xAxis.drawAxisLineEnabled = false
+//            self.chartView.rightAxis.enabled = false
+//            //self.chartView.leftAxis.enabled = false
+//            self.chartView.drawBordersEnabled = false
+//
+//            self.chartView.scaleYEnabled = false
+//            self.chartView.scaleXEnabled = false
+
+            self.chartView.xAxis.labelPosition = .bottom
+
+            //self.chartView.drawBarShadowEnabled = true
+
             self.chartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: weekDays)
             switch type {
             case .steps:
                 self.chartView.data = data.stepsChart
+                self.stepsItem.setState(true)
             case .calories:
                 self.chartView.data = data.caloriesChart
+                self.caloriesItem.setState(true)
             case .distance:
                 self.chartView.data = data.distanceChart
+                self.distanceItem.setState(true)
             }
+
+
         }
 
 
