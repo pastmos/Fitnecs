@@ -55,8 +55,9 @@ class ActivityViewModel: ActivityViewModelProtocol {
     weak var coordinatorDelegate: ActivityViewModelCoordinatorDelegate?
 
     // MARK: Variables
-    var healthService: HealthKitServiceProtocol?
-    var uploadService: UploadAPIService?
+    private var healthService: HealthKitServiceProtocol?
+    private var uploadService: UploadAPIService?
+    private var activityService: ActivityAPIService?
 
     // MARK: Callbacks
 
@@ -69,11 +70,7 @@ class ActivityViewModel: ActivityViewModelProtocol {
 
     var data: ActivityData = ActivityData()
 
-    var userData: UserViewData = UserViewData() {
-        didSet {
-            self.updateUser?(self.userData)
-        }
-    }
+    var userData: UserViewData = UserViewData()
 
     var activitiesData: ActivityViewData = ActivityViewData(
         kilometersItemData: ActivityItemViewData(image: Assets.Images.distanceIcon.image, amount: "", unit: "", isActive: false, type: .distance), stepsItemData: ActivityItemViewData(image: Assets.Images.stepsIcon.image, amount: "", unit: "", isActive: false, type: .steps),
@@ -105,9 +102,11 @@ class ActivityViewModel: ActivityViewModelProtocol {
 
     var state: ActivityState = .normal
 
-    init(healthService: HealthKitServiceProtocol = HealthKitService(), uploadService: UploadAPIService = UploadAPIServiceImplementation()) {
+    init(healthService: HealthKitServiceProtocol = HealthKitService(), uploadService: UploadAPIService = UploadAPIServiceImplementation(), activityService: ActivityAPIService = ActivityAPIServiceImplementation()) {
         self.healthService = healthService
         self.uploadService = uploadService
+        self.activityService = activityService
+
     }
 
     // MARK: Functions
@@ -133,7 +132,6 @@ class ActivityViewModel: ActivityViewModelProtocol {
                 }
             }
 
-            self.getActivityViewData()
         }
     }
 
@@ -207,20 +205,29 @@ class ActivityViewModel: ActivityViewModelProtocol {
 
         }
 
+        dispatchGroup.enter()
+        self.activityService?.getActivityIndex { result in
+            switch result {
+            case .success(let data):
+                self.initTestData()
+                self.userData.activityIndex = Double(data.activityIndex)
+                dispatchGroup.leave()
+
+            case .failure(let error):
+                print("Failure")
+                dispatchGroup.leave()
+            }
+        }
+
+
+
+
         dispatchGroup.notify(queue: DispatchQueue.main) { [weak self] in
             guard let self = self else {
                 return
             }
 
-            //Temporary hard data(waiting for backend)
-            self.userData.activityIndex = 68
-            self.userData.yesterdayActivityIndex = 37
-            self.userData.avatarImage = UIImage(named: "user-avatar")!
-            self.userData.normalStatus = "Ленивец"
-            self.userData.todayStatus = "Гепард"
-            self.userData.points = "150"
-            self.userData.motivation = "двигайся больше..."
-
+            self.updateUser?(self.userData)
             self.updateChart?(self.chartData, self.selectedActivitytype)
 
             // Request location + notification auth
@@ -228,6 +235,17 @@ class ActivityViewModel: ActivityViewModelProtocol {
             UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { didAllow, error in
             })
         }
+    }
+
+    private func initTestData() {
+        //Temporary hard data(waiting for backend)
+        //self.userData.activityIndex = 74
+        self.userData.yesterdayActivityIndex = 37
+        self.userData.avatarImage = UIImage(named: "user-avatar")!
+        self.userData.normalStatus = "Ленивец"
+        self.userData.todayStatus = "Гепард"
+        self.userData.points = "150"
+        self.userData.motivation = "двигайся больше..."
     }
 
     func getActivityUploadData(startDate: Date, endDate: Date) {

@@ -99,7 +99,7 @@ extension AppCoordinator {
 
     func handleAuthentificationError() {
         setupAuthenticationErrorHandler()
-        clearAuthData()
+        //clearAuthData()
         rootCoordinator.childCoordinators.forEach { $0.finish() }
         rootCoordinator.removeAllChildCoordinators()
         rootCoordinator.openAuthInterface(with: .login)

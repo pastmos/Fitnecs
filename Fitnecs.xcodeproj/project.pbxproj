@@ -37,6 +37,9 @@
 		2676D38F2580FAED0002A6F6 /* SFUIDisplay-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2676D3872580FAED0002A6F6 /* SFUIDisplay-Heavy.otf */; };
 		2676D3932582240C0002A6F6 /* NavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2676D3922582240C0002A6F6 /* NavigationBar.xib */; };
 		2676D396258225890002A6F6 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2676D395258225890002A6F6 /* NavigationBar.swift */; };
+		267EEA43259484C800EF8867 /* ActivityAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267EEA42259484C800EF8867 /* ActivityAPIService.swift */; };
+		267EEA462594854500EF8867 /* ActivityAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267EEA452594854500EF8867 /* ActivityAPI.swift */; };
+		267EEA4A2594871C00EF8867 /* ActivityIndexResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267EEA492594871C00EF8867 /* ActivityIndexResponseModel.swift */; };
 		2682F1C2258267FA00915865 /* StatisticsViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2682F1C1258267FA00915865 /* StatisticsViewData.swift */; };
 		2682F1C52587907300915865 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2682F1C42587907300915865 /* UIView.swift */; };
 		2682F26F2589280200915865 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2682F26E2589280200915865 /* UIApplication.swift */; };
@@ -171,6 +174,9 @@
 		2676D3872580FAED0002A6F6 /* SFUIDisplay-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Heavy.otf"; sourceTree = "<group>"; };
 		2676D3922582240C0002A6F6 /* NavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBar.xib; sourceTree = "<group>"; };
 		2676D395258225890002A6F6 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		267EEA42259484C800EF8867 /* ActivityAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityAPIService.swift; sourceTree = "<group>"; };
+		267EEA452594854500EF8867 /* ActivityAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityAPI.swift; sourceTree = "<group>"; };
+		267EEA492594871C00EF8867 /* ActivityIndexResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndexResponseModel.swift; sourceTree = "<group>"; };
 		2682F1C1258267FA00915865 /* StatisticsViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewData.swift; sourceTree = "<group>"; };
 		2682F1C42587907300915865 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		2682F26E2589280200915865 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
@@ -307,6 +313,14 @@
 				2648F33B254AE55300CD893A /* UploadDataResponseModel.swift */,
 			);
 			path = Upload;
+			sourceTree = "<group>";
+		};
+		267EEA482594870D00EF8867 /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				267EEA492594871C00EF8867 /* ActivityIndexResponseModel.swift */,
+			);
+			path = Activity;
 			sourceTree = "<group>";
 		};
 		2682F27125892F2100915865 /* Views */ = {
@@ -685,6 +699,7 @@
 		CEAE88C3251B740200E7EF87 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				267EEA42259484C800EF8867 /* ActivityAPIService.swift */,
 				CEAE88C5251B74A400E7EF87 /* AuthorizationAPIService.swift */,
 				2648F331254AE3C600CD893A /* UploadAPIService.swift */,
 				CEAE88C6251B74A400E7EF87 /* BaseAPIService.swift */,
@@ -697,6 +712,7 @@
 			children = (
 				CEAE88CF251B74FA00E7EF87 /* AuthorizationAPI.swift */,
 				2648F32E254AB84F00CD893A /* UploadAPI.swift */,
+				267EEA452594854500EF8867 /* ActivityAPI.swift */,
 			);
 			path = TargetTypes;
 			sourceTree = "<group>";
@@ -704,6 +720,7 @@
 		CEAE88E3251B767900E7EF87 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				267EEA482594870D00EF8867 /* Activity */,
 				2648F336254AE51300CD893A /* Upload */,
 				CEAE88F8251B782F00E7EF87 /* Auth */,
 				CEAE88F6251B782F00E7EF87 /* Common */,
@@ -1166,6 +1183,7 @@
 				CEAE877A251B57DA00E7EF87 /* InfoViewData.swift in Sources */,
 				CEAE878A251B621600E7EF87 /* InfoViewController.swift in Sources */,
 				CEAE88BF251B73A500E7EF87 /* assets-images.swift in Sources */,
+				267EEA462594854500EF8867 /* ActivityAPI.swift in Sources */,
 				2682F26F2589280200915865 /* UIApplication.swift in Sources */,
 				26D4C7AB252481AF00F645A3 /* UIImageView.swift in Sources */,
 				CEAE87AA251B63E300E7EF87 /* InteractivePopRecognizer.swift in Sources */,
@@ -1196,6 +1214,7 @@
 				CEAE876A251B562700E7EF87 /* Coordinator.swift in Sources */,
 				266C81922590CB2C0065DD74 /* AchievementsViewData.swift in Sources */,
 				CEAE88C9251B74A400E7EF87 /* BaseAPIService.swift in Sources */,
+				267EEA43259484C800EF8867 /* ActivityAPIService.swift in Sources */,
 				CEAE88E9251B770300E7EF87 /* StorageService.swift in Sources */,
 				CEAE8AD6251CC0DE00E7EF87 /* AuthCoordinator.swift in Sources */,
 				2648F2FC2542E1EF00CD893A /* LoginViewModel.swift in Sources */,
@@ -1205,6 +1224,7 @@
 				268B25B02539AE82008BC076 /* CircleProgressBar.swift in Sources */,
 				26893DBC2521DCB900604B44 /* GeoViewController.swift in Sources */,
 				CEAE8779251B57DA00E7EF87 /* ErrorViewData.swift in Sources */,
+				267EEA4A2594871C00EF8867 /* ActivityIndexResponseModel.swift in Sources */,
 				CE8B3F2225212CA800F4FEED /* ActivityCoordinator.swift in Sources */,
 				CEAE88FC251B782F00E7EF87 /* RegisterResponseModel.swift in Sources */,
 				CEAE8777251B57DA00E7EF87 /* AlertViewData.swift in Sources */,
