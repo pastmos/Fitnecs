@@ -53,33 +53,38 @@ class MainViewModel: NSObject, MainViewModelProtocol {
 
     private func addRegionMonitorPoints() {
 
+//Our test regions
+//        regions = [
+//            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.633206), longitude: CLLocationDegrees(37.603389)), identifier: "Жени."),
+//            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.791721), longitude: CLLocationDegrees(37.258575)), identifier: "Дениса."),
+//            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.997609), longitude: CLLocationDegrees(37.236750)), identifier: "Азбука Вкуса."),
+//            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.755825), longitude: CLLocationDegrees(37.617712)), identifier: "Нулевой километр.")
+//        ]
+
+//Subway regions
         regions = [
-            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.633206), longitude: CLLocationDegrees(37.603389)), identifier: "Жени."),
-            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.791721), longitude: CLLocationDegrees(37.258575)), identifier: "Дениса."),
-            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.997609), longitude: CLLocationDegrees(37.236750)), identifier: "Азбука Вкуса."),
-            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.755825), longitude: CLLocationDegrees(37.617712)), identifier: "Нулевой километр.")
-//            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.73512), longitude: CLLocationDegrees(37.59328)), identifier: "Парк культуры"),
-//            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.729), longitude: CLLocationDegrees(37.61139)), identifier: "Октябрьская"),
-//            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.72886), longitude: CLLocationDegrees(37.62356)), identifier: "Добрынинская"),
-//            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.7313), longitude: CLLocationDegrees(37.63612)), identifier: "Павелецкая"),
-//            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.74255), longitude: CLLocationDegrees(37.65389)), identifier: "Таганская"),
-//            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.75848), longitude: CLLocationDegrees(37.65985)), identifier: "Курская"),
-//            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.77717), longitude: CLLocationDegrees(37.655689)), identifier: "Комсомольская"),
-//            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.781196), longitude: CLLocationDegrees(37.633529)), identifier: "Проспект Мира"),
-//            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.77921), longitude: CLLocationDegrees(37.6009)), identifier: "Новослободская"),
-//            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.77492), longitude: CLLocationDegrees(37.58207)), identifier: "Белорусская"),
-//            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.760109), longitude: CLLocationDegrees(37.577141)), identifier: "Краснопресненская"),
-//            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.74388), longitude: CLLocationDegrees(37.56673)), identifier: "Киевская"),
-//            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.71886), longitude: CLLocationDegrees(37.60797)), identifier: "Шаболовская"),
-//            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.70818), longitude: CLLocationDegrees(37.58742)), identifier: "Ленинский проспект"),
-//            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.75876), longitude: CLLocationDegrees(37.62573)), identifier: "Лубянка"),
-//            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.76426), longitude: CLLocationDegrees(37.6389)), identifier: "Чистые пруды"),
+            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.73512), longitude: CLLocationDegrees(37.59328)), identifier: "Парк культуры"),
+            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.729), longitude: CLLocationDegrees(37.61139)), identifier: "Октябрьская"),
+            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.72886), longitude: CLLocationDegrees(37.62356)), identifier: "Добрынинская"),
+            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.7313), longitude: CLLocationDegrees(37.63612)), identifier: "Павелецкая"),
+            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.74255), longitude: CLLocationDegrees(37.65389)), identifier: "Таганская"),
+            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.75848), longitude: CLLocationDegrees(37.65985)), identifier: "Курская"),
+            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.77717), longitude: CLLocationDegrees(37.655689)), identifier: "Комсомольская"),
+            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.781196), longitude: CLLocationDegrees(37.633529)), identifier: "Проспект Мира"),
+            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.77921), longitude: CLLocationDegrees(37.6009)), identifier: "Новослободская"),
+            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.77492), longitude: CLLocationDegrees(37.58207)), identifier: "Белорусская"),
+            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.760109), longitude: CLLocationDegrees(37.577141)), identifier: "Краснопресненская"),
+            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.74388), longitude: CLLocationDegrees(37.56673)), identifier: "Киевская"),
+            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.71886), longitude: CLLocationDegrees(37.60797)), identifier: "Шаболовская"),
+            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.70818), longitude: CLLocationDegrees(37.58742)), identifier: "Ленинский проспект"),
+            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.75876), longitude: CLLocationDegrees(37.62573)), identifier: "Лубянка"),
+            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.76426), longitude: CLLocationDegrees(37.6389)), identifier: "Чистые пруды")
 //            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.755825), longitude: CLLocationDegrees(37.617712)), identifier: ""),
 //            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.755825), longitude: CLLocationDegrees(37.617712)), identifier: ""),
 //            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.755825), longitude: CLLocationDegrees(37.617712)), identifier: ""),
 //            GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.755825), longitude: CLLocationDegrees(37.617712)), identifier: "")
+            ]
 
-        ]
 
         regions.forEach { region in
             geofencingService.monitorRegionAtLocation(center: region.center, identifier: region.identifier)
