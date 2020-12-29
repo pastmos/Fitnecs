@@ -17,7 +17,7 @@ enum AuthorizationAPI {
 
 // MARK: - Target Type
 
-extension AuthorizationAPI: TargetType, AccessTokenAuthorizable {
+extension AuthorizationAPI: TargetType, AuthorizedTargetType {
 
     var baseURL: URL {
         guard let url = URL(string: APIConfig.baseApiURL) else {
@@ -63,10 +63,8 @@ extension AuthorizationAPI: TargetType, AccessTokenAuthorizable {
         return .successCodes
     }
 
-    var authorizationType: AuthorizationType? {
-        switch self {
-        case .registration, .login: return .none
-        }
+    var needsAuth: Bool {
+        return false
     }
 
 }

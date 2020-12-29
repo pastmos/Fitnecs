@@ -93,7 +93,6 @@ class ProfileViewModel: ProfileViewModelProtocol {
         storageService.removeFromKeychain(forKeys: [KeychainStorage.Key.token,
                                                     KeychainStorage.Key.username,
                                                     KeychainStorage.Key.password])
-        storageService.removeFromUserDefaults(forKey: .secretKey)
     }
 
 }

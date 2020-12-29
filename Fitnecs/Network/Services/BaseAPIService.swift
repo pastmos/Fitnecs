@@ -25,6 +25,32 @@ class AuthenticationErrorHandler {
     }
 }
 
+protocol AuthorizedTargetType {
+    var needsAuth: Bool { get }
+}
+
+struct AuthPlugin: PluginType {
+    let token: String
+
+    func prepare(_ request: URLRequest, target: TargetType) -> URLRequest {
+        guard let target = target as? AuthorizedTargetType, target.needsAuth else {
+            return request
+        }
+        var request = request
+        request.addValue(token, forHTTPHeaderField: APIConfig.authHeader)
+        return request
+    }
+}
+
+extension MultiTarget: AuthorizedTargetType {
+    var needsAuth: Bool {
+        guard let authorizableTarget = target as? AuthorizedTargetType else {
+            return false
+        }
+        return authorizableTarget.needsAuth
+    }
+}
+
 class BaseAPIService {
 
     weak var authErrorHandler: AuthenticationErrorHandler?
@@ -39,26 +65,20 @@ class BaseAPIService {
 
     // MARK: Properties
 
-    private let authPlugin = AccessTokenPlugin {_ in 
-        let storageService: StorageService = StorageServiceImplementation()
-
-        guard let secret = storageService.stringFromUserDefaults(with: .secretKey), !secret.isEmpty else {
-            return ""
-        }
-
-        let token = storageService.stringFromKeychain(with: KeychainStorage.Key.token)
-
-        return token ?? ""
-    }
 
     var plugins: [PluginType] {
+
+        let storageService: StorageService = StorageServiceImplementation()
+        let token = storageService.stringFromKeychain(with: KeychainStorage.Key.token) ?? "No token"
+        let authPlugin = AuthPlugin(token: token)
+
         #if DEBUG
         return [authPlugin, NetworkLoggerPlugin()]
         #endif
         return [authPlugin]
     }
 
-    lazy var provider = MoyaProvider<MultiTarget>(/*stubClosure: MoyaProvider.immediatelyStub,*/ plugins: plugins)
+    lazy var provider = MoyaProvider<MultiTarget>(plugins: plugins)
 
 
     // MARK: Public

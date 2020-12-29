@@ -80,9 +80,9 @@ class ActivityViewController: UIViewController {
                 return
             }
 
-            self.activityIndexCircleProgress.setProgress(to: data.activityIndex, maxValue: Const.activityIndexMax, startColor: Assets.Colors.circleGradientStart.color, endColor: Assets.Colors.circleGradientEnd.color, thickness: 32, isFractional: false, type: .activityIndex, yesterdayIndex: 54)
+            self.activityIndexCircleProgress.setProgress(to: data.activityIndex, maxValue: Const.activityIndexMax, startColor: Assets.Colors.circleGradientStart.color, endColor: Assets.Colors.circleGradientEnd.color, thickness: 32, isFractional: false, type: .activityIndex, yesterdayIndex: data.yesterdayActivityIndex)
 
-            self.yesterdayActivityIndexCircleProgress.setProgress(to: 54, maxValue: Const.activityIndexMax, startColor: Assets.Colors.circleYesterdayGradientEnd.color, endColor: Assets.Colors.circleYesterdayGradientEnd.color, thickness: 2, isFractional: false, type: .yesterdayIndex, yesterdayIndex: 54)
+            self.yesterdayActivityIndexCircleProgress.setProgress(to: data.yesterdayActivityIndex, maxValue: Const.activityIndexMax, startColor: Assets.Colors.circleYesterdayGradientEnd.color, endColor: Assets.Colors.circleYesterdayGradientEnd.color, thickness: 2, isFractional: false, type: .yesterdayIndex, yesterdayIndex: data.yesterdayActivityIndex)
 
             self.avatarImage.image = data.avatarImage
             self.pointsLabel.text = String(data.points)

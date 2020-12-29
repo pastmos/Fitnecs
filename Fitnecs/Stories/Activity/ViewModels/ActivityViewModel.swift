@@ -238,8 +238,8 @@ class ActivityViewModel: ActivityViewModelProtocol {
     }
 
     private func initTestData() {
+
         //Temporary hard data(waiting for backend)
-        //self.userData.activityIndex = 74
         self.userData.yesterdayActivityIndex = 37
         self.userData.avatarImage = UIImage(named: "user-avatar")!
         self.userData.normalStatus = "Ленивец"

@@ -16,7 +16,7 @@ enum UploadAPI {
 
 // MARK: - Target Type
 
-extension UploadAPI: TargetType, AccessTokenAuthorizable {
+extension UploadAPI: TargetType, AuthorizedTargetType {
 
     var baseURL: URL {
         guard let url = URL(string: APIConfig.baseApiURL) else {
@@ -57,8 +57,7 @@ extension UploadAPI: TargetType, AccessTokenAuthorizable {
     }
 
     var headers: [String: String]? {
-        let token = StorageServiceImplementation().stringFromKeychain(with: .token) ?? ""
-        let headers = ["Content-Type": "application/json", APIConfig.authHeader: token]
+        let headers = ["Content-Type": "application/json"]
         return headers
     }
 
@@ -66,13 +65,8 @@ extension UploadAPI: TargetType, AccessTokenAuthorizable {
         return .successCodes
     }
 
-    var authorizationType: AuthorizationType? {
-        switch self {
-        case .getInterval, .uploadData:
-            return .custom(APIConfig.tokenType)
-        default:
-            return .none
-        }
+    var needsAuth: Bool {
+        return true
     }
 
     var sampleData: Data {

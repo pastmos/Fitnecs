@@ -70,7 +70,6 @@ class RootViewModel: RootViewModelProtocol {
         storageService.removeFromKeychain(forKeys: [KeychainStorage.Key.token,
                                                     KeychainStorage.Key.username,
                                                     KeychainStorage.Key.password])
-        storageService.removeFromUserDefaults(forKey: .secretKey)
     }
 
     private func openApp() {
@@ -100,7 +99,6 @@ class RootViewModel: RootViewModelProtocol {
                 guard let token = model.token, !token.isEmpty else {
                     return
                 }
-                self.storageService.saveInUserDefaults(string: UUID().uuidString, with: .secretKey)
                 self.storageService.saveInKeychain(string: token, with: KeychainStorage.Key.token)
                 self.storageService.saveInKeychain(string: data.email, with: KeychainStorage.Key.username)
                 self.storageService.saveInKeychain(string: data.password, with: KeychainStorage.Key.password)

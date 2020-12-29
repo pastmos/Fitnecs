@@ -86,7 +86,6 @@ class LoginViewModel: LoginViewModelProtocol {
                 guard let token = model.token, !token.isEmpty else {
                     return
                 }
-                self.storageService.saveInUserDefaults(string: UUID().uuidString, with: .secretKey)
                 self.storageService.saveInKeychain(string: token, with: KeychainStorage.Key.token)
                 self.storageService.saveInKeychain(string: self.loginViewData.email, with: KeychainStorage.Key.username)
                 self.storageService.saveInKeychain(string: self.loginViewData.password, with: KeychainStorage.Key.password)

@@ -25,6 +25,7 @@ class GeofencingService: GeofencingServiceProtocol {
             // Make sure region monitoring is supported.
             if CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
 
+
                 self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
 
                 // Register the region.

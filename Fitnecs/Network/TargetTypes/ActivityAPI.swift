@@ -16,7 +16,7 @@ enum ActivityAPI {
 
 // MARK: - Target Type
 
-extension ActivityAPI: TargetType, AccessTokenAuthorizable {
+extension ActivityAPI: TargetType, AuthorizedTargetType {
 
     var baseURL: URL {
         guard let url = URL(string: APIConfig.baseApiURL) else {
@@ -47,8 +47,7 @@ extension ActivityAPI: TargetType, AccessTokenAuthorizable {
     }
 
     var headers: [String: String]? {
-        let token = StorageServiceImplementation().stringFromKeychain(with: .token) ?? ""
-        let headers = ["Content-Type": "application/json", APIConfig.authHeader: token]
+        let headers = ["Content-Type": "application/json"]
         return headers
     }
 
@@ -56,11 +55,8 @@ extension ActivityAPI: TargetType, AccessTokenAuthorizable {
         return .successCodes
     }
 
-    var authorizationType: AuthorizationType? {
-        switch self {
-        case .getActivityIndex:
-            return .custom(APIConfig.tokenType)
-        }
+    var needsAuth: Bool {
+        return true
     }
 
     var sampleData: Data {
