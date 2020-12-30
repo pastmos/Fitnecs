@@ -29,7 +29,7 @@ class GeofencingService: GeofencingServiceProtocol {
                 self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
 
                 // Register the region.
-                let maxDistance = Double(20)
+                let maxDistance = Double(100)
                 let region = CLCircularRegion(center: center,
                                               radius: maxDistance, identifier: identifier)
                 region.notifyOnEntry = true
