@@ -137,10 +137,6 @@ extension UserDefaultsStorage.Key {
 extension KeychainStorage.Key {
 
     static let token = KeychainStorage.Key("token")
-    static let username = KeychainStorage.Key("username")
-    static let password = KeychainStorage.Key("password")
-}
-
-extension UserDefaultsStorage.Key {
-    static let secretKey = UserDefaultsStorage.Key("SecretKey")
+    static let username = KeychainStorage.Key("login")
+    static let password = KeychainStorage.Key("pass")
 }
