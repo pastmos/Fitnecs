@@ -81,8 +81,10 @@ class MainViewModel: NSObject, MainViewModelProtocol {
             GeofenceRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(55.755825), longitude: CLLocationDegrees(37.617712)), identifier: "Нулевой километр.")
             ]
 
+        let radius: Double = 100
+
         regions.forEach { region in
-            geofencingService.monitorRegionAtLocation(center: region.center, identifier: region.identifier)
+            geofencingService.monitorRegionAtLocation(center: region.center, identifier: region.identifier, radius: radius)
         }
     }
 

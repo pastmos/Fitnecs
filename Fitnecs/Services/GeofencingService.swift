@@ -9,7 +9,7 @@ import CoreLocation
 
 protocol GeofencingServiceProtocol {
     var locationManager: CLLocationManager { get set }
-    func monitorRegionAtLocation(center: CLLocationCoordinate2D, identifier: String )
+    func monitorRegionAtLocation(center: CLLocationCoordinate2D, identifier: String, radius: Double)
 }
 
 
@@ -17,7 +17,7 @@ class GeofencingService: GeofencingServiceProtocol {
 
     var locationManager: CLLocationManager = CLLocationManager()
 
-    func monitorRegionAtLocation(center: CLLocationCoordinate2D, identifier: String ) {
+    func monitorRegionAtLocation(center: CLLocationCoordinate2D, identifier: String, radius: Double) {
 
         // Make sure the app is authorized.
         if CLLocationManager.authorizationStatus() == .authorizedAlways {
@@ -29,9 +29,8 @@ class GeofencingService: GeofencingServiceProtocol {
                 self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
 
                 // Register the region.
-                let maxDistance = Double(100)
                 let region = CLCircularRegion(center: center,
-                                              radius: maxDistance, identifier: identifier)
+                                              radius: radius, identifier: identifier)
                 region.notifyOnEntry = true
                 region.notifyOnExit = true
 
