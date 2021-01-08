@@ -145,7 +145,7 @@ extension MainViewModel: CLLocationManagerDelegate {
 
         let distanceStr = "До центра: " + String(distance) + " м"
         let coordinatesStr = "Широта: " + String(latitude) + " Долгота: " + String(longitude) + ". "
-        showLocalNotification(zone: region.identifier + " " + coordinatesStr + distanceStr, isEnter: true)
+        showLocalNotification(zone: region.identifier + " " + coordinatesStr + distanceStr, isEnter: false)
     }
 
 }
