@@ -211,6 +211,7 @@ class ActivityViewModel: ActivityViewModelProtocol {
             case .success(let data):
                 self.initTestData()
                 self.userData.activityIndex = Double(data.activityIndex)
+                self.userData.yesterdayActivityIndex = Double(data.yesterdayActivityIndex)
                 dispatchGroup.leave()
 
             case .failure(let error):

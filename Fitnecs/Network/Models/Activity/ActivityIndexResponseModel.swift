@@ -10,9 +10,11 @@ struct ActivityIndexResponseModel: Codable {
 
     private enum CodingKeys: String, CodingKey {
         case activityIndex = "activity_index"
+        case yesterdayActivityIndex = "yesterday_activity_index"
         case message
     }
 
     let activityIndex: Int
+    let yesterdayActivityIndex: Int
     let message: String
 }
