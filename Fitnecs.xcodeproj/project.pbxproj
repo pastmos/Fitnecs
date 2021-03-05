@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		18C33B3EA5C0733FB06AD272 /* Pods_Fitnecs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08ACED771143D2198230F4F3 /* Pods_Fitnecs.framework */; };
+		2411AA67FA01441382209965 /* Pods_Fitnecs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16F7B8ED0F54AFA5AAA7457 /* Pods_Fitnecs.framework */; };
 		26111D46252DE80A00587485 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26111D45252DE80A00587485 /* GoogleService-Info.plist */; };
 		263D7CD92541866400132B9E /* LoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263D7CD82541866400132B9E /* LoginResponseModel.swift */; };
 		2648F2F52542E1DB00CD893A /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2648F2F42542E1DB00CD893A /* ActivityViewController.swift */; };
@@ -143,7 +143,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		08ACED771143D2198230F4F3 /* Pods_Fitnecs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fitnecs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		07DD276D35AE7042CD45FE45 /* Pods-Fitnecs.debug(prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitnecs.debug(prod).xcconfig"; path = "Target Support Files/Pods-Fitnecs/Pods-Fitnecs.debug(prod).xcconfig"; sourceTree = "<group>"; };
+		2609CB3DD0FB5F6D08C75C8A /* Pods-Fitnecs.release(prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitnecs.release(prod).xcconfig"; path = "Target Support Files/Pods-Fitnecs/Pods-Fitnecs.release(prod).xcconfig"; sourceTree = "<group>"; };
 		26111D45252DE80A00587485 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		263D7CD82541866400132B9E /* LoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseModel.swift; sourceTree = "<group>"; };
 		2648F2912541A05C00CD893A /* Test.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Test.xcconfig; sourceTree = "<group>"; };
@@ -214,8 +215,8 @@
 		26D4C794252369D000F645A3 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		26D4C79825237EC400F645A3 /* ActivityViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewData.swift; sourceTree = "<group>"; };
 		26D4C7AA252481AF00F645A3 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
-		4D0A983AE7F1067C01EE0DA3 /* Pods-Fitnecs.release(test).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitnecs.release(test).xcconfig"; path = "Target Support Files/Pods-Fitnecs/Pods-Fitnecs.release(test).xcconfig"; sourceTree = "<group>"; };
-		7A48E13ECEBD132BE2E14E3D /* Pods-Fitnecs.debug(prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitnecs.debug(prod).xcconfig"; path = "Target Support Files/Pods-Fitnecs/Pods-Fitnecs.debug(prod).xcconfig"; sourceTree = "<group>"; };
+		3EDD5C9E16D31A58383D76C2 /* Pods-Fitnecs.release(test).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitnecs.release(test).xcconfig"; path = "Target Support Files/Pods-Fitnecs/Pods-Fitnecs.release(test).xcconfig"; sourceTree = "<group>"; };
+		94914117492B09309360D395 /* Pods-Fitnecs.debug(test).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitnecs.debug(test).xcconfig"; path = "Target Support Files/Pods-Fitnecs/Pods-Fitnecs.debug(test).xcconfig"; sourceTree = "<group>"; };
 		CE72CF512520FE6900EEE4FD /* Activity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Activity.storyboard; sourceTree = "<group>"; };
 		CE842E4B251B508E00C4CD96 /* Fitnecs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fitnecs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE842E4E251B508E00C4CD96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -288,8 +289,7 @@
 		CEAE8B29251CD34500E7EF87 /* ValidationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
 		CEAE8B30251CD42A00E7EF87 /* HtmlArticleViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HtmlArticleViewModel.swift; sourceTree = "<group>"; };
 		CEFAB9422521111900F58048 /* ActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
-		FCC0F8D03621CAC5AEB8110D /* Pods-Fitnecs.release(prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitnecs.release(prod).xcconfig"; path = "Target Support Files/Pods-Fitnecs/Pods-Fitnecs.release(prod).xcconfig"; sourceTree = "<group>"; };
-		FFB4A5F67FE39DD540D07468 /* Pods-Fitnecs.debug(test).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitnecs.debug(test).xcconfig"; path = "Target Support Files/Pods-Fitnecs/Pods-Fitnecs.debug(test).xcconfig"; sourceTree = "<group>"; };
+		F16F7B8ED0F54AFA5AAA7457 /* Pods_Fitnecs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fitnecs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,7 +299,7 @@
 			files = (
 				2676D369257E65690002A6F6 /* PastySwift in Frameworks */,
 				26D4C78F2523372300F645A3 /* HealthKit.framework in Frameworks */,
-				18C33B3EA5C0733FB06AD272 /* Pods_Fitnecs.framework in Frameworks */,
+				2411AA67FA01441382209965 /* Pods_Fitnecs.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,10 +454,10 @@
 		2C446CBFA930B2DDF15DB1A7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				FFB4A5F67FE39DD540D07468 /* Pods-Fitnecs.debug(test).xcconfig */,
-				7A48E13ECEBD132BE2E14E3D /* Pods-Fitnecs.debug(prod).xcconfig */,
-				4D0A983AE7F1067C01EE0DA3 /* Pods-Fitnecs.release(test).xcconfig */,
-				FCC0F8D03621CAC5AEB8110D /* Pods-Fitnecs.release(prod).xcconfig */,
+				94914117492B09309360D395 /* Pods-Fitnecs.debug(test).xcconfig */,
+				07DD276D35AE7042CD45FE45 /* Pods-Fitnecs.debug(prod).xcconfig */,
+				3EDD5C9E16D31A58383D76C2 /* Pods-Fitnecs.release(test).xcconfig */,
+				2609CB3DD0FB5F6D08C75C8A /* Pods-Fitnecs.release(prod).xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -467,7 +467,7 @@
 			children = (
 				26504D892550615D0070A5B8 /* .swiftlint.yml */,
 				26D4C78E2523372300F645A3 /* HealthKit.framework */,
-				08ACED771143D2198230F4F3 /* Pods_Fitnecs.framework */,
+				F16F7B8ED0F54AFA5AAA7457 /* Pods_Fitnecs.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -950,15 +950,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE842E5F251B509100C4CD96 /* Build configuration list for PBXNativeTarget "Fitnecs" */;
 			buildPhases = (
-				B39F8FB47A45E880116136A7 /* [CP] Check Pods Manifest.lock */,
+				A725FABA9E58F78FFBF6FBFD /* [CP] Check Pods Manifest.lock */,
 				CEAE87B2251B660A00E7EF87 /* SwiftGen */,
 				CE842E47251B508E00C4CD96 /* Sources */,
 				CE842E48251B508E00C4CD96 /* Frameworks */,
 				CE842E49251B508E00C4CD96 /* Resources */,
 				26111D49252DF38500587485 /* Crashlytics Firebase script */,
-				C925588BF11FC65AD8DA897E /* [CP] Embed Pods Frameworks */,
-				02C970F6D680F5333C8F8249 /* [CP] Copy Pods Resources */,
 				26504D7E255059AD0070A5B8 /* SwiftLynt */,
+				DBC007FCDD018D5E3557ED37 /* [CP] Embed Pods Frameworks */,
+				41AC736135E285150C90EFFA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1051,23 +1051,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		02C970F6D680F5333C8F8249 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Fitnecs/Pods-Fitnecs-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Fitnecs/Pods-Fitnecs-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fitnecs/Pods-Fitnecs-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		26111D49252DF38500587485 /* Crashlytics Firebase script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1106,7 +1089,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
-		B39F8FB47A45E880116136A7 /* [CP] Check Pods Manifest.lock */ = {
+		41AC736135E285150C90EFFA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fitnecs/Pods-Fitnecs-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fitnecs/Pods-Fitnecs-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fitnecs/Pods-Fitnecs-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A725FABA9E58F78FFBF6FBFD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1128,23 +1128,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C925588BF11FC65AD8DA897E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Fitnecs/Pods-Fitnecs-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Fitnecs/Pods-Fitnecs-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fitnecs/Pods-Fitnecs-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		CEAE87B2251B660A00E7EF87 /* SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1162,6 +1145,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"${PODS_ROOT}/SwiftGen/bin/swiftgen\"\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
+		};
+		DBC007FCDD018D5E3557ED37 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fitnecs/Pods-Fitnecs-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fitnecs/Pods-Fitnecs-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fitnecs/Pods-Fitnecs-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1323,6 +1323,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				EXCLUDED_ARCHS = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1355,7 +1356,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Fitnecs/Fitnecs.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 21;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = VS9ZZ3WKXQ;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
@@ -1366,6 +1367,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.2.1;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1411,6 +1413,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1422,6 +1425,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -1437,10 +1441,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Fitnecs/Fitnecs.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 21;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = VS9ZZ3WKXQ;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				INFOPLIST_FILE = Fitnecs/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1448,6 +1452,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.2.1;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1460,6 +1465,7 @@
 			baseConfigurationReference = 2648F2912541A05C00CD893A /* Test.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1493,6 +1499,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				EXCLUDED_ARCHS = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1555,6 +1562,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1566,6 +1574,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -1581,7 +1590,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Fitnecs/Fitnecs.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 21;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = VS9ZZ3WKXQ;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
@@ -1592,6 +1601,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.2.1;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1607,7 +1617,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Fitnecs/Fitnecs.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 21;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = VS9ZZ3WKXQ;
 				"EXCLUDED_ARCHS[sdk=*]" = arm64;
@@ -1618,6 +1628,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.2.1;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
