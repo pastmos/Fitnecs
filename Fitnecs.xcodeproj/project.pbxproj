@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2411AA67FA01441382209965 /* Pods_Fitnecs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16F7B8ED0F54AFA5AAA7457 /* Pods_Fitnecs.framework */; };
 		26111D46252DE80A00587485 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26111D45252DE80A00587485 /* GoogleService-Info.plist */; };
 		263D7CD92541866400132B9E /* LoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263D7CD82541866400132B9E /* LoginResponseModel.swift */; };
 		2648F2F52542E1DB00CD893A /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2648F2F42542E1DB00CD893A /* ActivityViewController.swift */; };
@@ -26,7 +25,7 @@
 		266C81952590D92D0065DD74 /* AchievementCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266C81942590D92D0065DD74 /* AchievementCard.swift */; };
 		266C81982590E2E80065DD74 /* AchievementsCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 266C81972590E2E80065DD74 /* AchievementsCard.xib */; };
 		266C819B2590E31D0065DD74 /* AchievementsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266C819A2590E31D0065DD74 /* AchievementsCard.swift */; };
-		2676D369257E65690002A6F6 /* PastySwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2676D368257E65690002A6F6 /* PastySwift */; };
+		2676D369257E65690002A6F6 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 2676D368257E65690002A6F6 /* SwiftPackageProductDependency */; };
 		2676D3882580FAED0002A6F6 /* SFUIDisplay-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2676D3802580FAEC0002A6F6 /* SFUIDisplay-Thin.otf */; };
 		2676D3892580FAED0002A6F6 /* SFUIDisplay-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2676D3812580FAEC0002A6F6 /* SFUIDisplay-Ultralight.otf */; };
 		2676D38A2580FAED0002A6F6 /* SFUIDisplay-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2676D3822580FAED0002A6F6 /* SFUIDisplay-Light.otf */; };
@@ -70,6 +69,7 @@
 		26D4C795252369D000F645A3 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D4C794252369D000F645A3 /* Date.swift */; };
 		26D4C79925237EC400F645A3 /* ActivityViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D4C79825237EC400F645A3 /* ActivityViewData.swift */; };
 		26D4C7AB252481AF00F645A3 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D4C7AA252481AF00F645A3 /* UIImageView.swift */; };
+		3BFB36C12B4DF21909BA9ACB /* Pods_Fitnecs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0812BAF5E7DAC7A0D3B13E68 /* Pods_Fitnecs.framework */; };
 		CE72CF522520FE6900EEE4FD /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE72CF512520FE6900EEE4FD /* Activity.storyboard */; };
 		CE842E4F251B508E00C4CD96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE842E4E251B508E00C4CD96 /* AppDelegate.swift */; };
 		CE842E5B251B509100C4CD96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE842E59251B509100C4CD96 /* LaunchScreen.storyboard */; };
@@ -143,8 +143,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		07DD276D35AE7042CD45FE45 /* Pods-Fitnecs.debug(prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitnecs.debug(prod).xcconfig"; path = "Target Support Files/Pods-Fitnecs/Pods-Fitnecs.debug(prod).xcconfig"; sourceTree = "<group>"; };
-		2609CB3DD0FB5F6D08C75C8A /* Pods-Fitnecs.release(prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitnecs.release(prod).xcconfig"; path = "Target Support Files/Pods-Fitnecs/Pods-Fitnecs.release(prod).xcconfig"; sourceTree = "<group>"; };
+		0812BAF5E7DAC7A0D3B13E68 /* Pods_Fitnecs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fitnecs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26111D45252DE80A00587485 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		263D7CD82541866400132B9E /* LoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseModel.swift; sourceTree = "<group>"; };
 		2648F2912541A05C00CD893A /* Test.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Test.xcconfig; sourceTree = "<group>"; };
@@ -215,8 +214,9 @@
 		26D4C794252369D000F645A3 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		26D4C79825237EC400F645A3 /* ActivityViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewData.swift; sourceTree = "<group>"; };
 		26D4C7AA252481AF00F645A3 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
-		3EDD5C9E16D31A58383D76C2 /* Pods-Fitnecs.release(test).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitnecs.release(test).xcconfig"; path = "Target Support Files/Pods-Fitnecs/Pods-Fitnecs.release(test).xcconfig"; sourceTree = "<group>"; };
-		94914117492B09309360D395 /* Pods-Fitnecs.debug(test).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitnecs.debug(test).xcconfig"; path = "Target Support Files/Pods-Fitnecs/Pods-Fitnecs.debug(test).xcconfig"; sourceTree = "<group>"; };
+		8AEA1AE2679EE53DBB6FF3B9 /* Pods-Fitnecs.release(prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitnecs.release(prod).xcconfig"; path = "Target Support Files/Pods-Fitnecs/Pods-Fitnecs.release(prod).xcconfig"; sourceTree = "<group>"; };
+		B00072A2E02B1EB0A2A85054 /* Pods-Fitnecs.release(test).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitnecs.release(test).xcconfig"; path = "Target Support Files/Pods-Fitnecs/Pods-Fitnecs.release(test).xcconfig"; sourceTree = "<group>"; };
+		CCFB0E8E7D0329282DA305CE /* Pods-Fitnecs.debug(test).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitnecs.debug(test).xcconfig"; path = "Target Support Files/Pods-Fitnecs/Pods-Fitnecs.debug(test).xcconfig"; sourceTree = "<group>"; };
 		CE72CF512520FE6900EEE4FD /* Activity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Activity.storyboard; sourceTree = "<group>"; };
 		CE842E4B251B508E00C4CD96 /* Fitnecs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fitnecs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE842E4E251B508E00C4CD96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -289,7 +289,7 @@
 		CEAE8B29251CD34500E7EF87 /* ValidationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
 		CEAE8B30251CD42A00E7EF87 /* HtmlArticleViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HtmlArticleViewModel.swift; sourceTree = "<group>"; };
 		CEFAB9422521111900F58048 /* ActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
-		F16F7B8ED0F54AFA5AAA7457 /* Pods_Fitnecs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fitnecs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0019BA0224D3FF8E9C001E9 /* Pods-Fitnecs.debug(prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitnecs.debug(prod).xcconfig"; path = "Target Support Files/Pods-Fitnecs/Pods-Fitnecs.debug(prod).xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,9 +297,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2676D369257E65690002A6F6 /* PastySwift in Frameworks */,
+				2676D369257E65690002A6F6 /* BuildFile in Frameworks */,
 				26D4C78F2523372300F645A3 /* HealthKit.framework in Frameworks */,
-				2411AA67FA01441382209965 /* Pods_Fitnecs.framework in Frameworks */,
+				3BFB36C12B4DF21909BA9ACB /* Pods_Fitnecs.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,10 +454,10 @@
 		2C446CBFA930B2DDF15DB1A7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				94914117492B09309360D395 /* Pods-Fitnecs.debug(test).xcconfig */,
-				07DD276D35AE7042CD45FE45 /* Pods-Fitnecs.debug(prod).xcconfig */,
-				3EDD5C9E16D31A58383D76C2 /* Pods-Fitnecs.release(test).xcconfig */,
-				2609CB3DD0FB5F6D08C75C8A /* Pods-Fitnecs.release(prod).xcconfig */,
+				CCFB0E8E7D0329282DA305CE /* Pods-Fitnecs.debug(test).xcconfig */,
+				D0019BA0224D3FF8E9C001E9 /* Pods-Fitnecs.debug(prod).xcconfig */,
+				B00072A2E02B1EB0A2A85054 /* Pods-Fitnecs.release(test).xcconfig */,
+				8AEA1AE2679EE53DBB6FF3B9 /* Pods-Fitnecs.release(prod).xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -467,7 +467,7 @@
 			children = (
 				26504D892550615D0070A5B8 /* .swiftlint.yml */,
 				26D4C78E2523372300F645A3 /* HealthKit.framework */,
-				F16F7B8ED0F54AFA5AAA7457 /* Pods_Fitnecs.framework */,
+				0812BAF5E7DAC7A0D3B13E68 /* Pods_Fitnecs.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -950,15 +950,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE842E5F251B509100C4CD96 /* Build configuration list for PBXNativeTarget "Fitnecs" */;
 			buildPhases = (
-				A725FABA9E58F78FFBF6FBFD /* [CP] Check Pods Manifest.lock */,
+				78CF5B8249989E796AE7A5CC /* [CP] Check Pods Manifest.lock */,
 				CEAE87B2251B660A00E7EF87 /* SwiftGen */,
 				CE842E47251B508E00C4CD96 /* Sources */,
 				CE842E48251B508E00C4CD96 /* Frameworks */,
 				CE842E49251B508E00C4CD96 /* Resources */,
 				26111D49252DF38500587485 /* Crashlytics Firebase script */,
 				26504D7E255059AD0070A5B8 /* SwiftLynt */,
-				DBC007FCDD018D5E3557ED37 /* [CP] Embed Pods Frameworks */,
-				41AC736135E285150C90EFFA /* [CP] Copy Pods Resources */,
+				6F57FF393DF2A861FBE5B879 /* [CP] Embed Pods Frameworks */,
+				98C3506E23707C824E9C5F84 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -966,7 +966,7 @@
 			);
 			name = Fitnecs;
 			packageProductDependencies = (
-				2676D368257E65690002A6F6 /* PastySwift */,
+				2676D368257E65690002A6F6 /* SwiftPackageProductDependency */,
 			);
 			productName = Fitnecs;
 			productReference = CE842E4B251B508E00C4CD96 /* Fitnecs.app */;
@@ -997,7 +997,7 @@
 			);
 			mainGroup = CE842E42251B508D00C4CD96;
 			packageReferences = (
-				2676D367257E65680002A6F6 /* XCRemoteSwiftPackageReference "PastySwift" */,
+				2676D367257E65680002A6F6 /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = CE842E4C251B508E00C4CD96 /* Products */;
 			projectDirPath = "";
@@ -1089,24 +1089,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
-		41AC736135E285150C90EFFA /* [CP] Copy Pods Resources */ = {
+		6F57FF393DF2A861FBE5B879 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Fitnecs/Pods-Fitnecs-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Fitnecs/Pods-Fitnecs-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Fitnecs/Pods-Fitnecs-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Fitnecs/Pods-Fitnecs-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fitnecs/Pods-Fitnecs-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fitnecs/Pods-Fitnecs-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A725FABA9E58F78FFBF6FBFD /* [CP] Check Pods Manifest.lock */ = {
+		78CF5B8249989E796AE7A5CC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1128,6 +1128,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		98C3506E23707C824E9C5F84 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fitnecs/Pods-Fitnecs-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fitnecs/Pods-Fitnecs-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fitnecs/Pods-Fitnecs-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		CEAE87B2251B660A00E7EF87 /* SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1145,23 +1162,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"${PODS_ROOT}/SwiftGen/bin/swiftgen\"\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
-		};
-		DBC007FCDD018D5E3557ED37 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Fitnecs/Pods-Fitnecs-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Fitnecs/Pods-Fitnecs-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fitnecs/Pods-Fitnecs-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1664,7 +1664,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2676D367257E65680002A6F6 /* XCRemoteSwiftPackageReference "PastySwift" */ = {
+		2676D367257E65680002A6F6 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pastmos/PastySwift";
 			requirement = {
@@ -1675,9 +1675,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2676D368257E65690002A6F6 /* PastySwift */ = {
+		2676D368257E65690002A6F6 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2676D367257E65680002A6F6 /* XCRemoteSwiftPackageReference "PastySwift" */;
+			package = 2676D367257E65680002A6F6 /* RemoteSwiftPackageReference */;
 			productName = PastySwift;
 		};
 /* End XCSwiftPackageProductDependency section */
